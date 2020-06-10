@@ -1,17 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Muli:wght@300;700&display=swap");
 body {
-  background-color: white;
+  font-family: "Muli", sans-serif;
+  font-weight: 300;
+  background: #9627a4;
+  background: linear-gradient(200deg, #9627a4 0%, #0034a1 100%);
+}
+
+.content {
   padding-left: 20px;
-  padding-top: 20px;
+  padding-right: 20px;
+  width: 100vw;
+  height: 100vh;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
 }
-
-p, h1, h2, h3, h4, h5, h6 {
-  margin: 0;
-  padding: 0;
-  color: black;
-}
-
-p {
-  font-size: 16px;
+.content p, .content a, .content a:hover, .content a:focus {
+  font-size: 20px;
+  color: white;
 }
 
 /*# sourceMappingURL=main.css.map */
