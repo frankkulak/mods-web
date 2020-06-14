@@ -12,14 +12,16 @@ const Data = (function () {
                 requiredPacks: [],
                 features: [
                     {
-                        headline: 'Name Cowplants',
-                        description: "That's all there is to it. You now have the option to name cowplants."
+                        headline: 'Give cowplants names',
+                        description: "Yeah, that's all there is to it. You now have the option to name cowplants."
                     }
                 ],
                 bugs: [
                     {
-                        headline: 'Cowplant gets de-planted in build mode',
-                        description: "A cowplant will de-plant itself when you move it in build mode, and an error message may be displayed while doing so. This can easily be fixed by moving the cowplant again - it will grow back into its full form, and will still have the name you gave it. The error message appears to be empty, and I have not noticed any effect on gameplay."
+                        headline: 'Moving cowplant in build mode',
+                        description: "A cowplant may turn into a pile of dirt when you move it in build mode, accompanied by a warning message if you have MC Command Center installed.",
+                        workaround: "An easy workaround is to simply move the pile of dirt again and the cowplant will go back to normal.",
+                        priority: "Note that the warning is just for a rendering issue in build mode - it has no effect on gameplay. I am still trying to fix this, though."
                     }
                 ],
                 link: `https://drive.google.com/file/d/1U1PQFkSSrKFqI3_vv23r-4epc7U883ja/view?usp=sharing`

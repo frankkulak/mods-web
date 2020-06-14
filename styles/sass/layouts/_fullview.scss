@@ -1,3 +1,30 @@
-#mod-fullview {
+.mod-fullview {
+  hr {
+    @include my($margin: $padding-lg);
+    background-color: var(--hr-color);
+    border: 0;
+    width: 80%;
+    height: 2px;
+    border-radius: 2px;
+    opacity: 0.6;
+  }
 
+  span.h-color {
+    color: var(--h-color);
+  }
+
+  span.workaround {
+    background-color: var(--text-highlight-color);
+    border-radius: 5px;
+    @include px($padding: $padding-xs);
+  }
+
+  h6 span {
+    font-weight: normal;
+  }
+
+  ul.terms li {
+    font-size: 14px;
+    margin-bottom: $padding-sm;
+  }
 }

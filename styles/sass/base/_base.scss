@@ -12,3 +12,21 @@ p, h1, h2, h3, h4, h5, h6 {
 div.container-fluid {
   @include py($padding: $padding-lg)
 }
+
+a.btn {
+  margin-top: $padding-lg;
+  text-decoration: none;
+}
+
+a.btn-outline-primary, a.btn-outline-primary:focus {
+  color: var(--button-color);
+  border-color: var(--button-color);
+  text-decoration: none;
+}
+
+a.btn-outline-primary:hover {
+  @extend %gradient;
+  color: var(--text-color);
+  border-style: none;
+  text-decoration: none;
+}

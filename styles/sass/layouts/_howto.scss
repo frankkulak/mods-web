@@ -5,7 +5,7 @@
 
   span {
     @include px($padding: $padding-xs);
-    background-color: var(--bg-band-overlay);
+    background-color: var(--text-highlight-color);
     border-radius: 5px;
   }
 }

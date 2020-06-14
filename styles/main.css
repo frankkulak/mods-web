@@ -2,17 +2,19 @@
 html {
   --bg-color: #0D3043;
   --bg-band-overlay: rgba(255, 255, 255, 0.05);
+  --text-highlight-color: rgba(255, 255, 255, 0.15);
   --text-color: #E3E3E3;
   --link-color: #1FBAAE;
-  --link-hover-color: #24B3FF;
+  --link-hover-color: #E3E3E3;
   --h-color: #24B3FF;
   --success-color: #1FBA6D;
   --warning-color: #F2DC33;
   --error-color: #F25833;
   --button-color: #24B3FF;
+  --hr-color: #24B3FF;
 }
 
-#mod-previews .mod-preview .btn-outline-primary:hover {
+a.btn-outline-primary:hover {
   background-color: #24B3FF;
   background-image: linear-gradient(45deg, #24B3FF 0%, #1FBAAE 100%);
 }
@@ -26,12 +28,12 @@ body {
 
 a, a:focus {
   color: var(--link-color);
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 a:hover {
   color: var(--link-hover-color);
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -92,6 +94,50 @@ div.container-fluid {
   padding-bottom: 40px;
 }
 
+a.btn {
+  margin-top: 40px;
+  text-decoration: none;
+}
+
+a.btn-outline-primary, a.btn-outline-primary:focus {
+  color: var(--button-color);
+  border-color: var(--button-color);
+  text-decoration: none;
+}
+
+a.btn-outline-primary:hover {
+  color: var(--text-color);
+  border-style: none;
+  text-decoration: none;
+}
+
+.mod-fullview hr {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  background-color: var(--hr-color);
+  border: 0;
+  width: 80%;
+  height: 2px;
+  border-radius: 2px;
+  opacity: 0.6;
+}
+.mod-fullview span.h-color {
+  color: var(--h-color);
+}
+.mod-fullview span.workaround {
+  background-color: var(--text-highlight-color);
+  border-radius: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.mod-fullview h6 span {
+  font-weight: normal;
+}
+.mod-fullview ul.terms li {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
 #mod-previews .banded {
   background-color: var(--bg-band-overlay);
 }
@@ -109,17 +155,6 @@ div.container-fluid {
     margin-bottom: 40px;
   }
 }
-#mod-previews .mod-preview .btn {
-  margin-top: 40px;
-}
-#mod-previews .mod-preview .btn-outline-primary, #mod-previews .mod-preview .btn-outline-primary:focus {
-  color: var(--button-color);
-  border-color: var(--button-color);
-}
-#mod-previews .mod-preview .btn-outline-primary:hover {
-  color: var(--text-color);
-  border-style: none;
-}
 
 .pack-compatability span {
   font-weight: bold;
@@ -134,7 +169,7 @@ div.container-fluid {
 #how-to span {
   padding-left: 5px;
   padding-right: 5px;
-  background-color: var(--bg-band-overlay);
+  background-color: var(--text-highlight-color);
   border-radius: 5px;
 }
 

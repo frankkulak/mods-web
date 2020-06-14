@@ -18,20 +18,5 @@
         margin-bottom: $padding-lg;
       }
     }
-
-    .btn {
-      margin-top: $padding-lg;
-    }
-
-    .btn-outline-primary, .btn-outline-primary:focus {
-      color: var(--button-color);
-      border-color: var(--button-color);
-    }
-
-    .btn-outline-primary:hover {
-      @extend %gradient;
-      color: var(--text-color);
-      border-style: none;
-    }
   }
 }
