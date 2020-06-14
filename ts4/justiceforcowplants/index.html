@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>#JusticeForCowplants</title>
+    <link rel="icon" href="../../images/icon.png">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- external styles -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- external scripts -->
+    <!--    <script src="https://cdn.jsdelivr.net/npm/vue"></script> &lt;!&ndash; prod &ndash;&gt;-->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> <!-- dev -->
+
+    <!-- styles -->
+    <link rel="stylesheet" href="../../styles/main.css">
+</head>
+<body>
+
+<div id="app">
+    <!-- FIXME : make this into a single page app -->
+    <mod-fullview :mod="mod"></mod-fullview>
+</div>
+
+<!-- modules -->
+<script src="../../scripts/modules/data.js"></script>
+
+<!-- vue components -->
+<script src="../../scripts/components/mod-fullview.js"></script>
+<script src="../../scripts/components/mod-header.js"></script>
+<script src="../../scripts/components/pack-compatability.js"></script>
+
+<!-- vue instance -->
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            mod: Data.ts4[0]
+        }
+    });
+</script>
+
+</body>
+</html>

@@ -98,14 +98,6 @@ div.container-fluid {
 #mod-previews .mod-preview {
   max-width: 100%;
 }
-#mod-previews .mod-preview .header {
-  max-width: 100%;
-  text-align: center;
-  margin-bottom: 40px;
-}
-#mod-previews .mod-preview .header h2 {
-  margin-bottom: 5px;
-}
 #mod-previews .mod-preview img {
   max-width: 250px;
   width: 90%;
@@ -144,6 +136,15 @@ div.container-fluid {
   padding-right: 5px;
   background-color: var(--bg-band-overlay);
   border-radius: 5px;
+}
+
+.mod-header {
+  max-width: 100%;
+  text-align: center;
+  margin-bottom: 40px;
+}
+.mod-header h2 {
+  margin-bottom: 5px;
 }
 
 /*# sourceMappingURL=main.css.map */

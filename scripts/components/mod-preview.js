@@ -3,15 +3,13 @@
         props: ['mod'],
         data: function () {
             return {
-                previewImageSource: `./images/${this.$props.mod.id}/preview.png`
+                previewImageSource: `./images/${this.$props.mod.id}/preview.png`,
+                fullviewLink: `./ts4/${this.$props.mod.id}/index.html`
             };
         },
         template: `
             <div class="mod-preview container-fluid">
-                <div class="header">
-                    <h2>{{mod.name}}</h2>
-                    <p>version {{mod.version}} (updated: {{mod.date}})</p>
-                </div>
+                <mod-header :mod="mod"></mod-header>
                 <div class="row justify-content-center align-items-center h-100">
                     <div class="col-sm-10 col-md-3 text-center">
                         <img v-bind:src="previewImageSource" alt="#JusticeForCowplants Preview Image"/>
@@ -21,7 +19,7 @@
                         <pack-compatability v-bind:mod="mod"></pack-compatability>
                     </div>
                     <div class="col-12 text-center">
-                        <a href="#" class="btn btn-outline-primary">details &amp; download page</a>
+                        <a :href="fullviewLink" class="btn btn-outline-primary">details &amp; download page</a>
                     </div>
                 </div>
             </div>`
