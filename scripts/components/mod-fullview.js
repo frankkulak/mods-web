@@ -25,6 +25,11 @@
         },
         template: `
             <div class="mod-fullview container-fluid">
+                <div class="home-page-link row justify-content-center">
+                    <div class="col-12 col-sm-10 col-md-8">
+                        <a href="../../index.html" target="_blank">Mods Home Page</a>
+                    </div>
+                </div>
                 <mod-header :mod="mod"></mod-header>
                 <div class="image-display row justify-content-center align-items-center">
                     <div class="left-arrow col-2 col-sm-1 h-100">

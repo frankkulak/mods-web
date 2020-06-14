@@ -111,6 +111,9 @@ a.btn-outline-primary:hover {
   text-decoration: none;
 }
 
+.mod-fullview .home-page-link {
+  margin-bottom: 40px;
+}
 .mod-fullview .image-display {
   margin-bottom: 40px;
 }
@@ -205,6 +208,9 @@ a.btn-outline-primary:hover {
   max-width: 100%;
   text-align: center;
   margin-bottom: 40px;
+}
+.mod-header .updated {
+  white-space: nowrap;
 }
 .mod-header h2 {
   margin-bottom: 5px;
