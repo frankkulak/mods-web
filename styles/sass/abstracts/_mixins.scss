@@ -1,0 +1,32 @@
+@mixin gradient($bottom, $top, $fallback) {
+  background-color: $fallback;
+  background-image: linear-gradient(45deg, $bottom 0%, $top 100%);
+}
+
+@mixin px($padding) {
+  padding: {
+    left: $padding;
+    right: $padding;
+  };
+}
+
+@mixin py($padding) {
+  padding: {
+    top: $padding;
+    bottom: $padding;
+  };
+}
+
+@mixin mx($margin) {
+  margin: {
+    left: $margin;
+    right: $margin;
+  };
+}
+
+@mixin my($margin) {
+  margin: {
+    top: $margin;
+    bottom: $margin;
+  };
+}

@@ -1,23 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Muli:wght@300;700&display=swap");
+@charset "UTF-8";
 
-body {
-  font-family: "Muli", sans-serif;
-  font-weight: 300;
-  background: rgb(150,39,164);
-  background: linear-gradient(200deg, rgba(150,39,164,1) 0%, rgba(0,52,161,1) 100%);
-}
-
-.content {
-  padding-left: 20px;
-  padding-right: 20px;
-  width: 100vw;
-  height: 100vh;
-  display: table-cell;
-  vertical-align: middle;
-  text-align: center;
-
-  p, a, a:hover, a:focus {
-    font-size: 20px;
-    color: white;
-  }
-}
+@import "abstracts/_index";
+@import "base/_index";
+@import "components/_index";

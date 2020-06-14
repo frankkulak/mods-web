@@ -1,0 +1,12 @@
+html {
+  --bg-color: #{$dark-blue};
+  --bg-band-overlay: #{rgb(255, 255, 255, 0.05)};
+  --text-color: #{$off-white};
+  --link-color: #{$teal};
+  --link-hover-color: #{$blue};
+  --h-color: #{$blue};
+  --success-color: #{$green};
+  --warning-color: #{$yellow};
+  --error-color: #{$red};
+  --button-color: #{$blue};
+}

@@ -1,23 +1,61 @@
 @import url("https://fonts.googleapis.com/css2?family=Muli:wght@300;700&display=swap");
+html {
+  --bg-color: #0D3043;
+  --bg-band-overlay: rgba(255, 255, 255, 0.05);
+  --text-color: #E3E3E3;
+  --link-color: #1FBAAE;
+  --link-hover-color: #24B3FF;
+  --h-color: #24B3FF;
+  --success-color: #1FBA6D;
+  --warning-color: #F2DC33;
+  --error-color: #F25833;
+  --button-color: #24B3FF;
+}
+
 body {
   font-family: "Muli", sans-serif;
   font-weight: 300;
-  background: #9627a4;
-  background: linear-gradient(200deg, #9627a4 0%, #0034a1 100%);
+  font-size: 16px;
+  color: var(--text-color);
 }
 
-.content {
-  padding-left: 20px;
-  padding-right: 20px;
-  width: 100vw;
-  height: 100vh;
-  display: table-cell;
-  vertical-align: middle;
-  text-align: center;
+h1, h2, h3, h4, h5, h6 {
+  color: var(--h-color);
+  font-weight: bold;
 }
-.content p, .content a, .content a:hover, .content a:focus {
+
+h1 {
+  font-size: 36px;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+h3 {
+  font-size: 22px;
+}
+
+h4 {
   font-size: 20px;
-  color: white;
+}
+
+h5 {
+  font-size: 18px;
+}
+
+h6 {
+  font-size: 16px;
+}
+
+body {
+  background-color: var(--bg-color);
+  position: relative;
+}
+
+p {
+  margin: 0;
+  padding: 0;
 }
 
 /*# sourceMappingURL=main.css.map */
