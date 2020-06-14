@@ -4,7 +4,7 @@ const Data = (function () {
             {
                 id: 'justiceforcowplants',
                 name: '#JusticeForCowplants',
-                description: `Back in April, <a href="https://www.youtube.com/channel/UC_TYFButglZuuDbD-0Q_IzQ">lilsimsie</a> created the hashtag #JusticeForCowplants, pointing out that cowplants cannot be named. This mod fixes that - you can now name and rename cowplants to your heart's content.`,
+                description: `Back in April, <a href="https://www.youtube.com/channel/UC_TYFButglZuuDbD-0Q_IzQ" target="_blank">lilsimsie</a> created the hashtag #JusticeForCowplants, pointing out that cowplants cannot be named. She mentioned it again in a <a href="https://youtu.be/Bpb0BhJ4Bng" target="_blank">recent video</a> of hers, so I decided to fix it. With this mod, you can now name and rename cowplants to your heart's content.`,
                 date: 'June 13, 2020',
                 version: '1.0 beta',
                 baseGameCompatible: true,
