@@ -3,14 +3,70 @@
 <head>
     <title>Mods by Frank Kulak</title>
     <link rel="icon" href="./images/icon.png">
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- external styles -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- external scripts -->
+    <!--    <script src="https://cdn.jsdelivr.net/npm/vue"></script> &lt;!&ndash; prod &ndash;&gt;-->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> <!-- dev -->
+
+    <!-- styles -->
     <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
-<div class="content">
-    <p>Hello there! This website is currently under construction. It will be used to showcase mods I make.</p>
-    <p>In the meantime, please check out my <a href="https://frankkulak.com">main website</a>.</p>
+
+<div id="app">
+    <section id="welcome">
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-12 col-sm-10 col-md-8">
+                    <h1>Welcome</h1>
+                    <p>My name is Frank, and I’m a software developer. I’ve recently started creating mods for The Sims
+                        4, and have decided to share them on this website. You may download them for free by following
+                        the links below. Feel free to check out my <a href="https://frankkulak.com">main website</a> as
+                        well.</p>
+                    <p class="disclaimer">Please <span class="important">DO NOT</span> share or distribute any of my
+                        work without proper attribution. Please include my name (Frank Kulak) and a link to this
+                        website.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="mod-previews">
+        <mod-preview v-for="(mod, index) in mods"
+                     :key="mod.id"
+                     :mod="mod"
+                     :class="isBanded(index) && 'banded'"></mod-preview>
+    </section>
 </div>
+
+<!-- modules -->
+<script src="./scripts/modules/data.js"></script>
+
+<!-- vue components -->
+<script src="./scripts/components/mod-preview.js"></script>
+<script src="./scripts/components/pack-compatability.js"></script>
+
+<!-- vue instance -->
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            mods: Data.ts4
+        },
+        methods: {
+            isBanded: function (index) {
+                return !Boolean(index % 2);
+            }
+        }
+    });
+</script>
+
 </body>
 </html>

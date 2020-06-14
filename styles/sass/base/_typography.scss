@@ -1,8 +1,18 @@
 body {
   font-family: 'Muli', sans-serif;
   font-weight: 300;
-  font-size: 16px;
+  font-size: 18px;
   color: var(--text-color);
+}
+
+a, a:focus {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--link-hover-color);
+  text-decoration: none;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -11,25 +21,34 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 36px;
+  font-size: 28px;
 }
 
 h2 {
-  font-size: 24px;
+  font-size: 26px;
 }
 
 h3 {
-  font-size: 22px;
+  font-size: 24px;
 }
 
 h4 {
-  font-size: 20px;
+  font-size: 22px;
 }
 
 h5 {
-  font-size: 18px;
+  font-size: 20px;
 }
 
 h6 {
-  font-size: 16px;
+  font-size: 18px;
+}
+
+span.important {
+  font-weight: bold;
+  color: var(--error-color);
+}
+
+p.disclaimer {
+  font-size: 14px;
 }

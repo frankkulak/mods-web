@@ -12,11 +12,26 @@ html {
   --button-color: #24B3FF;
 }
 
+#mod-previews .mod-preview .btn-outline-primary:hover {
+  background-color: #24B3FF;
+  background-image: linear-gradient(45deg, #24B3FF 0%, #1FBAAE 100%);
+}
+
 body {
   font-family: "Muli", sans-serif;
   font-weight: 300;
-  font-size: 16px;
+  font-size: 18px;
   color: var(--text-color);
+}
+
+a, a:focus {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--link-hover-color);
+  text-decoration: none;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -25,37 +40,100 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 36px;
+  font-size: 28px;
 }
 
 h2 {
-  font-size: 24px;
+  font-size: 26px;
 }
 
 h3 {
-  font-size: 22px;
+  font-size: 24px;
 }
 
 h4 {
-  font-size: 20px;
+  font-size: 22px;
 }
 
 h5 {
-  font-size: 18px;
+  font-size: 20px;
 }
 
 h6 {
-  font-size: 16px;
+  font-size: 18px;
+}
+
+span.important {
+  font-weight: bold;
+  color: var(--error-color);
+}
+
+p.disclaimer {
+  font-size: 14px;
 }
 
 body {
   background-color: var(--bg-color);
   position: relative;
-}
-
-p {
   margin: 0;
   padding: 0;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+p:last-child, h1:last-child, h2:last-child, h3:last-child, h4:last-child, h5:last-child, h6:last-child {
+  margin: 0;
+}
+
+div.container-fluid {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+#mod-previews .banded {
+  background-color: var(--bg-band-overlay);
+}
+#mod-previews .mod-preview {
+  max-width: 100%;
+}
+#mod-previews .mod-preview .header {
+  max-width: 100%;
+  text-align: center;
+  margin-bottom: 40px;
+}
+#mod-previews .mod-preview .header h2 {
+  margin-bottom: 5px;
+}
+#mod-previews .mod-preview img {
+  max-width: 250px;
+  width: 90%;
+  height: auto;
+  border-radius: 10%;
+}
+@media (max-width: 768px) {
+  #mod-previews .mod-preview img {
+    margin-bottom: 40px;
+  }
+}
+#mod-previews .mod-preview .btn {
+  margin-top: 40px;
+}
+#mod-previews .mod-preview .btn-outline-primary, #mod-previews .mod-preview .btn-outline-primary:focus {
+  color: var(--button-color);
+  border-color: var(--button-color);
+}
+#mod-previews .mod-preview .btn-outline-primary:hover {
+  color: var(--text-color);
+  border-style: none;
+}
+
+.pack-compatability span {
+  font-weight: bold;
+}
+.pack-compatability .base {
+  color: var(--success-color);
 }
 
 /*# sourceMappingURL=main.css.map */
