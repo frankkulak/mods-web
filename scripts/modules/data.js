@@ -5,6 +5,12 @@ const Data = (function () {
                 id: 'justiceforcowplants',
                 name: '#JusticeForCowplants',
                 description: `Back in April, <a href="https://www.youtube.com/channel/UC_TYFButglZuuDbD-0Q_IzQ" target="_blank">lilsimsie</a> created the hashtag #JusticeForCowplants, pointing out that cowplants cannot be named. She mentioned it again in a <a href="https://youtu.be/Bpb0BhJ4Bng" target="_blank">recent video</a> of hers, so I decided to fix it. With this mod, you can now name and rename cowplants to your heart's content.`,
+                // fixme : get rid of this images field, it's just a hack to get it to work for now
+                images: [
+                    '1.png',
+                    '2.png',
+                    '3.png'
+                ],
                 date: 'June 13, 2020',
                 version: '1.0 beta',
                 baseGameCompatible: true,
@@ -24,7 +30,7 @@ const Data = (function () {
                         priority: "Note that the warning is just for a rendering issue in build mode - it has no effect on gameplay. I am still trying to fix this, though."
                     }
                 ],
-                link: `https://drive.google.com/file/d/1U1PQFkSSrKFqI3_vv23r-4epc7U883ja/view?usp=sharing`
+                link: `https://drive.google.com/file/d/1-oohGmDyCA7dGZ4Xclolqjic7WtOZ3Qf/view?usp=sharing`
             }
         ]
     };

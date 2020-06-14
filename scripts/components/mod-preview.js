@@ -3,8 +3,8 @@
         props: ['mod'],
         data: function () {
             return {
-                previewImageSource: `./images/${this.$props.mod.id}/preview.png`,
-                fullviewLink: `./ts4/${this.$props.mod.id}/index.html`
+                previewImageSource: `./images/thumbnails/${this.$props.mod.id}.png`,
+                fullviewLink: `./ts4/${this.$props.mod.id}/index.html` // fixme replace with live link
             };
         },
         template: `

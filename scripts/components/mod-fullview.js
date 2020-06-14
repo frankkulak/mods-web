@@ -3,12 +3,49 @@
         props: ['mod'],
         data: function () {
             return {
-                imageDirectory: `./images/${this.$props.mod.id}`
+                imageCount: this.$props.mod.images.length,
+                imageIndexToShow: 0
             };
+        },
+        methods: {
+            getImagePath: function (filename) {
+                return `./images/${filename}`;
+            },
+            updateImage: function (offset) {
+                let nextIndex = (this.imageIndexToShow + offset) % 3;
+                if (nextIndex < 0) nextIndex = this.imageCount - 1;
+                this.imageIndexToShow = nextIndex;
+            },
+            nextImage: function () {
+                this.updateImage(1);
+            },
+            prevImage: function () {
+                this.updateImage(-1);
+            }
         },
         template: `
             <div class="mod-fullview container-fluid">
                 <mod-header :mod="mod"></mod-header>
+                <div class="image-display row justify-content-center align-items-center">
+                    <div class="left-arrow col-2 col-sm-1 h-100">
+                        <button @click="prevImage" class="btn btn-link">
+                            <img src="../../images/left-arrow.png" alt="Previous Image" class="arrow"/>
+                        </button>
+                    </div>
+                    <div class="thumbnail-display col-8 col-sm-6 col-md-5">
+                        <img v-for="(image, index) in mod.images"
+                             :key="index"
+                             v-show="index === imageIndexToShow"
+                             :src="getImagePath(image)"
+                             class="thumbnail"
+                             alt="Preview Image"/>
+                    </div>
+                    <div class="right-arrow col-2 col-sm-1 h-100">
+                        <button @click="nextImage" class="btn btn-link">
+                            <img src="../../images/right-arrow.png" alt="Next Image" class="arrow"/>
+                        </button>
+                    </div>
+                </div>
                 <div class="row justify-content-center">
                     <div class="col-12 col-sm-10 col-md-8">
                         <p v-html="mod.description"></p>

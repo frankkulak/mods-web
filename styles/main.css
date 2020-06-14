@@ -111,6 +111,34 @@ a.btn-outline-primary:hover {
   text-decoration: none;
 }
 
+.mod-fullview .image-display {
+  margin-bottom: 40px;
+}
+.mod-fullview .image-display .thumbnail-display {
+  padding-left: 0;
+  padding-right: 0;
+  justify-content: center;
+}
+.mod-fullview .image-display .thumbnail-display img.thumbnail {
+  width: 100%;
+  border-radius: 15px;
+}
+.mod-fullview .image-display .btn {
+  width: 100%;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+.mod-fullview .image-display img.arrow {
+  width: 100%;
+  max-width: 64px;
+}
+.mod-fullview .image-display .left-arrow {
+  justify-content: left;
+}
+.mod-fullview .image-display .right-arrow {
+  justify-content: right;
+}
 .mod-fullview hr {
   margin-top: 40px;
   margin-bottom: 40px;
