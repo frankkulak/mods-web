@@ -1,0 +1,11 @@
+#how-to {
+  ol {
+    margin-bottom: $padding-md;
+  }
+
+  span {
+    @include px($padding: $padding-xs);
+    background-color: var(--bg-band-overlay);
+    border-radius: 5px;
+  }
+}

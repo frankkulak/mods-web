@@ -136,4 +136,14 @@ div.container-fluid {
   color: var(--success-color);
 }
 
+#how-to ol {
+  margin-bottom: 20px;
+}
+#how-to span {
+  padding-left: 5px;
+  padding-right: 5px;
+  background-color: var(--bg-band-overlay);
+  border-radius: 5px;
+}
+
 /*# sourceMappingURL=main.css.map */

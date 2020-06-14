@@ -26,10 +26,9 @@
             <div class="row justify-content-center">
                 <div class="col-12 col-sm-10 col-md-8">
                     <h1>Welcome</h1>
-                    <p>My name is Frank, and I’m a software developer. I’ve recently started creating mods for The Sims
-                        4, and have decided to share them on this website. You may download them for free by following
-                        the links below. Feel free to check out my <a href="https://frankkulak.com">main website</a> as
-                        well.</p>
+                    <p>My name is Frank, and I’m a software developer. I just started creating mods for The Sims 4, and
+                        will be sharing them on this website. You can download them for free by following the links
+                        below. General instructions for installing mods can be found at the bottom of this page.</p>
                     <p class="disclaimer">Please <span class="important">DO NOT</span> share or distribute any of my
                         work without proper attribution. Please include my name (Frank Kulak) and a link to this
                         website.</p>
@@ -43,6 +42,29 @@
                      :key="mod.id"
                      :mod="mod"
                      :class="isBanded(index) && 'banded'"></mod-preview>
+    </section>
+
+    <section id="how-to">
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-12 col-sm-10 col-md-8">
+                    <h1>How to install mods</h1>
+                    <ol>
+                        <li>Ensure that the developer has updated their mod(s) for the latest patch</li>
+                        <li>Follow their instructions to download the mod file(s)</li>
+                        <li>If a downloaded file ends with <span>.zip</span>, unzip it</li>
+                        <li>Place the unzipped file(s) in your <span>Documents &gt; Electronic Arts &gt; The Sims 4
+                            &gt; Mods</span> directory
+                        </li>
+                        <li>Ensure that &quot;Enable Custom Content and Mods&quot; is checked under <span>Game Options
+                            &gt; Other</span>
+                        </li>
+                        <li>Reload your game, and check that the mod has successfully installed</li>
+                    </ol>
+                    <p>NOTE: Mod files may end in either <span>.package</span> or <span>.ts4script</span></p>
+                </div>
+            </div>
+        </div>
     </section>
 </div>
 

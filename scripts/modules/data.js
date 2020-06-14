@@ -6,7 +6,7 @@ const Data = (function () {
                 name: '#JusticeForCowplants',
                 description: `Back in April, <a href="https://www.youtube.com/channel/UC_TYFButglZuuDbD-0Q_IzQ">lilsimsie</a> created the hashtag #JusticeForCowplants, pointing out that cowplants cannot be named. This mod fixes that - you can now name and rename cowplants to your heart's content.`,
                 date: 'June 13, 2020',
-                version: '1.0',
+                version: '1.0 beta',
                 baseGameCompatible: true,
                 recommendedPacks: [],
                 requiredPacks: [],
