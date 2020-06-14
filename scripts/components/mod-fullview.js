@@ -27,7 +27,7 @@
             <div class="mod-fullview container-fluid">
                 <div class="home-page-link row justify-content-center">
                     <div class="col-12 col-sm-10 col-md-8">
-                        <a href="../../index.html" target="_blank">Mods Home Page</a>
+                        <a href="../../index.html">Mods Home Page</a>
                     </div>
                 </div>
                 <mod-header :mod="mod"></mod-header>
@@ -52,6 +52,10 @@
                     </div>
                 </div>
                 <div class="row justify-content-center">
+                    <div class="col-12 text-center">
+                        <a :href="mod.video" target="_blank"
+                           class="btn btn-outline-primary youtube">View the demo on YouTube</a>
+                    </div>
                     <div class="col-12 col-sm-10 col-md-8">
                         <p v-html="mod.description"></p>
                         <pack-compatability v-bind:mod="mod"></pack-compatability>
@@ -92,7 +96,7 @@
                             <li>I am free to stop supporting this mod at any time for any reason.</li>
                         </ul>
                         <div class="col-12 text-center">
-                            <a :href="mod.link" target="_blank" class="btn btn-outline-primary">
+                            <a :href="mod.download" target="_blank" class="btn btn-outline-primary">
                                 Download from Google Drive</a>
                         </div>
                     </div>

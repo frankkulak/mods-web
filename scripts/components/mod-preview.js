@@ -19,7 +19,7 @@
                         <pack-compatability v-bind:mod="mod"></pack-compatability>
                     </div>
                     <div class="col-12 text-center">
-                        <a :href="fullviewLink" target="_blank" class="btn btn-outline-primary">
+                        <a :href="fullviewLink" class="btn btn-outline-primary">
                             Details &amp; Download Page</a>
                     </div>
                 </div>

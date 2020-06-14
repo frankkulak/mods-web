@@ -37,6 +37,11 @@
     }
   }
 
+  a.youtube {
+    margin-top: 0;
+    margin-bottom: $padding-lg;
+  }
+
   hr {
     @include my($margin: $padding-lg);
     background-color: var(--hr-color);
