@@ -1,27 +1,59 @@
 (function () {
+    Vue.component('status-flag', {
+        props: ['status'],
+        computed: {
+            statusClass: function () {
+                const status = this.$props.status;
+                if (status === Constants.status.untested) {
+                    return 'sf-warning';
+                } else if (status === Constants.status.conflict) {
+                    return 'sf-danger';
+                } else {
+                    return 'sf-good';
+                }
+            },
+            titleText: function () {
+                const status = this.$props.status;
+                if (status === Constants.status.untested) {
+                    return 'This mod has not yet been tested with the latest patch';
+                } else if (status === Constants.status.conflict) {
+                    return 'This mod needs to be fixed for the latest patch';
+                } else {
+                    return 'This mod is working with the latest patch';
+                }
+            }
+        },
+        template: `
+            <div class="status-flag" :class="statusClass" :title="titleText">
+                <p v-if="statusClass === 'sf-warning'">&#9888;</p>
+                <p v-else-if="statusClass === 'sf-danger'">&#10761;</p>
+                <p v-else>&check;</p>
+            </div>`
+    });
+
     Vue.component('mod-preview', {
         props: ['mod'],
         data: function () {
             return {
-                previewImageSource: `./images/thumbnails/${this.$props.mod.id}.png`,
-                fullviewLink: `./ts4/${this.$props.mod.id}/index.html` // fixme replace with live link
+                thumbnail: `./images/thumbnails/${this.$props.mod.id}.png`,
+                thumbnailAlt: `${this.$props.mod.name} Thumbnail`,
+                link: `./ts4/${this.$props.mod.id}/index.html` // fixme replace with live link
             };
         },
         template: `
-            <div class="mod-preview container-fluid">
-                <mod-header :mod="mod"></mod-header>
-                <div class="row justify-content-center align-items-center h-100">
-                    <div class="col-sm-10 col-md-3 text-center">
-                        <img v-bind:src="previewImageSource" alt="#JusticeForCowplants Preview Image"/>
-                    </div>
-                    <div class="col-12 col-sm-10 col-md-5">
-                        <p v-html="mod.description"></p>
-                        <pack-compatability v-bind:mod="mod"></pack-compatability>
-                    </div>
-                    <div class="col-12 text-center">
-                        <a :href="fullviewLink" class="btn btn-outline-primary">
-                            Details &amp; Download Page</a>
-                    </div>
+            <div class="mod-preview">
+                <table>
+                    <tr>
+                        <td><h6>{{ mod.name }}</h6></td>
+                        <td class="right">
+                            <status-flag :status="mod.status"></status-flag>
+                        </td>
+                    </tr>
+                </table>
+                <img :src="thumbnail" :alt="thumbnailAlt" class="thumbnail"/>
+                <p v-html="mod.description"></p>
+                <div class="btn-container">
+                    <a :href="link" class="btn btn-outline-primary">details</a>
                 </div>
             </div>`
     });

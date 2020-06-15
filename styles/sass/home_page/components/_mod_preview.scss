@@ -1,0 +1,61 @@
+.mod-preview {
+  background-color: var(--bg-band-overlay);
+  border-radius: $padding-md;
+  padding: $padding-md;
+
+  table {
+    width: 100%;
+
+    td {
+      padding: 0;
+    }
+
+    td.right {
+      direction: rtl;
+    }
+  }
+
+  h1 {
+    max-width: 100%;
+  }
+
+  .status-flag {
+    color: var(--text-color);
+    font-size: 18px;
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    cursor: default;
+
+    &.sf-good {
+      background-color: var(--success-color);
+    }
+
+    &.sf-warning {
+      color: var(--bg-color);
+      background-color: var(--warning-color);
+    }
+
+    &.sf-danger {
+      background-color: var(--danger-color);
+    }
+  }
+
+  img.thumbnail {
+    width: 60%;
+    max-width: 200px;
+    height: auto;
+    border-radius: $padding-md;
+    display: block;
+    margin: $padding-md auto;
+  }
+
+  .btn-container {
+    width: 100%;
+    text-align: center;
+    margin-top: $padding-md;
+  }
+}

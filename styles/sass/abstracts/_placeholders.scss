@@ -1,3 +1,3 @@
-%gradient {
+%default-gradient {
   @include gradient($bottom: $blue, $top: $teal, $fallback: $blue);
 }

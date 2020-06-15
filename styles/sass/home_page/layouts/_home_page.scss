@@ -1,0 +1,14 @@
+#welcome, #contact {
+  background-color: var(--bg-band-overlay);
+}
+
+section {
+  padding: {
+    top: $padding-lg;
+    bottom: $padding-lg;
+  };
+}
+
+h1 {
+  padding-bottom: $padding-md;
+}

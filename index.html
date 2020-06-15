@@ -3,13 +3,7 @@
 <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155317753-2"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'UA-155317753-2');
-    </script>
+    <script src="./scripts/gtag-config.js"></script>
 
     <title>Mods by Frank Kulak</title>
     <link rel="icon" href="./images/icon.png">
@@ -17,67 +11,41 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- external styles -->
+    <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <!-- external scripts -->
+    <!-- Vue -->
     <script src="https://cdn.jsdelivr.net/npm/vue"></script> <!-- prod -->
     <!--    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> &lt;!&ndash; dev &ndash;&gt;-->
 
-    <!-- styles -->
-    <link rel="stylesheet" href="styles/main.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="./styles/home_page.css">
 </head>
 <body>
 
-<div id="app">
-    <section id="welcome">
-        <div class="container-fluid">
-            <div class="row justify-content-center">
-                <div class="col-12 col-sm-10 col-md-8">
-                    <h1>Welcome</h1>
-                    <p>My name is Frank, and I’m a software developer. I've recently started creating mods for The Sims
-                        4, and will be sharing them on this website. You can download them for free by following the
-                        links below, and some general instructions for installing mods can be found at the bottom of
-                        this page.</p>
-                    <p>You may contact me at <a href="mailto:mods@frankkulak.com">mods@frankkulak.com</a> to report
-                        bugs or ask questions. I am still very new to modding, so do not contact me with mod requests at
-                        this time - I will not respond.</p>
-                    <p class="disclaimer">Please <span class="important">DO NOT</span> share or distribute any of my
-                        work without proper attribution. Please include my name (Frank Kulak) and a link to this
-                        website.</p>
-                </div>
-            </div>
+<div id="app" class="container-fluid">
+    <section id="welcome" class="row justify-content-center">
+        <div class="col-12 col-sm-10 col-lg-8">
+            <h1>welcome</h1>
+            <p>My name is Frank, and I make mods for The Sims 4. You can preview them below, and download them from
+                their 'details' page.</p>
         </div>
     </section>
 
-    <section id="mod-previews">
-        <mod-preview v-for="(mod, index) in mods"
-                     :key="mod.id"
-                     :mod="mod"
-                     :class="isBanded(index) && 'banded'"></mod-preview>
+    <section id="mods" class="row justify-content-center">
+        <div class="col-12 col-sm-10 col-md-5 col-lg-4"
+             v-for="mod in mods"
+             :key="mod.id">
+            <mod-preview :mod="mod"></mod-preview>
+        </div>
     </section>
 
-    <section id="how-to">
-        <div class="container-fluid">
-            <div class="row justify-content-center">
-                <div class="col-12 col-sm-10 col-md-8">
-                    <h1>How to install mods</h1>
-                    <ol>
-                        <li>Ensure that the developer has updated their mod(s) for the latest patch</li>
-                        <li>Follow their instructions to download the mod file(s)</li>
-                        <li>If a downloaded file ends with <span>.zip</span>, unzip it</li>
-                        <li>Place the unzipped file(s) in your <span>Documents &gt; Electronic Arts &gt; The Sims 4
-                            &gt; Mods</span> directory
-                        </li>
-                        <li>Ensure that &quot;Enable Custom Content and Mods&quot; is checked under <span>Game Options
-                            &gt; Other</span>
-                        </li>
-                        <li>Reload your game, and check that the mod has successfully installed</li>
-                    </ol>
-                    <p>NOTE: Mod files may end in either <span>.package</span> or <span>.ts4script</span></p>
-                </div>
-            </div>
+    <section id="contact" class="row justify-content-center">
+        <div class="col-12 col-sm-10 col-lg-8">
+            <h1>contact</h1>
+            <p>You may email me at <a href="mailto:mods@frankkulak.com">mods@frankkulak.com</a>, but please refrain from
+                submitting mod requests.</p>
         </div>
     </section>
 </div>
@@ -87,8 +55,6 @@
 
 <!-- vue components -->
 <script src="./scripts/components/mod-preview.js"></script>
-<script src="./scripts/components/mod-header.js"></script>
-<script src="./scripts/components/pack-compatability.js"></script>
 
 <!-- vue instance -->
 <script>
@@ -96,11 +62,6 @@
         el: '#app',
         data: {
             mods: Data.ts4
-        },
-        methods: {
-            isBanded: function (index) {
-                return !Boolean(index % 2);
-            }
         }
     });
 </script>
