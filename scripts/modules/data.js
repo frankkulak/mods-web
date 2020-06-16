@@ -2,9 +2,8 @@ const Constants = (function () {
     return {
         status: {
             updated: 0,
-            beta: 1,
-            untested: 2,
-            conflict: 3
+            untested: 1,
+            conflict: 2
         }
     };
 })();
@@ -17,14 +16,15 @@ const Data = (function () {
                 name: '#JusticeForCowplants',
                 date: 'June 13, 2020',
                 version: '1.0',
-                status: Constants.status.beta,
+                beta: true,
+                status: Constants.status.updated,
                 description: `This mod lets you name cowplants. It was inspired by <a href="https://www.youtube.com/channel/UC_TYFButglZuuDbD-0Q_IzQ" target="_blank">lilsimsie</a>'s #JusticeForCowplants campaign on the gallery.`,
                 images: [
                     '1.png',
                     '2.png'
                 ],
                 features: [
-                    "Give names to cowplants"
+                    "Give names to cowplants."
                 ],
                 issues: [
                     {

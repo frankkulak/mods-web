@@ -1,0 +1,32 @@
+.mod-fullview {
+  span.date {
+    white-space: nowrap;
+  }
+
+  .status-bar {
+
+  }
+
+  span.fix {
+    background-color: var(--bg-band-overlay);
+    border-radius: $padding-sm;
+    padding: {
+      left: $padding-sm;
+      right: $padding-sm
+    }
+  }
+
+  .pack-compatibility {
+    &.base-game {
+      color: var(--success-color);
+    }
+
+    &.packs-required {
+      color: var(--warning-color);
+    }
+
+    span.pack {
+      font-weight: bold;
+    }
+  }
+}

@@ -2,9 +2,9 @@ html {
   --bg-color: #{$dark-blue};
   --bg-band-overlay: #{rgb(255, 255, 255, 0.05)};
   --text-highlight-color: #{rgb(255, 255, 255, 0.15)};
-  --text-color: #{$off-white};
+  --text-color: #{white};
   --link-color: #{$teal};
-  --link-hover-color: #{$off-white};
+  --link-hover-color: #{teal};
   --h-color: #{$blue};
   --success-color: #{$green};
   --warning-color: #{$yellow};

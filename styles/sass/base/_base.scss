@@ -22,3 +22,31 @@ a.btn-outline-primary:hover {
   border-style: none;
   text-decoration: none;
 }
+
+.status-success {
+  background-color: var(--success-color);
+  color: var(--text-color);
+}
+
+.status-warning {
+  background-color: var(--warning-color);
+  color: var(--bg-color);
+}
+
+.status-danger {
+  background-color: var(--danger-color);
+  color: var(--text-color);
+}
+
+span.unbold {
+  font-weight: normal;
+}
+
+span.important {
+  font-weight: bold;
+  color: var(--danger-color);
+}
+
+p.disclaimer {
+  font-size: 14px;
+}

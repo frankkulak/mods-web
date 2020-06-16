@@ -29,19 +29,6 @@
     text-align: center;
     vertical-align: middle;
     cursor: default;
-
-    &.sf-good {
-      background-color: var(--success-color);
-    }
-
-    &.sf-warning {
-      color: var(--bg-color);
-      background-color: var(--warning-color);
-    }
-
-    &.sf-danger {
-      background-color: var(--danger-color);
-    }
   }
 
   img.thumbnail {

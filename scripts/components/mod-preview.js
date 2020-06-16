@@ -5,11 +5,11 @@
             statusClass: function () {
                 const status = this.$props.status;
                 if (status === Constants.status.untested) {
-                    return 'sf-warning';
+                    return 'status-warning';
                 } else if (status === Constants.status.conflict) {
-                    return 'sf-danger';
+                    return 'status-danger';
                 } else {
-                    return 'sf-good';
+                    return 'status-success';
                 }
             },
             titleText: function () {
