@@ -74,7 +74,7 @@
             <div class="mod-fullview container-fluid">
                 <div class="row justify-content-center">
                     <div class="col-12 col-sm-10 col-lg-8">
-                        <a href="../../index.html">&larr; mods home page</a>
+                        <a href="../..">&larr; mods home page</a>
                         <div class="header">
                             <h1>{{ mod.name }}</h1>
                             <p v-html="versionText"></p>

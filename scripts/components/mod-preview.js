@@ -37,7 +37,7 @@
             return {
                 thumbnail: `./images/thumbnails/${this.$props.mod.id}.png`,
                 thumbnailAlt: `${this.$props.mod.name} Thumbnail`,
-                link: `./ts4/${this.$props.mod.id}/index.html` // fixme replace with live link
+                link: `./ts4/${this.$props.mod.id}`
             };
         },
         template: `
