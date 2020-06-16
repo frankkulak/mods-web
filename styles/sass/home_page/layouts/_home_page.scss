@@ -1,14 +1,33 @@
-#welcome, #contact {
-  background-color: var(--bg-band-overlay);
-}
-
 section {
+  h1 {
+    padding-bottom: $padding-md;
+  }
+
   padding: {
     top: $padding-lg;
     bottom: $padding-lg;
   };
 }
 
-h1 {
-  padding-bottom: $padding-md;
+#mods {
+  padding-top: 0;
+
+  [class^="col"] {
+    margin: {
+      top: $padding-sm;
+      bottom: $padding-sm;
+    }
+  }
+}
+
+#contact {
+  background-color: var(--bg-band-overlay);
+
+  p {
+    margin-bottom: $padding-md;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
 }

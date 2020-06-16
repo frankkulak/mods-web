@@ -150,17 +150,30 @@ a.btn-outline-primary:hover {
   margin-top: 20px;
 }
 
-#welcome, #contact {
-  background-color: var(--bg-band-overlay);
-}
-
 section {
   padding-top: 40px;
   padding-bottom: 40px;
 }
-
-h1 {
+section h1 {
   padding-bottom: 20px;
+}
+
+#mods {
+  padding-top: 0;
+}
+#mods [class^=col] {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#contact {
+  background-color: var(--bg-band-overlay);
+}
+#contact p {
+  margin-bottom: 20px;
+}
+#contact p:last-child {
+  margin-bottom: 0;
 }
 
 /*# sourceMappingURL=home_page.css.map */
