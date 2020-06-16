@@ -18,18 +18,18 @@ const Data = (function () {
                 version: '1.0',
                 beta: true,
                 status: Constants.status.updated,
-                description: `This mod lets you name cowplants. It was inspired by <a href="https://www.youtube.com/channel/UC_TYFButglZuuDbD-0Q_IzQ" target="_blank">lilsimsie</a>'s #JusticeForCowplants campaign on the gallery.`,
+                description: `This mod lets you name cowplants. It was inspired by <a href="https://www.youtube.com/channel/UC_TYFButglZuuDbD-0Q_IzQ" target="_blank">lilsimsie</a>'s #JusticeForCowplants hashtag on the gallery.`,
                 images: [
                     '1.png',
                     '2.png'
                 ],
                 features: [
-                    "Give names to cowplants."
+                    "The ability to name cowplants."
                 ],
                 issues: [
                     {
                         description: "A cowplant may turn into a pile of dirt when you move it in build mode, accompanied by a warning message if you have MC Command Center installed.",
-                        fix: "An easy workaround is to simply move the pile of dirt again and the cowplant will go back to normal."
+                        fix: "An easy workaround is to move the cowplant again and it will go back to normal."
                     }
                 ],
                 requiredPacks: [],

@@ -94,13 +94,13 @@
                         </div>
                         <div class="details">
                             <div class="features">
-                                <h2>features</h2>
+                                <h2>Features</h2>
                                 <ul>
                                     <li v-for="(feature, index) in mod.features" :key="index">{{ feature }}</li>
                                 </ul>
                             </div>
                             <div class="issues">
-                                <h2>known issues</h2>
+                                <h2>Known issues</h2>
                                 <ul>
                                     <li v-for="(issue, index) in mod.issues" :key="index">
                                         {{ issue.description }} <span class="fix">{{ issue.fix }}</span>
@@ -115,8 +115,7 @@
                                 <li><span class="important">DO NOT</span> share or distribute this mod without including
                                     my name (Frank Kulak) and a link to this website.
                                 </li>
-                                <li>I am not responsible for misuse of this mod in any way (e.g. using it when it is
-                                    out-of-date, changing the code, or using with other mods that conflict with it).
+                                <li>I am not responsible for the misuse of this mod in any way.
                                 </li>
                                 <li v-if="mod.beta">This mod is in its beta stage, so you acknowledge that there may be
                                     some bugs.
