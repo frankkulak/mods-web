@@ -117,23 +117,77 @@ p.disclaimer {
   font-size: 14px;
 }
 
-.mod-fullview span.date {
+.mod-fullview {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+.mod-fullview .header {
+  width: 100%;
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+.mod-fullview .header span.date {
   white-space: nowrap;
 }
-.mod-fullview span.fix {
+.mod-fullview .header .status-bar {
+  display: inline-block;
+  text-align: center;
+  border-radius: 5px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.mod-fullview .header .pack-compatibility.base-game {
+  color: var(--success-color);
+}
+.mod-fullview .header .pack-compatibility.packs-required {
+  color: var(--warning-color);
+}
+.mod-fullview .header .pack-compatibility span.pack {
+  font-weight: bold;
+}
+.mod-fullview .image-display .img-col {
+  padding: 10px;
+}
+.mod-fullview .image-display img {
+  width: 100%;
+  border-radius: 20px;
+}
+.mod-fullview .description {
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+.mod-fullview .btn-container {
+  width: 100%;
+  text-align: center;
+}
+.mod-fullview .details {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+.mod-fullview .details h2 {
+  font-weight: normal;
+  margin-bottom: 10px;
+}
+.mod-fullview .details .issues {
+  margin-top: 40px;
+}
+.mod-fullview .details .issues span.fix {
   background-color: var(--bg-band-overlay);
   border-radius: 10px;
   padding-left: 10px;
   padding-right: 10px;
 }
-.mod-fullview .pack-compatibility.base-game {
-  color: var(--success-color);
+.mod-fullview .terms {
+  margin-bottom: 40px;
 }
-.mod-fullview .pack-compatibility.packs-required {
-  color: var(--warning-color);
+.mod-fullview .terms h6 {
+  margin-bottom: 10px;
 }
-.mod-fullview .pack-compatibility span.pack {
-  font-weight: bold;
+.mod-fullview .terms li {
+  font-size: 16px;
 }
 
 /*# sourceMappingURL=mod_page.css.map */

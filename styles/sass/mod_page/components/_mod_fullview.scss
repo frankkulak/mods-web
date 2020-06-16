@@ -1,32 +1,105 @@
 .mod-fullview {
-  span.date {
-    white-space: nowrap;
+  padding: {
+    top: $padding-lg;
+    bottom: $padding-lg;
   }
 
-  .status-bar {
+  .header {
+    width: 100%;
+    text-align: center;
+    margin: {
+      top: $padding-lg;
+      bottom: $padding-lg;
+    }
 
+    span.date {
+      white-space: nowrap;
+    }
+
+    .status-bar {
+      display: inline-block;
+      text-align: center;
+      border-radius: $padding-xs;
+      margin-top: $padding-md;
+      margin-bottom: $padding-md;
+      padding: {
+        left: $padding-md;
+        right: $padding-md;
+      }
+    }
+
+    .pack-compatibility {
+      &.base-game {
+        color: var(--success-color);
+      }
+
+      &.packs-required {
+        color: var(--warning-color);
+      }
+
+      span.pack {
+        font-weight: bold;
+      }
+    }
   }
 
-  span.fix {
-    background-color: var(--bg-band-overlay);
-    border-radius: $padding-sm;
+  .image-display {
+    .img-col {
+      padding: $padding-sm;
+    }
+
+    img {
+      width: 100%;
+      border-radius: $padding-md;
+    }
+  }
+
+  .description {
+    margin: {
+      top: $padding-md + $padding-sm;
+      bottom: $padding-md;
+    }
+  }
+
+  .btn-container {
+    width: 100%;
+    text-align: center;
+  }
+
+  .details {
     padding: {
-      left: $padding-sm;
-      right: $padding-sm
+      top: $padding-lg;
+      bottom: $padding-lg;
+    }
+
+    h2 {
+      font-weight: normal;
+      margin-bottom: $padding-sm;
+    }
+
+    .issues {
+      margin-top: $padding-lg;
+
+      span.fix {
+        background-color: var(--bg-band-overlay);
+        border-radius: $padding-sm;
+        padding: {
+          left: $padding-sm;
+          right: $padding-sm
+        }
+      }
     }
   }
 
-  .pack-compatibility {
-    &.base-game {
-      color: var(--success-color);
+  .terms {
+    margin-bottom: $padding-lg;
+
+    h6 {
+      margin-bottom: $padding-sm;
     }
 
-    &.packs-required {
-      color: var(--warning-color);
-    }
-
-    span.pack {
-      font-weight: bold;
+    li {
+      font-size: 16px;
     }
   }
 }

@@ -15,11 +15,11 @@
             statusText: function () {
                 const status = this.$props.status;
                 if (status === Constants.status.untested) {
-                    return 'untested with latest patch';
+                    return 'not yet tested with latest patch';
                 } else if (status === Constants.status.conflict) {
-                    return 'conflicts with latest patch';
+                    return 'issues found with latest patch';
                 } else {
-                    return 'compatible with latest patch';
+                    return 'tested with latest patch';
                 }
             }
         },
@@ -62,7 +62,7 @@
         computed: {
             versionText: function () {
                 const {version, beta, date} = this.$props.mod;
-                return `version ${version} ${beta ? '' : 'beta '} <span class="date">(${date})</span>`;
+                return `version ${version} ${beta ? 'beta ' : ''} <span class="date">(${date})</span>`;
             }
         },
         methods: {
@@ -72,41 +72,65 @@
         },
         template: `
             <div class="mod-fullview container-fluid">
-                <a href="../../index.html">&larr; mods home page</a>
-                <h1>{{ mod.name }}</h1>
-                <p v-html="versionText"></p>
-                <status-bar :status="mod.status"></status-bar>
-                <p v-html="mod.description"></p>
-                <div class="image-display">
-                    <img v-for="image in mod.images" :key="image" :src="getImagePath(image)" :alt="image"/>
+                <div class="row justify-content-center">
+                    <div class="col-12 col-sm-10 col-lg-8">
+                        <a href="../../index.html">&larr; mods home page</a>
+                        <div class="header">
+                            <h1>{{ mod.name }}</h1>
+                            <p v-html="versionText"></p>
+                            <status-bar :status="mod.status"></status-bar>
+                            <pack-compatibility :packs="mod.requiredPacks"></pack-compatibility>
+                        </div>
+                        <div class="image-display row justify-content-center">
+                            <div class="img-col col-10 col-md-6" v-for="image in mod.images" :key="image">
+                                <img :src="getImagePath(image)" :alt="image"/>
+                            </div>
+                        </div>
+                        <p class="description" v-html="mod.description"></p>
+                        <div class="btn-container">
+                            <a :href="mod.video" target="_blank" class="btn btn-outline-primary">
+                                view demo (YouTube)
+                            </a>
+                        </div>
+                        <div class="details">
+                            <div class="features">
+                                <h2>features</h2>
+                                <ul>
+                                    <li v-for="(feature, index) in mod.features" :key="index">{{ feature }}</li>
+                                </ul>
+                            </div>
+                            <div class="issues">
+                                <h2>known issues</h2>
+                                <ul>
+                                    <li v-for="(issue, index) in mod.issues" :key="index">
+                                        {{ issue.description }} <span class="fix">{{ issue.fix }}</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="terms">
+                            <h6><span class="unbold">By downloading this mod, you are agreeing to my</span> terms of use
+                            </h6>
+                            <ul>
+                                <li><span class="important">DO NOT</span> share or distribute this mod without including
+                                    my name (Frank Kulak) and a link to this website.
+                                </li>
+                                <li>I am not responsible for misuse of this mod in any way (e.g. using it when it is
+                                    out-of-date, changing the code, or using with other mods that conflict with it).
+                                </li>
+                                <li v-if="mod.beta">This mod is in its beta stage, so you acknowledge that there may be
+                                    some bugs.
+                                </li>
+                                <li>I am free to stop supporting this mod at any time for any reason.</li>
+                            </ul>
+                        </div>
+                        <div class="btn-container">
+                            <a :href="mod.download" target="_blank" class="btn btn-outline-primary">
+                                download (Google Drive)
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <a :href="mod.video" target="_blank" class="btn btn-outline-primary youtube">view demo</a>
-                <h2>features</h2>
-                <ul>
-                    <li v-for="(feature, index) in mod.features" :key="index">{{ feature }}</li>
-                </ul>
-                <h2>known issues</h2>
-                <ul>
-                    <li v-for="(issue, index) in mod.issues" :key="index">
-                        {{ issue.description }} <span class="fix">{{ issue.fix }}</span>
-                    </li>
-                </ul>
-                <pack-compatibility :packs="mod.requiredPacks"></pack-compatibility>
-                <h6><span class="unbold">By downloading this mod, you are agreeing to my</span> terms of use</h6>
-                <ul class="terms">
-                    <li><span class="important">DO NOT</span> share or distribute this mod without proper
-                        attribution. All you have to do is include my name (Frank Kulak) and a link to this
-                        website.
-                    </li>
-                    <li>This mod is provided as-is with no warranty, and I am not responsible for misuse of it
-                        in any way (e.g. using it when it is out-of-date, changing the code, or using other mods
-                        that conflict with it).
-                    </li>
-                    <li>I am free to stop supporting this mod at any time for any reason.</li>
-                </ul>
-                <p v-if="mod.beta">
-                    This mod is currently in its beta stage, so be advised that there may be a couple bugs.</p>
-                <a :href="mod.download" target="_blank" class="btn btn-outline-primary">download</a>
             </div>`
     });
 })();
