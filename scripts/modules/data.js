@@ -18,10 +18,10 @@ const Data = (function () {
                 version: '1.0',
                 beta: true,
                 status: Constants.status.updated,
-                description: `This mod lets you name cowplants. It was inspired by <a href="https://www.youtube.com/channel/UC_TYFButglZuuDbD-0Q_IzQ" target="_blank">lilsimsie</a>'s #JusticeForCowplants hashtag on the gallery.`,
+                description: `This mod give you the ability to name cowplants. It was inspired by <a href="https://www.youtube.com/channel/UC_TYFButglZuuDbD-0Q_IzQ" target="_blank">lilsimsie</a>'s hashtag on the gallery.`,
                 images: [
-                    '1.png',
-                    '2.png'
+                    'jfcp-1.png',
+                    'jfcp-2.png'
                 ],
                 features: [
                     "The ability to name cowplants."

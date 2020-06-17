@@ -1,48 +1,31 @@
 .mod-preview {
   background-color: var(--bg-band-overlay);
-  border-radius: $padding-md;
-  padding: $padding-md;
+  border-radius: $padding-sm;
+  box-shadow: 0 $padding-xs 10px var(--shadow-color);
+  position: relative;
+  transition: top ease 300ms;
+  top: 0;
 
-  table {
-    width: 100%;
-
-    td {
-      padding: 0;
-    }
-
-    td.right {
-      direction: rtl;
-    }
+  &:hover {
+    top: -5px;
   }
 
-  h1 {
-    max-width: 100%;
-  }
-
-  .status-flag {
+  & > a, & > a:focus {
     color: var(--text-color);
-    font-size: 18px;
-    width: 30px;
-    height: 30px;
-    border-radius: 8px;
-    display: table-cell;
-    text-align: center;
-    vertical-align: middle;
-    cursor: default;
+    text-decoration: none;
   }
 
   img.thumbnail {
-    width: 60%;
-    max-width: 200px;
+    width: 100%;
     height: auto;
-    border-radius: $padding-md;
-    display: block;
-    margin: $padding-md auto;
+    border-radius: $padding-sm $padding-sm 0 0;
   }
 
-  .btn-container {
-    width: 100%;
-    text-align: center;
-    margin-top: $padding-md;
+  .content {
+    padding: $padding-md;
+
+    h6 {
+      margin-bottom: $padding-sm;
+    }
   }
 }

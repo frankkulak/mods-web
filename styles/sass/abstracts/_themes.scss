@@ -1,14 +1,14 @@
 html {
-  --bg-color: #{$dark-blue};
-  --bg-band-overlay: #{rgb(255, 255, 255, 0.05)};
-  --text-highlight-color: #{rgb(255, 255, 255, 0.15)};
-  --text-color: #{white};
+  --bg-color: #{$off-white};
+  --text-color: #{$dark-gray};
   --link-color: #{$teal};
-  --link-hover-color: #{teal};
+  --link-hover-color: #{$teal};
   --h-color: #{$blue};
+  --button-color: #{$blue};
+  --bg-band-overlay: #{rgb(0, 0, 0, 0.05)};
+  --text-highlight-color: #{rgb(0, 0, 0, 0.15)};
+  --shadow-color: #{rgb(32, 32, 32, 0.15)};
   --success-color: #{$green};
   --warning-color: #{$yellow};
   --danger-color: #{$red};
-  --button-color: #{$blue};
-  --hr-color: #{$blue};
 }

@@ -1,16 +1,19 @@
-section {
-  h1 {
-    padding-bottom: $padding-md;
-  }
+h1, p {
+  margin-bottom: $padding-md;
 
-  padding: {
-    top: $padding-lg;
-    bottom: $padding-lg;
-  };
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+#welcome {
+  padding-top: $padding-lg;
+  padding-bottom: 0;
 }
 
 #mods {
-  padding-top: 0;
+  padding-top: $padding-lg - $padding-sm;
+  padding-bottom: $padding-lg - $padding-sm;
 
   [class^="col"] {
     margin: {
@@ -22,12 +25,6 @@ section {
 
 #contact {
   background-color: var(--bg-band-overlay);
-
-  p {
-    margin-bottom: $padding-md;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
+  padding-top: $padding-lg;
+  padding-bottom: $padding-lg;
 }
