@@ -50,6 +50,7 @@ const App = (function () {
         router: router,
         watch: {
             '$route'(to, from) {
+                window.scrollTo(0, 0);
                 if (to.meta.modView && isValidModPage(to)) {
                     const {game, mod} = to.params;
                     const {name} = Data[game][mod];
