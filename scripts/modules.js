@@ -20,8 +20,13 @@ const Util = (function () {
         return `<span class="${style}">${text}</span>`
     }
 
+    function modExists(game, mod) {
+        return Data.hasOwnProperty(game) && Data[game].hasOwnProperty(mod);
+    }
+
     return {
-        formatPackCompatability: formatPackCompatability
+        formatPackCompatability: formatPackCompatability,
+        modExists: modExists
     };
 })();
 
