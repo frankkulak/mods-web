@@ -128,6 +128,111 @@ p.disclaimer {
   font-size: 14px;
 }
 
+#home-page h1, #home-page p {
+  margin-bottom: 20px;
+}
+#home-page h1:last-child, #home-page p:last-child {
+  margin-bottom: 0;
+}
+#home-page #welcome {
+  padding-top: 40px;
+  padding-bottom: 0;
+}
+#home-page #mods {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+#home-page #mods [class^=col] {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+#home-page #contact {
+  background-color: var(--bg-band-overlay);
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+#mod-page {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+#mod-page .header {
+  width: 100%;
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+#mod-page .header span.date {
+  white-space: nowrap;
+}
+#mod-page .header .status-bar {
+  display: inline-block;
+  text-align: center;
+  border-radius: 5px;
+  margin-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+#mod-page .image-display .img-col {
+  padding: 10px;
+}
+#mod-page .image-display img {
+  width: 100%;
+  border-radius: 10px;
+}
+#mod-page .description {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+#mod-page .description span.base-game {
+  color: var(--success-color);
+}
+#mod-page .description span.packs-required {
+  color: var(--danger-color);
+}
+#mod-page .description span.pack {
+  font-weight: bold;
+}
+#mod-page .btn-container {
+  width: 100%;
+  text-align: center;
+}
+#mod-page .details {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+#mod-page .details h2 {
+  font-weight: normal;
+  margin-bottom: 5px;
+}
+#mod-page .details ul {
+  margin: 0;
+}
+#mod-page .details .issues {
+  margin-top: 40px;
+}
+#mod-page .details .issues span.fix {
+  background-color: var(--text-highlight-color);
+  border-radius: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+#mod-page hr {
+  width: 80%;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+#mod-page .terms {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+#mod-page .terms h6 {
+  margin-bottom: 10px;
+}
+#mod-page .terms li {
+  font-size: 16px;
+}
+
 .mod-preview {
   background-color: var(--bg-band-overlay);
   border-radius: 10px;
@@ -155,31 +260,14 @@ p.disclaimer {
   margin-bottom: 10px;
 }
 
-h1, p {
+#page-not-found {
+  height: 100vh;
+  width: 100vw;
+  display: table-cell;
+  vertical-align: middle;
+}
+#page-not-found h1 {
   margin-bottom: 20px;
 }
-h1:last-child, p:last-child {
-  margin-bottom: 0;
-}
 
-#welcome {
-  padding-top: 40px;
-  padding-bottom: 0;
-}
-
-#mods {
-  padding-top: 30px;
-  padding-bottom: 30px;
-}
-#mods [class^=col] {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-#contact {
-  background-color: var(--bg-band-overlay);
-  padding-top: 40px;
-  padding-bottom: 40px;
-}
-
-/*# sourceMappingURL=home_page.css.map */
+/*# sourceMappingURL=main.css.map */

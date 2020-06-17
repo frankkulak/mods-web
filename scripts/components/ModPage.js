@@ -1,53 +1,51 @@
-(function () {
+const ModPage = (function () {
     Vue.component('status-bar', {
         props: ['status'],
+        methods: {
+            classToUse: function (status) {
+                return Constants.statusClasses[status];
+            },
+            isUntested: function (status) {
+                return status === Constants.status.untested;
+            },
+            isConflict: function (status) {
+                return status === Constants.status.conflict;
+            }
+        },
         template: `
-            <div class="status-bar" :class="Constants.statusClasses[status]">
-                <p v-if="status === Constants.status.untested">&#9888; not tested with latest patch</p>
-                <p v-else-if="status === Constants.status.conflict">&#10761; issues found with latest patch</p>
+            <div class="status-bar" :class="classToUse(status)">
+                <p v-if="isUntested(status)">&#9888; not tested with latest patch</p>
+                <p v-else-if="isConflict(status)">&#10761; issues found with latest patch</p>
                 <p v-else>&check; tested with latest patch</p>
             </div>`
     });
 
-    Vue.component('mod-fullview', {
-        props: ['mod'],
+    return Vue.component('mod-page', {
         computed: {
+            mod: function () {
+                const {game, mod} = this.$route.params;
+                return Data[game][mod];
+            },
             versionText: function () {
-                const {version, beta, date} = this.$props.mod;
+                const {version, beta, date} = this.mod;
                 return `version ${version} ${beta ? 'beta ' : ''} <span class="date">(${date})</span>`;
             },
-            packText: function () {
-                const packsCopy = this.$props.mod.requiredPacks.map(pack => `<span class="pack">${pack}</span>`);
-                const packCount = packsCopy.length;
-
-                let text;
-                if (packCount === 0) {
-                    text = `<span class="pack">Base Game</span> compatible`;
-                } else if (packCount === 1) {
-                    text = `${packsCopy[0]} required`;
-                } else {
-                    const last = packsCopy.pop();
-                    const oxfordComma = (packCount === 2) ? '' : ',';
-                    text = `${packsCopy.join(", ")}${oxfordComma} and ${last} required`;
-                }
-
-                const style = (packCount === 0) ? 'base-game' : 'packs-required';
-                return `<span class="${style}">${text}</span>`
-            },
             descriptionText: function () {
-                return `${this.$props.mod.description} ${this.packText}.`;
+                const packInfo = Util.formatPackCompatability(this.mod);
+                return `${this.mod.description} ${packInfo}.`;
             }
         },
         methods: {
             getImagePath: function (filename) {
-                return `./images/${filename}`;
+                const {game, id} = this.mod;
+                return `images/${game}/${id}/${filename}`;
             }
         },
         template: `
-            <div class="mod-fullview container-fluid">
+            <div id="mod-page" class="container-fluid">
                 <div class="row justify-content-center">
                     <div class="col-12 col-sm-10 col-lg-8">
-                        <a href="../..">&larr; mods home page</a>
+                        <router-link to="/">&larr; mods home page</router-link>
                         <div class="header">
                             <h1>{{ mod.name }}</h1>
                             <p v-html="versionText"></p>
