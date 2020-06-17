@@ -28,17 +28,16 @@ const App = (function () {
         routes // short for `routes: routes`
     });
 
+    function isValidModPage(to) {
+        const {game, mod} = to.params;
+        return Util.modExists(game, mod);
+    }
+
     router.beforeEach((to, from, next) => {
-        if (to.meta.modView) {
-            const {game, mod} = to.params;
-            console.log();
-            if (!Util.modExists(game, mod)) {
-                next({
-                    path: '/page-not-found'
-                });
-            } else {
-                next();
-            }
+        if (to.meta.modView && !isValidModPage(to)) {
+            next({
+                path: '/page-not-found'
+            });
         } else {
             next();
         }
@@ -51,12 +50,10 @@ const App = (function () {
         router: router,
         watch: {
             '$route'(to, from) {
-                if (to.meta.modView) {
+                if (to.meta.modView && isValidModPage(to)) {
                     const {game, mod} = to.params;
-                    if (Util.modExists(game, mod)) {
-                        const {name} = Data[game][mod];
-                        document.title = `${name} | ${game.toUpperCase()} Mod`;
-                    }
+                    const {name} = Data[game][mod];
+                    document.title = `${name} | ${game.toUpperCase()} Mod`;
                 } else {
                     document.title = to.meta.title || 'Mods by Frank Kulak'
                 }
