@@ -1,10 +1,19 @@
 const Constants = (function () {
+    const success = 'status-success';
+    const warning = 'status-warning';
+    const danger = 'status-danger';
+
     return {
         status: {
             updated: 0,
             untested: 1,
             conflict: 2
-        }
+        },
+        statusClasses: [
+            success,
+            warning,
+            danger
+        ]
     };
 })();
 
@@ -18,13 +27,13 @@ const Data = (function () {
                 version: '1.0',
                 beta: true,
                 status: Constants.status.updated,
-                description: `This mod give you the ability to name cowplants. It was inspired by <a href="https://www.youtube.com/channel/UC_TYFButglZuuDbD-0Q_IzQ" target="_blank">lilsimsie</a>'s hashtag on the gallery.`,
+                description: `This mod gives you the ability to name cowplants. It was inspired by <a href="https://www.youtube.com/channel/UC_TYFButglZuuDbD-0Q_IzQ" target="_blank">lilsimsie</a>'s hashtag on the gallery.`,
                 images: [
                     'jfcp-1.png',
                     'jfcp-2.png'
                 ],
                 features: [
-                    "The ability to name cowplants."
+                    "Click on a cowplant to give it a name."
                 ],
                 issues: [
                     {

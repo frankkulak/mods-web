@@ -10,6 +10,13 @@ p, h1, h2, h3, h4, h5, h6 {
   margin: 0;
 }
 
+hr {
+  background-color: var(--hr-color);
+  height: 2px;
+  border-radius: 1px;
+  border: 0;
+}
+
 a.btn, a.btn-outline-primary, a.btn-outline-primary:focus {
   color: var(--button-color);
   border-color: var(--button-color);
@@ -18,24 +25,24 @@ a.btn, a.btn-outline-primary, a.btn-outline-primary:focus {
 
 a.btn-outline-primary:hover {
   @extend %default-gradient;
-  color: var(--text-color);
+  color: var(--button-text-color);
   border-style: none;
   text-decoration: none;
 }
 
 .status-success {
   background-color: var(--success-color);
-  color: var(--text-color);
+  color: var(--light-color);
 }
 
 .status-warning {
   background-color: var(--warning-color);
-  color: var(--bg-color);
+  color: var(--dark-color);
 }
 
 .status-danger {
   background-color: var(--danger-color);
-  color: var(--text-color);
+  color: var(--light-color);
 }
 
 span.unbold {

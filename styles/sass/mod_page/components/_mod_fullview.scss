@@ -21,24 +21,9 @@
       text-align: center;
       border-radius: $padding-xs;
       margin-top: $padding-md;
-      margin-bottom: $padding-md;
       padding: {
         left: $padding-md;
         right: $padding-md;
-      }
-    }
-
-    .pack-compatibility {
-      &.base-game {
-        color: var(--success-color);
-      }
-
-      &.packs-required {
-        color: var(--warning-color);
-      }
-
-      span.pack {
-        font-weight: bold;
       }
     }
   }
@@ -56,8 +41,20 @@
 
   .description {
     margin: {
-      top: $padding-md + $padding-sm;
+      top: $padding-md - $padding-sm;
       bottom: $padding-md;
+    }
+
+    span.base-game {
+      color: var(--success-color);
+    }
+
+    span.packs-required {
+      color: var(--danger-color);
+    }
+
+    span.pack {
+      font-weight: bold;
     }
   }
 
@@ -74,7 +71,11 @@
 
     h2 {
       font-weight: normal;
-      margin-bottom: $padding-sm;
+      margin-bottom: $padding-xs;
+    }
+
+    ul {
+      margin: 0;
     }
 
     .issues {
@@ -91,8 +92,19 @@
     }
   }
 
+  hr {
+    width: 80%;
+    margin: {
+      top: 0;
+      bottom: 0;
+    }
+  }
+
   .terms {
-    margin-bottom: $padding-lg;
+    margin: {
+      top: $padding-lg;
+      bottom: $padding-lg;
+    }
 
     h6 {
       margin-bottom: $padding-sm;
