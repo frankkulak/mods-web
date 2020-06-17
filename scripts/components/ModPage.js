@@ -69,7 +69,7 @@ const ModPage = (function () {
                                     <li v-for="(feature, index) in mod.features" :key="index">{{ feature }}</li>
                                 </ul>
                             </div>
-                            <div class="issues">
+                            <div class="issues" v-if="mod.issues.length > 0">
                                 <h2>Known issues</h2>
                                 <ul>
                                     <li v-for="(issue, index) in mod.issues" :key="index">
