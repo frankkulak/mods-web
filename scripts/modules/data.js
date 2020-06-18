@@ -19,8 +19,8 @@ const Data = (function () {
                 ],
                 issues: [
                     {
-                        description: "A cowplant may turn into a pile of dirt when you move it in build mode, accompanied by a warning message if you have MC Command Center installed.",
-                        fix: "An easy workaround is to move the cowplant again and it will go back to normal."
+                        description: "A cowplant may turn into a pile of dirt when you move it in build mode, accompanied by a warning message if you have MC Command Center installed. I am trying to fix this issue, but for now,",
+                        fix: "an easy workaround is to move the cowplant again and it will go back to normal (and will still have its name)."
                     }
                 ],
                 requiredPacks: [],
