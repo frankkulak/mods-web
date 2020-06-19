@@ -15,9 +15,12 @@ const ModPreview = (function () {
             }
         },
         template: `
-            <div class="mod-preview">
+            <div class="mod-preview h-100">
                 <router-link :to="route">
-                    <img :src="thumbnail" :alt="thumbnailAlt" class="thumbnail"/>
+                    <img :src="thumbnail"
+                         :alt="thumbnailAlt"
+                         onerror="if (this.src !== 'images/default.png') this.src = 'images/default.png';"
+                         class="thumbnail"/>
                     <div class="content">
                         <h6>{{ mod.name }}</h6>
                         <p v-html="mod.description"></p>

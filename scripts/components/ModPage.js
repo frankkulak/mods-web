@@ -53,7 +53,9 @@ const ModPage = (function () {
                         </div>
                         <div class="image-display row justify-content-center">
                             <div class="img-col col-10 col-md-6" v-for="image in mod.images" :key="image">
-                                <img :src="getImagePath(image)" :alt="image"/>
+                                <img :src="getImagePath(image)"
+                                     :alt="image"
+                                     onerror="if (this.src !== 'images/default.png') this.src = 'images/default.png';"/>
                             </div>
                         </div>
                         <p class="description" v-html="descriptionText"></p>
