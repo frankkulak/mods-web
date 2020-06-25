@@ -1,24 +1,7 @@
-# mods-web
+# mods-web (mods.frankkulak.com)
 
-## Project setup
-```
-npm install
-```
+This website showcases the mods I create for The Sims 4, as well as links to download them.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+It is built with Vue.js, Bootstrap, and Sass. I'm a self-taught web developer, so any suggestions you have to improve the quality of my website and its code are very welcome!
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Due to my own hardware limitations, I am only able to test this website with Chrome, Firefox, and Safari on macOS and an iOS simulator before updates are released. I try to be as mindful of browser compatability as possible, but bugs sometimes sneak through - if you experience anything weird, please let me know by [emailing me](mailto:me@frankkulak.com) or [submitting an issue](https://github.com/frankkulak/mods-web/issues)!
