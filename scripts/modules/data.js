@@ -6,9 +6,17 @@ const Data = (function () {
                 id: 'justiceforcowplants',
                 name: '#JusticeForCowplants',
                 date: 'June 13, 2020',
+                status: Constants.status.updated,
                 version: '1.0',
                 beta: true,
-                status: Constants.status.updated,
+                versionDetails: [
+                    {
+                        id: '1.0',
+                        details: [
+                            'Added ability to name cowplants.'
+                        ]
+                    }
+                ],
                 description: `This mod gives you the ability to name cowplants. It was inspired by <a href="https://www.youtube.com/channel/UC_TYFButglZuuDbD-0Q_IzQ" target="_blank">lilsimsie</a>'s hashtag on the gallery.`,
                 images: [
                     'jfcp-1.png',
