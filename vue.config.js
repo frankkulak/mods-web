@@ -1,5 +1,5 @@
 module.exports = {
-    // publicPath: '/mods-web/',
+    publicPath: '', // keep this blank or else no assets will load
     css: {
         loaderOptions: {
             sass: {
