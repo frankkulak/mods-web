@@ -1,5 +1,6 @@
 # ignore dist/ directory in master
 dist/
+node_modules/.cache/*
 
 # Created by https://www.toptal.com/developers/gitignore/api/macos,webstorm+all,visualstudiocode
 # Edit at https://www.toptal.com/developers/gitignore?templates=macos,webstorm+all,visualstudiocode
