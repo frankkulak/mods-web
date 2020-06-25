@@ -1,0 +1,18 @@
+html {
+  --bg-color: #{$off-white};
+  --text-color: #{$dark-gray};
+  --link-color: #{$teal};
+  --link-hover-color: #{$teal};
+  --h-color: #{$blue};
+  --button-color: #{$blue};
+  --button-text-color: #{$off-white};
+  --hr-color: #{transparentize($blue, 0.5)};
+  --bg-band-overlay: #{transparentize(black, 0.95)};
+  --text-highlight-color: #{transparentize($blue, 0.85)};
+  --shadow-color: #{transparentize($dark-gray, 0.85)};
+  --success-color: #{$green};
+  --warning-color: #{$yellow};
+  --danger-color: #{$red};
+  --light-color: #{$off-white};
+  --dark-color: #{$dark-gray};
+}
