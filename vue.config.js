@@ -1,5 +1,7 @@
 module.exports = {
-    outputDir: 'docs',
+    publicPath: process.env.NODE_ENV === 'production'
+        ? '/mods-web/'
+        : '/',
     css: {
         loaderOptions: {
             sass: {
