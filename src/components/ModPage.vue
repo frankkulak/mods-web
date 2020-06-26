@@ -57,7 +57,7 @@
                 </div>
                 <div class="btn-container">
                     <a :href="mod.download" target="_blank" class="btn btn-outline-primary">
-                        download (Google Drive)
+                        download (Sim File Share)
                     </a>
                 </div>
             </div>

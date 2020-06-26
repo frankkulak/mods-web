@@ -50,7 +50,7 @@ export default {
                 }
             ],
             requiredPacks: [],
-            download: `https://drive.google.com/file/d/1-oohGmDyCA7dGZ4Xclolqjic7WtOZ3Qf/view?usp=sharing`,
+            download: `http://www.simfileshare.net/download/1895244/`,
             video: `https://youtu.be/tnvhvNxIETk`
         }
     }
