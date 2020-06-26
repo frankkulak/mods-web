@@ -9,14 +9,13 @@ npm run build
 # navigate into the build output directory
 cd dist
 
-# if you are deploying to a custom domain
-# echo 'mods.frankkulak.com' > CNAME
-
+# create empty repo and commit all changes
 git init
 git add -A
 git commit -m 'Deploy.'
 
-# if you are deploying to https://<USERNAME>.github.io/<REPO>
+# overwrite the gh-pages branch
 git push -f git@github.com:frankkulak/mods-web.git master:gh-pages
 
+# navigate back
 cd -
