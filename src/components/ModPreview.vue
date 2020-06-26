@@ -56,6 +56,7 @@
 
             h6 {
                 margin-bottom: $padding-sm;
+                font-weight: bold;
             }
         }
     }

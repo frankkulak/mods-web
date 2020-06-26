@@ -12,7 +12,7 @@ p, h1, h2, h3, h4, h5, h6 {
 
 hr {
   background-color: var(--hr-color);
-  height: 2px;
+  height: 1px;
   border-radius: 1px;
   border: 0;
 }
@@ -30,30 +30,16 @@ a.btn-outline-primary:hover {
   text-decoration: none;
 }
 
-.status-success {
-  background-color: var(--success-color);
-  color: var(--light-color);
-}
-
-.status-warning {
-  background-color: var(--warning-color);
-  color: var(--dark-color);
-}
-
-.status-danger {
-  background-color: var(--danger-color);
-  color: var(--light-color);
-}
-
-span.unbold {
-  font-weight: normal;
-}
-
 span.important {
   font-weight: bold;
   color: var(--danger-color);
 }
 
-p.disclaimer {
-  font-size: 14px;
+span.highlight {
+  background-color: var(--text-highlight-color);
+  border-radius: $padding-xs;
+  padding: {
+    left: $padding-xs;
+    right: $padding-xs
+  }
 }

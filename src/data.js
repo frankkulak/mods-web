@@ -1,19 +1,10 @@
 export const Constants = (function () {
-    const success = 'status-success';
-    const warning = 'status-warning';
-    const danger = 'status-danger';
-
     return {
         status: {
             updated: 0,
             untested: 1,
             conflict: 2
-        },
-        statusClasses: [
-            success,
-            warning,
-            danger
-        ]
+        }
     };
 })();
 
@@ -23,13 +14,14 @@ export default {
             game: 'ts4',
             id: 'justiceforcowplants',
             name: '#JusticeForCowplants',
-            date: 'June 13, 2020',
             status: Constants.status.updated,
-            version: '1.0',
+            date: 'June 13, 2020',
+            version: '1.0 beta 1',
             beta: true,
             versionDetails: [
                 {
-                    id: '1.0',
+                    id: '1.0 beta 1',
+                    date: 'June 13, 2020',
                     details: [
                         'Added ability to name cowplants.'
                     ]
@@ -40,13 +32,24 @@ export default {
                 'jfcp-1.png',
                 'jfcp-2.png'
             ],
-            features: [
-                "Click on a cowplant to give it a name."
-            ],
-            issues: [
+            details: [
                 {
-                    description: "A cowplant may turn into a pile of dirt when you move it in build mode, accompanied by a warning message if you have MC Command Center installed. I am trying to fix this issue, but for now,",
-                    fix: "an easy workaround is to move the cowplant again and it will go back to normal (and will still have its name)."
+                    title: 'features',
+                    bullets: [
+                        `Click on a cowplant to give it a name.`
+                    ]
+                },
+                {
+                    title: 'compatability',
+                    bullets: [
+                        `Base Game (no packs required).`
+                    ]
+                },
+                {
+                    title: 'known issues',
+                    bullets: [
+                        `A cowplant may turn into a pile of dirt when you move it in build mode, accompanied by a warning message if you have MC Command Center installed. I am trying to fix this issue, but for now, <span class="highlight">an easy workaround is to move the cowplant again and it will go back to normal (and will still have its name)</span>.`
+                    ]
                 }
             ],
             requiredPacks: [],

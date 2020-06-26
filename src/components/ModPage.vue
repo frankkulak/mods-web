@@ -3,46 +3,44 @@
         <div class="row justify-content-center">
             <div class="col-12 col-sm-10 col-lg-8">
                 <router-link to="/">&larr; mods home page</router-link>
+
                 <div class="header">
                     <h1>{{ mod.name }}</h1>
-                    <p v-html="versionText"></p>
-                    <div class="status-bar" :class="classToUse(mod.status)">
-                        <p v-if="isUntested(mod.status)">&#9888; not tested with latest patch</p>
-                        <p v-else-if="isConflict(mod.status)">&#10761; issues found with latest patch</p>
-                        <p v-else>&check; tested with latest patch</p>
+                    <p>v{{ mod.version }} &bull; {{ mod.date }}</p>
+                    <div class="status-bar" :class="classForStatus()">
+                        <p v-html="textForStatus()"></p>
                     </div>
                 </div>
+
                 <div class="image-display row justify-content-center">
                     <div class="img-col col-10 col-md-6" v-for="image in mod.images" :key="image">
                         <img :src="getImagePath(image)" :alt="image"/>
                     </div>
                 </div>
-                <p class="description" v-html="descriptionText"></p>
+
+                <p class="description" v-html="mod.description"></p>
+
                 <div class="btn-container">
-                    <a :href="mod.video" target="_blank" class="btn btn-outline-primary">
-                        view demo (YouTube)
-                    </a>
+                    <a :href="mod.video" target="_blank" class="btn btn-outline-primary">view demo (YouTube)</a>
                 </div>
-                <div class="details">
-                    <div class="features">
-                        <h2>Features</h2>
-                        <ul>
-                            <li v-for="(feature, index) in mod.features" :key="index">{{ feature }}</li>
-                        </ul>
-                    </div>
-                    <div class="issues" v-if="mod.issues.length > 0">
-                        <h2>Known issues</h2>
-                        <ul>
-                            <li v-for="(issue, index) in mod.issues" :key="index">
-                                {{ issue.description }} <span class="fix">{{ issue.fix }}</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+
                 <hr>
+
+                <div class="details">
+                    <div class="detail-category" v-for="category in mod.details" :key="category.title">
+                        <h2>{{ category.title }}</h2>
+                        <ul>
+                            <li v-for="(bullet, index) in category.bullets"
+                                :key="`${category.title}:${index}`"
+                                v-html="bullet"></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <hr>
+
                 <div class="terms">
-                    <h6><span class="unbold">By downloading this mod, you are agreeing to my</span> terms of use
-                    </h6>
+                    <h2>terms of use</h2>
                     <ul>
                         <li><span class="important">DO NOT</span> share or distribute this mod without including
                             my name (Frank Kulak) and a link to this website.
@@ -55,6 +53,7 @@
                         <li>I am free to stop supporting this mod at any time for any reason.</li>
                     </ul>
                 </div>
+
                 <div class="btn-container">
                     <a :href="mod.download" target="_blank" class="btn btn-outline-primary">
                         download (Sim File Share)
@@ -67,39 +66,39 @@
 
 <script>
     import Data from '../data.js'
-    import Util from '../util.js'
     import {Constants} from '../data.js'
 
     export default {
         name: "ModPage",
         data: function () {
-          return {
-              mod: Data[this.$route.params.game][this.$route.params.mod]
-          }
-        },
-        computed: {
-            versionText: function () {
-                const {version, beta, date} = this.mod;
-                return `version ${version} ${beta ? 'beta ' : ''} <span class="date">(${date})</span>`;
-            },
-            descriptionText: function () {
-                const packInfo = Util.formatPackCompatability(this.mod);
-                return `${this.mod.description} ${packInfo}.`;
+            return {
+                mod: Data[this.$route.params.game][this.$route.params.mod]
             }
         },
         methods: {
             getImagePath: function (filename) {
                 const {game, id} = this.mod;
-                return require(`@/assets/${game}/${id}/${filename}`);
+                return require(`../assets/${game}/${id}/${filename}`);
             },
-            classToUse: function (status) {
-                return Constants.statusClasses[status];
+            classForStatus: function () {
+                switch (this.mod.status) {
+                    case Constants.status.updated:
+                        return 'updated';
+                    case Constants.status.untested:
+                        return 'untested';
+                    default:
+                        return 'conflict'
+                }
             },
-            isUntested: function (status) {
-                return status === Constants.status.untested;
-            },
-            isConflict: function (status) {
-                return status === Constants.status.conflict;
+            textForStatus: function () {
+                switch (this.mod.status) {
+                    case Constants.status.updated:
+                        return '&check; tested with latest patch';
+                    case Constants.status.untested:
+                        return '&#9888; not tested with latest patch';
+                    default:
+                        return '&#10761; issues found with latest patch'
+                }
             }
         }
     }
@@ -133,6 +132,21 @@
                     left: $padding-md;
                     right: $padding-md;
                 }
+
+                &.updated {
+                    background-color: var(--success-color);
+                    color: var(--light-color);
+                }
+
+                &.untested {
+                    background-color: var(--warning-color);
+                    color: var(--dark-color);
+                }
+
+                &.conflict {
+                    background-color: var(--danger-color);
+                    color: var(--light-color);
+                }
             }
         }
 
@@ -149,20 +163,8 @@
 
         .description {
             margin: {
-                top: $padding-md - $padding-sm;
-                bottom: $padding-md;
-            }
-
-            span.base-game {
-                color: var(--success-color);
-            }
-
-            span.packs-required {
-                color: var(--danger-color);
-            }
-
-            span.pack {
-                font-weight: bold;
+                top: $padding-lg - $padding-sm;
+                bottom: $padding-lg;
             }
         }
 
@@ -171,56 +173,34 @@
             text-align: center;
         }
 
-        .details {
-            padding: {
+        hr {
+            width: 80%;
+            margin: {
                 top: $padding-lg;
                 bottom: $padding-lg;
             }
+        }
 
-            h2 {
-                font-weight: normal;
-                margin-bottom: $padding-xs;
-            }
+        ul {
+            margin: 0;
+        }
 
-            ul {
-                margin: 0;
-            }
+        h2 {
+            margin-bottom: $padding-sm;
+        }
 
-            .issues {
-                margin-top: $padding-lg;
+        .details {
+            .detail-category {
+                margin-bottom: $padding-lg;
 
-                span.fix {
-                    background-color: var(--text-highlight-color);
-                    border-radius: $padding-sm;
-                    padding: {
-                        left: $padding-sm;
-                        right: $padding-sm
-                    }
+                &:last-child {
+                    margin-bottom: 0;
                 }
             }
         }
 
-        hr {
-            width: 80%;
-            margin: {
-                top: 0;
-                bottom: 0;
-            }
-        }
-
         .terms {
-            margin: {
-                top: $padding-lg;
-                bottom: $padding-lg;
-            }
-
-            h6 {
-                margin-bottom: $padding-sm;
-            }
-
-            li {
-                font-size: 16px;
-            }
+            margin-bottom: $padding-lg;
         }
     }
 </style>
