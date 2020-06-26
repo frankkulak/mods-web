@@ -42,7 +42,8 @@ export default {
                 {
                     title: 'compatability',
                     bullets: [
-                        `Base Game (no packs required).`
+                        `Base Game (no packs required).`,
+                        `Avoid using with other mods that change cowplants in any way.`
                     ]
                 },
                 {

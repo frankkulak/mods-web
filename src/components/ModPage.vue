@@ -45,12 +45,13 @@
                         <li><span class="important">DO NOT</span> share or distribute this mod without including
                             my name (Frank Kulak) and a link to this website.
                         </li>
-                        <li>I am not responsible for the misuse of this mod in any way.
+                        <li>I am not responsible for the misuse of this mod in any way (e.g. using it when it is
+                            out-of-date, using it with conflicting mods, or modifying the code in any way).
                         </li>
+                        <li>I am free to stop supporting this mod at any time for any reason.</li>
                         <li v-if="mod.beta">This mod is in its beta stage, so you acknowledge that there may be
                             some bugs.
                         </li>
-                        <li>I am free to stop supporting this mod at any time for any reason.</li>
                     </ul>
                 </div>
 
