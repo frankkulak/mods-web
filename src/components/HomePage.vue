@@ -12,7 +12,7 @@
             <div class="col-12 col-sm-8 col-md-5 col-lg-4"
                  v-for="(mod, index) in mods"
                  :key="index">
-                <ModPreview :mod="mod"></ModPreview>
+                <mod-preview :mod="mod"></mod-preview>
             </div>
         </section>
 
@@ -29,7 +29,7 @@
 
 <script>
     import Data from '../data.js'
-    import ModPreview from "@/components/ModPreview";
+    import ModPreview from "./ModPreview";
 
     export default {
         name: "HomePage",

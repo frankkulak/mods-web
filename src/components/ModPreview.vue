@@ -32,11 +32,12 @@
         border-radius: $padding-sm;
         box-shadow: 0 $padding-xs 10px var(--shadow-color);
         position: relative;
-        transition: top ease 300ms;
+        transition: all ease 300ms;
         top: 0;
 
         &:hover {
             top: -5px;
+            box-shadow: 0 $padding-xs 15px var(--shadow-color);
         }
 
         & > a, & > a:focus, & > a:hover {
