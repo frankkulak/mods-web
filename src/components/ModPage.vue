@@ -20,8 +20,10 @@
 
                 <p class="description" v-html="mod.description"></p>
 
-                <div class="btn-container">
-                    <a :href="mod.video" target="_blank" class="btn btn-outline-primary">view demo (YouTube)</a>
+                <div class="btn-container" v-if="mod.video !== null">
+                    <a :href="mod.video" target="_blank" class="btn btn-outline-primary" title="view demo on YouTube">
+                        view demo
+                    </a>
                 </div>
 
                 <hr>
@@ -55,9 +57,10 @@
                     </ul>
                 </div>
 
-                <div class="btn-container">
-                    <a :href="mod.download" target="_blank" class="btn btn-outline-primary">
-                        download (Sim File Share)
+                <div class="btn-container" :class="mod.download === null && 'no-download'">
+                    <a :href="mod.download" target="_blank" class="btn btn-outline-primary"
+                       title="download from SimFileShare">
+                        {{ mod.download === null ? 'download temporarily unavailable' : 'download' }}
                     </a>
                 </div>
             </div>
@@ -79,7 +82,12 @@
         methods: {
             getImagePath: function (filename) {
                 const {game, id} = this.mod;
-                return require(`../assets/${game}/${id}/${filename}`);
+                try {
+                    return require(`../assets/${game}/${id}/${filename}`);
+                } catch (e) {
+                    console.log(e.message);
+                    return require(`../assets/${game}/default.png`);
+                }
             },
             classForStatus: function () {
                 switch (this.mod.status) {
@@ -100,6 +108,12 @@
                     default:
                         return '&#10761; issues found with latest patch'
                 }
+            }
+        },
+        watch: {
+            // eslint-disable-next-line no-unused-vars
+            $route(to, from) {
+                this.mod = Data[to.params.game][to.params.mod]
             }
         }
     }
@@ -172,6 +186,17 @@
         .btn-container {
             width: 100%;
             text-align: center;
+
+            &.no-download {
+                a.btn, a.btn-outline-primary, a.btn-outline-primary:focus, a.btn-outline-primary:hover {
+                    background-image: none;
+                    background-color: var(--bg-color);
+                    color: var(--text-color);
+                    border-color: var(--text-color);
+                    border-style: solid;
+                    text-decoration: none;
+                }
+            }
         }
 
         hr {

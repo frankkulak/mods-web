@@ -18,10 +18,19 @@
         },
         data: function () {
           return {
-              thumbnail: require(`../assets/${this.mod.game}/${this.mod.id}/${this.mod.images[0]}`),
               thumbnailAlt: `${this.mod.name} Thumbnail`,
               route: `/${this.mod.game}/${this.mod.id}`
           }
+        },
+        computed: {
+            thumbnail: function () {
+                try {
+                    return require(`../assets/${this.mod.game}/${this.mod.id}/${this.mod.images[0]}`);
+                } catch (e) {
+                    console.log(e.message);
+                    return require(`../assets/${this.mod.game}/default.png`);
+                }
+            }
         }
     }
 </script>
