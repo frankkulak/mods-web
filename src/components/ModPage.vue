@@ -63,6 +63,21 @@
                         {{ mod.download === null ? 'download temporarily unavailable' : 'download' }}
                     </a>
                 </div>
+
+                <hr>
+
+                <div class="version-history">
+                    <h2>version history</h2>
+
+                    <div class="version-details" v-for="version in mod.versionDetails" :key="version.id">
+                        <h6>{{ version.id }} ({{ version.date }})</h6>
+                        <ul>
+                            <li v-for="(bullet, index) in version.details"
+                                :key="`${version.id}:${index}`"
+                                v-html="bullet"></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -227,6 +242,12 @@
 
         .terms {
             margin-bottom: $padding-lg;
+        }
+
+        .version-history {
+            .version-details {
+                margin-top: $padding-md;
+            }
         }
     }
 </style>

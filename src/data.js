@@ -23,8 +23,8 @@ export default {
                   id: '1.0 beta 2',
                   date: 'July 8, 2020',
                   details: [
-                      'Added tooltip with custom name to cowplant.',
-                      'Added custom name to every cowplant interaction.'
+                      `Added cowplant's name to each interaction.`,
+                      `Added a tooltip with the cowplant's name and plant quality.`
                   ]
                 },
                 {
