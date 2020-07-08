@@ -15,10 +15,18 @@ export default {
             id: 'justiceforcowplants',
             name: '#JusticeForCowplants',
             status: Constants.status.updated,
-            date: 'June 13, 2020',
-            version: '1.0 beta 1',
+            date: 'July 8, 2020',
+            version: '1.0 beta 2',
             beta: true,
             versionDetails: [
+                {
+                  id: '1.0 beta 2',
+                  date: 'July 8, 2020',
+                  details: [
+                      'Added tooltip with custom name to cowplant.',
+                      'Added custom name to every cowplant interaction.'
+                  ]
+                },
                 {
                     id: '1.0 beta 1',
                     date: 'June 13, 2020',
@@ -53,7 +61,6 @@ export default {
                     ]
                 }
             ],
-            requiredPacks: [],
             download: `http://www.simfileshare.net/download/1895244/`,
             video: `https://youtu.be/tnvhvNxIETk`
         }
