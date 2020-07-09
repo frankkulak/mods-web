@@ -70,7 +70,7 @@
                     <h2>version history</h2>
 
                     <div class="version-details" v-for="version in mod.versionDetails" :key="version.id">
-                        <h6>{{ version.id }} ({{ version.date }})</h6>
+                        <p>{{ version.id }} ({{ version.date }})</p>
                         <ul>
                             <li v-for="(bullet, index) in version.details"
                                 :key="`${version.id}:${index}`"
