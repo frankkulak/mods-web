@@ -1,7 +1,7 @@
 <template>
-    <div id="mod-page" class="container-fluid">
-        <div class="row justify-content-center">
-            <div class="col-12 col-sm-10 col-lg-8">
+    <b-container id="mod-page" fluid>
+        <b-row align-h="center">
+            <b-col cols="12" sm="10" lg="8">
                 <router-link to="/">&larr; mods home page</router-link>
 
                 <div class="header">
@@ -12,11 +12,14 @@
                     </div>
                 </div>
 
-                <div class="image-display row justify-content-center">
-                    <div class="img-col col-10 col-md-6" v-for="image in mod.images" :key="image">
-                        <img :src="getImagePath(image)" :alt="image"/>
-                    </div>
-                </div>
+                <b-row align-h="center">
+                    <b-col cols="12" sm="10" lg="8">
+                        <b-carousel v-model="slide" :interval="5000" controls indicators img-width="700"
+                                    img-height="420" @sliding-start="onSlideStart" @sliding-end="onSlideEnd">
+                            <b-carousel-slide v-for="image in mod.images" :key="image" :img-src="getImagePath(image)"/>
+                        </b-carousel>
+                    </b-col>
+                </b-row>
 
                 <p class="description" v-html="mod.description"></p>
 
@@ -78,20 +81,22 @@
                         </ul>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
+            </b-col>
+        </b-row>
+    </b-container>
 </template>
 
 <script>
-    import Data from '../data.js'
-    import {Constants} from '../data.js'
+    import {GameData, ModData} from '../modules/Data.js'
+    import {Constants} from '../modules/Data.js'
 
     export default {
         name: "ModPage",
         data: function () {
             return {
-                mod: Data[this.$route.params.game][this.$route.params.mod]
+                mod: ModData[this.$route.params.game][this.$route.params.mod],
+                slide: 0,
+                sliding: null
             }
         },
         methods: {
@@ -115,20 +120,27 @@
                 }
             },
             textForStatus: function () {
+                const lastUpdate = GameData[this.mod.game].lastUpdate;
                 switch (this.mod.status) {
                     case Constants.status.updated:
-                        return '&check; tested with latest patch';
+                        return `&check; working with latest patch <span class="text-nowrap">(${lastUpdate})</span>`;
                     case Constants.status.untested:
-                        return '&#9888; not tested with latest patch';
+                        return `&#9888; not tested with latest patch <span class="text-nowrap">(${lastUpdate})</span>`;
                     default:
-                        return '&#10761; issues found with latest patch'
+                        return `&#10761; issues found with latest patch <span class="text-nowrap">(${lastUpdate})</span>`;
                 }
+            },
+            onSlideStart: function () {
+                this.sliding = true
+            },
+            onSlideEnd: function () {
+                this.sliding = false
             }
         },
         watch: {
             // eslint-disable-next-line no-unused-vars
             $route(to, from) {
-                this.mod = Data[to.params.game][to.params.mod]
+                this.mod = ModData[to.params.game][to.params.mod]
             }
         }
     }
@@ -159,6 +171,8 @@
                 border-radius: $padding-xs;
                 margin-top: $padding-md;
                 padding: {
+                    top: 2px;
+                    bottom: 2px;
                     left: $padding-md;
                     right: $padding-md;
                 }
@@ -177,17 +191,6 @@
                     background-color: var(--danger-color);
                     color: var(--light-color);
                 }
-            }
-        }
-
-        .image-display {
-            .img-col {
-                padding: $padding-sm;
-            }
-
-            img {
-                width: 100%;
-                border-radius: $padding-sm;
             }
         }
 

@@ -1,34 +1,32 @@
 <template>
-    <div id="home-page" class="container-fluid">
-        <section id="welcome" class="row justify-content-center">
-            <div class="col-12 col-md-10 col-lg-8">
+    <b-container id="home-page" fluid>
+        <b-row id="welcome" align-h="center">
+            <b-col cols="12" md="10" lg="8">
                 <h1>welcome</h1>
-                <p>My name is Frank, and I recently started modding for The Sims 4. I will be sharing my creations on
-                    this website - you can browse them below, and click their cards to learn more.</p>
-            </div>
-        </section>
+                <p>My name is Frank, and I make mods for The Sims 4. I share them on this website - you can browse
+                    through them below, and click their cards to learn more.</p>
+            </b-col>
+        </b-row>
 
-        <section id="mods" class="row justify-content-center">
-            <div class="col-12 col-sm-8 col-md-5 col-lg-4"
-                 v-for="(mod, index) in mods"
-                 :key="index">
+        <b-row id="mods" align-h="center">
+            <b-col cols="12" sm="8" md="5" lg="4" v-for="(mod, index) in mods" :key="index">
                 <mod-preview :mod="mod"></mod-preview>
-            </div>
-        </section>
+            </b-col>
+        </b-row>
 
-        <section id="contact" class="row justify-content-center">
-            <div class="col-12 col-md-10 col-lg-8">
+        <b-row id="contact" align-h="center">
+            <b-col cols="12" md="10" lg="8">
                 <h1>contact</h1>
                 <p>email: <a href="mailto:mods@frankkulak.com">mods@frankkulak.com</a></p>
-                <p>Feel free to report issues or ask questions, but please refrain from sending mod requests. I am still
-                    new to modding and am in the process of figuring it out.</p>
-            </div>
-        </section>
-    </div>
+                <p>Feel free to report issues, ask questions, or provide feedback about my current mods, but please
+                    refrain from sending mod requests.</p>
+            </b-col>
+        </b-row>
+    </b-container>
 </template>
 
 <script>
-    import Data from '../data.js'
+    import {ModData} from '../modules/Data.js'
     import ModPreview from "./ModPreview";
 
     export default {
@@ -36,7 +34,7 @@
         components: {ModPreview},
         data: function () {
             return {
-                mods: Data.ts4
+                mods: ModData.ts4
             }
         }
     }

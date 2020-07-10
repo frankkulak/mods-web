@@ -1,14 +1,19 @@
-export const Constants = (function () {
-    return {
-        status: {
-            updated: 0,
-            untested: 1,
-            conflict: 2
-        }
-    };
-})();
+export const Constants = {
+    status: {
+        updated: 0,
+        untested: 1,
+        conflict: 2
+    }
+};
 
-export default {
+export const GameData = {
+    ts4: {
+        name: "The Sims 4",
+        lastUpdate: "July 8, 2020"
+    }
+};
+
+export const ModData = {
     ts4: {
         justiceforcowplants: {
             game: 'ts4',
@@ -20,12 +25,12 @@ export default {
             beta: true,
             versionDetails: [
                 {
-                  id: '1.0 beta 2',
-                  date: 'July 8, 2020',
-                  details: [
-                      `Added cowplant's name to each interaction.`,
-                      `Added a tooltip with the cowplant's name and plant quality.`
-                  ]
+                    id: '1.0 beta 2',
+                    date: 'July 8, 2020',
+                    details: [
+                        `Added cowplant's name to each interaction.`,
+                        `Added a tooltip with the cowplant's name and plant quality.`
+                    ]
                 },
                 {
                     id: '1.0 beta 1',
@@ -63,6 +68,6 @@ export default {
             ],
             download: `http://www.simfileshare.net/download/1895244/`,
             video: `https://youtu.be/tnvhvNxIETk`
-        }
+        },
     }
 };

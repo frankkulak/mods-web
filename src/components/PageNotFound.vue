@@ -1,14 +1,14 @@
 <template>
-    <div id="page-not-found" class="container-fluid">
-        <div class="row justify-content-center">
-            <div class="col-12 col-md-10 col-lg-8">
+    <b-container id="page-not-found" fluid>
+        <b-row align-h="center">
+            <b-col cols="12" md="10" lg="8">
                 <h1>this page does not exist</h1>
                 <p>The URL you entered may have changed or been deleted. Try checking the
                     <router-link to="/">home page</router-link>.
                 </p>
-            </div>
-        </div>
-    </div>
+            </b-col>
+        </b-row>
+    </b-container>
 </template>
 
 <script>

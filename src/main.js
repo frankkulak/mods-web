@@ -4,7 +4,7 @@ import VueRouter from 'vue-router'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import App from './App.vue'
-import Data from './data.js'
+import { ModData } from './modules/Data.js'
 import HomePage from "./components/HomePage";
 import ModPage from "./components/ModPage";
 import PageNotFound from "./components/PageNotFound";
@@ -46,7 +46,7 @@ const router = new VueRouter({
 function isValidModPage(to) {
     const {game, mod} = to.params;
     // eslint-disable-next-line no-prototype-builtins
-    return Data.hasOwnProperty(game) && Data[game].hasOwnProperty(mod);
+    return ModData.hasOwnProperty(game) && ModData[game].hasOwnProperty(mod);
 }
 
 router.beforeEach((to, from, next) => {
@@ -67,7 +67,7 @@ Vue.use(VueRouter);
 
 new Vue({
     data: {
-        mods: Data
+        mods: ModData
     },
     router: router,
     watch: {
@@ -76,7 +76,7 @@ new Vue({
             window.scrollTo(0, 0);
             if (to.meta.modView && isValidModPage(to)) {
                 const {game, mod} = to.params;
-                const {name} = Data[game][mod];
+                const {name} = ModData[game][mod];
                 document.title = `${name} | ${game.toUpperCase()} Mod`;
             } else {
                 document.title = to.meta.title || 'Mods by Frank Kulak'
