@@ -213,6 +213,7 @@
                     border-color: var(--text-color);
                     border-style: solid;
                     text-decoration: none;
+                    pointer-events: none;
                 }
             }
         }
