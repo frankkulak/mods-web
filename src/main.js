@@ -1,10 +1,15 @@
 import Vue from 'vue'
+import { BootstrapVue } from 'bootstrap-vue'
 import VueRouter from 'vue-router'
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
 import App from './App.vue'
 import Data from './data.js'
 import HomePage from "./components/HomePage";
 import ModPage from "./components/ModPage";
 import PageNotFound from "./components/PageNotFound";
+
+Vue.use(BootstrapVue);
 
 // ----------------------------------------------------------------------
 // Routing
