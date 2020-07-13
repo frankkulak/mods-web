@@ -66,8 +66,12 @@ export const ModData = {
                     ]
                 }
             ],
+            installInstructions: [
+                'Download the .zip file from the link below.',
+                'Unzip the file and place it in your "The Sims 4 > Mods" directory.'
+            ],
             download: `http://www.simfileshare.net/download/1895244/`,
             video: `https://youtu.be/tnvhvNxIETk`
-        },
+        }
     }
 };

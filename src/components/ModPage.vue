@@ -1,6 +1,6 @@
 <template>
     <b-container id="mod-page" fluid>
-        <b-row align-h="center">
+        <b-row align-h="center" id="mod-overview">
             <b-col cols="12" sm="10" lg="8">
                 <router-link to="/">&larr; mods home page</router-link>
 
@@ -12,6 +12,7 @@
                     </div>
                 </div>
 
+                <!-- image gallery -->
                 <b-row align-h="center">
                     <b-col cols="12" sm="10" lg="8">
                         <b-carousel v-model="slide" :interval="5000" controls indicators img-width="700"
@@ -24,28 +25,39 @@
                 <p class="description" v-html="mod.description"></p>
 
                 <div class="btn-container" v-if="mod.video !== null">
-                    <a :href="mod.video" target="_blank" class="btn btn-outline-primary" title="view demo on YouTube">
-                        view demo
-                    </a>
+                    <a :href="mod.video" target="_blank" class="btn btn-outline-primary">view demo</a>
                 </div>
+            </b-col>
+        </b-row>
 
-                <hr>
+        <b-row align-h="center" id="mod-details">
+            <b-col cols="12" sm="10" lg="8">
+                <h1>details</h1>
 
-                <div class="details">
-                    <div class="detail-category" v-for="category in mod.details" :key="category.title">
-                        <h2>{{ category.title }}</h2>
-                        <ul>
-                            <li v-for="(bullet, index) in category.bullets"
-                                :key="`${category.title}:${index}`"
-                                v-html="bullet"></li>
-                        </ul>
-                    </div>
+                <div class="detail-category" v-for="category in mod.details" :key="category.title">
+                    <h4>{{ category.title }}</h4>
+                    <ul>
+                        <li v-for="(bullet, index) in category.bullets"
+                            :key="`${category.title}:${index}`"
+                            v-html="bullet"></li>
+                    </ul>
                 </div>
+            </b-col>
+        </b-row>
 
-                <hr>
+        <b-row align-h="center" id="mod-download">
+            <b-col cols="12" sm="10" lg="8">
+                <h1>download</h1>
+
+                <div class="install">
+                    <h4>install instructions</h4>
+                    <ul>
+                        <li v-for="(bullet, index) in mod.installInstructions" :key="index" v-html="bullet"></li>
+                    </ul>
+                </div>
 
                 <div class="terms">
-                    <h2>terms of use</h2>
+                    <h4>terms of use</h4>
                     <ul>
                         <li><span class="important">DO NOT</span> share or distribute this mod without including
                             my name (Frank Kulak) and a link to this website.
@@ -65,21 +77,6 @@
                        title="download from SimFileShare">
                         {{ mod.download === null ? 'download temporarily unavailable' : 'download' }}
                     </a>
-                </div>
-
-                <hr>
-
-                <div class="version-history">
-                    <h2>version history</h2>
-
-                    <div class="version-details" v-for="version in mod.versionDetails" :key="version.id">
-                        <p>{{ version.id }} ({{ version.date }})</p>
-                        <ul>
-                            <li v-for="(bullet, index) in version.details"
-                                :key="`${version.id}:${index}`"
-                                v-html="bullet"></li>
-                        </ul>
-                    </div>
                 </div>
             </b-col>
         </b-row>
@@ -148,57 +145,24 @@
 
 <style lang="scss">
     #mod-page {
-        padding: {
-            top: $padding-lg;
-            bottom: $padding-lg;
-        }
-
-        .header {
-            width: 100%;
-            text-align: center;
-            margin: {
+        & > .row {
+            padding: {
                 top: $padding-lg;
                 bottom: $padding-lg;
             }
-
-            span.date {
-                white-space: nowrap;
-            }
-
-            .status-bar {
-                display: inline-block;
-                text-align: center;
-                border-radius: $padding-xs;
-                margin-top: $padding-md;
-                padding: {
-                    top: 2px;
-                    bottom: 2px;
-                    left: $padding-md;
-                    right: $padding-md;
-                }
-
-                &.updated {
-                    background-color: var(--success-color);
-                    color: var(--light-color);
-                }
-
-                &.untested {
-                    background-color: var(--warning-color);
-                    color: var(--dark-color);
-                }
-
-                &.conflict {
-                    background-color: var(--danger-color);
-                    color: var(--light-color);
-                }
-            }
         }
 
-        .description {
-            margin: {
-                top: $padding-lg - $padding-sm;
-                bottom: $padding-lg;
-            }
+        h1 {
+            width: 100%;
+            text-align: center;
+        }
+
+        h4 {
+            margin-bottom: $padding-sm;
+        }
+
+        ul {
+            margin: 0;
         }
 
         .btn-container {
@@ -218,23 +182,59 @@
             }
         }
 
-        hr {
-            width: 80%;
-            margin: {
-                top: $padding-lg;
-                bottom: $padding-lg;
+        #mod-overview {
+            .header {
+                width: 100%;
+                text-align: center;
+                margin: {
+                    top: $padding-lg;
+                    bottom: $padding-lg;
+                }
+
+                .status-bar {
+                    display: inline-block;
+                    text-align: center;
+                    border-radius: $padding-xs;
+                    margin-top: $padding-md;
+                    padding: {
+                        top: 2px;
+                        bottom: 2px;
+                        left: $padding-md;
+                        right: $padding-md;
+                    }
+
+                    &.updated {
+                        background-color: var(--success-color);
+                        color: var(--light-color);
+                    }
+
+                    &.untested {
+                        background-color: var(--warning-color);
+                        color: var(--dark-color);
+                    }
+
+                    &.conflict {
+                        background-color: var(--danger-color);
+                        color: var(--light-color);
+                    }
+                }
+            }
+
+            .description {
+                margin: {
+                    top: $padding-lg - $padding-sm;
+                    bottom: $padding-lg;
+                }
             }
         }
 
-        ul {
-            margin: 0;
-        }
+        #mod-details {
+            background-color: var(--bg-band-overlay);
 
-        h2 {
-            margin-bottom: $padding-sm;
-        }
+            h1 {
+                margin-bottom: $padding-lg;
+            }
 
-        .details {
             .detail-category {
                 margin-bottom: $padding-lg;
 
@@ -244,13 +244,13 @@
             }
         }
 
-        .terms {
-            margin-bottom: $padding-lg;
-        }
+        #mod-download {
+            h1 {
+                margin-bottom: $padding-lg;
+            }
 
-        .version-history {
-            .version-details {
-                margin-top: $padding-md;
+            .install, .terms {
+                margin-bottom: $padding-lg;
             }
         }
     }
