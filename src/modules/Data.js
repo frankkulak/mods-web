@@ -126,6 +126,12 @@ export const ModData = {
                     ]
                 },
                 {
+                    title: 'notes',
+                    bullets: [
+                        `Exact amounts for follower gains/losses are heavily influenced by both the type of interaction and your sim's current fame rank. For example, a non-famous sim selling a painting is going to earn much less followers than a 5 star celebrity selling a painting, and both of those sims would earn significantly less than a 5 star celebrity acting in a movie or licensing a song.`
+                    ]
+                },
+                {
                     title: 'compatability',
                     bullets: [
                         `Get Famous is required.`
