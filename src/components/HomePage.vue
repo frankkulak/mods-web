@@ -8,8 +8,22 @@
             </b-col>
         </b-row>
 
-        <b-row id="mods" align-h="center">
-            <b-col cols="12" sm="8" md="5" lg="4" v-for="(mod, index) in mods" :key="index">
+        <b-row id="mods" align-h="center" class="mods-display">
+            <b-col cols="12" sm="8" md="5" lg="4" v-for="(mod, index) in activeMods" :key="index">
+                <mod-preview :mod="mod"></mod-preview>
+            </b-col>
+        </b-row>
+
+        <b-row id="retired-header" align-h="center" v-if="retiredMods.length > 0">
+            <b-col cols="12" md="10" lg="8">
+                <h1>retired mods</h1>
+                <p>These mods are no longer being updated with new features, and may not always be updated to work with
+                    the latest patch.</p>
+            </b-col>
+        </b-row>
+
+        <b-row id="retired-mods" align-h="center" v-if="retiredMods.length > 0" class="mods-display">
+            <b-col cols="12" sm="8" md="5" lg="4" v-for="(mod, index) in retiredMods" :key="index">
                 <mod-preview :mod="mod"></mod-preview>
             </b-col>
         </b-row>
@@ -29,22 +43,25 @@
     import {ModData} from '../modules/Data.js'
     import ModPreview from "./ModPreview";
 
+    const mods = Object.values(ModData.ts4).sort((mod1, mod2) => {
+        const modName1 = mod1.name.toUpperCase();
+        const modName2 = mod2.name.toUpperCase();
+        if (modName1 < modName2) {
+            return -1;
+        } else if (modName1 > modName2) {
+            return 1;
+        } else {
+            return 0;
+        }
+    });
+
     export default {
         name: "HomePage",
         components: {ModPreview},
-        computed: {
-            mods: function () {
-                return Object.values(ModData.ts4).sort((mod1, mod2) => {
-                    const modName1 = mod1.name.toUpperCase();
-                    const modName2 = mod2.name.toUpperCase();
-                    if (modName1 < modName2) {
-                        return -1;
-                    } else if (modName1 > modName2) {
-                        return 1;
-                    } else {
-                        return 0;
-                    }
-                });
+        data: function () {
+            return {
+                activeMods: mods.filter(mod => !mod.retired),
+                retiredMods: mods.filter(mod => mod.retired)
             }
         }
     }
@@ -66,15 +83,17 @@
         }
 
         #mods {
-            padding-top: $padding-lg - $padding-sm;
-            padding-bottom: $padding-lg - $padding-sm;
-
             [class^="col"] {
                 margin: {
                     top: $padding-sm;
                     bottom: $padding-sm;
                 }
             }
+        }
+
+        .mods-display {
+            padding-top: $padding-lg - $padding-sm;
+            padding-bottom: $padding-lg - $padding-sm;
         }
 
         #contact {

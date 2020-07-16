@@ -15,15 +15,23 @@ export const GameData = {
 
 export const ModData = {
     ts4: {
-        justiceforcowplants: {
+        nameablecowplants: {
             game: 'ts4',
-            id: 'justiceforcowplants',
-            name: '#JusticeForCowplants',
+            id: 'nameablecowplants',
+            name: 'Nameable Cowplants',
+            retired: false,
             status: Constants.status.updated,
-            date: 'July 8, 2020',
-            version: '1.0 beta 2',
+            date: 'July 16, 2020',
+            version: '1.0 beta 3',
             beta: true,
             versionDetails: [
+                {
+                    id: '1.0 beta 3',
+                    date: 'July 16, 2020',
+                    details: [
+                        'Change name from #JusticeToCowplants to Nameable Cowplants to avoid confusion with another mod by the same name.'
+                    ]
+                },
                 {
                     id: '1.0 beta 2',
                     date: 'July 8, 2020',
@@ -40,7 +48,7 @@ export const ModData = {
                     ]
                 }
             ],
-            description: `This mod gives you the ability to name cowplants. It was inspired by <a href="https://www.youtube.com/channel/UC_TYFButglZuuDbD-0Q_IzQ" target="_blank">lilsimsie</a>'s hashtag on the gallery.`,
+            description: `This mod gives you the ability to name cowplants. It was inspired by <a href="https://www.youtube.com/channel/UC_TYFButglZuuDbD-0Q_IzQ" target="_blank">lilsimsie</a>.`,
             images: [
                 'jfcp-1.png',
                 'jfcp-2.png'
@@ -53,6 +61,12 @@ export const ModData = {
                     ]
                 },
                 {
+                    title: 'notes',
+                    bullets: [
+                        `The name of this mod was changed to Nameable Cowplants to avoid confusion with another work-in-progress mod named #JusticeForCowplants. A link to the other creator's mod will be provided here when it becomes available.`
+                    ]
+                },
+                {
                     title: 'compatability',
                     bullets: [
                         `Base Game (no packs required).`,
@@ -62,7 +76,7 @@ export const ModData = {
                 {
                     title: 'known issues',
                     bullets: [
-                        `A cowplant may turn into a pile of dirt when you move it in build mode, accompanied by a warning message if you have MC Command Center installed. I am trying to fix this issue, but for now, <span class="highlight">an easy workaround is to move the cowplant again and it will go back to normal (and will still have its name)</span>.`
+                        `A cowplant may turn into a pile of dirt when you move it in build mode, accompanied by a warning message if you have MC Command Center installed. I will try to fix this issue, but for now <span class="highlight">an easy workaround is to move the cowplant again and it will go back to normal (and will still have its name)</span>.`
                     ]
                 }
             ],
@@ -78,6 +92,7 @@ export const ModData = {
             game: 'ts4',
             id: 'followersforfame',
             name: 'Followers for Fame',
+            retired: false,
             status: Constants.status.updated,
             date: 'July 15, 2020',
             version: '1.0 beta 1',
