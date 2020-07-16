@@ -16,6 +16,11 @@ Vue.use(BootstrapVue);
 
 const routes = [
     {
+        // fixme abstract this in case future mods also need to be renamed
+        path: '/ts4/justiceforcowplants',
+        redirect: '/ts4/nameablecowplants'
+    },
+    {
         path: '/:game/:mod',
         component: ModPage,
         meta: {
