@@ -15,7 +15,7 @@
                 <!-- image gallery -->
                 <b-row align-h="center">
                     <b-col cols="12" sm="10" lg="8">
-                        <b-carousel v-model="slide" :interval="5000" controls indicators img-width="700"
+                        <b-carousel v-model="slide" :interval="4000" controls indicators img-width="700"
                                     img-height="420" @sliding-start="onSlideStart" @sliding-end="onSlideEnd">
                             <b-carousel-slide v-for="image in mod.images" :key="image" :img-src="getImagePath(image)"/>
                         </b-carousel>
@@ -67,7 +67,7 @@
                         </li>
                         <li>I am free to stop supporting this mod at any time for any reason.</li>
                         <li v-if="mod.beta">This mod is in its beta stage, so you acknowledge that there may be
-                            some bugs.
+                            some bugs and/or glitches. If you encounter any, please let me know so I can fix it!
                         </li>
                     </ul>
                 </div>
@@ -221,10 +221,11 @@
             }
 
             .description {
-                margin: {
-                    top: $padding-lg - $padding-sm;
-                    bottom: $padding-lg;
-                }
+                margin-top: $padding-lg - $padding-sm;
+            }
+
+            .btn-container {
+                margin-top: $padding-lg;
             }
         }
 

@@ -32,9 +32,19 @@
     export default {
         name: "HomePage",
         components: {ModPreview},
-        data: function () {
-            return {
-                mods: ModData.ts4
+        computed: {
+            mods: function () {
+                return Object.values(ModData.ts4).sort((mod1, mod2) => {
+                    const modName1 = mod1.name.toUpperCase();
+                    const modName2 = mod2.name.toUpperCase();
+                    if (modName1 < modName2) {
+                        return -1;
+                    } else if (modName1 > modName2) {
+                        return 1;
+                    } else {
+                        return 0;
+                    }
+                });
             }
         }
     }
