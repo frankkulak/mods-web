@@ -94,10 +94,17 @@ export const ModData = {
             name: 'Followers for Fame',
             retired: false,
             status: Constants.status.updated,
-            date: 'July 15, 2020',
-            version: '1.0 beta 1',
+            date: 'July 16, 2020',
+            version: '1.0 beta 2',
             beta: true,
             versionDetails: [
+                {
+                    id: '1.0 beta 2',
+                    date: 'July 16, 2020',
+                    details: [
+                        `Added string tables for non-English languages.`
+                    ]
+                },
                 {
                     id: '1.0 beta 1',
                     date: 'July 15, 2020',
