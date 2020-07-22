@@ -9,7 +9,7 @@ export const Constants = {
 export const GameData = {
     ts4: {
         name: "The Sims 4",
-        lastUpdate: "July 8, 2020"
+        lastUpdate: "August 3, 2020"
     }
 };
 
@@ -19,8 +19,8 @@ export const ModData = {
             game: 'ts4',
             id: 'nameablecowplants',
             name: 'Nameable Cowplants',
-            retired: false,
-            status: Constants.status.updated,
+            retired: true,
+            status: Constants.status.conflict,
             date: 'July 16, 2020',
             version: '1.0 beta 3',
             beta: true,
@@ -63,20 +63,8 @@ export const ModData = {
                 {
                     title: 'notes',
                     bullets: [
-                        `The name of this mod was changed to Nameable Cowplants to avoid confusion with another work-in-progress mod named #JusticeForCowplants. A link to the other creator's mod will be provided here when it becomes available.`
-                    ]
-                },
-                {
-                    title: 'compatability',
-                    bullets: [
-                        `Base Game (no packs required).`,
-                        `Avoid using with other mods that change cowplants in any way.`
-                    ]
-                },
-                {
-                    title: 'known issues',
-                    bullets: [
-                        `A cowplant may turn into a pile of dirt when you move it in build mode, accompanied by a warning message if you have MC Command Center installed. I will try to fix this issue, but for now <span class="highlight">an easy workaround is to move the cowplant again and it will go back to normal (and will still have its name)</span>.`
+                        `The name of this mod was changed to Nameable Cowplants to avoid confusion with another work-in-progress mod named #JusticeForCowplants. A link to the other creator's mod will be provided here when it becomes available.`,
+                        `<span class="important">This mod has been retired, and should no longer be used.</span> As of the Nifty Knitting patch (August 3, 2020), cowplants are nameable in the base game. This page only serves as an example of my previous work.`
                     ]
                 }
             ],
@@ -93,7 +81,7 @@ export const ModData = {
             id: 'followersforfame',
             name: 'Followers for Fame',
             retired: false,
-            status: Constants.status.updated,
+            status: Constants.status.untested,
             date: 'July 16, 2020',
             version: '1.0 beta 2',
             beta: true,

@@ -17,8 +17,7 @@
         <b-row id="retired-header" align-h="center" v-if="retiredMods.length > 0">
             <b-col cols="12" md="10" lg="8">
                 <h1>retired mods</h1>
-                <p>These mods are no longer being updated with new features, and may not always be updated to work with
-                    the latest patch.</p>
+                <p>The below mods are no longer being updated, and may not work with the latest patch.</p>
             </b-col>
         </b-row>
 
@@ -69,7 +68,7 @@
 
 <style lang="scss">
     #home-page {
-        h1, p {
+        h1, h2, p {
             margin-bottom: $padding-md;
 
             &:last-child {
@@ -78,8 +77,9 @@
         }
 
         #welcome {
+            background-color: var(--bg-band-overlay);
             padding-top: $padding-lg;
-            padding-bottom: 0;
+            padding-bottom: $padding-lg;
         }
 
         #mods {

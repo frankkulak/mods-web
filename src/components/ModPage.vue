@@ -50,7 +50,7 @@
                 <h1>download</h1>
 
                 <div class="install">
-                    <h4>install instructions</h4>
+                    <h4>instructions</h4>
                     <ul>
                         <li v-for="(bullet, index) in mod.installInstructions" :key="index" v-html="bullet"></li>
                     </ul>
@@ -59,15 +59,19 @@
                 <div class="terms">
                     <h4>terms of use</h4>
                     <ul>
-                        <li><span class="important">DO NOT</span> share or distribute this mod without including
-                            my name (Frank Kulak) and a link to this website.
+                        <li>Do not share or distribute this mod without crediting me - a link to this website is
+                            sufficient.
                         </li>
-                        <li>I am not responsible for the misuse of this mod in any way (e.g. using it when it is
-                            out-of-date, using it with conflicting mods, or modifying the code in any way).
+                        <li>I am not responsible for the misuse of this mod (e.g. using it with conflicting mods or when
+                            it is out-of-date).
                         </li>
-                        <li>I am free to stop supporting this mod at any time for any reason.</li>
-                        <li v-if="mod.beta">This mod is in its beta stage, so you acknowledge that there may be
-                            some bugs and/or glitches. If you encounter any, please let me know so I can fix it!
+                        <li v-if="mod.retired"><span class="important">This mod has been retired, which means I no
+                            longer update or support it. Using it will likely cause problems with your game. Use at your
+                            own risk.</span>
+                        </li>
+                        <li v-else>I am free to stop supporting this mod at any time for any reason.</li>
+                        <li v-if="!mod.retired && mod.beta">This mod is in its beta stage, so you acknowledge that there
+                            may be some bugs and/or glitches. If you encounter any, please let me know so I can fix it!
                         </li>
                     </ul>
                 </div>
