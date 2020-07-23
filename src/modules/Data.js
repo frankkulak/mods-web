@@ -9,7 +9,7 @@ export const Constants = {
 export const GameData = {
     ts4: {
         name: "The Sims 4",
-        lastUpdate: "August 3, 2020"
+        lastUpdate: "July 23, 2020"
     }
 };
 
@@ -64,7 +64,7 @@ export const ModData = {
                     title: 'notes',
                     bullets: [
                         `The name of this mod was changed to Nameable Cowplants to avoid confusion with another work-in-progress mod named #JusticeForCowplants. A link to the other creator's mod will be provided here when it becomes available.`,
-                        `<span class="important">This mod has been retired, and should no longer be used.</span> As of the Nifty Knitting patch (August 3, 2020), cowplants are nameable in the base game. This page only serves as an example of my previous work.`
+                        `<span class="important">This mod has been retired, and should no longer be used.</span> As of the Nifty Knitting patch (July 23, 2020), cowplants are nameable in the base game. This page only serves as an example of my previous work.`
                     ]
                 }
             ],

@@ -126,7 +126,7 @@
                     case Constants.status.updated:
                         return `&check; working with latest patch <span class="text-nowrap">(${lastUpdate})</span>`;
                     case Constants.status.untested:
-                        return `&#9888; not tested with latest patch <span class="text-nowrap">(${lastUpdate})</span>`;
+                        return `&#9888; not yet tested with latest patch <span class="text-nowrap">(${lastUpdate})</span>`;
                     default:
                         return `&#10761; issues found with latest patch <span class="text-nowrap">(${lastUpdate})</span>`;
                 }
