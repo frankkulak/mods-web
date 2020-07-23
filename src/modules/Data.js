@@ -64,7 +64,8 @@ export const ModData = {
                     title: 'notes',
                     bullets: [
                         `The name of this mod was changed to Nameable Cowplants to avoid confusion with another work-in-progress mod named #JusticeForCowplants. A link to the other creator's mod will be provided here when it becomes available.`,
-                        `<span class="important">This mod has been retired, and should no longer be used.</span> As of the Nifty Knitting patch (July 23, 2020), cowplants are nameable in the base game. This page only serves as an example of my previous work.`
+                        `<span class="important">This mod has been retired, and should no longer be used.</span> As of the Nifty Knitting patch (July 23, 2020), cowplants are nameable in the base game, so this mod is now obsolete. This page only serves as an example of my previous work.`,
+                        `Fortunately, after you uninstall this mod, any names given to cowplants will carry over (so, you will not have to rename them).`
                     ]
                 }
             ],
@@ -81,7 +82,7 @@ export const ModData = {
             id: 'followersforfame',
             name: 'Followers for Fame',
             retired: false,
-            status: Constants.status.untested,
+            status: Constants.status.updated,
             date: 'July 16, 2020',
             version: '1.0 beta 2',
             beta: true,
