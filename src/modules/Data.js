@@ -83,10 +83,17 @@ export const ModData = {
             name: 'Followers for Fame',
             retired: false,
             status: Constants.status.updated,
-            date: 'July 16, 2020',
-            version: '1.0 beta 2',
-            beta: true,
+            date: 'July 26, 2020',
+            version: '1.0',
+            beta: false,
             versionDetails: [
+                {
+                    id: '1.0',
+                    date: 'July 26, 2020',
+                    details: [
+                        `End 1.0 beta phase.`
+                    ]
+                },
                 {
                     id: '1.0 beta 2',
                     date: 'July 16, 2020',
@@ -124,13 +131,14 @@ export const ModData = {
                 {
                     title: 'notes',
                     bullets: [
-                        `Exact amounts for follower gains/losses are heavily influenced by both the type of interaction and your sim's current fame rank. For example, a non-famous sim selling a painting is going to earn much less followers than a 5 star celebrity selling a painting, and both of those sims would earn significantly less than a 5 star celebrity acting in a movie or licensing a song.`
+                        `Exact amounts of follower gains/losses are heavily influenced by both the type of interaction and your sim's current fame rank. For example, a non-famous sim selling a painting is going to earn much less followers than a 5 star celebrity selling a painting, and both of those sims would earn significantly less than a 5 star celebrity acting in a movie or licensing a song.`
                     ]
                 },
                 {
                     title: 'compatability',
                     bullets: [
-                        `Get Famous is required.`
+                        `Get Famous is required for most interactions.`,
+                        `This mod does not override any files, so it should be safe to use with any other mods.`
                     ]
                 },
                 {
@@ -139,7 +147,7 @@ export const ModData = {
                         `Automatic follower gains for some careers, performing live, and boosts in reputation.`,
                         `Automatic follower losses for hits to reputation.`,
                         `Periodic, random follower gains and losses for all celebrity sims.`,
-                        `More text variations for each follower gain/loss notification.`
+                        `Settings to disable automatic followers for certain sims.`
                     ]
                 }
             ],

@@ -69,10 +69,15 @@
                             longer update or support it. Using it will likely cause problems with your game. Use at your
                             own risk.</span>
                         </li>
-                        <li v-else>I am free to stop supporting this mod at any time for any reason.</li>
-                        <li v-if="!mod.retired && mod.beta">This mod is in its beta stage, so you acknowledge that there
-                            may be some bugs and/or glitches. If you encounter any, please let me know so I can fix it!
+                        <li v-else-if="mod.beta">This mod is in its beta stage, so you acknowledge that there may be
+                            some bugs. If you encounter any, please let me know so I can fix them! The beta phase will
+                            end after 14 days with no bug reports.
                         </li>
+                        <li v-else>This mod has been thoroughly tested and does not contain any bugs that I am aware of,
+                            but sometimes they do sneak through. If you do experience any bugs, please let me know so I
+                            can fix them!
+                        </li>
+                        <li v-if="!mod.retired">I am free to stop supporting this mod at any time for any reason.</li>
                     </ul>
                 </div>
 
