@@ -25,10 +25,10 @@
         computed: {
             thumbnail: function () {
                 try {
-                    return require(`../assets/${this.mod.game}/${this.mod.id}/${this.mod.images[0]}`);
+                    return require(`../../assets/${this.mod.game}/${this.mod.id}/${this.mod.images[0]}`);
                 } catch (e) {
                     console.log(e.message);
-                    return require(`../assets/${this.mod.game}/default.png`);
+                    return require(`../../assets/${this.mod.game}/default.png`);
                 }
             }
         }

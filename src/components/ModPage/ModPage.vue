@@ -93,8 +93,8 @@
 </template>
 
 <script>
-    import {GameData, ModData} from '../modules/Data.js'
-    import {Constants} from '../modules/Data.js'
+    import {GameData, ModData} from '../../modules/Data.js'
+    import {Constants} from '../../modules/Data.js'
 
     export default {
         name: "ModPage",
@@ -109,10 +109,10 @@
             getImagePath: function (filename) {
                 const {game, id} = this.mod;
                 try {
-                    return require(`../assets/${game}/${id}/${filename}`);
+                    return require(`../../assets/${game}/${id}/${filename}`);
                 } catch (e) {
                     console.log(e.message);
-                    return require(`../assets/${game}/default.png`);
+                    return require(`../../assets/${game}/default.png`);
                 }
             },
             classForStatus: function () {

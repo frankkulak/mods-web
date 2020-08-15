@@ -6,7 +6,6 @@ html {
   --h-color: #{$blue};
   --button-color: #{$blue};
   --button-text-color: #{$off-white};
-  --hr-color: #{$blue};
   --bg-band-overlay: #{transparentize(black, 0.97)};
   --text-highlight-color: #{transparentize($blue, 0.85)};
   --shadow-color: #{transparentize($dark-gray, 0.85)};
@@ -15,4 +14,5 @@ html {
   --danger-color: #{$red};
   --light-color: #{$off-white};
   --dark-color: #{$dark-gray};
+  --banner-bg-color: #{$dark-blue};
 }

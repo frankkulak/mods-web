@@ -27,7 +27,7 @@
 </template>
 
 <script>
-    import {ModData} from '../modules/Data.js'
+    import {ModData} from '../../modules/Data.js'
     import ModCategoryContent from "./ModCategoryContent";
     import ModCategoryHeader from "./ModCategoryHeader";
 
@@ -67,23 +67,15 @@
         }
 
         #welcome {
-            background-color: $dark-blue;
-            padding-top: $padding-lg;
-            padding-bottom: $padding-lg;
-
-            img.decal {
-                max-width: 300px;
+            background-color: var(--banner-bg-color);
+            padding: {
+                top: $padding-lg;
+                bottom: $padding-lg;
             }
 
             p {
                 color: var(--light-color);
             }
-        }
-
-
-        .mods-display {
-            padding-top: $padding-lg - $padding-sm;
-            padding-bottom: $padding-lg - $padding-sm;
         }
     }
 </style>

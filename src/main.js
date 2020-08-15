@@ -5,8 +5,8 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import App from './App.vue'
 import { ModData } from './modules/Data.js'
-import HomePage from "./components/HomePage";
-import ModPage from "./components/ModPage";
+import HomePage from "./components/HomePage/HomePage";
+import ModPage from "./components/ModPage/ModPage";
 import PageNotFound from "./components/PageNotFound";
 
 Vue.use(BootstrapVue);
