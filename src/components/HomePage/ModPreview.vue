@@ -1,7 +1,7 @@
 <template>
     <div class="mod-preview h-100">
         <router-link :to="route">
-            <img :src="thumbnail" :alt="thumbnailAlt" class="thumbnail"/>
+            <img :src="thumbnail" :alt="thumbnailAlt" class="thumbnail" v-if="mod.images !== null"/>
             <div class="content">
                 <h6>{{ mod.name }}</h6>
                 <p v-html="mod.description"></p>
@@ -25,7 +25,9 @@
         computed: {
             thumbnail: function () {
                 try {
-                    return require(`../../assets/${this.mod.game}/${this.mod.id}/${this.mod.images[0]}`);
+                    const thumbnailFilename = this.mod.images[0];
+                    if (thumbnailFilename === null) return null;
+                    return require(`../../assets/${this.mod.game}/${this.mod.id}/${thumbnailFilename}`);
                 } catch (e) {
                     console.log(e.message);
                     return require(`../../assets/${this.mod.game}/default.png`);

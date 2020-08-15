@@ -65,7 +65,7 @@
                         <li>I am not responsible for the misuse of this mod (e.g. using it with conflicting mods or when
                             it is out-of-date).
                         </li>
-                        <li v-if="mod.retired"><span class="important">This mod has been retired, which means I no
+                        <li v-if="isRetired"><span class="important">This mod has been retired, which means I no
                             longer update or support it. Using it will likely cause problems with your game. Use at your
                             own risk.</span>
                         </li>
@@ -77,7 +77,7 @@
                             but sometimes they do sneak through. If you do experience any bugs, please let me know so I
                             can fix them!
                         </li>
-                        <li v-if="!mod.retired">I am free to stop supporting this mod at any time for any reason.</li>
+                        <li v-if="!isRetired">I am free to stop supporting this mod at any time for any reason.</li>
                     </ul>
                 </div>
 
@@ -103,6 +103,14 @@
                 mod: ModData[this.$route.params.game][this.$route.params.mod],
                 slide: 0,
                 sliding: null
+            }
+        },
+        computed: {
+            isRetired: function () {
+                return this.mod.developmentStage === Constants.developmentStage.retired;
+            },
+            isWip: function () {
+                return this.mod.developmentStage === Constants.developmentStage.wip;
             }
         },
         methods: {

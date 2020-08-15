@@ -27,7 +27,7 @@
 </template>
 
 <script>
-    import {ModData} from '../../modules/Data.js'
+    import {Constants, ModData} from '../../modules/Data.js'
     import ModCategoryContent from "./ModCategoryContent";
     import ModCategoryHeader from "./ModCategoryHeader";
 
@@ -48,9 +48,9 @@
         components: {ModCategoryHeader, ModCategoryContent},
         data: function () {
             return {
-                activeMods: mods.filter(mod => !mod.retired),
-                retiredMods: mods.filter(mod => mod.retired),
-                wipMods: []
+                activeMods: mods.filter(mod => mod.developmentStage === Constants.developmentStage.active),
+                retiredMods: mods.filter(mod => mod.developmentStage === Constants.developmentStage.retired),
+                wipMods: mods.filter(mod => mod.developmentStage === Constants.developmentStage.wip),
             }
         }
     }

@@ -1,4 +1,9 @@
 export const Constants = {
+    developmentStage: {
+        wip: 0,
+        active: 1,
+        retired: 2
+    },
     status: {
         updated: 0,
         untested: 1,
@@ -19,7 +24,7 @@ export const ModData = {
             game: 'ts4',
             id: 'nameablecowplants',
             name: 'Nameable Cowplants',
-            retired: true,
+            developmentStage: Constants.developmentStage.retired,
             status: Constants.status.conflict,
             date: 'July 16, 2020',
             version: '1.0 beta 3',
@@ -81,7 +86,7 @@ export const ModData = {
             game: 'ts4',
             id: 'followersforfame',
             name: 'Followers for Fame',
-            retired: false,
+            developmentStage: Constants.developmentStage.active,
             status: Constants.status.updated,
             date: 'July 26, 2020',
             version: '1.0',
@@ -157,6 +162,34 @@ export const ModData = {
                 'Make sure that your "Game Options > Other > Enable Custom Content and Mods" setting is enabled before use.'
             ],
             download: 'http://www.simfileshare.net/download/1930737/',
+            video: null
+        },
+        languagebarriers: {
+            game: 'ts4',
+            id: 'languagebarriers',
+            name: 'Language Barriers',
+            developmentStage: Constants.developmentStage.wip,
+            status: null,
+            date: null,
+            version: null,
+            beta: null,
+            versionDetails: null,
+            description: `A world where everyone speaks the same language is unrealistic. This mod adds new languages to the Sims universe, which adds a unique challenge to the game.`,
+            images: null,
+            details: [
+                {
+                    title: 'features',
+                    bullets: [
+                        `Features go here.`
+                    ]
+                }
+            ],
+            installInstructions: [
+                'Download the .zip folder from the link below.',
+                'Unzip the folder and place it in your "The Sims 4 > Mods" directory.',
+                'Make sure that your "Game Options > Other > Enable Custom Content and Mods" setting is enabled before use.'
+            ],
+            download: null,
             video: null
         }
     }
