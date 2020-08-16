@@ -72,10 +72,13 @@
                 </div>
             </b-col>
 
-            <div class="btn-container" v-for="download in mod.downloads" :key="download.site">
+            <div class="btn-container" v-for="download in shownDownloadLinks" :key="download.site">
                 <a :href="download.link" target="_blank" class="btn btn-outline-primary">
                     download from {{ download.site }}
                 </a>
+            </div>
+            <div class="btn-container" v-for="download in hiddenDownloadLinks" :key="download.site">
+                <b-button @click="whitelistHiddenDownload(download.site)">{{ download.hide }}</b-button>
             </div>
             <div class="btn-container no-download" v-if="mod.downloads === null || mod.downloads.length === 0">
                 <a class="btn btn-outline-primary">
@@ -96,7 +99,8 @@
             return {
                 mod: ModData[this.$route.params.game][this.$route.params.mod],
                 slide: 0,
-                sliding: null
+                sliding: null,
+                downloadSiteWhitelist: []
             }
         },
         computed: {
@@ -130,6 +134,12 @@
                         return `&#10761; issues found with latest patch <span class="text-nowrap">(${lastUpdate})</span>`;
                 }
             },
+            shownDownloadLinks: function () {
+                return this.mod.downloads.filter(d => d.hide === null || this.downloadSiteWhitelist.includes(d.site));
+            },
+            hiddenDownloadLinks: function () {
+                return this.mod.downloads.filter(d => d.hide !== null && !this.downloadSiteWhitelist.includes(d.site));
+            }
         },
         methods: {
             getImagePath: function (filename) {
@@ -146,6 +156,9 @@
             },
             onSlideEnd: function () {
                 this.sliding = false
+            },
+            whitelistHiddenDownload: function (downloadSiteName) {
+                this.downloadSiteWhitelist.push(downloadSiteName);
             }
         },
         watch: {
@@ -228,6 +241,16 @@
                 top: $padding-sm;
                 bottom: $padding-sm;
             };
+
+            button {
+                background: transparent;
+                color: var(--button-color);
+                border-style: none;
+
+                &:hover {
+                    color: var(--light-color);
+                }
+            }
 
             &.no-download {
                 a.btn, a.btn-outline-primary, a.btn-outline-primary:focus, a.btn-outline-primary:hover {

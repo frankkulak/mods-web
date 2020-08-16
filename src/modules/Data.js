@@ -77,7 +77,8 @@ export const ModData = {
             downloads: [
                 {
                     site: `Sim File Share`,
-                    link: `http://www.simfileshare.net/download/1895244/`
+                    link: `http://www.simfileshare.net/download/1895244/`,
+                    hide: null
                 },
             ],
             video: `https://youtu.be/tnvhvNxIETk`
@@ -160,8 +161,14 @@ export const ModData = {
             downloads: [
                 {
                     site: `Sim File Share`,
-                    link: `http://www.simfileshare.net/download/1930737/`
+                    link: `http://www.simfileshare.net/download/1930737/`,
+                    hide: null
                 },
+                {
+                    site: `Fast.io`,
+                    link: `https://modsbyfrankkulak.imfast.io/Followers%20for%20Fame/`,
+                    hide: `Sim File Share not working?`
+                }
             ],
             video: null
         },
@@ -193,6 +200,12 @@ export const ModData = {
                     bullets: [
                         `As this is a work-in-progress, more details are to come and they are all subject to change.`,
                         `The release date is TBD - check back later!`
+                    ]
+                },
+                {
+                    title: 'compatability',
+                    bullets: [
+                        `It is too early to tell if any packs will be required for this mod to work, but I am aiming for it to work with the base game.`
                     ]
                 }
             ],
