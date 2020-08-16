@@ -54,7 +54,7 @@ export const ModData = {
                     ]
                 }
             ],
-            description: `This mod gives you the ability to name cowplants. It was inspired by <a href="https://www.youtube.com/channel/UC_TYFButglZuuDbD-0Q_IzQ" target="_blank">lilsimsie</a>.`,
+            description: `This mod gives you the ability to name cowplants - it was inspired by <a href="https://www.youtube.com/channel/UC_TYFButglZuuDbD-0Q_IzQ" target="_blank">lilsimsie</a>. It is obsolete as cowplants can now be named in the base game.`,
             images: [
                 'jfcp-1.png',
                 'jfcp-2.png'
@@ -123,7 +123,7 @@ export const ModData = {
                     ]
                 }
             ],
-            description: `Can you really call yourself a 'Global Superstar' when you only have 32 followers on Simstagram? This mod automatically gives your sim followers whenever they complete fame-gaining actions.`,
+            description: `Can you really call yourself a 'Global Superstar' when you only have 12 followers on Simstagram? This mod automatically gives your sim followers whenever they gain fame.`,
             images: [
                 'f4f-1.png',
                 'f4f-2.png',
@@ -186,7 +186,7 @@ export const ModData = {
             currentVersion: null,
             beta: null,
             versionHistory: null,
-            description: `A world where everyone speaks the same language is unrealistic. This mod adds new languages to the Sims universe, which adds a unique challenge to the game.`,
+            description: `A world where everyone speaks the same language is unrealistic. This mod adds new languages to the Sims universe, which introduces a unique challenge to the game.`,
             images: [
                 'lb-1.png'
             ],

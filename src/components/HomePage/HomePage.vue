@@ -9,19 +9,19 @@
             </b-col>
         </b-row>
 
-        <mod-category-header header="active mods"
-                             description="These mods have been tested thoroughly and are ready to be downloaded. They
-                             are updated often, so be sure to check back after every game patch!"/>
+        <mod-category-header header="available mods"
+                             description="These mods are well-tested and ready to be downloaded. They are updated often,
+                             so be sure to check back periodically - especially after patches!"/>
         <mod-category-content :mods="activeMods"/>
 
         <mod-category-header header="work-in-progress mods"
-                             description="These mods are currently being worked on, and are not yet available for
-                             download. Check back later if you are interested in any of them!"/>
+                             description="These mods are currently in development, and are not yet available for
+                             download. Check back later if you are interested in them!"/>
         <mod-category-content :mods="wipMods"/>
 
         <mod-category-header header="retired mods"
-                             description="These mods are still available for download, but are no longer being updated
-                             and may conflict with the latest patch."/>
+                             description="These mods are no longer receiving updates, so they may not work with the
+                             latest version of the game. They are only included as an example of my previous work."/>
         <mod-category-content :mods="retiredMods"/>
     </b-container>
 </template>

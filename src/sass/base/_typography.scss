@@ -17,12 +17,12 @@ a:hover {
 
 h1, h2, h3, h4, h5, h6 {
   color: var(--h-color);
-  text-shadow: 2px 2px 8px var(--shadow-color);
 }
 
 h1 {
   font-size: 28px;
   font-weight: bold;
+  text-shadow: 2px 2px 8px var(--shadow-color);
 }
 
 h2 {
