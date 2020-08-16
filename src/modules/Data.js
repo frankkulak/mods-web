@@ -76,7 +76,7 @@ export const ModData = {
             ],
             downloads: [
                 {
-                    site: `Sime File Share`,
+                    site: `Sim File Share`,
                     link: `http://www.simfileshare.net/download/1895244/`
                 },
             ],
