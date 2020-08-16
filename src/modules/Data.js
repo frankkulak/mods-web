@@ -26,19 +26,20 @@ export const ModData = {
             name: 'Nameable Cowplants',
             developmentStage: Constants.developmentStage.retired,
             status: Constants.status.conflict,
-            date: 'July 16, 2020',
-            version: '1.0 beta 3',
+            releaseDate: 'June 13, 2020',
+            lastUpdated: 'July 16, 2020',
+            currentVersion: '1.0 beta 3',
             beta: true,
-            versionDetails: [
+            versionHistory: [
                 {
-                    id: '1.0 beta 3',
+                    version: '1.0 beta 3',
                     date: 'July 16, 2020',
                     details: [
                         'Change name from #JusticeToCowplants to Nameable Cowplants to avoid confusion with another mod by the same name.'
                     ]
                 },
                 {
-                    id: '1.0 beta 2',
+                    version: '1.0 beta 2',
                     date: 'July 8, 2020',
                     details: [
                         `Added cowplant's name to each interaction.`,
@@ -46,7 +47,7 @@ export const ModData = {
                     ]
                 },
                 {
-                    id: '1.0 beta 1',
+                    version: '1.0 beta 1',
                     date: 'June 13, 2020',
                     details: [
                         'Added ability to name cowplants.'
@@ -79,7 +80,12 @@ export const ModData = {
                 'Unzip the folder and place it in your "The Sims 4 > Mods" directory.',
                 'Make sure that your "Game Options > Other > Enable Custom Content and Mods" setting is enabled before use.'
             ],
-            download: `http://www.simfileshare.net/download/1895244/`,
+            downloads: [
+                {
+                    site: `Sime File Share`,
+                    link: `http://www.simfileshare.net/download/1895244/`
+                },
+            ],
             video: `https://youtu.be/tnvhvNxIETk`
         },
         followersforfame: {
@@ -88,26 +94,27 @@ export const ModData = {
             name: 'Followers for Fame',
             developmentStage: Constants.developmentStage.active,
             status: Constants.status.updated,
-            date: 'July 26, 2020',
-            version: '1.0',
+            releaseDate: 'July 15, 2020',
+            lastUpdated: 'July 26, 2020',
+            currentVersion: '1.0',
             beta: false,
-            versionDetails: [
+            versionHistory: [
                 {
-                    id: '1.0',
+                    version: '1.0',
                     date: 'July 26, 2020',
                     details: [
                         `End 1.0 beta phase.`
                     ]
                 },
                 {
-                    id: '1.0 beta 2',
+                    version: '1.0 beta 2',
                     date: 'July 16, 2020',
                     details: [
                         `Added string tables for non-English languages.`
                     ]
                 },
                 {
-                    id: '1.0 beta 1',
+                    version: '1.0 beta 1',
                     date: 'July 15, 2020',
                     details: [
                         `Added automatic follower gains for the following interactions: selling a painting or photo, making an app or game, licensing a song or lyrics, publishing a book, being nominated for and accepting an award, completing a work day as an actor, ranking up as a celebrity, and getting positive PR.`,
@@ -161,7 +168,12 @@ export const ModData = {
                 'Unzip the folder and place it in your "The Sims 4 > Mods" directory.',
                 'Make sure that your "Game Options > Other > Enable Custom Content and Mods" setting is enabled before use.'
             ],
-            download: 'http://www.simfileshare.net/download/1930737/',
+            downloads: [
+                {
+                    site: `Sime File Share`,
+                    link: `http://www.simfileshare.net/download/1930737/`
+                },
+            ],
             video: null
         },
         languagebarriers: {
@@ -170,12 +182,14 @@ export const ModData = {
             name: 'Language Barriers',
             developmentStage: Constants.developmentStage.wip,
             status: null,
-            date: null,
-            version: null,
+            lastUpdated: null,
+            currentVersion: null,
             beta: null,
-            versionDetails: null,
+            versionHistory: null,
             description: `A world where everyone speaks the same language is unrealistic. This mod adds new languages to the Sims universe, which adds a unique challenge to the game.`,
-            images: null,
+            images: [
+                'lb-1.png'
+            ],
             details: [
                 {
                     title: 'features',
@@ -189,7 +203,7 @@ export const ModData = {
                 'Unzip the folder and place it in your "The Sims 4 > Mods" directory.',
                 'Make sure that your "Game Options > Other > Enable Custom Content and Mods" setting is enabled before use.'
             ],
-            download: null,
+            downloads: null,
             video: null
         }
     }

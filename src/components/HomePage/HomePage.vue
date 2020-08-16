@@ -50,7 +50,7 @@
             return {
                 activeMods: mods.filter(mod => mod.developmentStage === Constants.developmentStage.active),
                 retiredMods: mods.filter(mod => mod.developmentStage === Constants.developmentStage.retired),
-                wipMods: mods.filter(mod => mod.developmentStage === Constants.developmentStage.wip),
+                wipMods: mods.filter(mod => mod.developmentStage === Constants.developmentStage.wip)
             }
         }
     }
@@ -76,6 +76,13 @@
             p {
                 color: var(--light-color);
             }
+        }
+
+        #display-checkbox {
+            z-index: 1020;
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
         }
     }
 </style>

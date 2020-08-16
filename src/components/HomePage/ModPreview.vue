@@ -1,7 +1,8 @@
 <template>
     <div class="mod-preview h-100">
         <router-link :to="route">
-            <img :src="thumbnail" :alt="thumbnailAlt" class="thumbnail" v-if="mod.images !== null"/>
+            <img :src="thumbnail" :alt="thumbnailAlt" class="thumbnail"
+                 v-if="mod.images !== null"/>
             <div class="content">
                 <h6>{{ mod.name }}</h6>
                 <p v-html="mod.description"></p>
@@ -17,10 +18,10 @@
             mod: Object
         },
         data: function () {
-          return {
-              thumbnailAlt: `${this.mod.name} Thumbnail`,
-              route: `/${this.mod.game}/${this.mod.id}`
-          }
+            return {
+                thumbnailAlt: `${this.mod.name} Thumbnail`,
+                route: `/${this.mod.game}/${this.mod.id}`
+            }
         },
         computed: {
             thumbnail: function () {
