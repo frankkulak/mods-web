@@ -54,7 +54,7 @@ export const ModData = {
                     ]
                 }
             ],
-            description: `This mod gives you the ability to name cowplants - it was inspired by <a href="https://www.youtube.com/channel/UC_TYFButglZuuDbD-0Q_IzQ" target="_blank">lilsimsie</a>. It is obsolete as cowplants can now be named in the base game.`,
+            description: `This mod gives you the ability to name cowplants, but is now obsolete as this ability was added to the base game. It was inspired by <a href="https://www.youtube.com/channel/UC_TYFButglZuuDbD-0Q_IzQ" target="_blank">lilsimsie</a>.`,
             images: [
                 'jfcp-1.png',
                 'jfcp-2.png'
@@ -70,15 +70,9 @@ export const ModData = {
                     title: 'notes',
                     bullets: [
                         `The name of this mod was changed to Nameable Cowplants to avoid confusion with another work-in-progress mod named #JusticeForCowplants. A link to the other creator's mod will be provided here when it becomes available.`,
-                        `<span class="important">This mod has been retired, and should no longer be used.</span> As of the Nifty Knitting patch (July 23, 2020), cowplants are nameable in the base game, so this mod is now obsolete. This page only serves as an example of my previous work.`,
-                        `Fortunately, after you uninstall this mod, any names given to cowplants will carry over (so, you will not have to rename them).`
+                        `As of the Nifty Knitting patch (July 23, 2020), cowplants are nameable in the base game, so this mod is now obsolete.`
                     ]
                 }
-            ],
-            installInstructions: [
-                'Download the .zip folder from the link below.',
-                'Unzip the folder and place it in your "The Sims 4 > Mods" directory.',
-                'Make sure that your "Game Options > Other > Enable Custom Content and Mods" setting is enabled before use.'
             ],
             downloads: [
                 {
@@ -134,22 +128,22 @@ export const ModData = {
                 {
                     title: 'features',
                     bullets: [
-                        `Automatically earn followers when you complete fame-gaining interactions. These interactions include selling paintings, making apps, licensing songs, publishing books, doing an acting gig, and so much more.`,
-                        `Earn a whole bunch of followers when your fame rank increases, and lose some of them if it ever goes down.`,
+                        `Automatically earn followers when you perform fame-gaining actions like selling a painting, licensing a song, publishing a book, performing an acting gig, and many more.`,
+                        `Earn a ton of followers when your fame rank increases, and lose some of them if it ever goes down.`,
                         `Earn some followers for getting good PR, and lose some for getting bad PR.`,
-                        `Use debug cheats to easily add and remove followers. To access them, first enable testing cheats with the command 'testingcheats on', then shift-click your sim and navigate to the 'Follower Cheats' option.`
+                        `Use debug cheats to add and remove followers. Enable testing cheats with the command 'testingcheats on', then shift-click your sim and navigate to the 'Follower Cheats' option.`
                     ]
                 },
                 {
                     title: 'notes',
                     bullets: [
-                        `Exact amounts of follower gains/losses are heavily influenced by both the type of interaction and your sim's current fame rank. For example, a non-famous sim selling a painting is going to earn much less followers than a 5 star celebrity selling a painting, and both of those sims would earn significantly less than a 5 star celebrity acting in a movie or licensing a song.`
+                        `Exact amounts for follower gains/losses are heavily influenced by both the type of interaction and your sim's current fame rank. For example, a non-famous sim selling a painting is going to earn much less followers than a 5 star celebrity selling a painting, and both of those sims would earn significantly less than a 5 star celebrity acting in a movie or licensing a song.`
                     ]
                 },
                 {
                     title: 'compatability',
                     bullets: [
-                        `Get Famous is required for most interactions.`,
+                        `The 'Get Famous' expansion pack is required for most interactions.`,
                         `This mod does not override any files, so it should be safe to use with any other mods.`
                     ]
                 },
@@ -162,11 +156,6 @@ export const ModData = {
                         `Settings to disable automatic followers for certain sims.`
                     ]
                 }
-            ],
-            installInstructions: [
-                'Download the .zip folder from the link below.',
-                'Unzip the folder and place it in your "The Sims 4 > Mods" directory.',
-                'Make sure that your "Game Options > Other > Enable Custom Content and Mods" setting is enabled before use.'
             ],
             downloads: [
                 {
@@ -194,14 +183,18 @@ export const ModData = {
                 {
                     title: 'features',
                     bullets: [
-                        `Features go here.`
+                        `New language skills associated with Selvadorada, Windenburg, Sulani, and Sixam.`,
+                        `Expand your vocabulary by reading books, practicing online, taking classes, and speaking with others.`,
+                        `Speaking to sims with whom you do not share a common language can be frustrating - there's a chance of miscommunication, which may make your sim angry, embarrassed, or tense.`
+                    ]
+                },
+                {
+                    title: 'notes',
+                    bullets: [
+                        `As this is a work-in-progress, more details are to come and they are all subject to change.`,
+                        `The release date is TBD - check back later!`
                     ]
                 }
-            ],
-            installInstructions: [
-                'Download the .zip folder from the link below.',
-                'Unzip the folder and place it in your "The Sims 4 > Mods" directory.',
-                'Make sure that your "Game Options > Other > Enable Custom Content and Mods" setting is enabled before use.'
             ],
             downloads: null,
             video: null

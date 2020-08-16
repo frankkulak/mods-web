@@ -6,16 +6,25 @@
             </b-col>
         </b-row>
 
+        <b-row align-h="center" class="alert-row">
+            <b-col cols="12" sm="10" lg="8">
+                <b-alert v-model="isRetired" variant="danger">This mod is retired, which means I no longer update or
+                    support it. Using it is not recommended, as it may cause issues with your game.</b-alert>
+                <b-alert v-model="isWip" variant="warning">This mod is a work-in-progress, which means it is not yet
+                    available for download. Please check back later if you are interested!</b-alert>
+                <b-alert v-model="isActive" :variant="statusClass" v-html="statusText"></b-alert>
+            </b-col>
+        </b-row>
+
         <b-row align-h="center">
             <b-col cols="12" sm="10" md="5" lg="4" class="text-center my-auto">
                 <h1>{{ mod.name }}</h1>
-                <p>version {{ mod.currentVersion }} • {{ mod.lastUpdated }}</p>
-                <p v-if="isRetired" class="conflict">This mod is retired, which means I no longer update or support it.
-                    Using it is not recommended, as it may cause issues with your game. Use at your own risk.</p>
-                <p v-else :class="statusClass" v-html="statusText"></p>
+                <p v-if="!isWip">v{{ mod.currentVersion }} • {{ mod.lastUpdated }}</p>
+                <p v-else>in development</p>
+                <p class="description" v-html="mod.description"></p>
             </b-col>
 
-            <b-col cols="12" sm="10" md="5" lg="4" class="my-auto py-3">
+            <b-col cols="12" sm="10" md="5" lg="4" class="my-auto py-4">
                 <b-carousel v-model="slide" :interval="4000" controls indicators :img-width="700"
                             :img-height="420" @sliding-start="onSlideStart" @sliding-end="onSlideEnd">
                     <b-carousel-slide v-for="image in mod.images" :key="image" :img-src="getImagePath(image)"/>
@@ -23,8 +32,8 @@
             </b-col>
         </b-row>
 
-        <b-row align-h="center" class="detail-category" v-for="category in mod.details" :key="category.title">
-            <b-col cols="12" sm="10" lg="8">
+        <b-row align-h="center" class="details-row">
+            <b-col cols="12" sm="10" lg="8" class="details-col" v-for="category in mod.details" :key="category.title">
                 <h4>{{ category.title }}</h4>
                 <ul>
                     <li v-for="(bullet, index) in category.bullets"
@@ -34,18 +43,18 @@
             </b-col>
         </b-row>
 
-        <b-row align-h="center" id="mod-download">
-            <b-col cols="12" class="text-center">
+        <b-row align-h="center" id="mod-download" v-if="!isWip">
+            <b-col cols="12" sm="10" lg="8">
                 <h1>download</h1>
-                <p v-if="isRetired">This mod is retired, which means I no longer update or support it. Using it is not
-                    recommended, as it may cause issues with your game. Use at your own risk.</p>
-            </b-col>
+                <b-alert v-model="isRetired" variant="danger">This mod is retired, which means I no longer update or
+                    support it. Using it is not recommended, as it may cause issues with your game.</b-alert>
 
-            <b-col cols="12" sm="10" md="5" lg="4">
                 <div class="install">
                     <h4>instructions</h4>
                     <ul>
-                        <li v-for="(bullet, index) in mod.installInstructions" :key="index" v-html="bullet"></li>
+                        <li>Download the .zip folder from the link below.</li>
+                        <li>Unzip the folder and place it in your "The Sims 4 > Mods" directory.</li>
+                        <li>In-game, ensure that "Game Options > Other > Enable Custom Content and Mods" is checked.</li>
                     </ul>
                 </div>
 
@@ -63,13 +72,16 @@
                 </div>
             </b-col>
 
-            <b-col cols="12" sm="10" md="5" lg="4" class="text-center my-auto">
-                <div class="btn-container" v-for="download in mod.downloads" :key="download.site">
-                    <a :href="download.link" target="_blank" class="btn btn-outline-primary">
-                        download from {{ download.site }}
-                    </a>
-                </div>
-            </b-col>
+            <div class="btn-container" v-for="download in mod.downloads" :key="download.site">
+                <a :href="download.link" target="_blank" class="btn btn-outline-primary">
+                    download from {{ download.site }}
+                </a>
+            </div>
+            <div class="btn-container no-download" v-if="mod.downloads === null || mod.downloads.length === 0">
+                <a class="btn btn-outline-primary">
+                    download not available
+                </a>
+            </div>
         </b-row>
     </b-container>
 </template>
@@ -88,6 +100,9 @@
             }
         },
         computed: {
+            isActive: function () {
+                return this.mod.developmentStage === Constants.developmentStage.active;
+            },
             isRetired: function () {
                 return this.mod.developmentStage === Constants.developmentStage.retired;
             },
@@ -97,11 +112,11 @@
             statusClass: function () {
                 switch (this.mod.status) {
                     case Constants.status.updated:
-                        return 'updated';
+                        return 'success';
                     case Constants.status.untested:
-                        return 'untested';
+                        return 'warning';
                     default:
-                        return 'conflict'
+                        return 'danger'
                 }
             },
             statusText: function () {
@@ -152,28 +167,43 @@
             }
         }
 
-        .updated {
-            color: var(--success-color);
-        }
-
-        .untested {
-            color: var(--warning-color);
-        }
-
-        .conflict {
-            color: var(--danger-color);
-        }
-
-        /*#mod-overview {*/
-        /*    text-align: center;*/
-        /*    vertical-align: middle;*/
-        /*}*/
-
-
         & > .row {
             padding: {
                 top: $padding-lg;
                 bottom: $padding-lg;
+            }
+
+            &.alert-row {
+                padding: {
+                    top: 0;
+                    bottom: 0
+                }
+
+                .alert {
+                    margin-bottom: 0;
+                    text-align: center;
+                }
+            }
+
+            &.details-row {
+                padding-top: 0;
+
+                .details-col {
+                    padding-bottom: $padding-lg;
+
+                    &:last-child {
+                        padding-bottom: 0;
+                    }
+                }
+            }
+        }
+
+        .description {
+            text-align: center;
+            font-size: 85%;
+
+            margin: {
+                top: $padding-md;
             }
         }
 
@@ -194,12 +224,17 @@
             width: 100%;
             text-align: center;
 
+            padding: {
+                top: $padding-sm;
+                bottom: $padding-sm;
+            };
+
             &.no-download {
                 a.btn, a.btn-outline-primary, a.btn-outline-primary:focus, a.btn-outline-primary:hover {
                     background-image: none;
-                    background-color: var(--bg-color);
-                    color: var(--text-color);
-                    border-color: var(--text-color);
+                    background-color: var(--banner-bg-color);
+                    color: var(--light-color);
+                    border-color: var(--light-color);
                     border-style: solid;
                     text-decoration: none;
                     pointer-events: none;
@@ -207,45 +242,14 @@
             }
         }
 
-        #mod-overview {
-            .header {
-                width: 100%;
-                text-align: center;
-                margin: {
-                    top: $padding-lg;
-                    bottom: $padding-lg;
-                }
-
-            }
-
-            .description {
-                margin-top: $padding-lg - $padding-sm;
-            }
-
-            .btn-container {
-                margin-top: $padding-lg;
-            }
-        }
-
-        #mod-details {
-            background-color: var(--bg-band-overlay);
-
-            h1 {
-                margin-bottom: $padding-lg;
-            }
-
-            .detail-category {
-                margin-bottom: $padding-lg;
-
-                &:last-child {
-                    margin-bottom: 0;
-                }
-            }
-        }
-
         #mod-download {
             background-color: var(--banner-bg-color);
             color: var(--light-color);
+
+            .alert {
+                margin-bottom: $padding-lg;
+                text-align: center;
+            }
 
             h1 {
                 margin-bottom: $padding-lg;
