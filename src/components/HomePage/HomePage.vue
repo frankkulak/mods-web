@@ -8,14 +8,11 @@
                     email at <a href="mailto:mods@frankkulak.com">mods@frankkulak.com</a>.</p>
             </b-col>
             <b-col cols="12" md="10" lg="2" class="my-auto socials text-center">
-                <b-button href="https://discord.gg/WNBhAX" target="_blank" variant="outline-primary"
+                <b-button href="https://discord.gg/qNhD3Jh" target="_blank" variant="outline-primary"
                           size="sm" class="discord">discord
                 </b-button>
-                <b-button href="https://twitter.com" target="_blank" variant="outline-primary"
+                <b-button href="https://twitter.com/frankkulakmods" target="_blank" variant="outline-primary"
                           size="sm" class="twitter">twitter
-                </b-button>
-                <b-button href="https://patreon.com" target="_blank" variant="outline-primary"
-                          size="sm" class="patreon">patreon
                 </b-button>
             </b-col>
         </b-row>
@@ -107,7 +104,6 @@
 
                     &:hover {
                         color: $off-white;
-                        border-style: solid;
                         border-color: $discord-purple;
                         background-color: $discord-purple;
                     }
@@ -119,7 +115,6 @@
 
                     &:hover {
                         color: $off-white;
-                        border-style: solid;
                         border-color: $twitter-blue;
                         background-color: $twitter-blue;
                     }
@@ -131,7 +126,6 @@
 
                     &:hover {
                         color: $off-white;
-                        border-style: solid;
                         border-color: $patreon-coral;
                         background-color: $patreon-coral;
                     }

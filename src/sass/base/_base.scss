@@ -26,7 +26,7 @@ a.btn, a.btn-outline-primary, a.btn-outline-primary:focus {
 a.btn-outline-primary:hover {
   @extend %default-gradient;
   color: var(--button-text-color);
-  border-style: none;
+  border-color: var(--light-color);
   text-decoration: none;
 }
 
