@@ -78,7 +78,7 @@
                 </a>
             </div>
             <div class="btn-container" v-for="download in hiddenDownloadLinks" :key="download.site">
-                <b-button @click="whitelistHiddenDownload(download.site)">{{ download.hide }}</b-button>
+                <b-button size="sm" @click="whitelistHiddenDownload(download.site)">{{ download.hide }}</b-button>
             </div>
             <div class="btn-container no-download" v-if="mod.downloads === null || mod.downloads.length === 0">
                 <a class="btn btn-outline-primary">
@@ -244,7 +244,7 @@
 
             button {
                 background: transparent;
-                color: var(--button-color);
+                color: var(--danger-color);
                 border-style: none;
 
                 &:hover {

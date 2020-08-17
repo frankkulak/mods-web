@@ -1,11 +1,22 @@
 <template>
     <b-container id="home-page" fluid>
         <b-row id="welcome" align-h="center">
-            <b-col cols="12" md="10" lg="8">
+            <b-col cols="12" md="10" lg="6" class="my-auto">
                 <h1>welcome</h1>
                 <p>I'm Frank, and I make mods for The Sims 4 - you can browse and download them from below. Please
-                    report bugs and direct questions to <a href="mailto:mods@frankkulak.com">mods@frankkulak.com</a>.
-                </p>
+                    send bug reports, questions, and mod suggestions to my discord server. You can also contact me by
+                    email at <a href="mailto:mods@frankkulak.com">mods@frankkulak.com</a>.</p>
+            </b-col>
+            <b-col cols="12" md="10" lg="2" class="my-auto socials text-center">
+                <b-button href="https://discord.gg/WNBhAX" target="_blank" variant="outline-primary"
+                          size="sm" class="discord">discord
+                </b-button>
+                <b-button href="https://twitter.com" target="_blank" variant="outline-primary"
+                          size="sm" class="twitter">twitter
+                </b-button>
+                <b-button href="https://patreon.com" target="_blank" variant="outline-primary"
+                          size="sm" class="patreon">patreon
+                </b-button>
             </b-col>
         </b-row>
 
@@ -75,6 +86,56 @@
 
             p {
                 color: var(--light-color);
+            }
+
+            @media (max-width: 992px) {
+                .socials {
+                    padding-top: $padding-lg - $padding-xs;
+                }
+            }
+
+            .btn.btn-outline-primary {
+                max-width: 150px;
+                width: 80%;
+                background-color: transparent;
+                background-image: none;
+                margin: $padding-xs;
+
+                &.discord, &.discord:focus {
+                    color: $discord-purple;
+                    border-color: $discord-purple;
+
+                    &:hover {
+                        color: $off-white;
+                        border-style: solid;
+                        border-color: $discord-purple;
+                        background-color: $discord-purple;
+                    }
+                }
+
+                &.twitter, &.twitter:focus {
+                    color: $twitter-blue;
+                    border-color: $twitter-blue;
+
+                    &:hover {
+                        color: $off-white;
+                        border-style: solid;
+                        border-color: $twitter-blue;
+                        background-color: $twitter-blue;
+                    }
+                }
+
+                &.patreon, &.patreon:focus {
+                    color: $patreon-coral;
+                    border-color: $patreon-coral;
+
+                    &:hover {
+                        color: $off-white;
+                        border-style: solid;
+                        border-color: $patreon-coral;
+                        background-color: $patreon-coral;
+                    }
+                }
             }
         }
 
