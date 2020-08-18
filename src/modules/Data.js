@@ -88,7 +88,7 @@ export const ModData = {
             id: 'followersforfame',
             name: 'Followers for Fame',
             developmentStage: Constants.developmentStage.active,
-            status: Constants.status.untested,
+            status: Constants.status.updated,
             releaseDate: 'July 15, 2020',
             lastUpdated: 'July 26, 2020',
             currentVersion: '1.0',
