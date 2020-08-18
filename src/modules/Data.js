@@ -199,13 +199,14 @@ export const ModData = {
                     title: 'notes',
                     bullets: [
                         `As this is a work-in-progress, more details are to come and they are all subject to change.`,
+                        `There will not be custom audio for each language - they will all sound like Simlish. While this is unfortunate, recording my own custom audio for speech would be impossible to pull off.`,
                         `The release date is TBD - check back later!`
                     ]
                 },
                 {
                     title: 'compatability',
                     bullets: [
-                        `It is too early to tell if any packs will be required for this mod to work, but I am aiming for it to work with the base game.`
+                        `It is too early to tell if any packs will be required for this mod to work, but I am aiming for it to work with the base game (i.e. you should still be able to study and speak Selvadoradian even if you do not have Jungle Adventure, but you of course will not have access to Selvadorada, which is where you would find all of the native Selvadoradian speakers).`
                     ]
                 }
             ],
