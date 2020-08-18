@@ -14,7 +14,7 @@ export const Constants = {
 export const GameData = {
     ts4: {
         name: "The Sims 4",
-        lastUpdate: "July 23, 2020"
+        lastUpdate: "August 18, 2020"
     }
 };
 
@@ -88,7 +88,7 @@ export const ModData = {
             id: 'followersforfame',
             name: 'Followers for Fame',
             developmentStage: Constants.developmentStage.active,
-            status: Constants.status.updated,
+            status: Constants.status.untested,
             releaseDate: 'July 15, 2020',
             lastUpdated: 'July 26, 2020',
             currentVersion: '1.0',
