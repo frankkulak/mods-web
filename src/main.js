@@ -84,7 +84,7 @@ new Vue({
                 const {name} = ModData[game][mod];
                 document.title = `${name} | ${game.toUpperCase()} Mod`;
             } else {
-                document.title = to.meta.title || 'Mods by Frank Kulak'
+                document.title = to.meta.title || `Frank's TS4 Mods`
             }
         }
     },

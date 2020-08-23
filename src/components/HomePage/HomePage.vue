@@ -2,17 +2,20 @@
     <b-container id="home-page" fluid>
         <b-row id="welcome" align-h="center">
             <b-col cols="12" md="10" lg="6" class="my-auto">
-                <h1>welcome</h1>
+                <b-row class="m-0 pb-3">
+                    <img src="../../assets/ts4/profilepic.png" alt="Simself" class="mr-3"/>
+                    <h1 class="my-auto">Frank's TS4 Mods</h1>
+                </b-row>
                 <p>I'm Frank, and I make mods for The Sims 4 - you can browse and download them from below. Please
-                    send bug reports, questions, and mod suggestions to my discord server. You can also contact me by
+                    send bug reports, questions, and suggestions to my discord server. You can also contact me by
                     email at <a href="mailto:mods@frankkulak.com">mods@frankkulak.com</a>.</p>
             </b-col>
             <b-col cols="12" md="10" lg="2" class="my-auto socials text-center">
                 <b-button href="https://discord.gg/qNhD3Jh" target="_blank" variant="outline-primary"
-                          size="sm" class="discord">discord
+                          size="sm" class="discord">Discord
                 </b-button>
                 <b-button href="https://twitter.com/frankkulakmods" target="_blank" variant="outline-primary"
-                          size="sm" class="twitter">twitter
+                          size="sm" class="twitter">Twitter
                 </b-button>
             </b-col>
         </b-row>
@@ -79,6 +82,12 @@
             padding: {
                 top: $padding-lg;
                 bottom: $padding-lg;
+            }
+
+            img {
+                width: auto;
+                height: 45px;
+                border-radius: 15%;
             }
 
             p {
