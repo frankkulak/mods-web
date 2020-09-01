@@ -192,7 +192,8 @@ export const ModData = {
                     bullets: [
                         `New language skills associated with Selvadorada, Windenburg, Sulani, and Sixam.`,
                         `Expand your vocabulary by reading books, practicing online, taking classes, and speaking with others.`,
-                        `Speaking to sims with whom you do not share a common language can be frustrating - there's a chance of miscommunication, which may make your sim angry, embarrassed, or tense.`
+                        `Speaking to sims with whom you do not share a common language can be frustrating - there's a chance of miscommunication, which may make your sim angry, embarrassed, or tense.`,
+                        `There will be an optional add-on for Base Game players to use an existing language in one of the Base Game worlds.`
                     ]
                 },
                 {
@@ -207,6 +208,47 @@ export const ModData = {
                     title: 'compatability',
                     bullets: [
                         `It is too early to tell if any packs will be required for this mod to work, but I am aiming for it to work with the base game (i.e. you should still be able to study and speak Selvadoradian even if you do not have Jungle Adventure, but you of course will not have access to Selvadorada, which is where you would find all of the native Selvadoradian speakers).`
+                    ]
+                }
+            ],
+            downloads: null,
+            video: null
+        },
+        simway: {
+            game: 'ts4',
+            id: 'simway',
+            name: 'Simway (MLM Mod)',
+            developmentStage: Constants.developmentStage.wip,
+            status: null,
+            lastUpdated: null,
+            currentVersion: null,
+            beta: null,
+            versionHistory: null,
+            description: `How would you like to be your own boss and set your own hours? Join Simway for just §500, and recruit other sims to make a profit! This mod adds MLMs (pyramid schemes) to the game.`,
+            images: [
+                'sw-1.png'
+            ],
+            details: [
+                {
+                    title: 'features',
+                    bullets: [
+                        `Work for an MLM as a side hustle. Buy and sell inventory, host selling parties, and earn bonuses and periodic payments from recruiting other sims.`,
+                        `There will be at least three MLMs to choose from, and I plan to add custom MLMs in the future.`
+                    ]
+                },
+                {
+                    title: 'notes',
+                    bullets: [
+                        `As this is a work-in-progress, more details are to come and they are all subject to change.`,
+                        `I have not yet started this mod, as I am focusing on <a href="#/ts4/languagebarriers">Language Barriers</a> first. Once it is released, Simway will be my primary focus!`
+                    ]
+                },
+                {
+                    title: 'compatability',
+                    bullets: [
+                        `Hosting selling parties will likely require the 'Get to Work' expansion pack.`,
+                        `Making your own MLM will likely require either the 'Get Famous' or 'Get Together' expansion pack (I will try to do it without involving these packs, but using the lifestyle brand fame perk or clubs would probably make the experience better).`,
+                        `Any features that require a pack to work will be in the form of an optional add-on, so that those without the pack(s) can still enjoy the Base Game features of this mod.`
                     ]
                 }
             ],
