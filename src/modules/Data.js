@@ -188,26 +188,34 @@ export const ModData = {
             ],
             details: [
                 {
-                    title: 'features',
+                    title: 'confirmed features',
                     bullets: [
-                        `New language skills associated with Selvadorada, Windenburg, Sulani, and Sixam.`,
-                        `Expand your vocabulary by reading books, practicing online, taking classes, and speaking with others.`,
-                        `Speaking to sims with whom you do not share a common language can be frustrating - there's a chance of miscommunication, which may make your sim angry, embarrassed, or tense.`,
-                        `There will be an optional add-on for Base Game players to use an existing language in one of the Base Game worlds.`
+                        `New language skills and traits associated with Selvadorada, Windenburg, Sulani, and Sixam.`,
+                        `Native languages will be automatically assigned to sims by taking their home world, traits, occult type, and ethnicity into account.`,
+                        `Sims must have at least one native language, but you can add more than one if you'd like. You can edit any played sim's native language(s) if you do not like the default value.`,
+                        `Expand your vocabulary by reading textbooks, practicing on Simlingo, and speaking with others.`,
+                        `Speaking to sims with whom you do not share a common language can be frustrating - there's a chance of miscommunication, which may make your sim angry, embarrassed, or tense. Note that this can be disabled on a sim-by-sim basis, but is enabled for everyone by default.`
+                    ]
+                },
+                {
+                    title: 'potential features',
+                    bullets: [
+                        `An optional add-on to use a language in a Base Game world so that players without the associated packs have a world that speaks another language (for example, the option to set Oasis Springs to speak Selvadoradian if you do not have Jungle Adventure).`,
+                        `Majoring in a language at University, or taking skill classes for languages.`,
+                        `An optional add-on to restrict where sims will naturally spawn depending on their language skills (for example, Simlish speakers can spawn anywhere, but Selvadoradian speakers can only spawn in Selvadorada, San Myshuno, Del Sol Valley, or other more diverse worlds).`
                     ]
                 },
                 {
                     title: 'notes',
                     bullets: [
                         `As this is a work-in-progress, more details are to come and they are all subject to change.`,
-                        `There will not be custom audio for each language - they will all sound like Simlish. While this is unfortunate, recording my own custom audio for speech would be impossible to pull off.`,
-                        `The release date is TBD - check back later!`
+                        `This mod is my primary focus at the moment, but I do not yet have an estimated release date. Check back later if you're interested!`
                     ]
                 },
                 {
                     title: 'compatability',
                     bullets: [
-                        `It is too early to tell if any packs will be required for this mod to work, but I am aiming for it to work with the base game (i.e. you should still be able to study and speak Selvadoradian even if you do not have Jungle Adventure, but you of course will not have access to Selvadorada, which is where you would find all of the native Selvadoradian speakers).`
+                        `It is too early to tell if any packs will be required for this mod to work, but I am aiming for it to work with the Base Game (i.e. you should still be able to study and speak Selvadoradian even if you do not have Jungle Adventure, but you of course will not have access to Selvadorada, which is where you would find all of the native Selvadoradian speakers).`
                     ]
                 }
             ],
@@ -230,25 +238,33 @@ export const ModData = {
             ],
             details: [
                 {
-                    title: 'features',
+                    title: 'confirmed features',
                     bullets: [
-                        `Work for an MLM as a side hustle. Buy and sell inventory, host selling parties, and earn bonuses and periodic payments from recruiting other sims.`,
-                        `There will be at least three MLMs to choose from, and I plan to add custom MLMs in the future.`
+                        `Be approached by existing MLM members through a phone call, text message, or knock on the door. They may try to sell products to you, recruit you, or both. You can disable this feature on a sim-by-sim basis.`,
+                        `Join an MLM by accepting a recruiter's offer or by joining at a computer. To join, you need to pay a startup fee, and to remain in the MLM, you must pay a weekly fee and a portion of your profits.`,
+                        `Make extra money by buying and selling inventory and recruiting other sims. You will get a percentage of their startup fee, as well as a portion of their sales.`,
+                    ]
+                },
+                {
+                    title: 'potential features',
+                    bullets: [
+                        `Host and attend selling parties to sell your own products or buy from others.`,
+                        `Create your own MLM empire for the chance to make a fortune.`
                     ]
                 },
                 {
                     title: 'notes',
                     bullets: [
                         `As this is a work-in-progress, more details are to come and they are all subject to change.`,
-                        `I have not yet started this mod, as I am focusing on <a href="#/ts4/languagebarriers">Language Barriers</a> first. Once it is released, Simway will be my primary focus!`
+                        `I have not yet started this mod, as I am focusing on <a href="#/ts4/languagebarriers">Language Barriers</a> first. Once that is released, Simway will be my primary focus!`
                     ]
                 },
                 {
                     title: 'compatability',
                     bullets: [
-                        `Hosting selling parties will likely require the 'Get to Work' expansion pack.`,
-                        `Making your own MLM will likely require either the 'Get Famous' or 'Get Together' expansion pack (I will try to do it without involving these packs, but using the lifestyle brand fame perk or clubs would probably make the experience better).`,
-                        `Any features that require a pack to work will be in the form of an optional add-on, so that those without the pack(s) can still enjoy the Base Game features of this mod.`
+                        `It is too early to tell, but hosting selling parties may require 'Get to Work'. I will aim to make it compatible with the Base Game, though.`,
+                        `I am unsure how I will implement creating your own MLM, but my ideas right now may require one of 'Get to Work', 'Get Together', or 'Get Famous'. Again, I will aim to make it compatible with the Base Game, if possible.`,
+                        `Any features that require a pack to work will come in the form of an optional add-on, so that those without the pack(s) can still enjoy the Base Game features of the mod.`
                     ]
                 }
             ],

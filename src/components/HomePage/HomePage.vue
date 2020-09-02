@@ -17,9 +17,11 @@
                 <b-button href="https://twitter.com/frankkulakmods" target="_blank" variant="outline-primary"
                           size="sm" class="twitter">Twitter
                 </b-button>
+                <!--
                 <b-button href="https://www.patreon.com/frankkulakmods" target="_blank" variant="outline-primary"
                           size="sm" class="patreon">Patreon
                 </b-button>
+                -->
             </b-col>
         </b-row>
 
