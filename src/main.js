@@ -7,6 +7,7 @@ import App from './App.vue'
 import { ModData } from './modules/Data.js'
 import HomePage from "./components/HomePage/HomePage";
 import ModPage from "./components/ModPage/ModPage";
+import ModVersion from "./components/ModPage/ModVersion";
 import PageNotFound from "./components/PageNotFound";
 
 Vue.use(BootstrapVue);
@@ -19,6 +20,13 @@ const routes = [
         // fixme abstract this in case future mods also need to be renamed
         path: '/ts4/justiceforcowplants',
         redirect: '/ts4/nameablecowplants'
+    },
+    {
+        path: '/:game/:mod/version',
+        component: ModVersion,
+        meta: {
+            modView: true
+        }
     },
     {
         path: '/:game/:mod',

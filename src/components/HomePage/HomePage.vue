@@ -39,12 +39,6 @@
                              description="These mods are no longer receiving updates, so they may not work with the
                              latest version of the game. They are only included as an example of my previous work."/>
         <mod-category-content :mods="retiredMods"/>
-
-        <b-row id="footer" align-h="center">
-            <b-col cols="12" md="10" lg="6">
-                <p>Frank Kulak &#169; 2020</p>
-            </b-col>
-        </b-row>
     </b-container>
 </template>
 
@@ -158,20 +152,6 @@
             position: fixed;
             right: 20px;
             bottom: 20px;
-        }
-
-        #footer {
-            text-align: center;
-            background-color: var(--banner-bg-color);
-            padding: {
-                top: $padding-sm;
-                bottom: $padding-sm;
-            }
-
-            p {
-                color: var(--light-color);
-                font-size: 0.8em;
-            }
         }
     }
 </style>
