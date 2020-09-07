@@ -191,25 +191,26 @@ export const ModData = {
                     title: 'confirmed features',
                     bullets: [
                         `New language skills and traits associated with Selvadorada, Windenburg, Sulani, and Sixam.`,
-                        `Native languages will be automatically assigned to sims by taking their home world, traits, occult type, and ethnicity into account.`,
+                        `Native languages will be automatically assigned to sims (children through elders) by taking their home world, traits, occult type, and ethnicity into account.`,
+                        `Toddlers will be able to gain language skills, and then their native language(s) will be automatically determined when they age up into children. Any language with a skill level at or above 5 will become a native language, and if they do not have any language skills above 5, their highest language skill will be used. If, somehow, the toddler has no language skills, they will default to speaking Simlish.`,
                         `Sims must have at least one native language, but you can add more than one if you'd like. You can edit any played sim's native language(s) if you do not like the default value.`,
-                        `Expand your vocabulary by reading textbooks, practicing on Simlingo, and speaking with others.`,
-                        `Speaking to sims with whom you do not share a common language can be frustrating - there's a chance of miscommunication, which may make your sim angry, embarrassed, or tense. Note that this can be disabled on a sim-by-sim basis, but is enabled for everyone by default.`
+                        `Expand your vocabulary by practicing on Simlingo and speaking with others. Every time you speak with someone that you do not share a native language with, there's a chance you will gain some knowledge about their language. Alternatively, you can also ask them for help with their language to gain the skill even faster.`,
+                        `Speaking to sims with whom you do not share a common language can be frustrating - there's a chance of miscommunication, which may make your sim angry, embarrassed, or tense. The chance of miscommunicating in a particular language decreases every time your sim increases their skill, and the possibility of miscommunicating is 0% when they are level 10. Note that this can be disabled on a sim-by-sim basis, but is enabled for everyone by default.`
                     ]
                 },
                 {
                     title: 'potential features',
                     bullets: [
                         `An optional add-on to use a language in a Base Game world so that players without the associated packs have a world that speaks another language (for example, the option to set Oasis Springs to speak Selvadoradian if you do not have Jungle Adventure).`,
-                        `Majoring in a language at University, or taking skill classes for languages.`,
-                        `An optional add-on to restrict where sims will naturally spawn depending on their language skills (for example, Simlish speakers can spawn anywhere, but Selvadoradian speakers can only spawn in Selvadorada, San Myshuno, Del Sol Valley, or other more diverse worlds).`
+                        `Majoring in a language at University, taking skill classes for languages, and/or reading textbooks to gain language skills.`,
+                        `An optional add-on to restrict where sims will naturally spawn depending on their language skills (for example, Simlish speakers can spawn anywhere, but Selvadoradian speakers will mainly spawn in Selvadorada, but have a chance of also spawning in more diverse worlds like San Myshuno and Del Sol Valley).`
                     ]
                 },
                 {
                     title: 'notes',
                     bullets: [
                         `As this is a work-in-progress, more details are to come and they are all subject to change.`,
-                        `This mod is my primary focus at the moment, but I do not yet have an estimated release date. Check back later if you're interested!`
+                        `I estimate that this mod will be ready for beta testing by the end of September. Feel free to <a href="https://discord.gg/qNhD3Jh" target="_blank">join my Discord server</a> if you would like to receive periodic updates on its status.`
                     ]
                 },
                 {
