@@ -179,6 +179,7 @@ export const ModData = {
             developmentStage: Constants.developmentStage.wip,
             status: null,
             lastUpdated: null,
+            releaseDate: 'October 2020',
             currentVersion: null,
             beta: null,
             versionHistory: null,
@@ -191,11 +192,12 @@ export const ModData = {
                     title: 'confirmed features',
                     bullets: [
                         `New language skills and traits associated with Selvadorada, Windenburg, Sulani, and Sixam.`,
-                        `Native languages will be automatically assigned to sims (children through elders) by taking their home world, traits, occult type, and ethnicity into account.`,
-                        `Toddlers will be able to gain language skills, and then their native language(s) will be automatically determined when they age up into children. Any language with a skill level at or above 5 will become a native language, and if they do not have any language skills above 5, their highest language skill will be used. If, somehow, the toddler has no language skills, they will default to speaking Simlish.`,
-                        `Sims must have at least one native language, but you can add more than one if you'd like. You can edit any played sim's native language(s) if you do not like the default value.`,
-                        `Expand your vocabulary by practicing on Simlingo and speaking with others. Every time you speak with someone that you do not share a native language with, there's a chance you will gain some knowledge about their language. Alternatively, you can also ask them for help with their language to gain the skill even faster.`,
-                        `Speaking to sims with whom you do not share a common language can be frustrating - there's a chance of miscommunication, which may make your sim angry, embarrassed, or tense. The chance of miscommunicating in a particular language decreases every time your sim increases their skill, and the possibility of miscommunicating is 0% when they are level 10. Note that this can be disabled on a sim-by-sim basis, but is enabled for everyone by default.`
+                        `Native languages will be automatically assigned to Sims (children through elders) based on their home world, traits, and occult type.`,
+                        `Toddlers' native language(s) will be determined when they age up into children. Any language skill at or above level 5 by the time they age up will become a native language. If they do not have any languages at this level, their highest language skill will be used instead. If they have no language skills, they will default to Simlish.`,
+                        `Sims must have at least one native language, but you can add more if you'd like. You can edit any played sim's native language(s) by using the 'Languages...' interaction on a Sim.`,
+                        `Learn other languages by practicing on Simlingo or speaking with other sims. Speaking with sims that speak another language will give you knowledge of their language, or you can explicitly ask them for help to gain the skill even faster.`,
+                        `Speaking to sims with whom you do not share a native language can be frustrating - there's a chance of miscommunication, which may make your sim angry, embarrassed, or tense. The chance of miscommunicating in any particular language starts at 99% and decreases by 11% every time your sim increases their skill, making it 0% when they are level 10.`,
+                        `An option to disable Language Barriers on a sim-by-sim basis, which will make them immune to miscommunication. Language Barriers is enabled for all sims by default, but can be toggled in the 'Languages...' pie menu option.`
                     ]
                 },
                 {
@@ -216,7 +218,7 @@ export const ModData = {
                 {
                     title: 'compatability',
                     bullets: [
-                        `It is too early to tell if any packs will be required for this mod to work, but I am aiming for it to work with the Base Game (i.e. you should still be able to study and speak Selvadoradian even if you do not have Jungle Adventure, but you of course will not have access to Selvadorada, which is where you would find all of the native Selvadoradian speakers).`
+                        `The majority of this mod will work with the Base Game (i.e. you will still be able to study and speak Selvadoradian even if you do not have Jungle Adventure, but you of course will not have access to Selvadorada, which is where you would find all of the native Selvadoradian speakers).`
                     ]
                 }
             ],
@@ -229,6 +231,7 @@ export const ModData = {
             name: 'Simway (MLM Mod)',
             developmentStage: Constants.developmentStage.wip,
             status: null,
+            releaseDate: null,
             lastUpdated: null,
             currentVersion: null,
             beta: null,

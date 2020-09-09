@@ -20,6 +20,7 @@
             <b-col cols="12" sm="10" md="5" lg="4" class="text-center my-auto">
                 <h1>{{ mod.name }}</h1>
                 <p v-if="!isWip">v{{ mod.currentVersion }} • {{ mod.lastUpdated }}</p>
+                <p v-else-if="mod.releaseDate !== null">expected by {{ mod.releaseDate }}</p>
                 <p v-else>in development</p>
                 <p class="description" v-html="mod.description"></p>
             </b-col>
