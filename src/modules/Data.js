@@ -274,6 +274,59 @@ export const ModData = {
             ],
             downloads: null,
             video: null
-        }
+        },
+        buybitsandpieces: {
+            game: 'ts4',
+            id: 'buybitsandpieces',
+            name: 'Buy Bits and Pieces',
+            developmentStage: Constants.developmentStage.active,
+            status: Constants.status.updated,
+            releaseDate: `September 9, 2020`,
+            lastUpdated: `September 9, 2020`,
+            currentVersion: `1.0`,
+            beta: false,
+            versionHistory: [
+                {
+                    version: '1.0',
+                    date: 'September 9, 2020',
+                    details: [
+                        `Initial release.`
+                    ]
+                },
+            ],
+            description: `Gathering bits and pieces by recycling materials can get repetitive and annoying. This mod allows you to buy them with simoleons instead, for those of you that don't like to use cheats.`,
+            images: [
+                'bbp-1.png',
+                'bbp-2.png'
+            ],
+            details: [
+                {
+                    title: 'features',
+                    bullets: [
+                        `Click on any trash can to buy bits and pieces with simoleons (buy 10 for §100). Yeah, I know this is a little weird, but this is a game with aliens and sentient gnomes - I think we can let a trashcan storefront slide.`,
+                        `Added an interaction to fill up the generator for §250 - no bits, pieces, or bio-fuel required!`
+                    ]
+                },
+                {
+                    title: 'compatability',
+                    bullets: [
+                        `This mod requires the 'Eco Lifestyle' expansion pack.`
+                    ]
+                }
+            ],
+            downloads: [
+                {
+                    site: `Sim File Share`,
+                    link: `http://www.simfileshare.net/download/2017359/`,
+                    hide: null
+                },
+                {
+                    site: `Fast.io`,
+                    link: `https://modsbyfrankkulak.imfast.io/Buy%20Bits%20and%20Pieces/`,
+                    hide: `Sim File Share not working?`
+                }
+            ],
+            video: null
+        },
     }
 };
