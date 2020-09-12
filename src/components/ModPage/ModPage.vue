@@ -66,8 +66,8 @@
                             sufficient.
                         </li>
                         <li>If you would like to provide a translation of this mod, please notify me via Discord or
-                            email before doing so. I do not appreciate my work being reposted by others without my
-                            knowledge and consent.
+                            email before doing so. I welcome and encourage translations of my mods, but I do not
+                            appreciate my work being reposted by others without my knowledge and consent.
                         </li>
                         <li>I am not responsible for the misuse of this mod (e.g. using it with conflicting mods or when
                             it is out-of-date).
