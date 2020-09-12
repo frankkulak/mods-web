@@ -27,8 +27,6 @@ export const ModData = {
             developmentStage: Constants.developmentStage.retired,
             status: Constants.status.conflict,
             releaseDate: 'June 13, 2020',
-            lastUpdated: 'July 16, 2020',
-            currentVersion: '1.0 beta 3',
             beta: true,
             versionHistory: [
                 {
@@ -90,10 +88,15 @@ export const ModData = {
             developmentStage: Constants.developmentStage.active,
             status: Constants.status.updated,
             releaseDate: 'July 15, 2020',
-            lastUpdated: 'July 26, 2020',
-            currentVersion: '1.0',
             beta: false,
             versionHistory: [
+                {
+                    version: '1.0.1',
+                    date: 'September 12, 2020',
+                    details: [
+                        `Fix file structure issue that may cause some errors on Windows installation.`
+                    ]
+                },
                 {
                     version: '1.0',
                     date: 'July 26, 2020',
@@ -178,9 +181,7 @@ export const ModData = {
             name: 'Language Barriers',
             developmentStage: Constants.developmentStage.wip,
             status: null,
-            lastUpdated: null,
             releaseDate: 'October 2020',
-            currentVersion: null,
             beta: null,
             versionHistory: null,
             description: `A world where everyone speaks the same language is unrealistic. This mod adds new languages to the Sims universe, which introduces a unique challenge to the game.`,
@@ -282,17 +283,23 @@ export const ModData = {
             developmentStage: Constants.developmentStage.active,
             status: Constants.status.updated,
             releaseDate: `September 9, 2020`,
-            lastUpdated: `September 9, 2020`,
-            currentVersion: `1.0`,
             beta: false,
             versionHistory: [
+                {
+                    version: '1.0.1',
+                    date: 'September 12, 2020',
+                    details: [
+                        `Fix file structure issue that may cause some errors on Windows installation.`,
+                        `Provide Italian translation.`
+                    ]
+                },
                 {
                     version: '1.0',
                     date: 'September 9, 2020',
                     details: [
                         `Initial release.`
                     ]
-                },
+                }
             ],
             description: `Gathering bits and pieces by recycling materials can get repetitive and annoying. This mod allows you to buy them with simoleons instead, for those of you that don't like to use cheats.`,
             images: [
@@ -311,6 +318,12 @@ export const ModData = {
                     title: 'compatability',
                     bullets: [
                         `This mod requires the 'Eco Lifestyle' expansion pack.`
+                    ]
+                },
+                {
+                    title: 'translations',
+                    bullets: [
+                        `This mod is available in English and Italian. Other languages will appear in English.`
                     ]
                 }
             ],

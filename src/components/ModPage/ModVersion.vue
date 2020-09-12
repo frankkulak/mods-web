@@ -1,5 +1,5 @@
 <template>
-    <p>{{ mod.currentVersion }}</p>
+    <p>{{ mod.versionHistory[0].version }}</p>
 </template>
 
 <script>
