@@ -233,27 +233,39 @@
                 ul.nav {
                     padding-bottom: $padding-lg;
 
-                    li > a.active {
-                        @extend %default-gradient;
-                        color: var(--button-text-color);
-                        border-color: var(--light-color);
-                        text-decoration: none;
-                    }
-                }
+                    li {
+                        border-color: var(--banner-bg-color);
+                        border-style: solid;
+                        border-width: 1px;
+                        border-radius: $padding-xs;
 
-                .details-tab {
-                    padding-top: 0;
-
-                    & > div {
-                        padding-bottom: $padding-lg;
+                        &:first-child {
+                            border-radius: $padding-xs 0 0 $padding-xs;
+                        }
 
                         &:last-child {
-                            padding-bottom: 0;
+                            border-radius: 0 $padding-xs $padding-xs 0;
+                        }
+
+                        &:only-child {
+                            border-radius: $padding-xs;
+                        }
+
+                        & > a {
+                            border-radius: inherit;
+                            background-color: transparent;
+                            color: var(--banner-bg-color);
+
+                            &.active {
+                                border-radius: inherit;
+                                background-color: var(--banner-bg-color);
+                                color: var(--light-color);
+                            }
                         }
                     }
                 }
 
-                .version-tab {
+                .details-tab, .version-tab {
                     padding-top: 0;
 
                     & > div {

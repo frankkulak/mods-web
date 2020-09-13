@@ -213,7 +213,7 @@ export const ModData = {
                     title: 'notes',
                     bullets: [
                         `As this is a work-in-progress, more details are to come and they are all subject to change.`,
-                        `I estimate that this mod will be ready for beta testing by the end of September. Feel free to <a href="https://discord.gg/qNhD3Jh" target="_blank">join my Discord server</a> if you would like to receive periodic updates on its status.`
+                        `I estimate that this mod will be ready for beta testing by October 2020. Feel free to <a href="https://discord.gg/qNhD3Jh" target="_blank">join my Discord server</a> if you would like to receive periodic updates on its status.`
                     ]
                 },
                 {
@@ -286,6 +286,13 @@ export const ModData = {
             beta: false,
             versionHistory: [
                 {
+                    version: '1.0.3',
+                    date: 'September 13, 2020',
+                    details: [
+                        `Add French translation (courtesy of Rebecca from my Discord server).`
+                    ]
+                },
+                {
                     version: '1.0.2',
                     date: 'September 12, 2020',
                     details: [
@@ -304,7 +311,8 @@ export const ModData = {
                     version: '1.0',
                     date: 'September 9, 2020',
                     details: [
-                        `Initial release.`
+                        `Added the buy bits/pieces interactions to all trash cans.`,
+                        `Added an interaction to fill the generator with §250.`
                     ]
                 }
             ],
@@ -330,14 +338,14 @@ export const ModData = {
                 {
                     title: 'translations',
                     bullets: [
-                        `This mod is available in English and Italian. Other languages will appear in English.`,
-                        `Questa mod è disponibile nell'inglese e l'italiano. L'inglese è usato per tutte le altre lingue.`
+                        `This mod is available in English, Italian, and French (translated by Rebecca). Other languages will appear in English.`,
+                        `Questa mod è disponibile nell'inglese, l'italiano, ed il francese (tradotto da Rebecca). L'inglese è usato per tutte le altre lingue.`
                     ]
                 },
                 {
                     title: 'known issues',
                     bullets: [
-                        `When you buy bits and pieces, the text for the §100 charge will overlap the text for the 10 bit/piece credit. I am not sure if this is something I can fix, but I will look into it and try to figure something out.`
+                        `When you buy bits and pieces, the text for the §100 charge will overlap the text for the 10 bit/piece credit. I am not sure if this is something I can fix, as it is just an issue with the UI, but I will look into it and try to figure something out.`,
                     ]
                 }
             ],
