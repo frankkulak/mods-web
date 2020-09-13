@@ -286,6 +286,13 @@ export const ModData = {
             beta: false,
             versionHistory: [
                 {
+                    version: '1.0.2',
+                    date: 'September 12, 2020',
+                    details: [
+                        `Fix animation issue where a sim would pour fuel where they are standing rather than at the generator.`
+                    ]
+                },
+                {
                     version: '1.0.1',
                     date: 'September 12, 2020',
                     details: [
@@ -329,7 +336,6 @@ export const ModData = {
                 {
                     title: 'known issues',
                     bullets: [
-                        `A sim will perform the 'Add Fuel' animation wherever they are standing when the generator interaction is selected, and will then walk over to the generator and start it. The interaction still works, the animation is just off. I will look in to this and fix it as soon as I get a chance.`,
                         `When you buy bits and pieces, the text for the §100 charge will overlap the text for the 10 bit/piece credit. I am not sure if this is something I can fix, but I will look in to this as well.`
                     ]
                 }
