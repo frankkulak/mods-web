@@ -183,7 +183,7 @@ export const ModData = {
             status: null,
             releaseDate: 'October 2020',
             beta: null,
-            versionHistory: null,
+            versionHistory: [],
             description: `A world where everyone speaks the same language is unrealistic. This mod adds new languages to the Sims universe, which introduces a unique challenge to the game.`,
             images: [
                 'lb-1.png'
@@ -236,7 +236,7 @@ export const ModData = {
             lastUpdated: null,
             currentVersion: null,
             beta: null,
-            versionHistory: null,
+            versionHistory: [],
             description: `How would you like to be your own boss and set your own hours? Join Simway for just §500, and recruit other sims to make a profit! This mod adds MLMs (pyramid schemes) to the game.`,
             images: [
                 'sw-1.png'
@@ -289,7 +289,7 @@ export const ModData = {
                     version: '1.0.2',
                     date: 'September 12, 2020',
                     details: [
-                        `Fix animation issue where a sim would pour fuel where they are standing rather than at the generator.`
+                        `Fix animation issue that caused sims to pour fuel where they are standing rather than at the generator.`
                     ]
                 },
                 {
@@ -330,13 +330,14 @@ export const ModData = {
                 {
                     title: 'translations',
                     bullets: [
-                        `This mod is available in English and Italian. Other languages will appear in English.`
+                        `This mod is available in English and Italian. Other languages will appear in English.`,
+                        `Questa mod è disponibile nell'inglese e l'italiano. L'inglese è usato per tutte le altre lingue.`
                     ]
                 },
                 {
                     title: 'known issues',
                     bullets: [
-                        `When you buy bits and pieces, the text for the §100 charge will overlap the text for the 10 bit/piece credit. I am not sure if this is something I can fix, but I will look in to this as well.`
+                        `When you buy bits and pieces, the text for the §100 charge will overlap the text for the 10 bit/piece credit. I am not sure if this is something I can fix, but I will look into it and try to figure something out.`
                     ]
                 }
             ],

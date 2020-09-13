@@ -9,9 +9,11 @@
         <b-row align-h="center" class="alert-row">
             <b-col cols="12" sm="10" lg="8">
                 <b-alert v-model="isRetired" variant="danger">This mod is retired, which means I no longer update or
-                    support it. Using it is not recommended, as it may cause issues with your game.</b-alert>
+                    support it. Using it is not recommended, as it may cause issues with your game.
+                </b-alert>
                 <b-alert v-model="isWip" variant="warning">This mod is a work-in-progress, which means it is not yet
-                    available for download. Please check back later if you are interested!</b-alert>
+                    available for download. Please check back later if you are interested!
+                </b-alert>
                 <b-alert v-model="isActive" :variant="statusClass" v-html="statusText"></b-alert>
             </b-col>
         </b-row>
@@ -33,14 +35,31 @@
             </b-col>
         </b-row>
 
-        <b-row align-h="center" class="details-row">
-            <b-col cols="12" sm="10" lg="8" class="details-col" v-for="category in mod.details" :key="category.title">
-                <h4>{{ category.title }}</h4>
-                <ul>
-                    <li v-for="(bullet, index) in category.bullets"
-                        :key="`${category.title}:${index}`"
-                        v-html="bullet"></li>
-                </ul>
+        <b-row align-h="center" class="tab-row">
+            <b-col cols="12" sm="10" lg="8">
+                <b-tabs pills fill justified>
+                    <b-tab title="details" active class="details-tab">
+                        <div v-for="category in mod.details" :key="category.title">
+                            <h4>{{ category.title }}</h4>
+                            <ul>
+                                <li v-for="(bullet, index) in category.bullets"
+                                    :key="`${category.title}:${index}`"
+                                    v-html="bullet"></li>
+                            </ul>
+                        </div>
+                    </b-tab>
+                    <b-tab title="version history" class="version-tab"
+                           v-if="mod.versionHistory !== null && mod.versionHistory.length > 0">
+                        <div v-for="version in mod.versionHistory" :key="version.version">
+                            <h4>{{ version.version }} ({{ version.date }})</h4>
+                            <ul>
+                                <li v-for="(bullet, index) in version.details"
+                                    :key="`${version.version}:${index}`"
+                                    v-html="bullet"></li>
+                            </ul>
+                        </div>
+                    </b-tab>
+                </b-tabs>
             </b-col>
         </b-row>
 
@@ -48,14 +67,16 @@
             <b-col cols="12" sm="10" lg="8">
                 <h1>download</h1>
                 <b-alert v-model="isRetired" variant="danger">This mod is retired, which means I no longer update or
-                    support it. Using it is not recommended, as it may cause issues with your game.</b-alert>
+                    support it. Using it is not recommended, as it may cause issues with your game.
+                </b-alert>
 
                 <div class="install">
                     <h4>instructions</h4>
                     <ul>
                         <li>Download the .zip folder from the link below.</li>
                         <li>Unzip the folder and place it in your "The Sims 4 > Mods" directory.</li>
-                        <li>In-game, ensure that "Game Options > Other > Enable Custom Content and Mods" is checked.</li>
+                        <li>In-game, ensure that "Game Options > Other > Enable Custom Content and Mods" is checked.
+                        </li>
                     </ul>
                 </div>
 
@@ -65,9 +86,9 @@
                         <li>Do not share or distribute this mod without crediting me - a link to this website is
                             sufficient.
                         </li>
-                        <li>If you would like to provide a translation of this mod, please notify me via Discord or
-                            email before doing so. I welcome and encourage translations of my mods, but I do not
-                            appreciate my work being reposted by others without my knowledge and consent.
+                        <li>If you would like to provide a translation for this mod, please notify me before doing so. I
+                            welcome and encourage translations, but I do not appreciate reposting of my work without
+                            my permission.
                         </li>
                         <li>I am not responsible for the misuse of this mod (e.g. using it with conflicting mods or when
                             it is out-of-date).
@@ -188,7 +209,7 @@
             }
         }
 
-        & > .row {
+        .row {
             padding: {
                 top: $padding-lg;
                 bottom: $padding-lg;
@@ -206,14 +227,41 @@
                 }
             }
 
-            &.details-row {
+            &.tab-row {
                 padding-top: 0;
 
-                .details-col {
+                ul.nav {
                     padding-bottom: $padding-lg;
 
-                    &:last-child {
-                        padding-bottom: 0;
+                    li > a.active {
+                        @extend %default-gradient;
+                        color: var(--button-text-color);
+                        border-color: var(--light-color);
+                        text-decoration: none;
+                    }
+                }
+
+                .details-tab {
+                    padding-top: 0;
+
+                    & > div {
+                        padding-bottom: $padding-lg;
+
+                        &:last-child {
+                            padding-bottom: 0;
+                        }
+                    }
+                }
+
+                .version-tab {
+                    padding-top: 0;
+
+                    & > div {
+                        padding-bottom: $padding-lg;
+
+                        &:last-child {
+                            padding-bottom: 0;
+                        }
                     }
                 }
             }
