@@ -91,10 +91,17 @@ export const ModData = {
             beta: false,
             versionHistory: [
                 {
+                    version: '1.0.2',
+                    date: 'September 15, 2020',
+                    details: [
+                        `<em>Actually</em> fix file structure issue that may cause some errors on Windows installation. Sorry about that!`
+                    ]
+                },
+                {
                     version: '1.0.1',
                     date: 'September 12, 2020',
                     details: [
-                        `Fix file structure issue that may cause some errors on Windows installation.`
+                        `Fix file structure issue that may cause some errors on Windows installation. EDIT: This fix did not work - see v1.0.2.`
                     ]
                 },
                 {
@@ -286,6 +293,13 @@ export const ModData = {
             beta: false,
             versionHistory: [
                 {
+                    version: '1.0.4',
+                    date: 'September 15, 2020',
+                    details: [
+                        `<em>Actually</em> fix file structure issue that may cause some errors on Windows installation. Sorry about that!`
+                    ]
+                },
+                {
                     version: '1.0.3',
                     date: 'September 13, 2020',
                     details: [
@@ -303,7 +317,7 @@ export const ModData = {
                     version: '1.0.1',
                     date: 'September 12, 2020',
                     details: [
-                        `Fix file structure issue that may cause some errors on Windows installation.`,
+                        `Fix file structure issue that may cause some errors on Windows installation. EDIT: This fix did not work - see v1.0.4.`,
                         `Provide Italian translation.`
                     ]
                 },
