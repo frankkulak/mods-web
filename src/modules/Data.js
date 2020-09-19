@@ -139,7 +139,7 @@ export const ModData = {
                 {
                     title: 'features',
                     bullets: [
-                        `Automatically earn followers when you perform fame-gaining actions like selling a painting, licensing a song, publishing a book, performing an acting gig, and many more.`,
+                        `Automatically earn followers when you perform fame-gaining interactions like selling a painting, licensing a song, publishing a book, performing an acting gig, and many more.`,
                         `Earn a ton of followers when your fame rank increases, and lose some of them if it ever goes down.`,
                         `Earn some followers for getting good PR, and lose some for getting bad PR.`,
                         `Use debug cheats to add and remove followers. Enable testing cheats with the command 'testingcheats on', then shift-click your sim and navigate to the 'Follower Cheats' option.`
@@ -203,7 +203,7 @@ export const ModData = {
                         `Native languages will be automatically assigned to Sims (children through elders) based on their home world, traits, and occult type.`,
                         `Toddlers' native language(s) will be determined when they age up into children. Any language skill at or above level 5 by the time they age up will become a native language. If they do not have any languages at this level, their highest language skill will be used instead. If they have no language skills, they will default to Simlish.`,
                         `Sims must have at least one native language, but you can add more if you'd like. You can edit any played sim's native language(s) by using the 'Languages...' interaction on a Sim.`,
-                        `Learn other languages by practicing on Simlingo or speaking with other sims. Speaking with sims that speak another language will give you knowledge of their language, or you can explicitly ask them for help to gain the skill even faster.`,
+                        `Learn other languages by practicing on Simlingo, reading textbooks, or speaking with other sims. Speaking with sims that speak another language will give you knowledge of their language, or you can explicitly ask them for help to gain the skill even faster.`,
                         `Speaking to sims with whom you do not share a native language can be frustrating - there's a chance of miscommunication, which may make your sim angry, embarrassed, or tense. The chance of miscommunicating in any particular language starts at 99% and decreases by 11% every time your sim increases their skill, making it 0% when they are level 10.`,
                         `An option to disable Language Barriers on a sim-by-sim basis, which will make them immune to miscommunication. Language Barriers is enabled for all sims by default, but can be toggled in the 'Languages...' pie menu option.`
                     ]
@@ -212,7 +212,7 @@ export const ModData = {
                     title: 'potential features',
                     bullets: [
                         `An optional add-on to use a language in a Base Game world so that players without the associated packs have a world that speaks another language (for example, the option to set Oasis Springs to speak Selvadoradian if you do not have Jungle Adventure).`,
-                        `Majoring in a language at University, taking skill classes for languages, and/or reading textbooks to gain language skills.`,
+                        `Majoring in a language at University or taking skill classes for languages to gain language skills.`,
                         `An optional add-on to restrict where sims will naturally spawn depending on their language skills (for example, Simlish speakers can spawn anywhere, but Selvadoradian speakers will mainly spawn in Selvadorada, but have a chance of also spawning in more diverse worlds like San Myshuno and Del Sol Valley).`
                     ]
                 },
