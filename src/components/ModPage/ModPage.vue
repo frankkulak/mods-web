@@ -53,7 +53,23 @@
                 </ul>
 
                 <div class="w-100 text-center">
-                    <p>TODO : download links</p>
+                    <div>
+                        <a :href="mod.primaryDownload.url" target="_blank" class="btn btn-outline-primary">
+                            Download from {{ mod.primaryDownload.title }}
+                        </a>
+                    </div>
+
+                    <b-button size="sm" @click="showAltDownloads = true" class="mt-3"
+                              v-if="mod.alternativeDownloads.length > 0 && !showAltDownloads">
+                        {{ mod.primaryDownload.title }} not working?
+                    </b-button>
+
+                    <div v-if="showAltDownloads">
+                        <a v-for="download in mod.alternativeDownloads" :key="download.title" :href="download.url"
+                           target="_blank" class="btn btn-outline-primar mt-3">
+                            Download from {{ download.title }}
+                        </a>
+                    </div>
                 </div>
             </b-container>
         </section>
@@ -72,6 +88,7 @@
         data: function () {
             return {
                 mod: ModData[this.$route.params.game][this.$route.params.mod],
+                showAltDownloads: false,
             }
         },
         computed: {
@@ -80,9 +97,8 @@
             },
             versionText: function () {
                 try {
-                    const {version, date} = this.mod.versionHistory[0];
-
                     if (!this.isWip) {
+                        const {version, date} = this.mod.versionHistory[0];
                         return `v${version} • ${date}`;
                     } else if (this.mod.releaseDate !== null) {
                         return `expected by ${this.mod.releaseDate}`;
@@ -168,6 +184,28 @@
         #mod-download {
             ul {
                 margin-bottom: 0;
+            }
+
+            a.btn, a.btn-outline-primary {
+                text-decoration: none;
+                color: var(--link-color);
+                border-color: var(--link-color);
+
+                &:hover {
+                    @extend %default-gradient;
+                    color: white;
+                    border-color: white;
+                }
+            }
+
+            button, button.btn-secondary {
+                border: none;
+                background-color: transparent;
+                color: $red;
+
+                &:hover {
+                    color: white;
+                }
             }
         }
     }
