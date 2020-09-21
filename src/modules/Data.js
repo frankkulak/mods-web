@@ -109,7 +109,7 @@ export const ModData = {
                 {
                     title: 'features',
                     bullets: [
-                        `Automatically earn followers when you perform fame-gaining interactions like selling paintings, licensing songs, publishing books, performing acting gigs, and more.`,
+                        `Automatically earn followers when you perform fame-gaining interactions like selling paintings, licensing songs, publishing books, performing acting gigs, and many more.`,
                         `Earn a ton of followers when your fame rank increases, and lose some of them if it ever goes down.`,
                         `Earn some followers for getting good PR, and lose some for getting bad PR.`,
                         `Use debug cheats to add and remove followers.`,
@@ -118,7 +118,7 @@ export const ModData = {
                 {
                     title: 'compatability',
                     bullets: [
-                        `Get Famous is required for most interactions.`,
+                        `The Get Famous expansion pack is required.`,
                         `This mod does not override any files, so it should be safe to use with any other mods.`,
                     ]
                 },
@@ -127,7 +127,7 @@ export const ModData = {
                 {
                     title: 'automatic followers',
                     bullets: [
-                        `The following interactions will add followers: selling a painting or photo, making an app or game, licensing a song or lyrics, publishing a book, being nominated for and accepting an award, completing a work day as an actor, ranking up as a celebrity, and getting positive PR through the PR agency.`,
+                        `The following interactions will add followers: selling a painting or photo, making an app or game, licensing a song or lyrics, publishing a book, being nominated for an award, accepting an award, completing a work day as an actor, ranking up as a celebrity, and getting positive PR through the PR agency.`,
                         `The following interactions will remove followers: ranking down as a celebrity and getting bad PR through the PR agency.`,
                         `Exact amounts for follower gains/losses are heavily influenced by both the type of interaction and your sim's current fame rank. For example, a non-famous sim selling a painting is going to earn much less followers than a 5 star celebrity selling a painting, and both of those sims would earn significantly less than a 5 star celebrity acting in a movie or licensing a song.`,
                     ]
@@ -217,8 +217,8 @@ export const ModData = {
                     title: 'confirmed features',
                     bullets: [
                         `Five regional languages: Selvadoradian, Windenburgish, Toki Sulani, Sixami, and Simlish.`,
-                        `Native languages will automatically be assigned to sims (children and up) depending on their home world, traits, and occult type.`,
-                        `Toddlers will acquire native language(s) when they age up into children depending on which language(s) they were taught.`,
+                        `Native languages will automatically be assigned to sims (children and older) depending on their home world, traits, and occult type.`,
+                        `Toddlers will acquire their native language(s) once they age up into children, which depends on the language(s) that they were spoken to in.`,
                         `Your sim can learn another language by using Simlingo, reading a textbook, or interacting with another sim who speaks it.`,
                         `Your sim may experience miscommunication when speaking with sims who they do not share a language with, which results in an Embarrassed, Angry, or Tense moodlet.`,
                         `You can disable Language Barriers for any sim, which makes them immune to miscommunication.`,
@@ -251,15 +251,15 @@ export const ModData = {
                     title: 'languages',
                     bullets: [
                         `There are five languages for your sims to learn and speak: Selvadoradian, Windenburgish, Toki Sulani, Sixami, and Simlish.`,
-                        `Selvadoradian is for all human sims from Selvadorada, even if they have islander traits.`,
-                        `Windenburgish is for all human sims from Windenburg who do not have any islander traits.`,
-                        `Toki Sulani is for all human sims from Sulani, all mermaids (regardless of where they live), and anyone with islander traits (other than aliens and sims from Selvadorada).`,
+                        `Selvadoradian is for all human sims from Selvadorada.`,
+                        `Windenburgish is for all human sims from Windenburg.`,
+                        `Toki Sulani is for all human sims from Sulani, all mermaids (regardless of where they live), and anyone with islander traits (except for aliens and humans from Selvadorada and Windenburg).`,
                         `Sixami is for all aliens (regardless of where they live and what traits they have).`,
                         `Simlish is the default language that everyone else speaks.`,
                     ]
                 },
                 {
-                    title: 'native language traits',
+                    title: 'native speaker traits',
                     bullets: [
                         `Each language has an associated native speaker trait. These traits are hidden - you will not see them in CAS or in your sim's info panel.`,
                         `Sims must have at least one native language at all times. Sims will only be assigned one native language by default, but you can add as many as you want.`,
@@ -270,10 +270,10 @@ export const ModData = {
                 {
                     title: 'toddler language acquisition',
                     bullets: [
-                        `Babies and toddler do not have native languages - they are assigned their native languages when they age up into children.`,
+                        `Babies and toddlers do not have native languages. A sim will acquire their native language(s) when they become a child.`,
                         `Unlike children-elder sims who are assigned a native language automatically, toddlers may acquire more than one native language naturally depending on who speaks to them, and how much.`,
-                        `Toddlers will learn the language skills associated with the native languages of whomever speaks to them. For instance, if both of their parents are native Simlish speakers, they will learn Simlish. However, if one parent is a native Simlish speaker while the other is a native Windenburgish speaker, they will most likely learn both.`,
-                        `When a toddler ages into a child, any language skills above level 5 will be automatically acquired as a native language. If the toddler does not have any language skills above level 5, then their highest skill will be used instead. If they have no language skills at all, then they will default to Simlish.`,
+                        `Toddlers will learn the language skills associated with the native languages of whomever speaks to them. For instance, if both of their parents are native Simlish speakers, they will learn Simlish. However, if one parent is a native Simlish speaker while the other is a native Windenburgish speaker, they will most likely learn both. If they happen to have an alien nanny, the toddler will probably pick up some Sixami, too.`,
+                        `When a toddler ages into a child, any language skills at or above level 5 will be acquired as a native language. If the toddler does not have any language skills at or above level 5, then just their highest skill will be used instead. If they have no language skills at all, then they will default to Simlish.`,
                         `Just like any other sims, you can change a child's acquired native language(s) by using the 'Languages > Native Languages' pie menu option`
                     ]
                 },
@@ -282,16 +282,16 @@ export const ModData = {
                     bullets: [
                         `Each language has an associated skill. You may only learn a language as a skill if it is not your native language.`,
                         `Having the native speaker trait for a particular language overrides your skill in that language - if you are a native speaker, the game will treat your skill level in that language as 10.`,
-                        `You can study language using Simlingo (at the computer ot tablet), reading textbooks (purchased from a bookshelf), or interacting with sims who speak that language natively.`,
+                        `You can study languages using Simlingo (at the computer or tablet), reading textbooks (purchased from a bookshelf), or interacting with sims who speak that language natively.`,
                     ]
                 },
                 {
                     title: 'miscommunication',
                     bullets: [
-                        `There is a chance to miscommunicate with sims if you do not have a language in common. This chance is equal to the inverse of your highest shared language skill, times 11. For the purposes of this calculation, a native speaker trait is equal to a skill level of 10. For instance, if you are a native Simlish speaker and do not know any Selvadoradian, and you are speaking to a Selvadoradian speaker who does not know any Simlish, your highest shared skill is 1, which equates to a 99% chance to miscommunicate. If one of you becomes level 2 in the other's language, your chance will decrease to 88%, and so on.`,
+                        `There is a chance to miscommunicate with sims if you do not have a language in common. This chance is equal to the inverse of your highest shared language skill, times 11. For the purposes of this calculation, a native speaker trait is equal to a skill level of 10. For instance, if you are a native Simlish speaker and do not know any Selvadoradian, and you are speaking to a Selvadoradian speaker who does not know any Simlish, your highest shared skill is 1, which equates to a 99% chance to miscommunicate. If one of you becomes level 2 in the other's language, your chance will decrease to 88%, then 77% for level 3, and so on.`,
                         `Your chance of miscommunication will be 0% in any of the following scenarios: both sims share a native language, one sim is level 10 in the other's native language, both sims are level 10 in the same language, or if at least one of the sims is not yet a child or has Language Barriers disabled.`,
                         `When miscommunication occurs, the actor of the interaction will gain a negative moodlet (+2 Embarrassed, Angry, or Tense). Each time you miscommunicate after that, there is a 33% chance that the moodlet will intensify to +4. After that, there is a 25% chance it will intensify to +8 (only for Embarrassed and Angry; Tense caps at +4). Note that +8 Embarrassed and Angry each have a chance of killing your sim (that wasn't me - that's in the base game), so you should really try to avoid this scenario.`,
-                        `You can disable Language Barriers for any sim by clicking on them and selecting the Languages pie menu option. Disabling Language Barriers for a sim will make their chance of miscommunication always be 0%.`
+                        `You can disable Language Barriers for any sim by clicking on them and selecting the 'Languages' pie menu option. Disabling Language Barriers for a sim will make their chance of miscommunication always be 0%.`
                     ]
                 },
             ],
@@ -318,16 +318,15 @@ export const ModData = {
                     bullets: [
                         `Three different MLMs for your sims to be a part of.`,
                         `You may be approached by an MLM member who wants to sell products to you, recruit you, or both.`,
-                        `You can join an MLM by accepting a sim's offer or manually at the computer for §500.`,
-                        `When in an MLM, you must pay a weekly fee and a portion of your profits.`,
-                        `You can earn money selling inventory and recruiting other sims.`,
+                        `You have to pay a startup fee to join an MLM and a weekly fee to remain in it.`,
+                        `You can earn money by buying and selling inventory and through recruiting other sims.`,
                     ]
                 },
                 {
                     title: 'potential features',
                     bullets: [
                         `Host and attend selling parties to sell your own products or buy from others.`,
-                        `Create your own MLM for the chance to make a fortune.`
+                        `Create your own MLM empire.`
                     ]
                 },
                 {
@@ -364,7 +363,8 @@ export const ModData = {
                     title: 'joining an MLM',
                     bullets: [
                         `Join an MLM by accepting a recruiter's offer or at a computer.`,
-                        `There is a §500 fee to join an MLM.`,
+                        `There is a §500 startup fee to join an MLM.`,
+                        `You must purchase some inventory when you sign up in order to get started.`
                     ]
                 },
                 {
@@ -398,14 +398,14 @@ export const ModData = {
                 {
                     title: 'features',
                     bullets: [
-                        `Buy bits and pieces with simoleons (10 for §100) at any trash can.`,
+                        `Buy bits and pieces with simoleons at any trash can (10 for §100).`,
                         `Fill up the generator for §250 - no bits, pieces, or bio-fuel required!`
                     ]
                 },
                 {
                     title: 'compatability',
                     bullets: [
-                        `This mod requires the 'Eco Lifestyle' expansion pack.`,
+                        `The Eco Lifestyle expansion pack is required.`,
                         `This mod does not override any files, so it should be safe to use with any other mods.`
                     ]
                 },
@@ -434,7 +434,7 @@ export const ModData = {
                 {
                     title: 'filling up the generator',
                     bullets: [
-                        `Click on a power generator fill it up for §250 - no bits, pieces, or bio-fuel required!`
+                        `Click on a power generator and select the option to fill it up for §250.`
                     ]
                 },
             ],

@@ -28,15 +28,15 @@
 
         <section id="mods" class="px-4">
             <mod-category header="available mods"
-                          description="These mods are ready to be downloaded."
+                          description="These mods are currently available for download."
                           :mods="activeMods"/>
 
             <mod-category header="work-in-progress mods"
-                          description="These mods are currently in development."
+                          description="These mods are in development and are not yet available for download."
                           :mods="wipMods"/>
 
             <mod-category header="retired mods"
-                          description="These mods are no longer being maintained."
+                          description="These mods are no longer being maintained, and may be broken."
                           :mods="retiredMods"/>
         </section>
     </div>

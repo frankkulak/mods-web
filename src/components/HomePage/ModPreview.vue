@@ -5,7 +5,7 @@
                 <img :src="thumbnail" :alt="thumbnailAlt"/>
             </b-col>
             <b-col cols="12" sm="7" md="9">
-                <h4 class="font-weight-bold">{{ mod.name }}</h4>
+                <h3 class="font-weight-bold">{{ mod.name }}</h3>
                 <p v-html="mod.description"></p>
             </b-col>
         </b-row>
@@ -26,17 +26,16 @@
         },
         computed: {
             thumbnail: function () {
-                const defaultImage = `../../assets/${this.mod.game}/default.png`;
                 try {
                     const thumbnailFilename = this.mod.images[0];
                     if (thumbnailFilename === null) {
-                        return require(defaultImage);
+                        return require(`../../assets/${this.mod.game}/default.png`);
                     } else {
                         return require(`../../assets/${this.mod.game}/${this.mod.id}/${thumbnailFilename}`);
                     }
                 } catch (e) {
                     console.log(e.message);
-                    return require(defaultImage);
+                    return require(`../../assets/${this.mod.game}/default.png`);
                 }
             }
         }
