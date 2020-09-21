@@ -1,8 +1,6 @@
 <template>
     <div id="mod-page">
-        <div id="home-button" class="text-center px-3 py-2">
-            <router-link to="/">&larr; more mods</router-link>
-        </div>
+        <router-link id="home-button" class="px-3 py-2" to="/">&larr; more mods</router-link>
 
         <section id="mod-header">
             <b-container class="pt-5" fluid>
@@ -140,10 +138,7 @@
             position: fixed;
             left: 12px;
             top: 12px;
-
-            a, a:focus, a:hover {
-                text-decoration: none;
-            }
+            text-decoration: none;
 
             &:hover {
                 top: 8px;
