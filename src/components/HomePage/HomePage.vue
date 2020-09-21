@@ -43,7 +43,7 @@
 </template>
 
 <script>
-    import {Constants, ModData} from '../../modules/Data.js'
+    import {DataEnums, ModData} from '../../modules/Data.js'
     import ModCategory from "./ModCategory";
 
     const mods = Object.values(ModData.ts4).sort((mod1, mod2) => {
@@ -62,7 +62,7 @@
         name: "HomePage",
         components: {ModCategory},
         data: function () {
-            const {active, wip, retired} = Constants.developmentStage;
+            const {active, wip, retired} = DataEnums.developmentStage;
             const isInDevStage = stage => (mod => mod.developmentStage === stage);
             return {
                 activeMods: mods.filter(isInDevStage(active)),

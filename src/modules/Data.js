@@ -28,6 +28,7 @@ export const ModData = {
             name: 'Nameable Cowplants',
             developmentStage: DataEnums.developmentStage.retired,
             testingStatus: DataEnums.testingStatus.broken,
+            releaseDate: 'June 13, 2020',
             description: `This mod gives you the ability to name cowplants, but is now obsolete as this ability was added to the base game. It was inspired by <a href="https://www.youtube.com/channel/UC_TYFButglZuuDbD-0Q_IzQ" target="_blank">lilsimsie</a>.`,
             thumbnail: 'jfcp-1.png',
             images: [
@@ -93,7 +94,8 @@ export const ModData = {
             id: 'followersforfame',
             name: 'Followers for Fame',
             developmentStage: DataEnums.developmentStage.active,
-            testingStatus: DataEnums.testingStatus.updated,
+            testingStatus: DataEnums.testingStatus.working,
+            releaseDate: 'July 15, 2020',
             description: `Can you really call yourself a 'Global Superstar' when you only have 12 followers on Simstagram? This mod automatically gives your sim followers whenever they gain fame.`,
             thumbnail: 'f4f-1.png',
             images: [
@@ -203,6 +205,7 @@ export const ModData = {
             name: 'Language Barriers',
             developmentStage: DataEnums.developmentStage.wip,
             testingStatus: DataEnums.testingStatus.unreleased,
+            releaseDate: 'October 2020',
             description: `A world where everyone speaks the same language is unrealistic. This mod adds new languages to the Sims universe, which introduces a unique challenge to the game.`,
             thumbnail: 'lb-1.png',
             images: [
@@ -302,6 +305,7 @@ export const ModData = {
             name: 'Simway (MLM Mod)',
             developmentStage: DataEnums.developmentStage.wip,
             testingStatus: DataEnums.testingStatus.unreleased,
+            releaseDate: null,
             description: `How would you like to be your own boss and set your own hours? Join Simway for just §500, and recruit other sims to make a profit! This mod adds MLMs (pyramid schemes) to the game.`,
             thumbnail: 'sw-1.png',
             images: [
@@ -382,6 +386,7 @@ export const ModData = {
             name: 'Buy Bits and Pieces',
             developmentStage: DataEnums.developmentStage.active,
             testingStatus: DataEnums.testingStatus.working,
+            releaseDate: 'September 9, 2020',
             description: `Gathering bits and pieces by recycling materials can get repetitive and annoying. This mod allows you to buy them with simoleons instead, for those of you that don't like to use cheats.`,
             thumbnail: 'bbp-1.png',
             images: [

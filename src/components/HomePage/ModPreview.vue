@@ -5,7 +5,7 @@
                 <img :src="thumbnail" :alt="thumbnailAlt"/>
             </b-col>
             <b-col cols="12" sm="7" md="9">
-                <h4>{{ mod.name }}</h4>
+                <h4 class="font-weight-bold">{{ mod.name }}</h4>
                 <p v-html="mod.description"></p>
             </b-col>
         </b-row>
