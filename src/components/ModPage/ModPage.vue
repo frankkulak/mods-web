@@ -1,6 +1,6 @@
 <template>
     <div id="mod-page">
-        <div id="home-button">
+        <div id="home-button" class="text-center px-3 py-2">
             <router-link to="/">&larr; more mods</router-link>
         </div>
 
@@ -130,7 +130,25 @@
 <style lang="scss">
     #mod-page {
         #home-button {
-            // intentionally blank
+            background-color: $dark-blue;
+            color: var(--link-color);
+            border: 1px solid white;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px var(--shadow-color);
+            transition: all ease 200ms;
+            z-index: 1020;
+            position: fixed;
+            left: 12px;
+            top: 12px;
+
+            a, a:focus, a:hover {
+                text-decoration: none;
+            }
+
+            &:hover {
+                top: 8px;
+                box-shadow: 0 5px 15px var(--shadow-color);
+            }
         }
 
         #mod-header {

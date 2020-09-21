@@ -29,10 +29,6 @@ h1 {
   text-shadow: 2px 2px 8px var(--shadow-color);
   font-size: 1.6 * $font-size;
   font-weight: bold;
-
-  .dark-vars & {
-    text-shadow: none;
-  }
 }
 
 h2 {
