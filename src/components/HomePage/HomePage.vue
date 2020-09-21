@@ -26,17 +26,19 @@
             </b-container>
         </section>
 
-        <mod-category header="available mods"
-                      description="These mods are well-tested and ready to be downloaded."
-                      :mods="activeMods"/>
+        <section id="mods" class="px-4">
+            <mod-category header="available mods"
+                          description="These mods are ready to be downloaded."
+                          :mods="activeMods"/>
 
-        <mod-category header="work-in-progress mods"
-                      description="These mods are currently in development."
-                      :mods="wipMods"/>
+            <mod-category header="work-in-progress mods"
+                          description="These mods are currently in development."
+                          :mods="wipMods"/>
 
-        <mod-category header="retired mods"
-                      description="These mods are likely broken and will not be updated."
-                      :mods="retiredMods"/>
+            <mod-category header="retired mods"
+                          description="These mods are no longer being maintained."
+                          :mods="retiredMods"/>
+        </section>
     </div>
 </template>
 

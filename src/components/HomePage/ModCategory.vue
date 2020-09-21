@@ -1,7 +1,7 @@
 <template>
     <section class="mod-category">
         <b-container fluid>
-            <div class="py-5 px-4">
+            <div class="py-5">
                 <h1>{{ header }}</h1>
                 <p class="mx-0 mx-md-5">{{ description }}</p>
             </div>

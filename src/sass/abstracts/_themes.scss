@@ -4,7 +4,7 @@ html {
   --h-color: #{$blue};
   --text-color: #{$dark-gray};
   --link-color: #{$blue};
-  --shadow-color: #{transparentize($dark-gray, 0.8)};
+  --shadow-color: #{transparentize($dark-gray, 0.82)};
   --danger-color: #{$red};
 
   .dark-vars {
