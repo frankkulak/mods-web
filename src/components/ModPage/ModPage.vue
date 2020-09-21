@@ -117,7 +117,7 @@
 
 <script>
     import {GameData, ModData} from '../../modules/Data.js'
-    import {Constants} from '../../modules/Data.js'
+    import {DataEnums} from '../../modules/Data.js'
 
     export default {
         name: "ModPage",
@@ -131,19 +131,19 @@
         },
         computed: {
             isActive: function () {
-                return this.mod.developmentStage === Constants.developmentStage.active;
+                return this.mod.developmentStage === DataEnums.developmentStage.active;
             },
             isRetired: function () {
-                return this.mod.developmentStage === Constants.developmentStage.retired;
+                return this.mod.developmentStage === DataEnums.developmentStage.retired;
             },
             isWip: function () {
-                return this.mod.developmentStage === Constants.developmentStage.wip;
+                return this.mod.developmentStage === DataEnums.developmentStage.wip;
             },
             statusClass: function () {
-                switch (this.mod.status) {
-                    case Constants.status.updated:
+                switch (this.mod.testingStatus) {
+                    case DataEnums.testingStatus.updated:
                         return 'success';
-                    case Constants.status.untested:
+                    case DataEnums.testingStatus.untested:
                         return 'warning';
                     default:
                         return 'danger'
@@ -151,10 +151,10 @@
             },
             statusText: function () {
                 const lastUpdate = GameData[this.mod.game].lastUpdate;
-                switch (this.mod.status) {
-                    case Constants.status.updated:
+                switch (this.mod.testingStatus) {
+                    case DataEnums.testingStatus.updated:
                         return `&check; working with latest patch <span class="text-nowrap">(${lastUpdate})</span>`;
-                    case Constants.status.untested:
+                    case DataEnums.testingStatus.untested:
                         return `&#9888; not yet tested with latest patch <span class="text-nowrap">(${lastUpdate})</span>`;
                     default:
                         return `&#10761; issues found with latest patch <span class="text-nowrap">(${lastUpdate})</span>`;
