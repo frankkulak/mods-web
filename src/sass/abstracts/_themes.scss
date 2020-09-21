@@ -1,18 +1,14 @@
 html {
-  --bg-color: #{$off-white};
-  --text-color: #{$dark-gray};
-  --link-color: #{$teal};
-  --link-hover-color: #{$teal};
+  --bg-color: #{white};
+  --card-bg-color: #{$off-white};
   --h-color: #{$blue};
-  --button-color: #{$blue};
-  --button-text-color: #{$off-white};
-  --bg-band-overlay: #{transparentize(black, 0.97)};
-  --text-highlight-color: #{transparentize($blue, 0.85)};
-  --shadow-color: #{transparentize($dark-gray, 0.85)};
-  --success-color: #{$green};
-  --warning-color: #{$orange};
+  --text-color: #{$dark-gray};
+  --link-color: #{$blue};
+  --shadow-color: #{transparentize($dark-gray, 0.8)};
   --danger-color: #{$red};
-  --light-color: #{$off-white};
-  --dark-color: #{$dark-gray};
-  --banner-bg-color: #{$dark-blue};
+
+  .dark-vars {
+    --bg-color: #{$dark-blue};
+    --text-color: #{white};
+  }
 }

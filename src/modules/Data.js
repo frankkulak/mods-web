@@ -199,34 +199,40 @@ export const ModData = {
                 {
                     title: 'confirmed features',
                     bullets: [
-                        `New language skills and traits associated with Selvadorada, Windenburg, Sulani, and Sixam.`,
-                        `Native languages will be automatically assigned to Sims (children through elders) based on their home world, traits, and occult type.`,
-                        `Toddlers' native language(s) will be determined when they age up into children. Any language skill at or above level 5 by the time they age up will become a native language. If they do not have any languages at this level, their highest language skill will be used instead. If they have no language skills, they will default to Simlish.`,
-                        `Sims must have at least one native language, but you can add more if you'd like. You can edit any played sim's native language(s) by using the 'Languages...' interaction on a Sim.`,
-                        `Learn other languages by practicing on Simlingo, reading textbooks, or speaking with other sims. Speaking with sims that speak another language will give you knowledge of their language, or you can explicitly ask them for help to gain the skill even faster.`,
-                        `Speaking to sims with whom you do not share a native language can be frustrating - there's a chance of miscommunication, which may make your sim angry, embarrassed, or tense. The chance of miscommunicating in any particular language starts at 99% and decreases by 11% every time your sim increases their skill, making it 0% when they are level 10.`,
-                        `An option to disable Language Barriers on a sim-by-sim basis, which will make them immune to miscommunication. Language Barriers is enabled for all sims by default, but can be toggled in the 'Languages...' pie menu option.`
+                        `Five languages for your sims to learn and speak: Selvadoradian, Windenburgish, Toki Sulani, Sixami, and Simlish.`,
+                        `Native languages are assigned to Sims based on their home world, traits, and occult type (but you can change them if you want to).`,
+                        `Toddlers will pick up any languages that are spoken to them. Their highest language skills will become their native language(s) when they age up into a child.`,
+                        `Learn other languages by using Simlingo, reading textbooks, or interacting with other sims that you do not share a language with.`,
+                        `There's a chance to miscommunicate with sims who you do not share a language with, which may result in an embarrassed, angry, or tense moodlet.`,
+                        `You can disable Language Barriers for any sim you'd like, which makes them immune to miscommunication.`
                     ]
                 },
                 {
                     title: 'potential features',
                     bullets: [
-                        `An optional add-on to use a language in a Base Game world so that players without the associated packs have a world that speaks another language (for example, the option to set Oasis Springs to speak Selvadoradian if you do not have Jungle Adventure).`,
-                        `Majoring in a language at University or taking skill classes for languages to gain language skills.`,
-                        `An optional add-on to restrict where sims will naturally spawn depending on their language skills (for example, Simlish speakers can spawn anywhere, but Selvadoradian speakers will mainly spawn in Selvadorada, but have a chance of also spawning in more diverse worlds like San Myshuno and Del Sol Valley).`
+                        `An add-on to use Selvadoradian in Oasis Springs for Base Game players.`,
+                        `An add-on to alter where sims spawn depending on their language skills/traits.`
+                    ]
+                },
+                {
+                    title: 'future plans (not in initial release)'  ,
+                    bullets: [
+                        `Majoring in a language at University and taking skill classes for languages.`,
+                        `A translator career which would benefit from the associated University degree.`,
                     ]
                 },
                 {
                     title: 'notes',
                     bullets: [
-                        `As this is a work-in-progress, more details are to come and they are all subject to change.`,
-                        `I estimate that this mod will be ready for beta testing by October 2020. Feel free to <a href="https://discord.gg/qNhD3Jh" target="_blank">join my Discord server</a> if you would like to receive periodic updates on its status.`
+                        `As this is still a work-in-progress, all details are subject to change.`,
+                        `This mod should be ready by October. Feel free to <a href="https://discord.gg/qNhD3Jh" target="_blank">join my Discord server</a> if you would like periodic updates on its status.`
                     ]
                 },
                 {
                     title: 'compatability',
                     bullets: [
-                        `The majority of this mod will work with the Base Game (i.e. you will still be able to study and speak Selvadoradian even if you do not have Jungle Adventure, but you of course will not have access to Selvadorada, which is where you would find all of the native Selvadoradian speakers).`
+                        `The vast majority of this mod is compatible with the Base Game. You can study and speak any languages with the Base Game, but you will need the associated packs to access worlds that naturally spawn speakers of languages other than Simlish.`,
+                        `This mod does not override any files, so it <em>should</em> be safe to use with most other mods. However, if there are any other mods that alter the way that sims communicate, it may conflict with those.`,
                     ]
                 }
             ],
@@ -346,7 +352,8 @@ export const ModData = {
                 {
                     title: 'compatability',
                     bullets: [
-                        `This mod requires the 'Eco Lifestyle' expansion pack.`
+                        `This mod requires the 'Eco Lifestyle' expansion pack.`,
+                        `This mod does not override any files, so it should be safe to use with any other mods.`
                     ]
                 },
                 {

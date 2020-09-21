@@ -202,7 +202,7 @@
 <style lang="scss">
     #mod-page {
         h1, h2, p {
-            margin-bottom: $padding-sm;
+            margin-bottom: 10px;
 
             &:last-child {
                 margin-bottom: 0;
@@ -211,8 +211,8 @@
 
         .row {
             padding: {
-                top: $padding-lg;
-                bottom: $padding-lg;
+                top: 40px;
+                bottom: 40px;
             }
 
             &.alert-row {
@@ -231,24 +231,24 @@
                 padding-top: 0;
 
                 ul.nav {
-                    padding-bottom: $padding-lg;
+                    padding-bottom: 40px;
 
                     li {
                         border-color: var(--banner-bg-color);
                         border-style: solid;
                         border-width: 1px;
-                        border-radius: $padding-xs;
+                        border-radius: 5px;
 
                         &:first-child {
-                            border-radius: $padding-xs 0 0 $padding-xs;
+                            border-radius: 5px 0 0 5px;
                         }
 
                         &:last-child {
-                            border-radius: 0 $padding-xs $padding-xs 0;
+                            border-radius: 0 5px 5px 0;
                         }
 
                         &:only-child {
-                            border-radius: $padding-xs;
+                            border-radius: 5px;
                         }
 
                         & > a {
@@ -269,7 +269,7 @@
                     padding-top: 0;
 
                     & > div {
-                        padding-bottom: $padding-lg;
+                        padding-bottom: 40px;
 
                         &:last-child {
                             padding-bottom: 0;
@@ -284,7 +284,7 @@
             font-size: 85%;
 
             margin: {
-                top: $padding-md;
+                top: 20px;
             }
         }
 
@@ -294,7 +294,7 @@
         }
 
         h4 {
-            margin-bottom: $padding-sm;
+            margin-bottom: 10px;
         }
 
         ul {
@@ -306,8 +306,8 @@
             text-align: center;
 
             padding: {
-                top: $padding-sm;
-                bottom: $padding-sm;
+                top: 10px;
+                bottom: 10px;
             };
 
             button {
@@ -338,16 +338,16 @@
             color: var(--light-color);
 
             .alert {
-                margin-bottom: $padding-lg;
+                margin-bottom: 40px;
                 text-align: center;
             }
 
             h1 {
-                margin-bottom: $padding-lg;
+                margin-bottom: 40px;
             }
 
             .install, .terms {
-                margin-bottom: $padding-lg;
+                margin-bottom: 40px;
             }
         }
     }

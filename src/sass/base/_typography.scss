@@ -1,46 +1,48 @@
+$font-size: 16px;
+
 body {
   font-family: 'Muli', sans-serif;
   font-weight: 300;
-  font-size: 18px;
+  font-size: $font-size;
+  color: var(--text-color);
+}
+
+section, div {
   color: var(--text-color);
 }
 
 a, a:focus {
   color: var(--link-color);
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 a:hover {
-  color: var(--link-hover-color);
-  text-decoration: underline;
+  color: var(--link-color);
+  text-decoration: none;
 }
 
 h1, h2, h3, h4, h5, h6 {
   color: var(--h-color);
+  font-weight: bold;
 }
 
 h1 {
-  font-size: 28px;
-  font-weight: bold;
   text-shadow: 2px 2px 8px var(--shadow-color);
+  font-size: 1.6 * $font-size;
+
+  .dark-vars & {
+    text-shadow: none;
+  }
 }
 
 h2 {
-  font-size: 26px;
+  font-size: 1.4 * $font-size;
 }
 
 h3 {
-  font-size: 24px;
+  font-size: 1.2 * $font-size;
 }
 
 h4 {
-  font-size: 22px;
-}
-
-h5 {
-  font-size: 20px;
-}
-
-h6 {
-  font-size: 18px;
+  font-size: $font-size;
 }

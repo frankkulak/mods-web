@@ -1,14 +1,15 @@
 <template>
-    <div class="mod-preview h-100">
-        <router-link :to="route">
-            <img :src="thumbnail" :alt="thumbnailAlt" class="thumbnail"
-                 v-if="mod.images !== null"/>
-            <div class="content">
+    <router-link :to="route" class="mod-preview-link">
+        <b-row align-h="center" class="mod-preview text-left">
+            <b-col cols="1">
+                <img :src="thumbnail" :alt="thumbnailAlt" class="thumbnail" v-if="mod.images !== null"/>
+            </b-col>
+            <b-col cols="11">
                 <h6>{{ mod.name }}</h6>
                 <p v-html="mod.description"></p>
-            </div>
-        </router-link>
-    </div>
+            </b-col>
+        </b-row>
+    </router-link>
 </template>
 
 <script>
@@ -39,17 +40,21 @@
 </script>
 
 <style lang="scss">
+    .mod-preview-link {
+        text-decoration: none;
+    }
+
     .mod-preview {
-        background-color: var(--bg-band-overlay);
-        border-radius: $padding-sm;
-        box-shadow: 0 $padding-xs 10px var(--shadow-color);
+        background-color: var(--card-bg-color);
+        border-radius: 10px;
+        box-shadow: 0 5px 10px var(--shadow-color);
         position: relative;
         transition: all ease 300ms;
         top: 0;
 
         &:hover {
             top: -5px;
-            box-shadow: 0 $padding-xs 15px var(--shadow-color);
+            box-shadow: 0 5px 15px var(--shadow-color);
         }
 
         & > a, & > a:focus, & > a:hover {
@@ -60,14 +65,14 @@
         img.thumbnail {
             width: 100%;
             height: auto;
-            border-radius: $padding-sm $padding-sm 0 0;
+            border-radius: 10px 10px 0 0;
         }
 
         .content {
-            padding: $padding-md;
+            padding: 20px;
 
             h6 {
-                margin-bottom: $padding-sm;
+                margin-bottom: 10px;
                 font-weight: bold;
             }
         }

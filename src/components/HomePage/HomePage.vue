@@ -1,51 +1,48 @@
 <template>
-    <b-container id="home-page" fluid>
-        <b-row id="welcome" align-h="center">
-            <b-col cols="12" md="10" lg="6" class="my-auto">
-                <b-row class="m-0 pb-3">
-                    <img src="../../assets/ts4/profilepic.png" alt="Simself" class="mr-3"/>
-                    <h1 class="my-auto">Frank's TS4 Mods</h1>
+    <div id="home-page" class="pb-5">
+        <section id="welcome" class="dark-vars">
+            <b-container fluid>
+                <b-row align-h="center" align-v="center" class="py-5">
+                    <b-col cols="12" sm="3" md="2" class="text-center">
+                        <img src="../../assets/ts4/profilepic.png" alt="Simself" class="my-auto"/>
+                    </b-col>
+                    <b-col cols="12" sm="9" md="8" class="py-4 py-sm-0 text-center text-sm-left">
+                        <h1>Frank's TS4 Mods</h1>
+                        <p>I'm Frank, and I make mods for The Sims 4 - you can browse and download them from below.
+                            Please send bug reports, questions, and suggestions to my Discord server.</p>
+                    </b-col>
+                    <b-col cols="12" md="2" class="text-center mt-0 mt-sm-4 mt-md-0">
+                        <b-button href="https://discord.gg/qNhD3Jh" target="_blank" variant="outline-primary"
+                                  size="sm" class="discord m-1">Discord
+                        </b-button>
+                        <b-button href="https://twitter.com/frankkulakmods" target="_blank" variant="outline-primary"
+                                  size="sm" class="twitter m-1">Twitter
+                        </b-button>
+                        <b-button href="https://www.patreon.com/frankkulakmods" target="_blank"
+                                  variant="outline-primary" size="sm" class="patreon m-1">Patreon
+                        </b-button>
+                    </b-col>
                 </b-row>
-                <p>I'm Frank, and I make mods for The Sims 4 - you can browse and download them from below. Please
-                    send bug reports, questions, and suggestions to my discord server. You can also contact me by
-                    email at <a href="mailto:mods@frankkulak.com">mods@frankkulak.com</a>.</p>
-            </b-col>
-            <b-col cols="12" md="10" lg="2" class="my-auto socials text-center">
-                <b-button href="https://discord.gg/qNhD3Jh" target="_blank" variant="outline-primary"
-                          size="sm" class="discord">Discord
-                </b-button>
-                <b-button href="https://twitter.com/frankkulakmods" target="_blank" variant="outline-primary"
-                          size="sm" class="twitter">Twitter
-                </b-button>
-                <!--
-                <b-button href="https://www.patreon.com/frankkulakmods" target="_blank" variant="outline-primary"
-                          size="sm" class="patreon">Patreon
-                </b-button>
-                -->
-            </b-col>
-        </b-row>
+            </b-container>
+        </section>
 
-        <mod-category-header header="available mods"
-                             description="These mods are well-tested and ready to be downloaded. They are updated often,
-                             so be sure to check back periodically - especially after patches!"/>
-        <mod-category-content :mods="activeMods"/>
+        <mod-category header="available mods"
+                      description="These mods are well-tested and ready to be downloaded."
+                      :mods="activeMods"/>
 
-        <mod-category-header header="work-in-progress mods"
-                             description="These mods are currently in development, and are not yet available for
-                             download. Check back later if you are interested in them!"/>
-        <mod-category-content :mods="wipMods"/>
+        <mod-category header="work-in-progress mods"
+                      description="These mods are currently in development."
+                      :mods="wipMods"/>
 
-        <mod-category-header header="retired mods"
-                             description="These mods are no longer receiving updates, so they may not work with the
-                             latest version of the game. They are only included as an example of my previous work."/>
-        <mod-category-content :mods="retiredMods"/>
-    </b-container>
+        <mod-category header="retired mods"
+                      description="These mods are likely broken and will not be updated."
+                      :mods="retiredMods"/>
+    </div>
 </template>
 
 <script>
     import {Constants, ModData} from '../../modules/Data.js'
-    import ModCategoryContent from "./ModCategoryContent";
-    import ModCategoryHeader from "./ModCategoryHeader";
+    import ModCategory from "./ModCategory";
 
     const mods = Object.values(ModData.ts4).sort((mod1, mod2) => {
         const modName1 = mod1.name.toUpperCase();
@@ -61,12 +58,14 @@
 
     export default {
         name: "HomePage",
-        components: {ModCategoryHeader, ModCategoryContent},
+        components: {ModCategory},
         data: function () {
+            const {active, wip, retired} = Constants.developmentStage;
+            const isInDevStage = stage => (mod => mod.developmentStage === stage);
             return {
-                activeMods: mods.filter(mod => mod.developmentStage === Constants.developmentStage.active),
-                retiredMods: mods.filter(mod => mod.developmentStage === Constants.developmentStage.retired),
-                wipMods: mods.filter(mod => mod.developmentStage === Constants.developmentStage.wip)
+                activeMods: mods.filter(isInDevStage(active)),
+                wipMods: mods.filter(isInDevStage(wip)),
+                retiredMods: mods.filter(isInDevStage(retired)),
             }
         }
     }
@@ -74,84 +73,39 @@
 
 <style lang="scss">
     #home-page {
-        h1, h2, p {
-            margin-bottom: $padding-md;
-
-            &:last-child {
-                margin-bottom: 0;
-            }
-        }
-
         #welcome {
-            background-color: var(--banner-bg-color);
-            padding: {
-                top: $padding-lg;
-                bottom: $padding-lg;
-            }
-
             img {
-                width: auto;
-                height: 45px;
-                border-radius: 15%;
+                width: 100%;
+                max-width: 100px;
+                height: auto;
+                border-radius: 50%;
             }
 
-            p {
-                color: var(--light-color);
-            }
+            a.btn-outline-primary {
+                width: 100%;
+                max-width: 128px;
+                text-decoration: none;
 
-            @media (max-width: 992px) {
-                .socials {
-                    padding-top: $padding-lg - $padding-xs;
+                &.discord {
+                    --brand-color: rgb(118, 139, 212);
+                }
+
+                &.twitter {
+                    --brand-color: rgb(75, 161, 236);
+                }
+
+                &.patreon {
+                    --brand-color: rgb(255, 66, 77);
+                }
+
+                border-color: var(--brand-color);
+                color: var(--brand-color);
+
+                &:hover {
+                    background-color: var(--brand-color);
+                    color: white;
                 }
             }
-
-            .btn.btn-outline-primary {
-                max-width: 150px;
-                width: 80%;
-                background-color: transparent;
-                background-image: none;
-                margin: $padding-xs;
-
-                &.discord, &.discord:focus {
-                    color: $discord-purple;
-                    border-color: $discord-purple;
-
-                    &:hover {
-                        color: $off-white;
-                        border-color: $discord-purple;
-                        background-color: $discord-purple;
-                    }
-                }
-
-                &.twitter, &.twitter:focus {
-                    color: $twitter-blue;
-                    border-color: $twitter-blue;
-
-                    &:hover {
-                        color: $off-white;
-                        border-color: $twitter-blue;
-                        background-color: $twitter-blue;
-                    }
-                }
-
-                &.patreon, &.patreon:focus {
-                    color: $patreon-coral;
-                    border-color: $patreon-coral;
-
-                    &:hover {
-                        color: $off-white;
-                        border-color: $patreon-coral;
-                        background-color: $patreon-coral;
-                    }
-                }
-            }
-        }
-
-        #display-checkbox {
-            z-index: 1020;
-            position: fixed;
-            right: 20px;
-            bottom: 20px;
         }
     }
 </style>

@@ -5,41 +5,16 @@ body {
   padding: 0;
 }
 
-p, h1, h2, h3, h4, h5, h6 {
-  padding: 0;
-  margin: 0;
+section, div {
+  background-color: var(--bg-color);
 }
 
-hr {
-  background-color: var(--hr-color);
-  height: 1px;
-  border-radius: 1px;
-  border: 0;
-}
-
-a.btn, a.btn-outline-primary, a.btn-outline-primary:focus {
-  color: var(--button-color);
-  border-color: var(--button-color);
-  text-decoration: none;
-}
-
-a.btn-outline-primary:hover {
-  @extend %default-gradient;
-  color: var(--button-text-color);
-  border-color: var(--light-color);
-  text-decoration: none;
-}
-
-span.important {
-  font-weight: bold;
-  color: var(--danger-color);
-}
-
-span.highlight {
-  background-color: var(--text-highlight-color);
-  border-radius: $padding-xs;
-  padding: {
-    left: $padding-xs;
-    right: $padding-xs
+h1, h2, h3, h4, h5, h6, p {
+  &:last-child {
+    margin-bottom: 0;
   }
+}
+
+.container-fluid {
+  max-width: 992px;
 }

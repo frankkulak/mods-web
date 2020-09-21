@@ -25,7 +25,7 @@
         vertical-align: middle;
 
         h1 {
-            margin-bottom: $padding-md;
+            margin-bottom: 20px;
         }
     }
 </style>
