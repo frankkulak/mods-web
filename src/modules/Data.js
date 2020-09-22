@@ -232,13 +232,6 @@ export const ModData = {
                     ]
                 },
                 {
-                    title: 'notes',
-                    bullets: [
-                        `As this is still a work-in-progress, more details are to come and all are subject to change.`,
-                        `This mod should be ready by October. Feel free to <a href="https://discord.gg/qNhD3Jh" target="_blank">join my Discord server</a> if you would like periodic updates on its status.`
-                    ]
-                },
-                {
                     title: 'compatability',
                     bullets: [
                         `The vast majority of this mod is compatible with the Base Game. You can study and speak any languages with the Base Game, but you will need the associated packs to access worlds that naturally spawn speakers of languages other than Simlish.`,
@@ -330,13 +323,6 @@ export const ModData = {
                     ]
                 },
                 {
-                    title: 'notes',
-                    bullets: [
-                        `As this is a work-in-progress, more details are to come and they are all subject to change.`,
-                        `I have not yet started this mod, as I am focusing on <a href="#/ts4/languagebarriers">Language Barriers</a> first. Once that is released, Simway will be my primary focus!`
-                    ]
-                },
-                {
                     title: 'compatability',
                     bullets: [
                         `It is too early to tell if any packs will be required.`,
@@ -416,12 +402,6 @@ export const ModData = {
                         `Questa mod è disponibile nell'inglese, l'italiano, ed il francese (tradotto da Rebecca). L'inglese è usato per tutte le altre lingue.`
                     ]
                 },
-                {
-                    title: 'known issues',
-                    bullets: [
-                        `When you buy bits and pieces, the text for the §100 charge will overlap the text for the 10 bit/piece credit. I am not sure if this is something I can fix, as it is just an issue with the UI, but I will look into it and try to figure something out.`,
-                    ]
-                }
             ],
             details: [
                 {
@@ -435,6 +415,12 @@ export const ModData = {
                     title: 'filling up the generator',
                     bullets: [
                         `Click on a power generator and select the option to fill it up for §250.`
+                    ]
+                },
+                {
+                    title: 'known issues',
+                    bullets: [
+                        `When you buy bits and pieces, the text for the §100 charge will overlap the text for the 10 bit/piece credit. I am not sure if this is something I can fix, as it is just an issue with the UI, but I will look into it and try to figure something out.`,
                     ]
                 },
             ],
