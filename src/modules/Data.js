@@ -218,23 +218,22 @@ export const ModData = {
                     bullets: [
                         `Five regional languages: Selvadoradian, Windenburgish, Toki Sulani, Sixami, and Simlish.`,
                         `Native languages will automatically be assigned to sims (children and older) depending on their home world, traits, and occult type.`,
-                        `Toddlers will acquire their native language(s) once they age up into children, which depends on the language(s) that they were spoken to in.`,
-                        `Your sim can learn another language by using Simlingo, reading a textbook, or interacting with another sim who speaks it.`,
-                        `Your sim may experience miscommunication when speaking with sims who they do not share a language with, which results in an Embarrassed, Angry, or Tense moodlet.`,
+                        `Toddlers will acquire their native language(s) once they age up into children. The language(s) they acquire depends on the language(s) they have been exposed to.`,
+                        `Sims can learn another language by using Simlingo, reading a textbook, or interacting with another sim who speaks it.`,
+                        `Sims may experience miscommunication when speaking with others who they do not share a language with. This results in an Embarrassed, Angry, or Tense moodlet.`,
                         `You can disable Language Barriers for any sim, which makes them immune to miscommunication.`,
                     ]
                 },
                 {
                     title: 'potential features',
                     bullets: [
-                        `An add-on to use Selvadoradian in Oasis Springs for Base Game players.`,
-                        `An add-on to alter where sims spawn depending on their language skills/traits.`,
+                        `An optional add-on to use Selvadoradian in Oasis Springs for Base Game players.`,
                     ]
                 },
                 {
                     title: 'compatability',
                     bullets: [
-                        `The vast majority of this mod is compatible with the Base Game. You can study and speak any languages with the Base Game, but you will need the associated packs to access worlds that naturally spawn speakers of languages other than Simlish.`,
+                        `This mod is completely compatible with the Base Game. This means that you can study and speak any of the languages, even if you do not have their associated packs. The only issue you will experience is that you do not have a world that is filled with speakers of another language by default, but you can manually set anyone's language(s) to whatever you wish.`,
                         `This mod does not override any files, so it <em>should</em> be safe to use with most other mods. However, if there are any other mods that alter the way that sims communicate, it may conflict with those.`,
                     ]
                 },
@@ -244,30 +243,20 @@ export const ModData = {
                     title: 'languages',
                     bullets: [
                         `There are five languages for your sims to learn and speak: Selvadoradian, Windenburgish, Toki Sulani, Sixami, and Simlish.`,
-                        `Selvadoradian is for all human sims from Selvadorada.`,
-                        `Windenburgish is for all human sims from Windenburg.`,
-                        `Toki Sulani is for all human sims from Sulani, all mermaids (regardless of where they live), and anyone with islander traits (except for aliens and humans from Selvadorada and Windenburg).`,
-                        `Sixami is for all aliens (regardless of where they live and what traits they have).`,
-                        `Simlish is the default language that everyone else speaks.`,
+                        `Selvadoradian is for everyone from Selvadorada (except for aliens and mermaids).`,
+                        `Windenburgish is for everyone from Windenburg (except for aliens and mermaids).`,
+                        `Toki Sulani is for everyone from Sulani (except for aliens), all mermaids (regardless of where they live), and anyone with an islander trait (except for aliens and sims from Selvadorada or Windenburg).`,
+                        `Sixami is for all aliens (regardless of where they live).`,
+                        `Simlish is the default language for everyone else.`,
                     ]
                 },
                 {
-                    title: 'native speaker traits',
+                    title: 'native language traits',
                     bullets: [
-                        `Each language has an associated native speaker trait. These traits are hidden - you will not see them in CAS or in your sim's info panel.`,
-                        `Sims must have at least one native language at all times. Sims will only be assigned one native language by default, but you can add as many as you want.`,
-                        `Native languages are assigned to all sims (children and older) as they spawn in to the world. Their default language is dictated by the rules mentioned in the 'languages' section above.`,
-                        `If you want to change a sim's native language(s), you can do so by clicking on them and selecting the 'Languages > Native Languages' pie menu option.`,
-                    ]
-                },
-                {
-                    title: 'toddler language acquisition',
-                    bullets: [
-                        `Babies and toddlers do not have native languages. A sim will acquire their native language(s) when they become a child.`,
-                        `Unlike children-elder sims who are assigned a native language automatically, toddlers may acquire more than one native language naturally depending on who speaks to them, and how much.`,
-                        `Toddlers will learn the language skills associated with the native languages of whomever speaks to them. For instance, if both of their parents are native Simlish speakers, they will learn Simlish. However, if one parent is a native Simlish speaker while the other is a native Windenburgish speaker, they will most likely learn both. If they happen to have an alien nanny, the toddler will probably pick up some Sixami, too.`,
-                        `When a toddler ages into a child, any language skills at or above level 5 will be acquired as a native language. If the toddler does not have any language skills at or above level 5, then just their highest skill will be used instead. If they have no language skills at all, then they will default to Simlish.`,
-                        `Just like any other sims, you can change a child's acquired native language(s) by using the 'Languages > Native Languages' pie menu option`
+                        `Each language has an associated native language trait. These traits are hidden, which means you will not see them in CAS or in your sim's info panel.`,
+                        `Sims must have at least one native language trait at all times. Sims will only be assigned one native language by default, but you can add as many as you want.`,
+                        `Native language traits are assigned to all sims (children and older) when they spawn in to the world. Their default native language is dictated by the rules mentioned in the 'languages' section above.`,
+                        `If you want to change a sim's native language(s), you can do so by clicking on them and selecting the 'Languages > Native Languages' pie menu option. You can add as many as you'd like.`,
                     ]
                 },
                 {
@@ -279,12 +268,22 @@ export const ModData = {
                     ]
                 },
                 {
+                    title: 'toddler language acquisition',
+                    bullets: [
+                        `Babies and toddlers do not have native languages. A sim will acquire their native language(s) when they become a child.`,
+                        `Toddlers will learn the language skills associated with the native languages of whomever speaks to them. For instance, if both of their parents are native Simlish speakers, they will learn Simlish. However, if one parent is a native Simlish speaker while the other is a native Windenburgish speaker, they will most likely learn both. If they happen to have an alien nanny, the toddler will probably pick up some Sixami, too.`,
+                        `When a toddler ages into a child, any language skills at or above level 5 will be acquired as a native language. If the toddler does not have any language skills at or above level 5, then just their highest skill will be used instead. If they have no language skills at all, then they will default to Simlish.`,
+                        `Just like any other sims, you can change a child's acquired native language(s) by using the 'Languages > Native Languages' pie menu option.`
+                    ]
+                },
+                {
                     title: 'miscommunication',
                     bullets: [
                         `There is a chance to miscommunicate with sims if you do not have a language in common. This chance is equal to the inverse of your highest shared language skill, times 11. For the purposes of this calculation, a native speaker trait is equal to a skill level of 10. For instance, if you are a native Simlish speaker and do not know any Selvadoradian, and you are speaking to a Selvadoradian speaker who does not know any Simlish, your highest shared skill is 1, which equates to a 99% chance to miscommunicate. If one of you becomes level 2 in the other's language, your chance will decrease to 88%, then 77% for level 3, and so on.`,
-                        `Your chance of miscommunication will be 0% in any of the following scenarios: both sims share a native language, one sim is level 10 in the other's native language, both sims are level 10 in the same language, or if at least one of the sims is not yet a child or has Language Barriers disabled.`,
-                        `When miscommunication occurs, the actor of the interaction will gain a negative moodlet (+2 Embarrassed, Angry, or Tense). Each time you miscommunicate after that, there is a 33% chance that the moodlet will intensify to +4. After that, there is a 25% chance it will intensify to +8 (only for Embarrassed and Angry; Tense caps at +4). Note that +8 Embarrassed and Angry each have a chance of killing your sim (that wasn't me - that's in the base game), so you should really try to avoid this scenario.`,
-                        `You can disable Language Barriers for any sim by clicking on them and selecting the 'Languages' pie menu option. Disabling Language Barriers for a sim will make their chance of miscommunication always be 0%.`
+                        `The chance of miscommunication will be 0% in any of the following scenarios: both sims share a native language, one sim is level 10 in the other's native language, both sims are level 10 in the same language, or if at least one of the sims is not yet a child or has Language Barriers disabled.`,
+                        `When miscommunication occurs, the actor of the interaction will gain a negative moodlet (+2 Embarrassed, Angry, or Tense). Each time you miscommunicate after that, there is a 33% chance that the moodlet will intensify to +4. After that, there is a 25% chance it will intensify to +8 (only for Embarrassed and Angry; Tense caps at +4). Note that +8 Embarrassed and Angry each have a chance of killing your sim (that wasn't me - that's in the base game).`,
+                        `NPCs and children will never get a +8 moodlet from miscommunication; they cap at +4. This is to prevent these sims from dying due to extreme emotions. So, the only sims who are at risk of dying from miscommunication are the teenagers and older sims in your active household.`,
+                        `You can disable Language Barriers for any sim by clicking on them and selecting the 'Languages' pie menu option. Disabling Language Barriers for a sim will make their chance of miscommunication always be 0%.`,
                     ]
                 },
             ],
