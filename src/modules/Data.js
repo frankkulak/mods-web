@@ -243,11 +243,11 @@ export const ModData = {
                     title: 'languages',
                     bullets: [
                         `There are five languages for your sims to learn and speak: Selvadoradian, Windenburgish, Toki Sulani, Sixami, and Simlish.`,
-                        `Selvadoradian is for everyone from Selvadorada (except for aliens and mermaids).`,
-                        `Windenburgish is for everyone from Windenburg (except for aliens and mermaids).`,
-                        `Toki Sulani is for everyone from Sulani (except for aliens), all mermaids (regardless of where they live), and anyone with an islander trait (except for aliens and sims from Selvadorada or Windenburg).`,
-                        `Sixami is for all aliens (regardless of where they live).`,
-                        `Simlish is the default language for everyone else.`,
+                        `Selvadoradian: Everyone from Selvadorada (except for aliens and mermaids).`,
+                        `Windenburgish: Everyone from Windenburg (except for aliens and mermaids).`,
+                        `Toki Sulani: Everyone from Sulani (except for aliens), all mermaids (regardless of where they live), and anyone with an islander trait (except for aliens and sims from Selvadorada or Windenburg).`,
+                        `Sixami: All aliens (regardless of where they live).`,
+                        `Simlish: Default language for everyone else.`,
                     ]
                 },
                 {
@@ -286,6 +286,18 @@ export const ModData = {
                         `You can disable Language Barriers for any sim by clicking on them and selecting the 'Languages' pie menu option. Disabling Language Barriers for a sim will make their chance of miscommunication always be 0%.`,
                     ]
                 },
+                {
+                    title: 'interactions',
+                    bullets: [
+                        `There are a number of new interactions associated with languages: Ask for Help, Try Speaking, Recite Joke, Make Suggestive Comment, Mock Accent, and Give Fake Translation. Each interaction is available for each language.`,
+                        `Ask for Help (friendly): Available for non-natives (with skill level 1-9) speaking to natives. This will award some skill gain in that language.`,
+                        `Try Speaking (friendly): Available for non-natives (with skill level 2-9) speaking to natives. If this succeeds, a positive moodlet will replace any miscommunication moodlets. If it fails, miscommunication moodlets will intensify.`,
+                        `Recite Joke (funny): Available for non-natives (with skill level 3+) speaking to natives. If this succeeds, a positive moodlet will replace any miscommunication moodlets. If it fails, miscommunication moodlets will intensify.`,
+                        `Make Suggestive Comment (romance): Available for non-natives (with skill level 3+) speaking to natives. If this succeeds, a positive moodlet will replace any miscommunication moodlets and you will gain some romantic relationship with the other sim. If it fails, miscommunication moodlets will intensify and it will damage your relationship with the other sim.`,
+                        `Mock Accent (mean): Available for natives speaking to non-natives. This will damage your relationship with the other sim.`,
+                        `Give Fake Translation (mischief): Available for natives speaking to non-natives. If the listener is highly skilled in your language, there is a chance that this will interaction will fail which will damage your relationship with the other sim.`,
+                    ]
+                }
             ],
             versionHistory: [],
             primaryDownload: null,
