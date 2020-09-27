@@ -294,8 +294,8 @@ export const ModData = {
                         `Try Speaking (friendly): Available for non-natives (with skill level 2-9) speaking to natives. If this succeeds, a positive moodlet will replace any miscommunication moodlets. If it fails, miscommunication moodlets will intensify.`,
                         `Recite Joke (funny): Available for non-natives (with skill level 3+) speaking to natives. If this succeeds, a positive moodlet will replace any miscommunication moodlets. If it fails, miscommunication moodlets will intensify.`,
                         `Make Suggestive Comment (romance): Available for non-natives (with skill level 3+) speaking to natives. If this succeeds, a positive moodlet will replace any miscommunication moodlets and you will gain some romantic relationship with the other sim. If it fails, miscommunication moodlets will intensify and it will damage your relationship with the other sim.`,
-                        `Mock Accent (mean): Available for natives speaking to non-natives. This will damage your relationship with the other sim.`,
-                        `Give Fake Translation (mischief): Available for natives speaking to non-natives. If the listener is highly skilled in your language, there is a chance that this will interaction will fail which will damage your relationship with the other sim.`,
+                        `Mock Accent (mean): Available for non-natives speaking to natives. This will damage your relationship with the other sim.`,
+                        `Give Fake Translation (mischief): Available for natives speaking to non-natives. There is a chance that this will interaction will fail which will damage your relationship with the other sim.`,
                     ]
                 }
             ],
