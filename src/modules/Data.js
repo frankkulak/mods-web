@@ -272,6 +272,7 @@ export const ModData = {
                     bullets: [
                         `Babies and toddlers do not have native languages. A sim will acquire their native language(s) when they become a child.`,
                         `Toddlers will learn the language skills associated with the native languages of whomever speaks to them. For instance, if both of their parents are native Simlish speakers, they will learn Simlish. However, if one parent is a native Simlish speaker while the other is a native Windenburgish speaker, they will most likely learn both. If they happen to have an alien nanny, the toddler will probably pick up some Sixami, too.`,
+                        `Toddlers can use Simlingo Jr. on any tablet to learn the languages that their parents cannot teach them.`,
                         `When a toddler ages into a child, any language skills at or above level 5 will be acquired as a native language. If the toddler does not have any language skills at or above level 5, then just their highest skill will be used instead. If they have no language skills at all, then they will default to Simlish.`,
                         `Just like any other sims, you can change a child's acquired native language(s) by using the 'Languages > Native Languages' pie menu option.`
                     ]
@@ -296,6 +297,18 @@ export const ModData = {
                         `Make Suggestive Comment (romance): Available for non-natives (with skill level 3+) speaking to natives. If this succeeds, a positive moodlet will replace any miscommunication moodlets and you will gain some romantic relationship with the other sim. If it fails, miscommunication moodlets will intensify and it will damage your relationship with the other sim.`,
                         `Mock Accent (mean): Available for non-natives speaking to natives. This will damage your relationship with the other sim.`,
                         `Give Fake Translation (mischief): Available for natives speaking to non-natives. There is a chance that this will interaction will fail which will damage your relationship with the other sim.`,
+                    ]
+                },
+                {
+                    title: 'cheats',
+                    bullets: [
+                        `Open the cheat console and type in the following cheats to use them.`,
+                        `'fklb.refreshlanguages' = Sets the native language of all sims to their default.`,
+                        `'fklb.simlish add' = Adds Simlish as a native language to the active sim. Can use 'fklb.simlish a' as shorthand.`,
+                        `'fklb.simlish remove' = Removes Simlish as a native language from the active sim. Can use 'fklb.simlish r' as shorthand.`,
+                        `'fklb.simlish add first last' = Replace 'first last' with the first and last name of a sim, and it will add Simlish as a native language to them. Can use 'fklb.simlish a first last' as shorthand.`,
+                        `'fklb.simlish remove first last' = Replace 'first last' with the first and last name of a sim, and it will remove Simlish as a native language from them. Can use 'fklb.simlish r first last' as shorthand.`,
+                        `You can replace 'simlish' with 'sixami', 'windenburgish', 'selvadoradian', or 'tokisulani' in any of the previous cheats in order to add or remove the respective language.`,
                     ]
                 }
             ],
