@@ -264,7 +264,7 @@ export const ModData = {
                     bullets: [
                         `Each language has an associated skill. You may only learn a language as a skill if it is not your native language.`,
                         `Having the native speaker trait for a particular language overrides your skill in that language - if you are a native speaker, the game will treat your skill level in that language as 10.`,
-                        `You can study languages using Simlingo (at the computer or tablet), reading textbooks (purchased from a bookshelf), or interacting with sims who speak that language natively.`,
+                        `You can study languages by using Simlingo (at the computer or tablet), reading textbooks (purchased from a bookshelf), or interacting with sims who speak that language natively.`,
                     ]
                 },
                 {
