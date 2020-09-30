@@ -216,18 +216,17 @@ export const ModData = {
                 {
                     title: 'features',
                     bullets: [
-                        `Five regional languages: Selvadoradian, Windenburgish, Toki Sulani, Sixami, and Simlish.`,
+                        `Five languages for your sims to learn: Selvadoradian, Windenburgish, Toki Sulani, Sixami, and Simlish.`,
                         `Native languages are assigned to sims (children and older) depending on their home world, traits, and occult type.`,
-                        `Toddlers acquire their native language(s) once they become children. The language(s) they acquire depends on the language(s) they have been exposed to while growing up.`,
+                        `Toddlers will acquire their native language(s) once they become children. The languages they acquire depends on which ones they have been exposed to.`,
                         `Sims can learn another language by using Simlingo, reading a textbook, or interacting with other sims who speak it.`,
-                        `Sims may miscommunicate with others who they do not share a language with. This results in an embarrassed, angry, or tense moodlet. This feature can be disabled for any sim you wish, but is enabled for everyone by default.`,
+                        `Sims may miscommunicate when they do not share a language. This results in an embarrassed, angry, or tense moodlet that will get worse the more you talk.`,
                     ]
                 },
                 {
                     title: 'customization',
                     bullets: [
-                        `You can make sims from any residential world (other than Sulani and Windenburg) speak whatever language you wish. This is a great option for players without any of the associated packs.`,
-                        `Directions for how to do this can be found in the 'README.txt' file that comes with the download.`
+                        `You can make sims from any residential world speak whatever language you wish. This is a great option for players without any of the associated packs. Instructions for this can be found in the 'details' tab above, or in the 'README.txt' file that comes with the download.`,
                     ]
                 },
                 {
@@ -242,7 +241,6 @@ export const ModData = {
                 {
                     title: 'languages',
                     bullets: [
-                        `The five languages are Selvadoradian, Windenburgish, Toki Sulani, Sixami, and Simlish.`,
                         `Selvadoradian: Everyone from Selvadorada (except for aliens and mermaids).`,
                         `Windenburgish: Everyone from Windenburg (except for aliens and mermaids).`,
                         `Toki Sulani: Everyone from Sulani (except for aliens), all mermaids (regardless of where they live), and anyone with an islander trait (except for aliens and sims from Selvadorada or Windenburg).`,
@@ -253,37 +251,38 @@ export const ModData = {
                 {
                     title: 'native language traits',
                     bullets: [
-                        `Each language has an associated native language trait. These traits are hidden, which means you will not see them in CAS or in your sim's info panel.`,
-                        `Sims must have at least one native language trait at all times. Sims will only be assigned one native language by default, but you can add as many as you want.`,
-                        `Native language traits are assigned to all sims (children and older) when they spawn in to the world. Their default native language is dictated by the rules mentioned in the 'languages' section above.`,
-                        `If you want to change a sim's native language(s), you can do so by clicking on them and selecting the 'Languages > Native Languages' pie menu option, or by using console cheats (explained further down on this page).`,
+                        `Each language has a native language trait. These traits are hidden, which means you will not see them in CAS or in your sim's info panel.`,
+                        `Sims must have at least one native language trait at all times, but you can add more if you want to.`,
+                        `Native languages are automatically assigned to sims who are a child or older. The language that is assigned is dictated by the rules mentioned in the 'languages' section above.`,
+                        `If you want to change a sim's native language(s), you can do so by clicking on them and selecting the 'Languages > Native Languages' pie menu option, or by using console cheats.`,
                     ]
                 },
                 {
                     title: 'language skills',
                     bullets: [
-                        `Each language has an associated skill. You may only learn a language as a skill if it is not your native language.`,
-                        `Having the native speaker trait for a particular language overrides your skill in that language - if you are a native speaker, the game will treat your skill level in that language as 10.`,
-                        `You can study languages by using Simlingo (at the computer or tablet), reading textbooks (purchased from a bookshelf), or interacting with sims who speak that language natively.`,
+                        `Each language has a skill. You may only learn a language skill if it is not your native language.`,
+                        `If you are a native speaker of a language, the game treats your skill level in that language as 10.`,
+                        `You can study a language on Simlingo (at the computer or tablet), reading its textbook, or talking to someone who speaks it natively.`,
                     ]
                 },
                 {
                     title: 'toddler language acquisition',
                     bullets: [
-                        `Babies and toddlers do not have native languages. A sim will acquire their native language(s) when they become a child.`,
-                        `Toddlers will learn the language skills associated with the native languages of whomever speaks to them.`,
-                        `Toddlers can use Simlingo Jr. on any tablet to learn the languages that their parents cannot teach them.`,
-                        `When a toddler ages into a child, any language skills at or above level 5 will be acquired as a native language. If the toddler does not have any language skills at or above level 5, then just their highest skill will be used instead. If they have no language skills at all, then they will default to Simlish.`,
+                        `Babies and toddlers do not have native languages. A sim acquires their native language(s) once they become a child.`,
+                        `Toddlers will pick up the language skills associated with the native languages of whomever speaks to them.`,
+                        `Toddlers can use Simlingo Jr. on a tablet to learn other languages that their parents cannot teach them.`,
+                        `When a toddler becomes a child, any languages at or above level 5 will be acquired as a native language. If there are no languages at this level, then their highest language will be used. If they have no language skills at all, then they will speak Simlish.`,
                     ]
                 },
                 {
                     title: 'miscommunication',
                     bullets: [
-                        `There is a chance to miscommunicate with sims if you do not have a language in common. This chance is equal to the inverse of your highest shared language skill, times 11. For instance, if you have no language in common, your shared skill is 1 and the chance is 99%. Once your shared skill becomes 2, the chance is 88%, and so on.`,
-                        `The chance of miscommunication is 0% if: both sims share a native language, one sim is level 10 in the other's native language, both sims are level 10 in the same language, or at least one of the sims is not yet a child or has Language Barriers disabled.`,
-                        `When miscommunication occurs, the actor of the interaction will gain a +2 embarrassed, angry, or tense moodlet. Each time after that, there is a 33% chance that the moodlet will intensify to +4. After that, there is a 25% chance it will intensify to +8 (only for embarrassed and angry). Note that +8 embarrassed and angry each have a chance of killing your sim (that wasn't me - that's in the base game).`,
+                        `There is a chance for sims to miscommunicate if they do not share a language. This chance is inversely related to the sims' highest shared language skill. For instance, if their highest shared skill is 1, the chance is 99%. Once it becomes 2, the chance is 88%, and so on.`,
+                        `If both sims are level 10 (native speaker = level 10) in the same language, or if either sim is not yet a child or has Language Barriers disabled, then they will not miscommunicate.`,
+                        `When miscommunication occurs, the sim will gain a +2 embarrassed, angry, or tense moodlet. Each time after that, there is a 33% chance that the moodlet will intensify to +4. After that, there is a 25% chance it will intensify to +8 (only for embarrassed and angry). Note that +8 embarrassed and angry each have a chance of killing your sim (that wasn't me, that's in the base game - I'm just taking advantage of it).`,
                         `NPCs and children will never get a +8 moodlet from miscommunication. This is to prevent these sims from dying due to extreme emotions. So, the only sims who are at risk are the teenagers and older sims in your active household.`,
-                        `You can disable Language Barriers for any sim by clicking on them and selecting the 'Languages' pie menu option. Disabling Language Barriers for a sim will make their chance of miscommunication always be 0%.`,
+                        `If you do not want to run the chance of your sims dying, then you can disable extreme emotions in the 'Languages...' pie menu option.`,
+                        `You can disable Language Barriers for any sim by clicking on them and selecting the 'Languages...' pie menu option. Disabling Language Barriers for a sim will make their chance of miscommunication always be 0%.`,
                     ]
                 },
                 {
@@ -298,23 +297,23 @@ export const ModData = {
                     ]
                 },
                 {
-                    title: 'configuring lb_settings',
+                    title: 'configuring world languages',
                     bullets: [
-                        `You can use the config file to change the language that sims from any world use.`,
-                        `Open 'lb_settings.cfg' in any text editor, and simply change the language on the right side of the '=' for any world you want. For example, to make sims from Oasis Springs speak Selvadoradian, change "Oasis Springs = Simlish" to "Oasis Springs = Selvadoradian".`,
-                        `The valid languages are Simlish, Selvadoradian, Windenburgish, Toki Sulani, and Sixami. Capitalization and spaces don't matter, but spelling sure does, so be sure you have it right.`,
-                        `If you've already played the game with Language Barriers installed, you will have to run the 'fklb.refreshlanguages' cheat (described below) in order to make your new settings take effect. If you do not run this cheat, then sims who have already spawned into the world will continue to speak their world's previous default language.`,
+                        `You can use the 'lb_settings.cfg' file to change the language that sims from any world use.`,
+                        `Open the file in any text editor, and change the language on the right side of the '=' for whichever world you want. For example, to make sims from Oasis Springs speak Selvadoradian, change "Oasis Springs = Simlish" to "Oasis Springs = Selvadoradian".`,
+                        `The valid languages are Simlish, Selvadoradian, Windenburgish, Toki Sulani, and Sixami. Capitalization and spaces don't matter, but spelling does, so be sure you have it right.`,
+                        `If you've already played the game with Language Barriers installed, you will have to run the 'fklb.reset_langs' cheat (described below) in order for your new settings take effect. If you do not run this cheat, then sims who have already spawned into the world will continue to speak their world's previous default language.`,
                     ]
                 },
                 {
                     title: 'console cheats',
                     bullets: [
-                        `'fklb.refreshlanguages' = Sets the native language of all sims to their default. Can be used to refresh languages after you've modified the 'lb_settings.cfg' file. Be advised that running this cheat will undo any native languages that you have manually added or removed.`,
+                        `'fklb.reset_langs' = Sets the native language of all sims to their default. This can be used to reset everyone's languages after you've modified the 'lb_settings.cfg' file. Be advised that running this cheat will also reset any languages that you have manually added or removed to sims, as well as any languages that children have acquired.`,
                         `'fklb.simlish a' = Adds Simlish to the active sim.`,
                         `'fklb.simlish r' = Removes Simlish from the active sim.`,
                         `'fklb.simlish a first last' = Adds Simlish to the sim with the name First Last (change the name to whatever you want).`,
                         `'fklb.simlish r first last' = Removes Simlish from the sim with the name First Last (change the name to whatever you want).`,
-                        `You can replace 'simlish' with 'sixami', 'windenburgish', 'selvadoradian', or 'tokisulani' to add/remove the other languages.`,
+                        `You can replace 'simlish' with 'sixami', 'windenburgish', 'selvadoradian', or 'toki_sulani' to add/remove the other languages.`,
                         `Example: 'fklb.windenburgish a eliza pancakes' will make Eliza Pancakes speak Windenburgish. This does not remove any other languages that she speaks.`
                     ]
                 }
