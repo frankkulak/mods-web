@@ -210,6 +210,12 @@ export const ModData = {
             thumbnail: 'lb-1.png',
             images: [
                 'lb-1.png',
+                'lb-2.png',
+                'lb-3.png',
+                'lb-4.png',
+                'lb-5.png',
+                'lb-6.png',
+                'lb-7.png',
             ],
             videoUrl: null,
             overview: [
