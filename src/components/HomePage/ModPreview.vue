@@ -27,7 +27,7 @@
         computed: {
             thumbnail: function () {
                 try {
-                    const thumbnailFilename = this.mod.images[0];
+                    const thumbnailFilename = this.mod.thumbnail;
                     if (thumbnailFilename === null) {
                         return require(`../../assets/${this.mod.game}/default.png`);
                     } else {
