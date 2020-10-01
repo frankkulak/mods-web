@@ -97,19 +97,18 @@ export const ModData = {
             testingStatus: DataEnums.testingStatus.working,
             releaseDate: 'July 15, 2020',
             description: `Can you really call yourself a 'Global Superstar' when you only have 12 followers on Simstagram? This mod automatically gives your sim followers whenever they gain fame.`,
-            thumbnail: 'f4f-1.png',
+            thumbnail: 'ff-thumbnail.png',
             images: [
-                'f4f-1.png',
-                'f4f-2.png',
-                'f4f-3.png',
-                'f4f-4.png',
+                'ff-thumbnail.png',
+                'ff-earn.png',
+                'ff-lose.png',
             ],
             videoUrl: null,
             overview: [
                 {
                     title: 'features',
                     bullets: [
-                        `Automatically earn followers when you perform fame-gaining interactions like selling paintings, licensing songs, publishing books, performing acting gigs, and many more.`,
+                        `Automatically earn followers when you sell paintings, license songs, publish books, perform acting gigs, or pretty much anything else that earn you fame.`,
                         `Earn a ton of followers when your fame rank increases, and lose some of them if it ever goes down.`,
                         `Earn some followers for getting good PR, and lose some for getting bad PR.`,
                         `Use debug cheats to add and remove followers.`,
@@ -127,25 +126,25 @@ export const ModData = {
                 {
                     title: 'automatic followers',
                     bullets: [
-                        `The following interactions will add followers: selling a painting or photo, making an app or game, licensing a song or lyrics, publishing a book, being nominated for an award, accepting an award, completing a work day as an actor, ranking up as a celebrity, and getting positive PR through the PR agency.`,
-                        `The following interactions will remove followers: ranking down as a celebrity and getting bad PR through the PR agency.`,
-                        `Exact amounts for follower gains/losses are heavily influenced by both the type of interaction and your sim's current fame rank. For example, a non-famous sim selling a painting is going to earn much less followers than a 5 star celebrity selling a painting, and both of those sims would earn significantly less than a 5 star celebrity acting in a movie or licensing a song.`,
+                        `Interactions that add followers: selling a painting or photo, making an app or game, licensing a song or lyrics, publishing a book, being nominated for an award, accepting an award, completing a work day as an actor, ranking up as a celebrity, and getting positive PR through the PR agency.`,
+                        `Interactions that remove followers: ranking down as a celebrity and getting bad PR through the PR agency.`,
+                        `Exact amounts for follower gains/losses are heavily influenced by both the type of interaction and your sim's current fame rank. For example, a non-famous sim selling a painting is going to earn much less followers than a 5-star celebrity selling a painting, and both of those sims would earn significantly less than a 5-star celebrity acting in a movie or licensing a song.`,
                     ]
                 },
                 {
                     title: 'followers cheats',
                     bullets: [
-                        `Enable testing cheats with the command 'testingcheats on', then shift-click your sim and use the 'Follower Cheats' option to add or remove followers.`,
-                        `Follower cheats are available in 6 tiers: Tiny, Small, Medium, Large, Huge, Epic. These tiers correspond to the tiers that are used for specific interactions. For instance, selling a photo is a Tiny gain, and leveling up your fame is an Epic gain.`,
+                        `Enable testing cheats with the command <code>testingcheats on</code>, then shift-click your sim and use the 'Follower Cheats' option to add or remove followers.`,
+                        `Follower cheats are available in 6 tiers: Tiny, Small, Medium, Large, Huge, Epic. These tiers correspond to those that are used by specific interactions behind the scenes. They are in order from least to most significant, and the exact amount of followers they add/remove depends on the sim's fame rank.`,
                     ]
                 },
                 {
-                    title: 'future plans',
+                    title: 'planned for version 1.1',
                     bullets: [
-                        `Automatic follower gains for some careers, performing live (singing, acting, comedy, etc.), and boosts in reputation.`,
-                        `Automatic follower losses for hits to reputation.`,
-                        `Periodic, random follower gains and losses for all celebrity sims.`,
-                        `Option to disable automatic followers for certain sims.`,
+                        `Console cheats to add, remove, or set a specific number of followers for any sim.`,
+                        `Automatic follower gains for more careers and when you gain reputation.`,
+                        `Automatic follower losses when you lose reputation.`,
+                        `Periodic, random follower gains and losses for celebrity sims.`,
                     ]
                 },
             ],
