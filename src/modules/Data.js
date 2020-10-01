@@ -308,21 +308,24 @@ export const ModData = {
                         `You can use the 'lb_settings.cfg' file to change the language that sims from any world use.`,
                         `Open the file in any text editor, and change the language on the right side of the '=' for whichever world you want. For example, to make sims from Oasis Springs speak Selvadoradian, change "Oasis Springs = Simlish" to "Oasis Springs = Selvadoradian".`,
                         `The valid languages are Simlish, Selvadoradian, Windenburgish, Toki Sulani, and Sixami. Capitalization and spaces don't matter, but spelling does, so be sure you have it right.`,
-                        `If you've already played the game with Language Barriers installed, you will have to run the 'fklb.reset_langs' cheat (described below) in order for your new settings take effect. If you do not run this cheat, then sims who have already spawned into the world will continue to speak their world's previous default language.`,
+                        `If you've already played the game with Language Barriers installed, you will have to run the 'fklb.reset_all' cheat (described below) in order for your new settings take effect. If you do not run this cheat, then sims who have already spawned into the world will continue to speak their world's previous default language.`,
                     ]
                 },
                 {
                     title: 'console cheats',
                     bullets: [
-                        `'fklb.reset_langs' = Sets the native language of all sims to their default. This can be used to reset everyone's languages after you've modified the 'lb_settings.cfg' file. Be advised that running this cheat will also reset any languages that you have manually added or removed to sims, as well as any languages that children have acquired.`,
-                        `'fklb.simlish a' = Adds Simlish to the active sim.`,
-                        `'fklb.simlish r' = Removes Simlish from the active sim.`,
-                        `'fklb.simlish a first last' = Adds Simlish to the sim with the name First Last (change the name to whatever you want).`,
-                        `'fklb.simlish r first last' = Removes Simlish from the sim with the name First Last (change the name to whatever you want).`,
-                        `You can replace 'simlish' with 'sixami', 'windenburgish', 'selvadoradian', or 'toki_sulani' to add/remove the other languages.`,
-                        `Example: 'fklb.windenburgish a eliza pancakes' will make Eliza Pancakes speak Windenburgish. This does not remove any other languages that she speaks.`
+                        `<code>fklb.reset_all</code> = Sets the native language of all sims to their default. This can be used to reset everyone's languages after you've modified the 'lb_settings.cfg' file. Be advised that running this cheat will also reset any languages that you have manually added or removed to sims, as well as any languages that children have acquired.`,
+                        `<code>fklb.set_all language</code> = Forces every sim to only speak the specified language.`,
+                        `<code>fklb.enable first last</code> = Enables Language Barriers for the sim with the given name.`,
+                        `<code>fklb.disable first last</code> = Disables Language Barriers for the sim with the given name.`,
+                        `<code>fklb.add language first last</code> = Adds the specified language to the sim with the given name.`,
+                        `<code>fklb.remove language first last</code> = Removes the specified language from the sim with the given name.`,
+                        `Valid values for <code>language</code> are <code>simlish</code>, <code>windenburgish</code>, <code>selvadoradian</code>, <code>tokisulani</code>, and <code>sixami</code>.`,
+                        `Replace <code>first last</code> with the name of whatever sim you want. If you omit the name, the cheat applies to the active sim.`,
+                        `Example: <code>fklb.add windenburgish bella goth</code> will make Bella Goth speak Windenburgish.`,
+                        `Example: <code>fklb.remove tokisulani</code> will make the active sim no longer speak Toki Sulani.`,
                     ]
-                }
+                },
             ],
             versionHistory: [],
             primaryDownload: null,
