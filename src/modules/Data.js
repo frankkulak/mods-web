@@ -204,7 +204,7 @@ export const ModData = {
             name: 'Language Barriers',
             developmentStage: DataEnums.developmentStage.wip,
             testingStatus: DataEnums.testingStatus.unreleased,
-            releaseDate: 'October 2020',
+            releaseDate: 'October 6th, 2020',
             description: `A world where everyone speaks the same language is unrealistic. This mod adds new languages to the Sims universe, which introduces a unique challenge to the game.`,
             thumbnail: 'lb-thumbnail.png',
             images: [
