@@ -209,6 +209,7 @@ export const ModData = {
             description: `A world where everyone speaks the same language is unrealistic. This mod adds new languages to the Sims universe, which introduces a unique challenge to the game.`,
             thumbnail: 'lb-thumbnail.png',
             images: [
+                `lb-thumbnail.png`,
                 'lb-textbook.png',
                 'lb-simlingo.png',
                 'lb-mortified.png',
@@ -315,6 +316,7 @@ export const ModData = {
                     bullets: [
                         `<code>fklb.reset_all</code> = Sets the native language of all sims to their default. This can be used to reset everyone's languages after you've modified the 'lb_settings.cfg' file. Be advised that running this cheat will also reset any languages that you have manually added or removed to sims, as well as any languages that children have acquired.`,
                         `<code>fklb.set_all language</code> = Forces every sim to only speak the specified language.`,
+                        `<code>fklb.audit</code> = Outputs every sim and their assigned language(s) to LanguageBarriers.log. This is probably not useful to you, as I use it mainly for testing and debugging, but you can check it out if you want.`,
                         `<code>fklb.enable first last</code> = Enables Language Barriers for the sim with the given name.`,
                         `<code>fklb.disable first last</code> = Disables Language Barriers for the sim with the given name.`,
                         `<code>fklb.add language first last</code> = Adds the specified language to the sim with the given name.`,
