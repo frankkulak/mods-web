@@ -31,6 +31,10 @@
                 margin-bottom: 0;
             }
 
+            strong {
+                font-weight: bold;
+            }
+
             &:last-child {
                 margin-bottom: 0 !important;
             }
