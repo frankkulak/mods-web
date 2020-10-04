@@ -204,7 +204,7 @@ export const ModData = {
             name: 'Language Barriers',
             developmentStage: DataEnums.developmentStage.wip,
             testingStatus: DataEnums.testingStatus.unreleased,
-            releaseDate: 'Mid-October 2020',
+            releaseDate: 'Early-Mid October 2020',
             description: `A world where everyone speaks the same language is unrealistic. This mod adds new languages to the Sims universe, which introduces a unique challenge to the game.`,
             thumbnail: 'lb-thumbnail.png',
             images: [
@@ -242,16 +242,16 @@ export const ModData = {
                         `This mod does not override any files, so it <em>should</em> be safe to use with most other mods. However, if there are any other mods that alter the way that sims communicate, it may not play nicely with those.`,
                     ]
                 },
-                // {
-                //     title: 'special thanks',
-                //     bullets: [
-                //         `This mod took a village to pull off, and it wouldn't have been possible without the help I received along the way. I want to give a very big thank you to some amazing people:`,
-                //         `<strong>MizoreYukii</strong>, who has helped me more times than I can count. I cannot even begin to list everything she's helped me with, or this thank you section would never end. Without her, I wouldn't have even been able to begin this mod.`,
-                //         `<strong>Basemental</strong>, who helped me figure out some of the more advanced concepts of scripting for The Sims 4, which made my code more concise and resilient to game patches, and even enable it to work with new items and CC.`,
-                //         `<strong>Lumpinou</strong> and <strong>Jamjars</strong>, who were always there to help me fix bugs and give me new ideas to work with.`,
-                //         `And finally, to the members of my Discord server and anyone else who provided me with ideas, feedback, help, and encouragement along the way, thank you!`,
-                //     ]
-                // }
+                {
+                    title: 'special thanks',
+                    bullets: [
+                        `This mod took a village to pull off, and it wouldn't have been possible without the help I received along the way. I want to give a very big thank you to some amazing people:`,
+                        `<strong>MizoreYukii</strong>, who has helped me more times than I can count. I cannot even begin to list everything she's helped me with, or this thank you section would never end. Without her, I wouldn't have even been able to begin this mod.`,
+                        `<strong>Basemental</strong>, who helped me figure out some of the more advanced concepts of scripting for The Sims 4, which made my code more concise and resilient to game patches, and even enable it to work with new items and CC.`,
+                        `<strong>Lumpinou</strong> and <strong>Jamjars</strong>, who were always there to help me fix bugs and give me new ideas to work with.`,
+                        `And finally, to the members of my Discord server and anyone else who provided me with ideas, feedback, help, and encouragement along the way, thank you!`,
+                    ]
+                }
             ],
             details: [
                 {
@@ -281,8 +281,8 @@ export const ModData = {
                 {
                     title: 'language levels',
                     bullets: [
-                        `'Language level' refers to a sim's knowledge of a language. If they are a native speaker, their level is 10, otherwise it is just whatever their skill level is.`,
-                        `A 'shared language level' refers to the highest language level that two sims have in common. For instance, if one sim is a Simlish native, and the other is a Selvadoradian native but has level 5 of the Simlish skill, then their shared language level is 5.`,
+                        `'Language level' refers to a sim's knowledge of a language. If they are a native speaker, their level is 10, otherwise it is equivalent to whatever their skill level is.`,
+                        `'Shared language level' refers to the highest language level that two sims have in common. For instance, if one sim is level 10 Simlish and level 3 Selvadoradian, and the other sim is level 10 Selvadoradian and level 5 Simlish, then their shared language skill is 5, because they both have at least a 5 in Simlish.`,
                     ]
                 },
                 {
@@ -298,21 +298,11 @@ export const ModData = {
                     title: 'limited interactions',
                     bullets: [
                         `The social interactions that a sim can perform are limited when they do not know the other sim's language.`,
-                        `Once they reach level 2 in the other sim's language, they unlock all friendly interactions.`,
-                        `At level 3, they unlock all mean interactions.`,
-                        `At level 4, they unlock all funny and mischief interactions.`,
-                        `At level 5, they unlock all romantic interactions.`,
-                    ]
-                },
-                {
-                    title: 'new interactions',
-                    bullets: [
-                        `<strong>Ask for Help (friendly)</strong>: Available for non-natives (levels 1-9) talking to natives.`,
-                        `<strong>Try Speaking (friendly)</strong>: Available for non-natives (levels 2-9) talking to natives.`,
-                        `<strong>Recite Joke (funny)</strong>: Available for non-natives (level 4+) talking to natives.`,
-                        `<strong>Make Suggestive Comment (romance)</strong>: Available for non-natives (level 5+) speaking to natives.`,
-                        `<strong>Mock Accent (mean)</strong>: Available for all non-natives speaking to natives.`,
-                        `<strong>Give Fake Translation (mischief)</strong>: Available for natives (level 4+) speaking to non-natives.`,
+                        `More details will come about which interactions are unlocked at what levels, as I'm still deciding.`,
+                        // `Once they reach level 2 in the other sim's language, they unlock all friendly interactions.`,
+                        // `At level 3, they unlock all mean interactions.`,
+                        // `At level 4, they unlock all funny and mischief interactions.`,
+                        // `At level 5, they unlock all romantic interactions.`,
                     ]
                 },
                 {
