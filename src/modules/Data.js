@@ -297,12 +297,12 @@ export const ModData = {
                 {
                     title: 'limited interactions',
                     bullets: [
-                        `The social interactions that a sim can perform are limited when they do not know the other sim's language.`,
-                        `More details will come about which interactions are unlocked at what levels, as I'm still deciding.`,
-                        // `Once they reach level 2 in the other sim's language, they unlock all friendly interactions.`,
-                        // `At level 3, they unlock all mean interactions.`,
-                        // `At level 4, they unlock all funny and mischief interactions.`,
-                        // `At level 5, they unlock all romantic interactions.`,
+                        `Social interactions are extremely limited between two sims that have a shared language level of 1.`,
+                        `At level 2, they unlock some more basic friendly interactions.`,
+                        `At level 3, they unlock many more friendly and mean interactions.`,
+                        `At level 4, they unlock all funny and mean interactions, and some simple funny and mischief interactions.`,
+                        `At level 5, they unlock all interactions, including funny, mischief, and romantic.`,
+                        `If a sim has Language Barriers disabled, they will be able to communicate with everyone normally.`,
                     ]
                 },
                 {
@@ -310,8 +310,9 @@ export const ModData = {
                     bullets: [
                         `There is a chance for sims to miscommunicate if their shared language level is below 10. The chance starts at 99% for level 1, and then decreases by 11% every level (88% for level 2, 77% for level 3, and so on).`,
                         `Miscommunication results in a +2 embarrassed, angry, or tense moodlet. If they keep talking, there is a chance that the moodlet will intensify to +4, and then to +8. Recall that <a href="https://sims-online.com/sims-4-death-guide-killing-your-sims/" target="_blank">+8 embarrassed and angry has a chance to kill your sim</a>. You can calm them down at a mirror to get rid of the +8 moodlet.`,
-                        `When a sim has a +8 miscommunication moodlet, they may only speak to sims with whom their shared language level is 10. Communication with everyone else will be severely limited.`,
-                        `NPCs and children will never get a +8 moodlet from miscommunication.`,
+                        `When a sim has a +8 miscommunication moodlet, they may only speak to sims with whom their shared language level is 10. Communication with everyone else will be severely limited, as if their shared level were 1.`,
+                        `NPCs and children will never get a +8 moodlet from miscommunication - they will get at most a +4.`,
+                        `If a sim has Language Barriers disabled, they will never miscommunicate with anyone.`,
                     ]
                 },
                 {
