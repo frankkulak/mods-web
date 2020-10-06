@@ -94,7 +94,7 @@ export const ModData = {
             id: 'followersforfame',
             name: 'Followers for Fame',
             developmentStage: DataEnums.developmentStage.active,
-            testingStatus: DataEnums.testingStatus.untested,
+            testingStatus: DataEnums.testingStatus.working,
             releaseDate: 'July 15, 2020',
             description: `Can you really call yourself a 'Global Superstar' when you only have 12 followers on Simstagram? This mod automatically gives your sim followers whenever they gain fame.`,
             thumbnail: 'ff-thumbnail.png',
@@ -435,7 +435,7 @@ export const ModData = {
             id: 'buybitsandpieces',
             name: 'Buy Bits and Pieces',
             developmentStage: DataEnums.developmentStage.active,
-            testingStatus: DataEnums.testingStatus.untested,
+            testingStatus: DataEnums.testingStatus.working,
             releaseDate: 'September 9, 2020',
             description: `Gathering bits and pieces by recycling materials can get repetitive and annoying. This mod allows you to buy them with simoleons instead, for those of you that don't like to use cheats.`,
             thumbnail: 'bbp-1.png',
@@ -535,6 +535,86 @@ export const ModData = {
                 {
                     title: `Fast.io`,
                     url: `https://modsbyfrankkulak.imfast.io/Buy%20Bits%20and%20Pieces/`
+                },
+            ]
+        },
+        onlinehomework: {
+            game: 'ts4',
+            id: 'onlinehomework',
+            name: 'Online Homework',
+            developmentStage: DataEnums.developmentStage.active,
+            testingStatus: DataEnums.testingStatus.working,
+            releaseDate: 'October 6, 2020',
+            description: `Can't find your sim's notebook? Well, now you can do their homework at any computer or laptop. This mod currently only works for university students.`,
+            thumbnail: 'oh-thumbnail.png',
+            images: [
+                'oh-thumbnail.png',
+            ],
+            videoUrl: null,
+            overview: [
+                {
+                    title: 'features',
+                    bullets: [
+                        `Do your university homework at any computer or laptop.`,
+                    ]
+                },
+                {
+                    title: 'compatability',
+                    bullets: [
+                        `The Discover University expansion pack is required.`,
+                        `This mod does not override any files, so it should be safe to use with any other mods.`,
+                    ]
+                },
+                {
+                    title: 'translations',
+                    bullets: [
+                        `This mod is available in English and Italian. Other languages will appear in English.`,
+                        `Questa mod è disponibile nell'inglese e l'italiano. L'inglese è usato per tutte le altre lingue.`,
+                    ]
+                },
+            ],
+            details: [
+                {
+                    title: 'doing homework at the computer',
+                    bullets: [
+                        `Click on any computer or laptop and go the 'University > University Coursework > Do Homework' pie menu option to do your homework. This works with (most) CC computers!`,
+                        `You can only do your own homework at the computer, not homework for others.`,
+                        `This feature is currently only available for university students.`,
+                    ]
+                },
+                {
+                    title: 'future plans',
+                    bullets: [
+                        `I will soon expand this mod to work for children and teens as well.`,
+                        `When I add functionality for children and teens, I will make university homework an add-on so that Discover university is no longer required for the mod to work.`,
+                        `I do not plan on adding the ability to do other's homework at the computer. That would be tricky because the way that that works is because the notebooks are owned by certain sims, but computers are not. If someone <em>really</em> wants this feature added, reach out to me on Discord and I will see what I can do.`,
+                    ]
+                },
+            ],
+            versionHistory: [
+                {
+                    version: '1.0.1',
+                    date: 'October 6, 2020',
+                    bullets: [
+                        `Fixed issue where Italian text showed up in the English version.`,
+                    ]
+                },
+                {
+                    version: '1.0',
+                    date: 'October 6, 2020',
+                    bullets: [
+                        `Added the ability to do university homework at any computer or laptop.`,
+                    ]
+                }
+            ],
+            primaryDownload: {
+                title: `Sim File Share`,
+                url: `http://www.simfileshare.net/download/2089628/`
+            },
+            alternativeDownloads: [
+                {
+                    title: `Fast.io`,
+                    url: `https://modsbyfrankkulak.imfast.io/Online%20Homework/`
                 },
             ]
         },
