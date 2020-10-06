@@ -16,7 +16,7 @@ export const DataEnums = {
 export const GameData = {
     ts4: {
         name: "The Sims 4",
-        lastUpdate: "September 3, 2020"
+        lastUpdate: "October 6, 2020"
     }
 };
 
@@ -94,7 +94,7 @@ export const ModData = {
             id: 'followersforfame',
             name: 'Followers for Fame',
             developmentStage: DataEnums.developmentStage.active,
-            testingStatus: DataEnums.testingStatus.working,
+            testingStatus: DataEnums.testingStatus.untested,
             releaseDate: 'July 15, 2020',
             description: `Can you really call yourself a 'Global Superstar' when you only have 12 followers on Simstagram? This mod automatically gives your sim followers whenever they gain fame.`,
             thumbnail: 'ff-thumbnail.png',
@@ -233,6 +233,7 @@ export const ModData = {
                     title: 'customization',
                     bullets: [
                         `You can make sims from any residential world speak whatever language you wish. This is a great option for players without any of the associated packs. Instructions for this can be found in the 'details' tab above, or in the 'README.txt' file that comes with the download.`,
+                        `You can disable Language Barriers for any sims you want, in case you don't want them to have limited interactions or experience miscommunication.`,
                     ]
                 },
                 {
@@ -334,15 +335,18 @@ export const ModData = {
                 {
                     title: 'console cheats',
                     bullets: [
-                        `<code>fklb.reset_all</code>: Sets the native language of all sims to their default. This can be used to reset everyone's languages after you've modified the 'lb_settings.cfg' file. Be advised that running this cheat will also reset any languages that you have manually added or removed to sims, as well as any languages that children have acquired.`,
-                        `<code>fklb.set_all language</code>: Forces every sim to only speak the specified language.`,
-                        `<code>fklb.audit</code>: Outputs every sim and their assigned language(s) to LanguageBarriers.log. This is probably not useful to you, as I use it mainly for testing and debugging, but you can check it out if you want.`,
-                        `<code>fklb.enable first last</code>: Enables Language Barriers for the sim with the given name.`,
-                        `<code>fklb.disable first last</code>: Disables Language Barriers for the sim with the given name.`,
-                        `<code>fklb.add language first last</code>: Adds the specified language to the sim with the given name.`,
-                        `<code>fklb.remove language first last</code>: Removes the specified language from the sim with the given name.`,
+                        `<code>fklb.add language first last</code>: Adds the given language to the named sim.`,
+                        `<code>fklb.add_all language</code>: Adds the given language to all sims.`,
+                        `<code>fklb.audit</code>: Outputs every sim and their assigned language(s) to LanguageBarriers.log. You can use it to review everyone's language(s) if you want.`,
+                        `<code>fklb.enable first last</code>: Enables Language Barriers for the named sim.`,
+                        `<code>fklb.enable_all</code>: Enables Language Barriers for all sims.`,
+                        `<code>fklb.disable first last</code>: Disables Language Barriers for the named sim.`,
+                        `<code>fklb.disable_all</code>: Disables Language Barriers for all sims.`,
+                        `<code>fklb.remove language first last</code>: Removes the given language from the named sim.`,
+                        `<code>fklb.reset_all</code>: Resets the native language of all sims to their default. This can be used to reset everyone's languages after you've modified the 'lb_settings.cfg' file. Be advised that running this cheat will also reset any languages that you have manually added or removed to sims, as well as any languages that children have acquired. However, it will not affect their language skills.`,
+                        `<code>fklb.set_all language</code>: Forces every sim to only speak the given language. Note that this will not apply to townies that generate in after this cheat is run.`,
                         `Valid values for <code>language</code> are <code>simlish</code>, <code>windenburgish</code>, <code>selvadoradian</code>, <code>tokisulani</code>, and <code>sixami</code>.`,
-                        `Replace <code>first last</code> with the name of whatever sim you want. If you omit the name, the cheat applies to the active sim.`,
+                        `Replace <code>first last</code> with the name of whatever sim you want. If you omit the name, the cheat applies to the active sim instead. The name must be supplied in two tokens (which are separated by spaces). If your sim's name has a space in it, use a % and it will be understood as a space.`,
                         `<strong>Example</strong>: <code>fklb.add windenburgish bella goth</code> will make Bella Goth speak Windenburgish.`,
                         `<strong>Example</strong>: <code>fklb.remove tokisulani</code> will make the active sim no longer speak Toki Sulani.`,
                     ]
@@ -431,7 +435,7 @@ export const ModData = {
             id: 'buybitsandpieces',
             name: 'Buy Bits and Pieces',
             developmentStage: DataEnums.developmentStage.active,
-            testingStatus: DataEnums.testingStatus.working,
+            testingStatus: DataEnums.testingStatus.untested,
             releaseDate: 'September 9, 2020',
             description: `Gathering bits and pieces by recycling materials can get repetitive and annoying. This mod allows you to buy them with simoleons instead, for those of you that don't like to use cheats.`,
             thumbnail: 'bbp-1.png',
