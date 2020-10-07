@@ -568,8 +568,8 @@ export const ModData = {
                 {
                     title: 'translations',
                     bullets: [
-                        `This mod is available in English and Italian. Other languages will appear in English.`,
-                        `Questa mod è disponibile nell'inglese e l'italiano. L'inglese è usato per tutte le altre lingue.`,
+                        `This mod is available in English, Italian, and French (translated by Kimikosoma). Other languages will appear in English.`,
+                        `Questa mod è disponibile nell'inglese, l'italiano, ed il francese (tradotto da Kimikosoma). L'inglese è usato per tutte le altre lingue.`
                     ]
                 },
             ],
@@ -592,6 +592,13 @@ export const ModData = {
                 },
             ],
             versionHistory: [
+                {
+                    version: '1.0.2',
+                    date: 'October 7, 2020',
+                    bullets: [
+                        `Added French translation (courtesy of Kimikosoma on Discord).`,
+                    ]
+                },
                 {
                     version: '1.0.1',
                     date: 'October 6, 2020',
