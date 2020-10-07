@@ -568,8 +568,8 @@ export const ModData = {
                 {
                     title: 'translations',
                     bullets: [
-                        `This mod is available in English, Italian, and French (translated by Kimikosoma). Other languages will appear in English.`,
-                        `Questa mod è disponibile nell'inglese, l'italiano, ed il francese (tradotto da Kimikosoma). L'inglese è usato per tutte le altre lingue.`
+                        `This mod is available in English, Italian, and French (translated by <a href="https://modsims4.fr/" target="_blank">Kimikosoma</a>). Other languages will appear in English.`,
+                        `Questa mod è disponibile nell'inglese, l'italiano, ed il francese (tradotto da <a href="https://modsims4.fr/" target="_blank">Kimikosoma</a>). L'inglese è usato per tutte le altre lingue.`
                     ]
                 },
             ],
@@ -596,7 +596,7 @@ export const ModData = {
                     version: '1.0.2',
                     date: 'October 7, 2020',
                     bullets: [
-                        `Added French translation (courtesy of Kimikosoma on Discord).`,
+                        `Added French translation (courtesy of <a href="https://modsims4.fr/" target="_blank">Kimikosoma</a>).`,
                     ]
                 },
                 {
