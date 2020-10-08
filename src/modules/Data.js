@@ -233,6 +233,7 @@ export const ModData = {
                     title: 'customization',
                     bullets: [
                         `You can make sims from any residential world speak whatever language you wish. This is a great option for players without any of the associated packs. Instructions for this can be found in the 'details' tab above, or in the 'README.txt' file that comes with the download.`,
+                        `Some sims may automatically spawn in with random language skills, but you can disable this feature or tweak the settings more to your liking. Instructions how to do this can also be found in the 'details' tab or in the 'README.txt' file.`,
                         `You can disable Language Barriers for any sims you want, in case you don't want them to have limited interactions or experience miscommunication.`,
                     ]
                 },
@@ -270,6 +271,7 @@ export const ModData = {
                     bullets: [
                         `Each language has a native language trait. They are hidden, which means you will not see them in CAS or in your sim's info panel - they are automatically assigned to all children and older sims when they spawn in to the world.`,
                         `Sims must have at least one native language trait at all times, but you can change them or add more by using the 'Languages > Native Languages' pie menu option, or by using console cheats (described below).`,
+                        `Learn how to configure worlds to use any native language you wish in the 'configuring world languages' section below.`,
                     ]
                 },
                 {
@@ -277,6 +279,8 @@ export const ModData = {
                     bullets: [
                         `Each language has a skill. A sim may only learn a language skill if it is not their native language.`,
                         `You can study a language on Simlingo (computer/tablet), with a textbook, or by talking to a native speaker.`,
+                        `By default, non-played sims have a chance of spawning with random language skills between levels 2 and 4. Their chance to speak another language depends on their age, native language(s), and home world. The languages they may speak are also determined by their own native language(s) and their home world.`,
+                        `Learn how to configure automatic language skill assignment in the 'configuring random language skills' section below.`,
                     ]
                 },
                 {
@@ -292,6 +296,7 @@ export const ModData = {
                         `Babies and toddlers do not have native languages - they are acquired once they become a child.`,
                         `Toddlers pick up the language skills associated with the native languages of whomever speaks to them.`,
                         `Toddlers can use Simlingo Jr. on any tablet to learn languages that their parents cannot teach them.`,
+                        `NPC toddlers will automatically be given their parents' native language(s) at level 3.`,
                         `When a toddler becomes a child, any languages at or above level 5 will be acquired as a native language. If there are no languages at this level, then their highest language will be used instead. If they have no language skills at all, then they will speak Simlish.`,
                     ]
                 },
@@ -310,7 +315,7 @@ export const ModData = {
                     title: 'miscommunication',
                     bullets: [
                         `There is a chance for sims to miscommunicate if their shared language level is below 10. The chance starts at 99% for level 1, and then decreases by 11% every level (88% for level 2, 77% for level 3, and so on).`,
-                        `Miscommunication results in a +2 embarrassed, angry, or tense moodlet. If they keep talking, there is a chance that the moodlet will intensify to +4, and then to +8. Recall that <a href="https://sims-online.com/sims-4-death-guide-killing-your-sims/" target="_blank">+8 embarrassed and angry has a chance to kill your sim</a>. You can calm them down at a mirror to get rid of the +8 moodlet.`,
+                        `Miscommunication results in a +2 embarrassed, angry, or tense moodlet. If they keep talking, there is a chance that the moodlet will intensify to +4, and then to +8. Recall that <a href="https://sims-online.com/sims-4-death-guide-killing-your-sims/" target="_blank">+8 embarrassed and angry has a chance to kill your sim</a>. You can calm them down at a mirror to get rid of the +8 moodlet, or you can disable extreme emotions to avoid this situation.`,
                         `When a sim has a +8 miscommunication moodlet, they may only speak to sims with whom their shared language level is 10. Communication with everyone else will be severely limited, as if their shared level were 1.`,
                         `NPCs and children will never get a +8 moodlet from miscommunication - they will get at most a +4.`,
                         `If a sim has Language Barriers disabled, they will never miscommunicate with anyone.`,
@@ -333,6 +338,18 @@ export const ModData = {
                     ]
                 },
                 {
+                    title: 'configuring random language skills',
+                    bullets: [
+                        `You can use the 'lb_settings.cfg' file to change the settings surrounding random language skill assignment.`,
+                        `Open the file in any text editor, and edit the fields under the <code>[RANDOM SKILLS]</code> header.`,
+                        `<code>Enabled</code>: If <code>True</code>, then language skills will be randomly assigned to sims. If <code>False</code>, then sims will not spawn with any language skills, and will instead just speak their native language.`,
+                        `<code>Realistic</code>: If <code>True</code>, then the realistic algorithm describe in the 'language skills' section will be used to determine who speaks what. If <code>False</code>, then language skill assignment will be entirely randomized, and equally probable for everyone.`,
+                        `<code>Played sims</code>: If <code>True</code>, played sims will be assigned random language skills as well. If <code>False</code>, random language skills will only be applied to NPC sims.`,
+                        `<code>Base chance</code>: The percent chance that a sim will have another language skill. This value must be an integer between 0 and 100. If using the realistic system, keep in mind that there are numerous multipliers that are used to determine which sims are going to be bilingual, so the actual percentage of bilingual sims is going to be higher than this base chance. I recommend sticking to a value between 5 and 15.`,
+                        `<code>Max per sim</code>: The maximum number of language skills that a sim may spawn with. This must be between 1 and 4.`,
+                    ]
+                },
+                {
                     title: 'console cheats',
                     bullets: [
                         `<code>fklb.add language first last</code>: Adds the given language to the named sim.`,
@@ -343,9 +360,11 @@ export const ModData = {
                         `<code>fklb.disable first last</code>: Disables Language Barriers for the named sim.`,
                         `<code>fklb.disable_all</code>: Disables Language Barriers for all sims.`,
                         `<code>fklb.remove language first last</code>: Removes the given language from the named sim.`,
-                        `<code>fklb.reset_all</code>: Resets the native language of all sims to their default. This can be used to reset everyone's languages after you've modified the 'lb_settings.cfg' file. Be advised that running this cheat will also reset any languages that you have manually added or removed to sims, as well as any languages that children have acquired. However, it will not affect their language skills.`,
-                        `<code>fklb.set_all language</code>: Forces every sim to only speak the given language. Note that this will not apply to townies that generate in after this cheat is run.`,
+                        `<code>fklb.reset_all</code>: Resets the native language of all sims to their default. This can be used to reset everyone's languages after you've modified the [REGIONS] section of the 'lb_settings.cfg' file. Be advised that running this cheat will also reset any languages that you have manually added or removed to sims, as well as any languages that children have acquired. However, it will not affect their language skills.`,
+                        `<code>fklb.reset_random_skills</code>: Resets the random skills that are assigned to sims by default. This can be run after changing the contents in the [RANDOM SKILLS] section of the 'lb_settings.cfg' file. Be advised that running this cheat will completely reset the language skills of any and all NPC sims, and will not affect played sims at all, even if you have the 'Played sims' setting set to True.`,
+                        `<code>fklb.set_skill language level first last</code>: Sets the skill for the given language to the given level for the named sim.`,
                         `Valid values for <code>language</code> are <code>simlish</code>, <code>windenburgish</code>, <code>selvadoradian</code>, <code>tokisulani</code>, and <code>sixami</code>.`,
+                        `Valid values for <code>level</code> are any integer values between 1 and 10.`,
                         `Replace <code>first last</code> with the name of whatever sim you want. If you omit the name, the cheat applies to the active sim instead. The name must be supplied in two tokens (which are separated by spaces). If your sim's name has a space in it, use a % and it will be understood as a space.`,
                         `<strong>Example</strong>: <code>fklb.add windenburgish bella goth</code> will make Bella Goth speak Windenburgish.`,
                         `<strong>Example</strong>: <code>fklb.remove tokisulani</code> will make the active sim no longer speak Toki Sulani.`,
