@@ -306,7 +306,7 @@ export const ModData = {
                         `Social interactions are extremely limited between two sims that have a shared language level of 1.`,
                         `At level 2, they unlock some more basic friendly interactions.`,
                         `At level 3, they unlock many more friendly and mean interactions.`,
-                        `At level 4, they unlock all funny and mean interactions, and some simple funny and mischief interactions.`,
+                        `At level 4, they unlock all friendly and mean interactions, and some simple funny and mischief interactions.`,
                         `At level 5, they unlock all interactions, including funny, mischief, and romantic.`,
                         `If a sim has Language Barriers disabled, they will be able to communicate with everyone normally.`,
                     ]
