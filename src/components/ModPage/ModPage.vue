@@ -41,7 +41,9 @@
                     <h3>installation instructions</h3>
                     <ul class="mb-4">
                         <li>Download the .zip folder from the link below.</li>
-                        <li>Unzip the folder and place it in your "The Sims 4 > Mods" directory.</li>
+                        <li>Unzip the folder and place it directly in your "The Sims 4 > Mods" directory. Do NOT place
+                            it in any sub-folders, or else the script will not load correctly and the mod will not work.
+                        </li>
                         <li>In-game, ensure that "Game Options > Other > Enable Custom Content and Mods" is checked.
                         </li>
                     </ul>
@@ -51,8 +53,11 @@
                         <li>Do not share or distribute this mod without crediting me - a link to this website is
                             sufficient.
                         </li>
-                        <li>If you would like to provide a translation for this mod, please let me know. I welcome and
-                            encourage translations, but I do not appreciate re-posting of my work without permission.
+                        <li>If you would like to provide a translation for this mod, please let me know on
+                            <a href="https://discord.gg/qNhD3Jh" target="_blank">Discord</a>. I welcome and encourage
+                            translations, but I do not appreciate re-posting of my work without permission.
+                            Additionally, telling me about your translation will allow me include it in the official
+                            download on this webpage. You will be credited for your translation.
                         </li>
                         <li>I am not responsible for the misuse of this mod (e.g. using it with conflicting mods or when
                             it is out-of-date).
@@ -74,7 +79,7 @@
 
                         <div v-if="showAltDownloads">
                             <a v-for="download in mod.alternativeDownloads" :key="download.title" :href="download.url"
-                               target="_blank" class="btn btn-outline-primar mt-3">
+                               target="_blank" class="btn btn-outline-primary mt-3">
                                 Download from {{ download.title }}
                             </a>
                         </div>

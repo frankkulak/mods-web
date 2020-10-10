@@ -202,9 +202,9 @@ export const ModData = {
             game: 'ts4',
             id: 'languagebarriers',
             name: 'Language Barriers',
-            developmentStage: DataEnums.developmentStage.wip,
-            testingStatus: DataEnums.testingStatus.unreleased,
-            releaseDate: 'Early-Mid October 2020',
+            developmentStage: DataEnums.developmentStage.active,
+            testingStatus: DataEnums.testingStatus.beta,
+            releaseDate: 'October 10, 2020',
             description: `A world where everyone speaks the same language is unrealistic. This mod adds new languages to the Sims universe, which introduces a unique challenge to the game.`,
             thumbnail: 'lb-thumbnail.png',
             images: [
@@ -223,18 +223,10 @@ export const ModData = {
                     bullets: [
                         `Five languages for your sims to learn: Selvadoradian, Windenburgish, Toki Sulani, Sixami, and Simlish.`,
                         `Native languages are assigned to sims (children and older) depending on their home world, traits, and occult type.`,
-                        `Toddlers will acquire their native language(s) once they become children. The languages they acquire depends on which ones they have been exposed to.`,
+                        `Toddlers will acquire their native language(s) once they become children. The languages they acquire depends on which ones they have been exposed to while growing up.`,
                         `Sims can learn another language by using Simlingo, reading a textbook, or interacting with other sims who speak it.`,
                         `Communication between sims is limited when they do not share a language. New interactions unlock as you learn more of the other sim's language(s).`,
-                        `Sims may miscommunicate when they do not share a language. This results in an embarrassed, angry, or tense moodlet that will get worse the more you talk.`,
-                    ]
-                },
-                {
-                    title: 'customization',
-                    bullets: [
-                        `You can make sims from any residential world speak whatever language you wish. This is a great option for players without any of the associated packs. Instructions for this can be found in the 'details' tab above, or in the 'README.txt' file that comes with the download.`,
-                        `Some sims may automatically spawn in with random language skills, but you can disable this feature or tweak the settings more to your liking. Instructions how to do this can also be found in the 'details' tab or in the 'README.txt' file.`,
-                        `You can disable Language Barriers for any sims you want, in case you don't want them to have limited interactions or experience miscommunication.`,
+                        `Sims may miscommunicate when they do not share a language. This results in an embarrassed, angry, or tense moodlet that will get worse the more they talk.`,
                     ]
                 },
                 {
@@ -242,6 +234,16 @@ export const ModData = {
                     bullets: [
                         `This mod is completely compatible with the Base Game. This means that you can study and speak any of the languages, even if you do not have their associated packs.`,
                         `This mod does not override any files, so it <em>should</em> be safe to use with most other mods. However, if there are any other mods that alter the way that sims communicate, it may not play nicely with those.`,
+                    ]
+                },
+                {
+                    title: 'customization options',
+                    bullets: [
+                        `You can make sims from any residential world speak whatever language you wish. This is a great option for players without any of the associated packs.`,
+                        `Sims may spawn in with random language skills, but you can disable this or tweak the settings however you want.`,
+                        `You can disable Language Barriers for any sim you want, in case you don't want them to have limited interactions or experience miscommunication.`,
+                        `You can disable extreme emotions (which are +8 moodlets resulting from miscommunication) if you don't want to deal with the consequences of them.`,
+                        `Instructions for how to do all of these can be found in the 'details' tab above.`,
                     ]
                 },
                 {
@@ -371,9 +373,32 @@ export const ModData = {
                     ]
                 },
             ],
-            versionHistory: [],
-            primaryDownload: null,
-            alternativeDownloads: []
+            versionHistory: [
+                {
+                    version: '1.0 beta 2',
+                    date: 'October 10, 2020',
+                    bullets: [
+                        `Add non-English string tables so that text doesn't appear blank in non-English games.`,
+                    ]
+                },
+                {
+                    version: '1.0 beta 1',
+                    date: 'October 10, 2020',
+                    bullets: [
+                        `Initial release.`,
+                    ]
+                },
+            ],
+            primaryDownload: {
+                title: `Sim File Share`,
+                url: `http://www.simfileshare.net/download/2094858/`
+            },
+            alternativeDownloads: [
+                {
+                    title: `Fast.io`,
+                    url: `https://modsbyfrankkulak.imfast.io/Language%20Barriers/`
+                },
+            ]
         },
         simway: {
             game: 'ts4',
@@ -485,6 +510,12 @@ export const ModData = {
                         `Questa mod è disponibile nell'inglese, l'italiano, ed il francese (tradotto da Rebecca). L'inglese è usato per tutte le altre lingue.`
                     ]
                 },
+                {
+                    title: 'known issues',
+                    bullets: [
+                        `When you buy bits and pieces, the text for the §100 charge will overlap the text for the 10 bit/piece credit. I am not sure if this is something I can fix, as it is an issue with the UI, but I will look into it and try to figure something out.`,
+                    ]
+                },
             ],
             details: [
                 {
@@ -498,12 +529,6 @@ export const ModData = {
                     title: 'filling up the generator',
                     bullets: [
                         `Click on a power generator and select the option to fill it up for §250.`
-                    ]
-                },
-                {
-                    title: 'known issues',
-                    bullets: [
-                        `When you buy bits and pieces, the text for the §100 charge will overlap the text for the 10 bit/piece credit. I am not sure if this is something I can fix, as it is just an issue with the UI, but I will look into it and try to figure something out.`,
                     ]
                 },
             ],
