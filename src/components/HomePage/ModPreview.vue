@@ -1,12 +1,12 @@
 <template>
-    <router-link :to="route" class="mod-preview-link">
-        <b-row align-h="center" align-v="center" class="mod-preview text-left mb-3 py-3">
-            <b-col cols="12" sm="5" md="3" class="mb-3 mb-sm-0">
-                <img :src="thumbnail" :alt="thumbnailAlt"/>
+    <router-link :to="route" class="mod-preview-link" :id="`preview-${mod.id}-a`">
+        <b-row align-h="center" align-v="center" class="mod-preview text-left mb-3 py-3" :id="`preview-${mod.id}-row`">
+            <b-col cols="12" sm="5" md="3" class="mb-3 mb-sm-0" :id="`preview-${mod.id}-col1`">
+                <img :src="thumbnail" :alt="thumbnailAlt" :id="`preview-${mod.id}-img`"/>
             </b-col>
-            <b-col cols="12" sm="7" md="9">
-                <h3 class="font-weight-bold">{{ mod.name }}</h3>
-                <p v-html="mod.description"></p>
+            <b-col cols="12" sm="7" md="9" :id="`preview-${mod.id}-col2`">
+                <h3 class="font-weight-bold" :id="`preview-${mod.id}-h3`">{{ mod.name }}</h3>
+                <p v-html="mod.description" :id="`preview-${mod.id}-p`"></p>
             </b-col>
         </b-row>
     </router-link>

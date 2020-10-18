@@ -13,13 +13,13 @@
                     </b-col>
                     <b-col cols="12" md="2" class="text-center mt-0 mt-sm-4 mt-md-0">
                         <b-button href="https://discord.gg/qNhD3Jh" target="_blank" variant="outline-primary"
-                                  size="sm" class="discord m-1">Discord
+                                  size="sm" class="m-1" id="social-discord">Discord
                         </b-button>
                         <b-button href="https://twitter.com/frankkulakmods" target="_blank" variant="outline-primary"
-                                  size="sm" class="twitter m-1">Twitter
+                                  size="sm" class="m-1" id="social-twitter">Twitter
                         </b-button>
                         <b-button href="https://www.patreon.com/frankkulakmods" target="_blank"
-                                  variant="outline-primary" size="sm" class="patreon m-1">Patreon
+                                  variant="outline-primary" size="sm" class="m-1" id="social-patreon">Patreon
                         </b-button>
                     </b-col>
                 </b-row>
@@ -88,15 +88,15 @@
                 max-width: 128px;
                 text-decoration: none;
 
-                &.discord {
+                &#social-discord {
                     --brand-color: rgb(118, 139, 212);
                 }
 
-                &.twitter {
+                &#social-twitter {
                     --brand-color: rgb(75, 161, 236);
                 }
 
-                &.patreon {
+                &#social-patreon {
                     --brand-color: rgb(255, 66, 77);
                 }
 

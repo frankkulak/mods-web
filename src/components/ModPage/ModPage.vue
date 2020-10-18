@@ -67,7 +67,8 @@
 
                     <div class="w-100 text-center">
                         <div>
-                            <a :href="mod.primaryDownload.url" target="_blank" class="btn btn-outline-primary">
+                            <a :href="mod.primaryDownload.url" target="_blank" class="btn btn-outline-primary"
+                               :id="`download-primary-${mod.id}`">
                                 Download from {{ mod.primaryDownload.title }}
                             </a>
                         </div>
@@ -78,8 +79,9 @@
                         </b-button>
 
                         <div v-if="showAltDownloads">
-                            <a v-for="download in mod.alternativeDownloads" :key="download.title" :href="download.url"
-                               target="_blank" class="btn btn-outline-primary mt-3">
+                            <a v-for="(download, n) in mod.alternativeDownloads" :key="download.title"
+                               :href="download.url" target="_blank" class="btn btn-outline-primary mt-3"
+                               :id="`download-alt${n}-${mod.id}`">
                                 Download from {{ download.title }}
                             </a>
                         </div>

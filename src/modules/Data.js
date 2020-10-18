@@ -108,7 +108,7 @@ export const ModData = {
                 {
                     title: 'features',
                     bullets: [
-                        `Automatically earn followers when you sell paintings, license songs, publish books, perform acting gigs, or pretty much anything else that earn you fame.`,
+                        `Automatically earn followers when you sell paintings, license songs, publish books, perform acting gigs, or pretty much anything else that earns you fame.`,
                         `Earn a ton of followers when your fame rank increases, and lose some of them if it ever goes down.`,
                         `Earn some followers for getting good PR, and lose some for getting bad PR.`,
                         `Use debug cheats to add and remove followers.`,
@@ -142,6 +142,7 @@ export const ModData = {
                     title: 'planned for version 1.1',
                     bullets: [
                         `Console cheats to add, remove, or set a specific number of followers for any sim.`,
+                        `Setting to disable automatic followers for particular sims.`,
                         `Automatic follower gains for more careers and when you gain reputation.`,
                         `Automatic follower losses when you lose reputation.`,
                         `Periodic, random follower gains and losses for celebrity sims.`,
@@ -345,7 +346,7 @@ export const ModData = {
                         `You can use the 'lb_settings.cfg' file to change the settings surrounding random language skill assignment.`,
                         `Open the file in any text editor, and edit the fields under the <code>[RANDOM SKILLS]</code> header.`,
                         `<code>Enabled</code>: If <code>True</code>, then language skills will be randomly assigned to sims. If <code>False</code>, then sims will not spawn with any language skills, and will instead just speak their native language.`,
-                        `<code>Realistic</code>: If <code>True</code>, then the realistic algorithm describe in the 'language skills' section will be used to determine who speaks what. If <code>False</code>, then language skill assignment will be entirely randomized, and equally probable for everyone.`,
+                        `<code>Realistic</code>: If <code>True</code>, then the realistic algorithm described in the 'language skills' section will be used to determine who speaks what. If <code>False</code>, then language skill assignment will be entirely randomized, and equally probable for everyone.`,
                         `<code>Played sims</code>: If <code>True</code>, played sims will be assigned random language skills as well. If <code>False</code>, random language skills will only be applied to NPC sims.`,
                         `<code>Base chance</code>: The percent chance that a sim will have another language skill. This value must be an integer between 0 and 100. If using the realistic system, keep in mind that there are numerous multipliers that are used to determine which sims are going to be bilingual, so the actual percentage of bilingual sims is going to be higher than this base chance. I recommend sticking to a value between 5 and 15.`,
                         `<code>Max per sim</code>: The maximum number of language skills that a sim may spawn with. This must be between 1 and 4.`,
@@ -370,6 +371,7 @@ export const ModData = {
                         `Replace <code>first last</code> with the name of whatever sim you want. If you omit the name, the cheat applies to the active sim instead. The name must be supplied in two tokens (which are separated by spaces). If your sim's name has a space in it, use a % and it will be understood as a space.`,
                         `<strong>Example</strong>: <code>fklb.add windenburgish bella goth</code> will make Bella Goth speak Windenburgish.`,
                         `<strong>Example</strong>: <code>fklb.remove tokisulani</code> will make the active sim no longer speak Toki Sulani.`,
+                        `<strong>Example</strong>: <code>fklb.set_skill sixami 5 eliza pancakes</code> will make Eliza Pancakes speak Sixami at level 5.`,
                     ]
                 },
             ],
