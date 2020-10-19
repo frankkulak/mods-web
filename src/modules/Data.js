@@ -194,8 +194,8 @@ export const ModData = {
             },
             alternativeDownloads: [
                 {
-                    title: `Fast.io`,
-                    url: `https://modsbyfrankkulak.imfast.io/Followers%20for%20Fame/`
+                    title: `Google Drive`,
+                    url: `https://drive.google.com/drive/folders/18eZztaSfaTo5PWO3pC1ITgiL8h8jqD9N?usp=sharing`
                 },
             ]
         },
@@ -245,6 +245,12 @@ export const ModData = {
                         `You can disable Language Barriers for any sim you want, in case you don't want them to have limited interactions or experience miscommunication.`,
                         `You can disable extreme emotions (which are +8 moodlets resulting from miscommunication) if you don't want to deal with the consequences of them.`,
                         `Instructions for how to do all of these can be found in the 'details' tab above.`,
+                    ]
+                },
+                {
+                    title: 'translations',
+                    bullets: [
+                        `This mod is available in English and Japanese (translated by Maru). Other languages will appear in English.`,
                     ]
                 },
                 {
@@ -327,7 +333,7 @@ export const ModData = {
                 {
                     title: 'settings',
                     bullets: [
-                        `If you do not want to run the chance of your sims dying from extreme emotions, then you can disable extreme emotions in the 'Languages' pie menu option. This will make miscommunication moodlets cap out at +4 for that sim.`,
+                        `If you do not want to run the chance of your sims dying from extreme emotions, then you can disable extreme emotions in the 'Languages' pie menu option. This will make miscommunication moodlets cap out at +4 for that sim (NOTE: If your sim already has a +8 moodlet and you disable extreme emotions, the moodlet will go away).`,
                         `You can disable Language Barriers for any sim by clicking on them and selecting the 'Languages' pie menu option. Disabling Language Barriers for a sim means that they will be able to communicate like normal and never experience miscommunication, regardless of their language skills.`,
                     ]
                 },
@@ -377,6 +383,13 @@ export const ModData = {
             ],
             versionHistory: [
                 {
+                    version: '1.0 beta 3',
+                    date: 'October 19, 2020',
+                    bullets: [
+                        `Add Japanese translation (courtesy of Maru on Discord).`,
+                    ]
+                },
+                {
                     version: '1.0 beta 2',
                     date: 'October 10, 2020',
                     bullets: [
@@ -397,8 +410,8 @@ export const ModData = {
             },
             alternativeDownloads: [
                 {
-                    title: `Fast.io`,
-                    url: `https://modsbyfrankkulak.imfast.io/Language%20Barriers/`
+                    title: `Google Drive`,
+                    url: `https://drive.google.com/drive/folders/1-5D1REN-nvr2Lld3Db-ffCNuDjKlxyK-?usp=sharing`
                 },
             ]
         },
@@ -579,8 +592,8 @@ export const ModData = {
             },
             alternativeDownloads: [
                 {
-                    title: `Fast.io`,
-                    url: `https://modsbyfrankkulak.imfast.io/Buy%20Bits%20and%20Pieces/`
+                    title: `Google Drive`,
+                    url: `https://drive.google.com/drive/folders/1igN6N0DPyIw8QwT-ZdOwp6TeQTovlqRz?usp=sharing`
                 },
             ]
         },
@@ -666,8 +679,8 @@ export const ModData = {
             },
             alternativeDownloads: [
                 {
-                    title: `Fast.io`,
-                    url: `https://modsbyfrankkulak.imfast.io/Online%20Homework/`
+                    title: `Google Drive`,
+                    url: `https://drive.google.com/drive/folders/1GKkgjuWfSklSN7_cN2p0JJsbkF39eKhF?usp=sharing`
                 },
             ]
         },
