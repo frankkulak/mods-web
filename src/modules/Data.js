@@ -250,7 +250,8 @@ export const ModData = {
                 {
                     title: 'translations',
                     bullets: [
-                        `This mod is available in English and Japanese (translated by Maru). Other languages will appear in English.`,
+                        `This mod is available in English, Japanese (translated by Maru), French (translated by Syngo9), and Korean (translated by SHUSHU). Other languages will appear in English.`,
+                        `These translations are available in the Translations folder in the download. If you play in English, you can delete the Translations folder if you want.`
                     ]
                 },
                 {
@@ -278,7 +279,7 @@ export const ModData = {
                 {
                     title: 'native language traits',
                     bullets: [
-                        `Each language has a native language trait. They are hidden, which means you will not see them in CAS or in your sim's info panel - they are automatically assigned to all children and older sims when they spawn in to the world.`,
+                        `Each language has a native language trait. You cannot select these traits in CAS - they are automatically assigned to all children and older sims when they spawn in to the world.`,
                         `Sims must have at least one native language trait at all times, but you can change them or add more by using the 'Languages > Native Languages' pie menu option, or by using console cheats (described below).`,
                         `Learn how to configure worlds to use any native language you wish in the 'configuring world languages' section below.`,
                     ]
@@ -382,6 +383,16 @@ export const ModData = {
                 },
             ],
             versionHistory: [
+                {
+                    version: '1.0 beta 4',
+                    date: 'October 20, 2020',
+                    bullets: [
+                        `Add French translation (courtesy of Syngo9 on Discord).`,
+                        `Add Korean translation (courtesy of SHUSHU on Discord).`,
+                        `Fix issue where the Flower Bunny was assigned Simlish, rather than all languages.`,
+                        `Make native speaker traits show up in the sim info panel.`
+                    ]
+                },
                 {
                     version: '1.0 beta 3',
                     date: 'October 19, 2020',
