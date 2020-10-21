@@ -139,7 +139,7 @@ export const ModData = {
                     ]
                 },
                 {
-                    title: 'planned for version 1.1',
+                    title: 'planned for v1.1',
                     bullets: [
                         `Console cheats to add, remove, or set a specific number of followers for any sim.`,
                         `Setting to disable automatic followers for particular sims.`,
@@ -175,16 +175,16 @@ export const ModData = {
                     version: '1.0 beta 2',
                     date: 'July 16, 2020',
                     bullets: [
-                        `Added string tables for non-English languages.`
+                        `Add string tables for non-English languages.`
                     ]
                 },
                 {
                     version: '1.0 beta 1',
                     date: 'July 15, 2020',
                     bullets: [
-                        `Added automatic follower gains for the following interactions: selling a painting or photo, making an app or game, licensing a song or lyrics, publishing a book, being nominated for and accepting an award, completing a work day as an actor, ranking up as a celebrity, and getting positive PR.`,
-                        `Added automatic follower losses for the following interactions: ranking down as a celebrity and getting bad PR.`,
-                        `Added debug cheats to quickly increase or decrease your follower count.`
+                        `Add automatic follower gains for the following interactions: selling a painting or photo, making an app or game, licensing a song or lyrics, publishing a book, being nominated for and accepting an award, completing a work day as an actor, ranking up as a celebrity, and getting positive PR.`,
+                        `Add automatic follower losses for the following interactions: ranking down as a celebrity and getting bad PR.`,
+                        `Add debug cheats to quickly increase or decrease your follower count.`
                     ]
                 }
             ],
@@ -250,8 +250,8 @@ export const ModData = {
                 {
                     title: 'translations',
                     bullets: [
-                        `This mod is available in English, Japanese (translated by Maru), French (translated by Syngo9), and Korean (translated by SHUSHU). Other languages will appear in English.`,
-                        `These translations are available in the Translations folder in the download. If you play in English, you can delete the Translations folder if you want.`
+                        `This mod is available in <strong>English</strong>, <strong>Japanese</strong> (by Maru), <strong>French</strong> (by Syngo9), and <strong>Korean</strong> (by SHUSHU). All other languages will appear in English.`,
+                        `These translations are available in the Translations folder in the download. If you play in English or another language not listed above, you can delete the Translations folder.`
                     ]
                 },
                 {
@@ -261,6 +261,7 @@ export const ModData = {
                         `<strong>MizoreYukii</strong>, who has helped me more times than I can count. I cannot even begin to list everything she's helped me with, or this thank you section would never end. Without her, I wouldn't have even been able to begin this mod.`,
                         `<strong>Basemental</strong>, who helped me figure out some of the more advanced concepts of scripting for The Sims 4, which made my code more concise and resilient to game patches, and even enable it to work with new items and CC.`,
                         `<strong>Lumpinou</strong> and <strong>Jamjars</strong>, who were always there to help me fix bugs and give me new ideas to work with.`,
+                        `All of the translators who took the time to make this mod more accessible to those who do not speak English.`,
                         `And finally, to the members of my Discord server and anyone else who provided me with ideas, feedback, help, and encouragement along the way, thank you!`,
                     ]
                 }
@@ -383,6 +384,13 @@ export const ModData = {
                 },
             ],
             versionHistory: [
+                {
+                    version: '1.0 beta 5',
+                    date: 'October 21, 2020',
+                    bullets: [
+                        `Update Korean translation (SHUSHU).`,
+                    ]
+                },
                 {
                     version: '1.0 beta 4',
                     date: 'October 20, 2020',
@@ -532,8 +540,8 @@ export const ModData = {
                 {
                     title: 'translations',
                     bullets: [
-                        `This mod is available in English, Italian, and French (translated by Rebecca). Other languages will appear in English.`,
-                        `Questa mod è disponibile nell'inglese, l'italiano, ed il francese (tradotto da Rebecca). L'inglese è usato per tutte le altre lingue.`
+                        `This mod is available in <strong>English</strong>, <strong>Italian</strong> (by me), <strong>French</strong> (by Rebecca), and <strong>Chinese</strong> (by MuMu). All other languages will appear in English.`,
+                        `Questa mod è disponibile nell'italiano. Non è necessario installare nient'altro.`,
                     ]
                 },
                 {
@@ -560,6 +568,13 @@ export const ModData = {
             ],
             versionHistory: [
                 {
+                    version: '1.0.5',
+                    date: 'October 21, 2020',
+                    bullets: [
+                        `Add Chinese translation (courtesy of MuMu from Discord).`
+                    ]
+                },
+                {
                     version: '1.0.4',
                     date: 'September 15, 2020',
                     bullets: [
@@ -570,7 +585,7 @@ export const ModData = {
                     version: '1.0.3',
                     date: 'September 13, 2020',
                     bullets: [
-                        `Add French translation (courtesy of Rebecca from my Discord server).`
+                        `Add French translation (courtesy of Rebecca from Discord).`
                     ]
                 },
                 {
@@ -592,8 +607,8 @@ export const ModData = {
                     version: '1.0',
                     date: 'September 9, 2020',
                     bullets: [
-                        `Added the buy bits/pieces interactions to all trash cans.`,
-                        `Added an interaction to fill the generator with §250.`
+                        `Add the buy bits/pieces interactions to all trash cans.`,
+                        `Add an interaction to fill the generator with §250.`
                     ]
                 }
             ],
@@ -638,8 +653,8 @@ export const ModData = {
                 {
                     title: 'translations',
                     bullets: [
-                        `This mod is available in English, Italian, and French (translated by <a href="https://modsims4.fr/" target="_blank">Kimikosoma</a>). Other languages will appear in English.`,
-                        `Questa mod è disponibile nell'inglese, l'italiano, ed il francese (tradotto da <a href="https://modsims4.fr/" target="_blank">Kimikosoma</a>). L'inglese è usato per tutte le altre lingue.`
+                        `This mod is available in <strong>English</strong>, <strong>Italian</strong> (by me), <strong>French</strong> (by <a href="https://modsims4.fr/" target="_blank">Kimikosoma</a>), and <strong>Chinese</strong> (by MuMu). All other languages will appear in English.`,
+                        `Questa mod è disponibile nell'italiano. Non è necessario installare nient'altro.`
                     ]
                 },
             ],
@@ -663,24 +678,31 @@ export const ModData = {
             ],
             versionHistory: [
                 {
+                    version: '1.0.3',
+                    date: 'October 21, 2020',
+                    bullets: [
+                        `Add Chinese translation (courtesy of MuMu from Discord).`
+                    ]
+                },
+                {
                     version: '1.0.2',
                     date: 'October 7, 2020',
                     bullets: [
-                        `Added French translation (courtesy of <a href="https://modsims4.fr/" target="_blank">Kimikosoma</a>).`,
+                        `Add French translation (courtesy of <a href="https://modsims4.fr/" target="_blank">Kimikosoma</a>).`,
                     ]
                 },
                 {
                     version: '1.0.1',
                     date: 'October 6, 2020',
                     bullets: [
-                        `Fixed issue where Italian text showed up in the English version.`,
+                        `Fix issue where Italian text showed up in the English version.`,
                     ]
                 },
                 {
                     version: '1.0',
                     date: 'October 6, 2020',
                     bullets: [
-                        `Added the ability to do university homework at any computer or laptop.`,
+                        `Add the ability to do university homework at any computer or laptop.`,
                     ]
                 }
             ],
