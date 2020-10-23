@@ -385,6 +385,15 @@ export const ModData = {
             ],
             versionHistory: [
                 {
+                    version: '1.0',
+                    date: 'October 23, 2020',
+                    bullets: [
+                        `Add Spanish translation (GeoSims).`,
+                        `Adjust the probability for miscommunication moodlets to intensity to be slightly less likely.`,
+                        `End beta phase.`,
+                    ]
+                },
+                {
                     version: '1.0 beta 5',
                     date: 'October 21, 2020',
                     bullets: [
