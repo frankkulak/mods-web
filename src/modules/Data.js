@@ -250,8 +250,9 @@ export const ModData = {
                 {
                     title: 'translations',
                     bullets: [
-                        `This mod is available in <strong>English</strong>, <strong>Japanese</strong> (by Maru), <strong>French</strong> (by Syngo9), <strong>Korean</strong> (by SHUSHU), and <strong>Spanish</strong> (by GeoSims). All other languages will appear in English.`,
-                        `These translations are available in the Translations folder in the download. If you play in English or another language not listed above, you can delete the Translations folder.`
+                        `This mod is available in <strong>English</strong>, <strong>Japanese</strong> (by Maru), <strong>French</strong> (by Syngo9), <strong>Korean</strong> (by SHUSHU), <strong>Spanish</strong> (by GeoSims), and <strong>Chinese*</strong> (by GreenOnionC). All other languages will appear in English.`,
+                        `These translations are available in the Translations folder in the download. If you play in English or another language not listed above, you can delete the Translations folder.`,
+                        `* = The Chinese translation is currently missing strings for the textbooks, so they will appear in English.`,
                     ]
                 },
                 {
@@ -384,6 +385,15 @@ export const ModData = {
                 },
             ],
             versionHistory: [
+                {
+                    version: '1.0.1',
+                    date: 'October 28, 2020',
+                    bullets: [
+                        `Add Chinese translation (GreenOnionC).`,
+                        `Fix potential compatability issue with some other mods.`,
+                        `Fix some typos.`,
+                    ]
+                },
                 {
                     version: '1.0',
                     date: 'October 23, 2020',
