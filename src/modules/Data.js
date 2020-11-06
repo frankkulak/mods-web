@@ -250,9 +250,8 @@ export const ModData = {
                 {
                     title: 'translations',
                     bullets: [
-                        `This mod is available in <strong>English</strong>, <strong>Japanese</strong> (by Maru), <strong>French</strong> (by Syngo9), <strong>Korean</strong> (by SHUSHU), <strong>Spanish</strong> (by GeoSims), and <strong>Chinese*</strong> (by GreenOnionC). All other languages will appear in English.`,
+                        `This mod is available in <strong>English</strong>, <strong>Japanese</strong> (by Maru), <strong>French</strong> (by Syngo9 and <a href="https://modsims4.fr/" target="_blank">Kimikosoma</a>), <strong>Korean</strong> (by SHUSHU), <strong>Spanish</strong> (by GeoSims), and <strong>Chinese</strong> (by GreenOnionC). All other languages will appear in English.`,
                         `These translations are available in the Translations folder in the download. If you play in English or another language not listed above, you can delete the Translations folder.`,
-                        `* = The Chinese translation is currently missing strings for the textbooks, so they will appear in English.`,
                     ]
                 },
                 {
@@ -372,6 +371,7 @@ export const ModData = {
                         `<code>fklb.disable first last</code>: Disables Language Barriers for the named sim.`,
                         `<code>fklb.disable_all</code>: Disables Language Barriers for all sims.`,
                         `<code>fklb.remove language first last</code>: Removes the given language from the named sim.`,
+                        `<code>fklb.reset language</code>: Identifies every sim that would speak the given language by default, and resets their native language traits. This can be used when a new language is added to the mod, and you want to make sure it is applied to everyone that it should be without affecting your existing sims.`,
                         `<code>fklb.reset_all</code>: Resets the native language of all sims to their default. This can be used to reset everyone's languages after you've modified the [REGIONS] section of the 'lb_settings.cfg' file. Be advised that running this cheat will also reset any languages that you have manually added or removed to sims, as well as any languages that children have acquired. However, it will not affect their language skills.`,
                         `<code>fklb.reset_random_skills</code>: Resets the random skills that are assigned to sims by default. This can be run after changing the contents in the [RANDOM SKILLS] section of the 'lb_settings.cfg' file. Be advised that running this cheat will completely reset the language skills of any and all NPC sims, and will not affect played sims at all, even if you have the 'Played sims' setting set to True.`,
                         `<code>fklb.set_skill language level first last</code>: Sets the skill for the given language to the given level for the named sim.`,
@@ -385,6 +385,14 @@ export const ModData = {
                 },
             ],
             versionHistory: [
+                {
+                    version: '1.0.2',
+                    date: 'November 6, 2020',
+                    bullets: [
+                        `Update Chinese (GreenOnionC) and French (Kimikosoma) translations.`,
+                        `Add the <code>fklb.reset</code> cheat in preparation for the Snowy Escape update.`
+                    ]
+                },
                 {
                     version: '1.0.1',
                     date: 'October 28, 2020',
