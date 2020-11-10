@@ -16,7 +16,7 @@ export const DataEnums = {
 export const GameData = {
     ts4: {
         name: "The Sims 4",
-        lastUpdate: "October 6, 2020"
+        lastUpdate: "November 10, 2020"
     }
 };
 
@@ -94,7 +94,7 @@ export const ModData = {
             id: 'followersforfame',
             name: 'Followers for Fame',
             developmentStage: DataEnums.developmentStage.active,
-            testingStatus: DataEnums.testingStatus.working,
+            testingStatus: DataEnums.testingStatus.untested,
             releaseDate: 'July 15, 2020',
             description: `Can you really call yourself a 'Global Superstar' when you only have 12 followers on Simstagram? This mod automatically gives your sim followers whenever they gain fame.`,
             thumbnail: 'ff-thumbnail.png',
@@ -204,7 +204,7 @@ export const ModData = {
             id: 'languagebarriers',
             name: 'Language Barriers',
             developmentStage: DataEnums.developmentStage.active,
-            testingStatus: DataEnums.testingStatus.beta,
+            testingStatus: DataEnums.testingStatus.untested,
             releaseDate: 'October 10, 2020',
             description: `A world where everyone speaks the same language is unrealistic. This mod adds new languages to the Sims universe, which introduces a unique challenge to the game.`,
             thumbnail: 'lb-thumbnail.png',
@@ -540,7 +540,7 @@ export const ModData = {
             id: 'buybitsandpieces',
             name: 'Buy Bits and Pieces',
             developmentStage: DataEnums.developmentStage.active,
-            testingStatus: DataEnums.testingStatus.working,
+            testingStatus: DataEnums.testingStatus.untested,
             releaseDate: 'September 9, 2020',
             description: `Gathering bits and pieces by recycling materials can get repetitive and annoying. This mod allows you to buy them with simoleons instead, for those of you that don't like to use cheats.`,
             thumbnail: 'bbp-1.png',
@@ -655,7 +655,7 @@ export const ModData = {
             id: 'onlinehomework',
             name: 'Online Homework',
             developmentStage: DataEnums.developmentStage.active,
-            testingStatus: DataEnums.testingStatus.working,
+            testingStatus: DataEnums.testingStatus.untested,
             releaseDate: 'October 6, 2020',
             description: `Can't find your sim's notebook? Well, now you can do their homework at any computer or laptop. This mod currently only works for university students.`,
             thumbnail: 'oh-thumbnail.png',
