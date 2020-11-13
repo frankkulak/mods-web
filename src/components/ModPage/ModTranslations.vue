@@ -1,13 +1,12 @@
 <template>
     <section id="mod-translations" class="pb-5">
         <b-container fluid>
-            <h1 class="w-100 text-center mb-5">available in...</h1>
+            <h1 class="w-100 text-center mb-5">supported languages</h1>
 
             <b-row>
                 <b-col v-for="translation in translations" :key="translation.language" class="p-2"
                        cols="12" sm="6" md="4">
                     <div class="translation-container p-3">
-                        <!--<p class="mb-2">{{ translation.language }}</p>-->
                         <h2>{{ translation.languageNativeName }}<span v-if="!translation.updated">*</span></h2>
                         <p class="mt-2">by <span v-html="translation.translator"></span></p>
                     </div>
@@ -18,7 +17,7 @@
                 * = This language's translation is outdated, and some text will appear in English.
             </p>
 
-            <p class="mt-5">If you would like to provide a translation for this mod, please let me know on
+            <p class="mt-3">If you would like to provide a translation for this mod, please let me know on
                 <a href="https://discord.gg/qNhD3Jh" target="_blank">Discord</a>. I welcome and encourage
                 translations, but I do not appreciate re-posting of my work without permission.
                 Additionally, telling me about your translation will allow me include it in the official

@@ -88,6 +88,7 @@ export const ModData = {
                 url: `http://www.simfileshare.net/download/1895244/`
             },
             alternativeDownloads: [],
+            warning: `This mod is obsolete, and I therefore no longer support it - you should not put it in your game. The only reason the download is still available is for you to reference the code, if you would like.`,
             translations: [
                 {
                     language: `English`,
@@ -206,6 +207,7 @@ export const ModData = {
                     url: `https://drive.google.com/drive/folders/18eZztaSfaTo5PWO3pC1ITgiL8h8jqD9N?usp=sharing`
                 },
             ],
+            warning: null,
             translations: [
                 {
                     language: `English`,
@@ -279,9 +281,9 @@ export const ModData = {
                 {
                     title: 'languages',
                     bullets: [
-                        `<strong>Komorebigo</strong>: Everyone from Mt. Komorebi (except for aliens, mermaids, and islanders).`,
-                        `<strong>Selvadoradian</strong>: Everyone from Selvadorada (except for aliens, mermaids, and islanders).`,
-                        `<strong>Windenburgish</strong>: Everyone from Windenburg (except for aliens, mermaids, and islanders).`,
+                        `<strong>Komorebigo</strong>: Everyone from Mt. Komorebi (except for aliens & mermaids).`,
+                        `<strong>Selvadoradian</strong>: Everyone from Selvadorada (except for aliens & mermaids).`,
+                        `<strong>Windenburgish</strong>: Everyone from Windenburg (except for aliens & mermaids).`,
                         `<strong>Toki Sulani</strong>: Everyone from Sulani, all mermaids (regardless of where they live), and anyone with islander traits.`,
                         `<strong>Sixami</strong>: All aliens (regardless of where they live or which traits they have).`,
                         `<strong>Simlish</strong>: Default language for everyone else.`,
@@ -412,12 +414,12 @@ export const ModData = {
                     version: '1.1',
                     date: 'November 13, 2020',
                     bullets: [
-                        `Add the Komorebigo language for Mt. Komorebi.`,
-                        `Add skill, trait, textbook, Simlingo interactions, social interactions, etc. for Komorebigo.`,
-                        `Add option to disable any languages that aren't wanted.`,
-                        `Add support for changing the language of Windenburg, Sulani, and Mt. Komorebi.`,
-                        `Update all existing translations.`,
-                        `Add Brazilian Portuguese translation (Proko).`,
+                        `Add Komorebigo for Mt. Komorebi (skill, trait, textbook, Simlingo interactions, social interactions, etc.).`,
+                        `Add an option to disable unwanted languages with 'lb_settings.cfg'.`,
+                        `Add support for changing the default languages of Windenburg, Sulani, and Mt. Komorebi.`,
+                        `Fix bug where you could not speak to a celebrity in another language.`,
+                        `Update all existing translations (except for Chinese).`,
+                        `Add Portuguese translation (by Proko).`,
                     ]
                 },
                 {
@@ -495,6 +497,7 @@ export const ModData = {
                     url: `https://drive.google.com/drive/folders/1-5D1REN-nvr2Lld3Db-ffCNuDjKlxyK-?usp=sharing`
                 },
             ],
+            warning: `If you have already played Snowy Escape with a version of Language Barriers lower than v1.1, you will have to use the <code>fklb.reset komorebigo</code> cheat, or else your sims from Mt. Komorebi will speak Simlish rather than Komorebigo.`,
             translations: [
                 {
                     language: `English`,
@@ -524,17 +527,17 @@ export const ModData = {
                     language: `Spanish`,
                     languageNativeName: `Español`,
                     translator: `GeoSims`,
-                    updated: false,
+                    updated: true,
                 },
                 {
                     language: `Chinese (Simplified)`,
                     languageNativeName: `简体中文`,
                     translator: `GreenOnionC`,
-                    updated: false,
+                    updated: true,
                 },
                 {
-                    language: `Portuguese (Brazil)`,
-                    languageNativeName: `Português do Brasil`,
+                    language: `Portuguese`,
+                    languageNativeName: `Português`,
                     translator: `Proko`,
                     updated: true,
                 },
@@ -613,6 +616,7 @@ export const ModData = {
             versionHistory: [],
             primaryDownload: null,
             alternativeDownloads: [],
+            warning: null,
             translations: []
         },
         buybitsandpieces: {
@@ -722,6 +726,7 @@ export const ModData = {
                     url: `https://drive.google.com/drive/folders/1igN6N0DPyIw8QwT-ZdOwp6TeQTovlqRz?usp=sharing`
                 },
             ],
+            warning: null,
             translations: [
                 {
                     language: `English`,
@@ -835,6 +840,7 @@ export const ModData = {
                     url: `https://drive.google.com/drive/folders/1GKkgjuWfSklSN7_cN2p0JJsbkF39eKhF?usp=sharing`
                 },
             ],
+            warning: null,
             translations: [
                 {
                     language: `English`,

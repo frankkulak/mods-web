@@ -61,6 +61,11 @@
                         <li>I am free to stop supporting this mod at any time for any reason.</li>
                     </ul>
 
+                    <b-alert variant="warning" class="text-left mb-5" v-if="mod.warning !== null" show>
+                        <strong>&#9888; WARNING: </strong>
+                        <span v-html="mod.warning"></span>
+                    </b-alert>
+
                     <div class="w-100 text-center">
                         <div>
                             <a :href="mod.primaryDownload.url" target="_blank" class="btn btn-outline-primary"
@@ -195,6 +200,10 @@
         }
 
         #mod-download {
+            .alert strong {
+                font-weight: bold;
+            }
+
             ul {
                 margin-bottom: 0;
             }
