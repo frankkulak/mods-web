@@ -28,6 +28,8 @@
             </b-container>
         </section>
 
+        <mod-translations :mod="mod" v-if="!isWip"/>
+
         <section id="mod-download" class="dark-vars py-5">
             <b-container fluid>
                 <h1 class="w-100 text-center mb-5">download</h1>
@@ -52,12 +54,6 @@
                     <ul class="mb-5">
                         <li>Do not share or distribute this mod without crediting me - a link to this website is
                             sufficient.
-                        </li>
-                        <li>If you would like to provide a translation for this mod, please let me know on
-                            <a href="https://discord.gg/qNhD3Jh" target="_blank">Discord</a>. I welcome and encourage
-                            translations, but I do not appreciate re-posting of my work without permission.
-                            Additionally, telling me about your translation will allow me include it in the official
-                            download on this webpage. You will be credited for your translation.
                         </li>
                         <li>I am not responsible for the misuse of this mod (e.g. using it with conflicting mods or when
                             it is out-of-date).
@@ -97,10 +93,11 @@
     import ModStatusAlert from "./ModStatusAlert";
     import ModImageCarousel from "./ModImageCarousel";
     import ModDetailsTab from "./ModDetailsTab";
+    import ModTranslations from "./ModTranslations";
 
     export default {
         name: "ModPage",
-        components: {ModStatusAlert, ModImageCarousel, ModDetailsTab},
+        components: {ModTranslations, ModStatusAlert, ModImageCarousel, ModDetailsTab},
         data: function () {
             return {
                 mod: ModData[this.$route.params.game][this.$route.params.mod],
@@ -135,7 +132,7 @@
                 if (details !== null && details.length > 0) tabs.push({title: "details", items: details});
                 if (versionHistory !== null && versionHistory.length > 0) {
                     tabs.push({
-                        title: "history",
+                        title: "change log",
                         items: versionHistory.map(({version, date, bullets}) => {
                             return {
                                 title: `${version} (${date})`,

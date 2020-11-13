@@ -87,7 +87,15 @@ export const ModData = {
                 title: `Sim File Share`,
                 url: `http://www.simfileshare.net/download/1895244/`
             },
-            alternativeDownloads: []
+            alternativeDownloads: [],
+            translations: [
+                {
+                    language: `English`,
+                    languageNativeName: `English`,
+                    translator: `Frankk`,
+                    updated: true,
+                },
+            ]
         },
         followersforfame: {
             game: 'ts4',
@@ -197,6 +205,14 @@ export const ModData = {
                     title: `Google Drive`,
                     url: `https://drive.google.com/drive/folders/18eZztaSfaTo5PWO3pC1ITgiL8h8jqD9N?usp=sharing`
                 },
+            ],
+            translations: [
+                {
+                    language: `English`,
+                    languageNativeName: `English`,
+                    translator: `Frankk`,
+                    updated: true,
+                },
             ]
         },
         languagebarriers: {
@@ -222,7 +238,7 @@ export const ModData = {
                 {
                     title: 'features',
                     bullets: [
-                        `Five languages for your sims to learn: Selvadoradian, Windenburgish, Toki Sulani, Sixami, and Simlish.`,
+                        `Six languages: Komorebigo, Selvadoradian, Simlish, Sixami, Toki Sulani, and Windenburgish.`,
                         `Native languages are assigned to sims (children and older) depending on their home world, traits, and occult type.`,
                         `Toddlers will acquire their native language(s) once they become children. The languages they acquire depends on which ones they have been exposed to while growing up.`,
                         `Sims can learn another language by using Simlingo, reading a textbook, or interacting with other sims who speak it.`,
@@ -240,18 +256,11 @@ export const ModData = {
                 {
                     title: 'customization options',
                     bullets: [
-                        `You can make sims from any residential world speak whatever language you wish. This is a great option for players without any of the associated packs.`,
-                        `Sims may spawn in with random language skills, but you can disable this or tweak the settings however you want.`,
-                        `You can disable Language Barriers for any sim you want, in case you don't want them to have limited interactions or experience miscommunication.`,
-                        `You can disable extreme emotions (which are +8 moodlets resulting from miscommunication) if you don't want to deal with the consequences of them.`,
-                        `Instructions for how to do all of these can be found in the 'details' tab above.`,
-                    ]
-                },
-                {
-                    title: 'translations',
-                    bullets: [
-                        `This mod is available in <strong>English</strong>, <strong>Japanese</strong> (by Maru), <strong>French</strong> (by Syngo9 and <a href="https://modsims4.fr/" target="_blank">Kimikosoma</a>), <strong>Korean</strong> (by SHUSHU), <strong>Spanish</strong> (by GeoSims), and <strong>Chinese</strong> (by GreenOnionC). All other languages will appear in English.`,
-                        `These translations are available in the Translations folder in the download. If you play in English or another language not listed above, you can delete the Translations folder.`,
+                        `You can disable any of the languages that you don't want to play with.`,
+                        `You can set any residential world to speak whatever language you wish.`,
+                        `Sims spawn with random language skills, and you can fine-tune how this works.`,
+                        `You can disable Language Barriers for any sim, and they'll be able to communicate like normal with anyone.`,
+                        `Detailed instructions for how to do all of these can be found in the 'details' tab above.`,
                     ]
                 },
                 {
@@ -270,6 +279,7 @@ export const ModData = {
                 {
                     title: 'languages',
                     bullets: [
+                        `<strong>Komorebigo</strong>: Everyone from Mt. Komorebi (except for aliens, mermaids, and islanders).`,
                         `<strong>Selvadoradian</strong>: Everyone from Selvadorada (except for aliens, mermaids, and islanders).`,
                         `<strong>Windenburgish</strong>: Everyone from Windenburg (except for aliens, mermaids, and islanders).`,
                         `<strong>Toki Sulani</strong>: Everyone from Sulani, all mermaids (regardless of where they live), and anyone with islander traits.`,
@@ -280,7 +290,7 @@ export const ModData = {
                 {
                     title: 'native language traits',
                     bullets: [
-                        `Each language has a native language trait. You cannot select these traits in CAS - they are automatically assigned to all children and older sims when they spawn in to the world.`,
+                        `Each language has a native language trait. These traits are not chosen in CAS - they are automatically assigned to sims when they spawn in to the world.`,
                         `Sims must have at least one native language trait at all times, but you can change them or add more by using the 'Languages > Native Languages' pie menu option, or by using console cheats (described below).`,
                         `Learn how to configure worlds to use any native language you wish in the 'configuring world languages' section below.`,
                     ]
@@ -320,6 +330,7 @@ export const ModData = {
                         `At level 4, they unlock all friendly and mean interactions, and some simple funny and mischief interactions.`,
                         `At level 5, they unlock all interactions, including funny, mischief, and romantic.`,
                         `If a sim has Language Barriers disabled, they will be able to communicate with everyone normally.`,
+                        `This system will work with CC interactions only if they are in the friendly, funny, mischief, mean, or romance categories. If they are in their own CC categories, they will not be hidden. Reach out to me if you would like to see LB better integrated with another mod.`,
                     ]
                 },
                 {
@@ -340,19 +351,30 @@ export const ModData = {
                     ]
                 },
                 {
+                    title: 'disabling languages',
+                    bullets: [
+                        `You can use the <code>[LANGUAGES]</code> section of the 'lb_settings.cfg' file to disable any languages that you don't want to play with.`,
+                        `If the value is set to <code>True</code>, then the language will be enabled and function normally. If it is set to <code>False</code>, then the language will be disabled, which means that the game will ignore traits and occult types when assigning languages.`,
+                        `If you want to also disable a language in terms of region, you must also change the value of its associated world in the <code>[REGIONS]</code> section (described below).`,
+                        `If you've already played with the mod installed, you will have to run either the <code>fklb.reset</code> or <code>fklb.reset_all</code> cheat in order for your new settings to take effect. These settings are described in the 'console cheats' section below.`,
+                        `<strong>Example</strong>: Want to get rid of Windenburgish? Set <code>Windenburgish = False</code> and <code>Windenburg = Simlish</code>`,
+                        `<strong>Example</strong>: Want to get rid of Sixami? Just set <code>Sixami = False</code>`,
+                    ]
+                },
+                {
                     title: 'configuring world languages',
                     bullets: [
-                        `You can use the 'lb_settings.cfg' file to change the language that sims from any world use.`,
-                        `Open the file in any text editor, and change the language for whichever world you want. For example, to make sims from Oasis Springs speak Selvadoradian, change <code>Oasis Springs = Simlish</code> to <code>Oasis Springs = Selvadoradian</code>.`,
-                        `The valid languages are <code>Simlish</code>, <code>Selvadoradian</code>, <code>Windenburgish</code>, <code>Toki Sulani</code>, and <code>Sixami</code>. Capitalization and spaces don't matter, but spelling does, so be sure you have it right.`,
-                        `If you've already played the game with Language Barriers installed, you will have to run the <code>fklb.reset_all</code> cheat (described below) in order for your new settings take effect. If you do not run this cheat, then sims who have already spawned into the world will continue to speak their world's previous default language.`,
+                        `You can use the <code>[LANGUAGES]</code> section of the 'lb_settings.cfg' file to change the language that a particular world speaks.`,
+                        `The valid languages are <code>Simlish</code>, <code>Selvadoradian</code>, <code>Windenburgish</code>, <code>Komorebigo</code>, <code>Toki Sulani</code>, and <code>Sixami</code>. Capitalization doesn't matter, but spelling does, so be sure you have it right.`,
+                        `If changing the language for Mt. Komorebi, Windenburg, or Sulani, make sure you set those languages to <code>False</code> (described above), or else some sims in these worlds may still speak the default language.`,
+                        `If you've already played with the mod installed, you will have to run either the <code>fklb.reset</code> or <code>fklb.reset_all</code> cheat in order for your new settings to take effect. These settings are described in the 'console cheats' section below.`,
+                        `<strong>Example</strong>: Want to make sims from Oasis Springs speak Selvadoradian? Set <code>Oasis Springs = Selvadoradian</code>`
                     ]
                 },
                 {
                     title: 'configuring random language skills',
                     bullets: [
-                        `You can use the 'lb_settings.cfg' file to change the settings surrounding random language skill assignment.`,
-                        `Open the file in any text editor, and edit the fields under the <code>[RANDOM SKILLS]</code> header.`,
+                        `You can use the <code>[RANDOM SKILLS]</code> section in the 'lb_settings.cfg' file to change the settings surrounding random language skill assignment.`,
                         `<code>Enabled</code>: If <code>True</code>, then language skills will be randomly assigned to sims. If <code>False</code>, then sims will not spawn with any language skills, and will instead just speak their native language.`,
                         `<code>Realistic</code>: If <code>True</code>, then the realistic algorithm described in the 'language skills' section will be used to determine who speaks what. If <code>False</code>, then language skill assignment will be entirely randomized, and equally probable for everyone.`,
                         `<code>Played sims</code>: If <code>True</code>, played sims will be assigned random language skills as well. If <code>False</code>, random language skills will only be applied to NPC sims.`,
@@ -371,20 +393,33 @@ export const ModData = {
                         `<code>fklb.disable first last</code>: Disables Language Barriers for the named sim.`,
                         `<code>fklb.disable_all</code>: Disables Language Barriers for all sims.`,
                         `<code>fklb.remove language first last</code>: Removes the given language from the named sim.`,
-                        `<code>fklb.reset language</code>: Identifies every sim that would speak the given language by default, and resets their native language traits. This can be used when a new language is added to the mod, and you want to make sure it is applied to everyone that it should be without affecting your existing sims.`,
-                        `<code>fklb.reset_all</code>: Resets the native language of all sims to their default. This can be used to reset everyone's languages after you've modified the [REGIONS] section of the 'lb_settings.cfg' file. Be advised that running this cheat will also reset any languages that you have manually added or removed to sims, as well as any languages that children have acquired. However, it will not affect their language skills.`,
+                        `<code>fklb.reset language</code>: Identifies every sim that would speak the given language by default, and resets their native language traits. This can be used when a new language is added to the mod, and you want to make sure it is applied to all new sims, without affecting your existing sims. It can also be used when you've edited the [LANGUAGES] or [REGIONS] sections of the 'lb_settings.cfg' file for one language only.`,
+                        `<code>fklb.reset_all</code>: Resets the native language of all sims to their default. This can be used to reset everyone's languages after you've modified the [LANGUAGES] or [REGIONS] sections of the 'lb_settings.cfg' file. Be advised that running this cheat will also reset any languages that you have manually added or removed to sims, as well as any languages that children have acquired. However, it will not affect their language skills.`,
                         `<code>fklb.reset_random_skills</code>: Resets the random skills that are assigned to sims by default. This can be run after changing the contents in the [RANDOM SKILLS] section of the 'lb_settings.cfg' file. Be advised that running this cheat will completely reset the language skills of any and all NPC sims, and will not affect played sims at all, even if you have the 'Played sims' setting set to True.`,
                         `<code>fklb.set_skill language level first last</code>: Sets the skill for the given language to the given level for the named sim.`,
-                        `Valid values for <code>language</code> are <code>simlish</code>, <code>windenburgish</code>, <code>selvadoradian</code>, <code>tokisulani</code>, and <code>sixami</code>.`,
+                        `Valid values for <code>language</code> are <code>simlish</code>, <code>windenburgish</code>, <code>selvadoradian</code>, <code>tokisulani</code>, <code>komorebigo</code>, and <code>sixami</code>.`,
                         `Valid values for <code>level</code> are any integer values between 1 and 10.`,
                         `Replace <code>first last</code> with the name of whatever sim you want. If you omit the name, the cheat applies to the active sim instead. The name must be supplied in two tokens (which are separated by spaces). If your sim's name has a space in it, use a % and it will be understood as a space.`,
                         `<strong>Example</strong>: <code>fklb.add windenburgish bella goth</code> will make Bella Goth speak Windenburgish.`,
                         `<strong>Example</strong>: <code>fklb.remove tokisulani</code> will make the active sim no longer speak Toki Sulani.`,
+                        `<strong>Example</strong>: <code>fklb.reset komorebigo</code> will reset the native languages of all sims that should speak Komorebigo, taking your custom settings into account.`,
                         `<strong>Example</strong>: <code>fklb.set_skill sixami 5 eliza pancakes</code> will make Eliza Pancakes speak Sixami at level 5.`,
                     ]
                 },
             ],
             versionHistory: [
+                {
+                    version: '1.1',
+                    date: 'November 13, 2020',
+                    bullets: [
+                        `Add the Komorebigo language for Mt. Komorebi.`,
+                        `Add skill, trait, textbook, Simlingo interactions, social interactions, etc. for Komorebigo.`,
+                        `Add option to disable any languages that aren't wanted.`,
+                        `Add support for changing the language of Windenburg, Sulani, and Mt. Komorebi.`,
+                        `Update all existing translations.`,
+                        `Add Brazilian Portuguese translation (Proko).`,
+                    ]
+                },
                 {
                     version: '1.0.2',
                     date: 'November 6, 2020',
@@ -458,6 +493,50 @@ export const ModData = {
                 {
                     title: `Google Drive`,
                     url: `https://drive.google.com/drive/folders/1-5D1REN-nvr2Lld3Db-ffCNuDjKlxyK-?usp=sharing`
+                },
+            ],
+            translations: [
+                {
+                    language: `English`,
+                    languageNativeName: `English`,
+                    translator: `Frankk`,
+                    updated: true,
+                },
+                {
+                    language: `Japanese`,
+                    languageNativeName: `日本語`,
+                    translator: `Maru`,
+                    updated: true,
+                },
+                {
+                    language: `Korean`,
+                    languageNativeName: `한국어`,
+                    translator: `SHUSHU`,
+                    updated: true,
+                },
+                {
+                    language: `French`,
+                    languageNativeName: `Français`,
+                    translator: `Syngo9 and <a href="https://modsims4.fr/" target="_blank">Kimikosoma</a>`,
+                    updated: true,
+                },
+                {
+                    language: `Spanish`,
+                    languageNativeName: `Español`,
+                    translator: `GeoSims`,
+                    updated: false,
+                },
+                {
+                    language: `Chinese (Simplified)`,
+                    languageNativeName: `简体中文`,
+                    translator: `GreenOnionC`,
+                    updated: false,
+                },
+                {
+                    language: `Portuguese (Brazil)`,
+                    languageNativeName: `Português do Brasil`,
+                    translator: `Proko`,
+                    updated: true,
                 },
             ]
         },
@@ -533,7 +612,8 @@ export const ModData = {
             ],
             versionHistory: [],
             primaryDownload: null,
-            alternativeDownloads: []
+            alternativeDownloads: [],
+            translations: []
         },
         buybitsandpieces: {
             game: 'ts4',
@@ -562,13 +642,6 @@ export const ModData = {
                     bullets: [
                         `The Eco Lifestyle expansion pack is required.`,
                         `This mod does not override any files, so it should be safe to use with any other mods.`
-                    ]
-                },
-                {
-                    title: 'translations',
-                    bullets: [
-                        `This mod is available in <strong>English</strong>, <strong>Italian</strong> (by me), <strong>French</strong> (by Rebecca), and <strong>Chinese</strong> (by MuMu). All other languages will appear in English.`,
-                        `Questa mod è disponibile nell'italiano. Non è necessario installare nient'altro.`,
                     ]
                 },
                 {
@@ -648,6 +721,32 @@ export const ModData = {
                     title: `Google Drive`,
                     url: `https://drive.google.com/drive/folders/1igN6N0DPyIw8QwT-ZdOwp6TeQTovlqRz?usp=sharing`
                 },
+            ],
+            translations: [
+                {
+                    language: `English`,
+                    languageNativeName: `English`,
+                    translator: `Frankk`,
+                    updated: true,
+                },
+                {
+                    language: `Italian`,
+                    languageNativeName: `Italiano`,
+                    translator: `Frankk`,
+                    updated: true,
+                },
+                {
+                    language: `French`,
+                    languageNativeName: `Français`,
+                    translator: `<a href="https://modsims4.fr/" target="_blank">Kimikosoma</a>`,
+                    updated: true,
+                },
+                {
+                    language: `Chinese (Simplified)`,
+                    languageNativeName: `简体中文`,
+                    translator: `MuMu`,
+                    updated: true,
+                },
             ]
         },
         onlinehomework: {
@@ -675,13 +774,6 @@ export const ModData = {
                     bullets: [
                         `The Discover University expansion pack is required.`,
                         `This mod does not override any files, so it should be safe to use with any other mods.`,
-                    ]
-                },
-                {
-                    title: 'translations',
-                    bullets: [
-                        `This mod is available in <strong>English</strong>, <strong>Italian</strong> (by me), <strong>French</strong> (by <a href="https://modsims4.fr/" target="_blank">Kimikosoma</a>), and <strong>Chinese</strong> (by MuMu). All other languages will appear in English.`,
-                        `Questa mod è disponibile nell'italiano. Non è necessario installare nient'altro.`
                     ]
                 },
             ],
@@ -741,6 +833,32 @@ export const ModData = {
                 {
                     title: `Google Drive`,
                     url: `https://drive.google.com/drive/folders/1GKkgjuWfSklSN7_cN2p0JJsbkF39eKhF?usp=sharing`
+                },
+            ],
+            translations: [
+                {
+                    language: `English`,
+                    languageNativeName: `English`,
+                    translator: `Frankk`,
+                    updated: true,
+                },
+                {
+                    language: `Italian`,
+                    languageNativeName: `Italiano`,
+                    translator: `Frankk`,
+                    updated: true,
+                },
+                {
+                    language: `French`,
+                    languageNativeName: `Français`,
+                    translator: `<a href="https://modsims4.fr/" target="_blank">Kimikosoma</a>`,
+                    updated: true,
+                },
+                {
+                    language: `Chinese (Simplified)`,
+                    languageNativeName: `简体中文`,
+                    translator: `MuMu`,
+                    updated: true,
                 },
             ]
         },
