@@ -411,6 +411,13 @@ export const ModData = {
             ],
             versionHistory: [
                 {
+                    version: '1.1.1',
+                    date: 'November 14, 2020',
+                    bullets: [
+                        `Update Chinese translation (GreenOnionC).`,
+                    ]
+                },
+                {
                     version: '1.1',
                     date: 'November 13, 2020',
                     bullets: [
@@ -538,7 +545,7 @@ export const ModData = {
                 {
                     language: `Portuguese`,
                     languageNativeName: `Português`,
-                    translator: `Proko`,
+                    translator: `AnayramProko`,
                     updated: true,
                 },
             ]
