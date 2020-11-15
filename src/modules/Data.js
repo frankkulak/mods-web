@@ -809,6 +809,13 @@ export const ModData = {
             ],
             versionHistory: [
                 {
+                    version: '1.0.4',
+                    date: 'November 15, 2020',
+                    bullets: [
+                        `Add Polish translation (courtesy of Osqar from Discord).`
+                    ]
+                },
+                {
                     version: '1.0.3',
                     date: 'October 21, 2020',
                     bullets: [
@@ -871,6 +878,12 @@ export const ModData = {
                     language: `Chinese (Simplified)`,
                     languageNativeName: `简体中文`,
                     translator: `MuMu`,
+                    updated: true,
+                },
+                {
+                    language: `Polish`,
+                    languageNativeName: `Polski`,
+                    translator: `<a href="https://www.instagram.com/ossqarr/" target="_blank">Osqar</a>`,
                     updated: true,
                 },
             ]
