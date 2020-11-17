@@ -411,6 +411,13 @@ export const ModData = {
             ],
             versionHistory: [
                 {
+                    version: '1.1.2',
+                    date: 'November 16, 2020',
+                    bullets: [
+                        `Add Polish translation (Osqar).`,
+                    ]
+                },
+                {
                     version: '1.1.1',
                     date: 'November 14, 2020',
                     bullets: [
@@ -546,6 +553,12 @@ export const ModData = {
                     language: `Portuguese`,
                     languageNativeName: `Português`,
                     translator: `AnayramProko`,
+                    updated: true,
+                },
+                {
+                    language: `Polish`,
+                    languageNativeName: `Polski`,
+                    translator: `<a href="https://www.instagram.com/ossqarr/" target="_blank">Osqar</a>`,
                     updated: true,
                 },
             ]

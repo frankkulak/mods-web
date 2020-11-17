@@ -55,8 +55,8 @@
                         <li>Do not share or distribute this mod without crediting me - a link to this website is
                             sufficient.
                         </li>
-                        <li>I am not responsible for the misuse of this mod (e.g. using it with conflicting mods or when
-                            it is out-of-date).
+                        <li>I am not responsible for the misuse of this mod (e.g. changing the code, using it with
+                            conflicting mods, or when it is out-of-date).
                         </li>
                         <li>I am free to stop supporting this mod at any time for any reason.</li>
                     </ul>
