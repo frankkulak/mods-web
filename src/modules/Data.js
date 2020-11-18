@@ -16,7 +16,7 @@ export const DataEnums = {
 export const GameData = {
     ts4: {
         name: "The Sims 4",
-        lastUpdate: "November 10, 2020"
+        lastUpdate: "November 17, 2020"
     }
 };
 
@@ -412,7 +412,7 @@ export const ModData = {
             versionHistory: [
                 {
                     version: '1.1.2',
-                    date: 'November 16, 2020',
+                    date: 'November 17, 2020',
                     bullets: [
                         `Add Polish translation (Osqar).`,
                     ]
