@@ -2,7 +2,7 @@
     <div id="home-page" class="pb-5">
         <section id="welcome" class="dark-vars">
             <b-container fluid>
-                <b-row align-h="center" align-v="center" class="py-5">
+                <b-row align-h="center" align-v="center" class="py-4">
                     <b-col cols="12" sm="3" md="2" class="text-center">
                         <img src="../../assets/ts4/profilepic.png" alt="Simself" class="my-auto"/>
                     </b-col>
@@ -20,6 +20,9 @@
                         </b-button>
                         <b-button href="https://www.patreon.com/frankkulakmods" target="_blank"
                                   variant="outline-primary" size="sm" class="m-1" id="social-patreon">Patreon
+                        </b-button>
+                        <b-button href="https://ko-fi.com/frankkulak" target="_blank"
+                                  variant="outline-primary" size="sm" class="m-1" id="social-kofi">Ko-fi
                         </b-button>
                     </b-col>
                 </b-row>
@@ -98,6 +101,10 @@
 
                 &#social-patreon {
                     --brand-color: rgb(255, 66, 77);
+                }
+
+                &#social-kofi {
+                    --brand-color: #FBAA19;
                 }
 
                 border-color: var(--brand-color);

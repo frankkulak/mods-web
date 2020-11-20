@@ -55,6 +55,7 @@
                         <li>Do not share or distribute this mod without crediting me - a link to this website is
                             sufficient.
                         </li>
+                        <li>Do not re-upload this mod anywhere or include it in any mod download folders.</li>
                         <li>I am not responsible for the misuse of this mod (e.g. changing the code, using it with
                             conflicting mods, or when it is out-of-date).
                         </li>
@@ -62,7 +63,7 @@
                     </ul>
 
                     <b-alert variant="warning" class="text-left mb-5" v-if="mod.warning !== null" show>
-                        <strong>&#9888; WARNING: </strong>
+                        <strong>&#9888; NOTICE: </strong>
                         <span v-html="mod.warning"></span>
                     </b-alert>
 
@@ -162,7 +163,7 @@
 <style lang="scss">
     #mod-page {
         #home-button {
-            background-color: $dark-blue;
+            background-color: $darker-blue;
             color: var(--link-color);
             border: 1px solid white;
             border-radius: 20px;

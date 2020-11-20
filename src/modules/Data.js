@@ -258,9 +258,10 @@ export const ModData = {
                 {
                     title: 'customization options',
                     bullets: [
-                        `You can disable any of the languages that you don't want to play with.`,
+                        `You can prevent sims from spawning with any languages you don't want to play with.`,
                         `You can set any residential world to speak whatever language you wish.`,
-                        `Sims spawn with random language skills, and you can fine-tune how this works.`,
+                        `Some sims spawn with random language skills, and you can fine-tune how this works.`,
+                        `You can change the skill level required for toddlers to acquire a language natively.`,
                         `You can disable Language Barriers for any sim, and they'll be able to communicate like normal with anyone.`,
                         `Detailed instructions for how to do all of these can be found in the 'details' tab above.`,
                     ]
@@ -320,7 +321,7 @@ export const ModData = {
                         `Toddlers pick up the language skills associated with the native languages of whomever speaks to them.`,
                         `Toddlers can use Simlingo Jr. on any tablet to learn languages that their parents cannot teach them.`,
                         `NPC toddlers will automatically be given their parents' native language(s) at level 3.`,
-                        `When a toddler becomes a child, any languages at or above level 5 will be acquired as a native language. If there are no languages at this level, then their highest language will be used instead. If they have no language skills at all, then they will speak Simlish.`,
+                        `When a toddler becomes a child, any languages at or above a certain threshold will be acquired as a native language. By default, this threshold is equal to 5, but you can modify this in lb_settings.cfg (learn how in the 'configuring language acquisition' section below). If there are no languages at this level, then their highest language will be used instead. If they have no language skills at all, then they will speak Simlish.`,
                     ]
                 },
                 {
@@ -356,9 +357,9 @@ export const ModData = {
                     title: 'disabling languages',
                     bullets: [
                         `You can use the <code>[LANGUAGES]</code> section of the 'lb_settings.cfg' file to disable any languages that you don't want to play with.`,
-                        `If the value is set to <code>True</code>, then the language will be enabled and function normally. If it is set to <code>False</code>, then the language will be disabled, which means that the game will ignore traits and occult types when assigning languages.`,
+                        `If the value is set to <code>True</code>, then the language will be enabled and function normally. If it is set to <code>False</code>, then the language will be disabled, which means that the game will ignore traits and occult types when assigning it to sims.`,
                         `If you want to also disable a language in terms of region, you must also change the value of its associated world in the <code>[REGIONS]</code> section (described below).`,
-                        `If you've already played with the mod installed, you will have to run either the <code>fklb.reset</code> or <code>fklb.reset_all</code> cheat in order for your new settings to take effect. These settings are described in the 'console cheats' section below.`,
+                        `If you've already played with the mod installed, you will have to run either the <code>fklb.reset</code> or <code>fklb.reset_all</code> cheat in order for your new settings to take effect. These cheats are described in the 'console cheats' section below.`,
                         `<strong>Example</strong>: Want to get rid of Windenburgish? Set <code>Windenburgish = False</code> and <code>Windenburg = Simlish</code>`,
                         `<strong>Example</strong>: Want to get rid of Sixami? Just set <code>Sixami = False</code>`,
                     ]
@@ -366,10 +367,10 @@ export const ModData = {
                 {
                     title: 'configuring world languages',
                     bullets: [
-                        `You can use the <code>[LANGUAGES]</code> section of the 'lb_settings.cfg' file to change the language that a particular world speaks.`,
+                        `You can use the <code>[REGIONS]</code> section of the 'lb_settings.cfg' file to change the language that a particular world speaks.`,
                         `The valid languages are <code>Simlish</code>, <code>Selvadoradian</code>, <code>Windenburgish</code>, <code>Komorebigo</code>, <code>Toki Sulani</code>, and <code>Sixami</code>. Capitalization doesn't matter, but spelling does, so be sure you have it right.`,
-                        `If changing the language for Mt. Komorebi, Windenburg, or Sulani, make sure you set those languages to <code>False</code> (described above), or else some sims in these worlds may still speak the default language.`,
-                        `If you've already played with the mod installed, you will have to run either the <code>fklb.reset</code> or <code>fklb.reset_all</code> cheat in order for your new settings to take effect. These settings are described in the 'console cheats' section below.`,
+                        `If changing the language for Mt. Komorebi, Windenburg, or Sulani, make sure you set those languages to <code>False</code> (described in 'disabling languages' above), or else some sims in these worlds may still speak the default language.`,
+                        `If you've already played with the mod installed, you will have to run either the <code>fklb.reset</code> or <code>fklb.reset_all</code> cheat in order for your new settings to take effect. These cheats are described in the 'console cheats' section below.`,
                         `<strong>Example</strong>: Want to make sims from Oasis Springs speak Selvadoradian? Set <code>Oasis Springs = Selvadoradian</code>`
                     ]
                 },
@@ -382,6 +383,13 @@ export const ModData = {
                         `<code>Played sims</code>: If <code>True</code>, played sims will be assigned random language skills as well. If <code>False</code>, random language skills will only be applied to NPC sims.`,
                         `<code>Base chance</code>: The percent chance that a sim will have another language skill. This value must be an integer between 0 and 100. If using the realistic system, keep in mind that there are numerous multipliers that are used to determine which sims are going to be bilingual, so the actual percentage of bilingual sims is going to be higher than this base chance. I recommend sticking to a value between 5 and 15.`,
                         `<code>Max per sim</code>: The maximum number of language skills that a sim may spawn with. This must be between 1 and 4.`,
+                    ]
+                },
+                {
+                    title: 'configuring language acquisition',
+                    bullets: [
+                        `You can use the <code>[ACQUISITION]</code> section in the 'lb_settings.cfg' file to set the skill level at which you would like children to acquire languages natively.`,
+                        `<code>Skill threshold</code>: When a toddler becomes a child, they will acquire all languages at or above this level natively. If no languages are at this level, they will just acquire their highest language instead. This must be an integer between 2 and 10.`
                     ]
                 },
                 {
@@ -410,6 +418,14 @@ export const ModData = {
                 },
             ],
             versionHistory: [
+                {
+                    version: '1.1.3',
+                    date: 'November 19, 2020',
+                    bullets: [
+                        `Make the skill threshold for acquiring native languages configurable.`,
+                        `Update French translation (Kimikosoma).`,
+                    ]
+                },
                 {
                     version: '1.1.2',
                     date: 'November 17, 2020',
@@ -511,7 +527,7 @@ export const ModData = {
                     url: `https://drive.google.com/drive/folders/1-5D1REN-nvr2Lld3Db-ffCNuDjKlxyK-?usp=sharing`
                 },
             ],
-            warning: `If you have already played Snowy Escape with a version of Language Barriers lower than v1.1, you will have to use the <code>fklb.reset komorebigo</code> cheat, or else your sims from Mt. Komorebi will speak Simlish rather than Komorebigo.`,
+            warning: `If you have played Snowy Escape with a version of Language Barriers lower than v1.1, you will have to use the <code>fklb.reset komorebigo</code> cheat to ensure that all sims from Mt. Komorebi speak Komorebigo.`,
             translations: [
                 {
                     language: `English`,
