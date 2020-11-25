@@ -462,6 +462,14 @@ export const ModData = {
             ],
             versionHistory: [
                 {
+                    version: '1.1.4',
+                    date: 'November 25, 2020',
+                    bullets: [
+                        `Fix a bug that prevented the customization of some worlds (Sulani, Windenburg, Mt. Komorebi could only speak their own language or Simlish - setting them to speak any other language would not work).`,
+                        `Add Italian (Alex) and German (Leia) translations.`,
+                    ]
+                },
+                {
                     version: '1.1.3',
                     date: 'November 19, 2020',
                     bullets: [
@@ -619,6 +627,18 @@ export const ModData = {
                     languageNativeName: `Polski`,
                     translator: `<a href="https://www.instagram.com/ossqarr/" target="_blank">Osqar</a>`,
                     updated: true,
+                },
+                {
+                    language: `Italian`,
+                    languageNativeName: `Italiano`,
+                    translator: `Alex`,
+                    updated: true,
+                },
+                {
+                    language: `German`,
+                    languageNativeName: `Deutsch`,
+                    translator: `Leia`,
+                    updated: false,
                 },
             ]
         },

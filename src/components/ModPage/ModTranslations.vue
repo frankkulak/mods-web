@@ -14,7 +14,7 @@
             </b-row>
 
             <p class="mt-3" v-if="somethingIsOutdated">
-                * = This language's translation is outdated, and some text will appear in English.
+                * = This language's translation is incomplete, and some text will appear in English.
             </p>
 
             <p class="mt-3">If you would like to provide a translation for this mod, please let me know on
