@@ -118,9 +118,11 @@ export const ModData = {
                     title: 'features',
                     bullets: [
                         `Automatically earn followers when you sell paintings, license songs, publish books, perform acting gigs, or pretty much anything else that earns you fame.`,
+                        `Existing famous sims will automatically be given some followers depending on their fame rank.`,
                         `Earn a ton of followers when your fame rank increases, and lose some of them if it ever goes down.`,
                         `Earn some followers for getting good PR, and lose some for getting bad PR.`,
-                        `Use debug cheats to add and remove followers.`,
+                        `You can disable automatic follower gains/losses for any sims you want.`,
+                        `Use cheats to add, remove, and set followers to whatever you want.`,
                     ]
                 },
                 {
@@ -135,23 +137,47 @@ export const ModData = {
                 {
                     title: 'automatic followers',
                     bullets: [
-                        `Interactions that add followers: selling a painting or photo, making an app or game, licensing a song or lyrics, publishing a book, being nominated for an award, accepting an award, completing a work day as an actor, ranking up as a celebrity, and getting positive PR through the PR agency.`,
-                        `Interactions that remove followers: ranking down as a celebrity and getting bad PR through the PR agency.`,
-                        `Exact amounts for follower gains/losses are heavily influenced by both the type of interaction and your sim's current fame rank. For example, a non-famous sim selling a painting is going to earn much less followers than a 5-star celebrity selling a painting, and both of those sims would earn significantly less than a 5-star celebrity acting in a movie or licensing a song.`,
+                        `<strong>Interactions that add followers</strong>: selling a painting or photo, making an app or game, licensing a song or lyrics, publishing a book, being nominated for an award, accepting an award, completing a work day as an actor, ranking up as a celebrity, and getting positive PR through the PR agency.`,
+                        `<strong>Interactions that remove followers</strong>: ranking down as a celebrity and getting bad PR through the PR agency.`,
+                        `Exact amounts for follower gains/losses are random, but are heavily influenced by the type of interaction that was performed, the sim's current fame rank, and the sim's current follower count. For example, a non-famous sim who has 10 followers will earn very few followers for selling a painting, but a 5-star celebrity with 10 million followers will earn hundreds of thousands of followers for acting in a movie.`,
                     ]
                 },
                 {
-                    title: 'followers cheats',
+                    title: 'initial followers for famous sims',
+                    bullets: [
+                        `Any sims that are between fame levels 1-5 will automatically be given followers if they do not have any.`,
+                        `Fame level 1 will equate to approximately 1,000 followers, and each fame level above that will be 10x the previous amount (level 2 = 10k; level 3 = 100k; level 4 = 1M; level 5 = 10M).`,
+                    ]
+                },
+                {
+                    title: 'disabling automatic followers',
+                    bullets: [
+                        `Enable testing cheats with the command <code>testingcheats on</code>, then shift-click your sim and use the 'Follower Cheats' option to disable/enable automatic followers for any particular sim. All sims have automatic followers enabled by default.`,
+                    ]
+                },
+                {
+                    title: 'follower cheats (debug)',
                     bullets: [
                         `Enable testing cheats with the command <code>testingcheats on</code>, then shift-click your sim and use the 'Follower Cheats' option to add or remove followers.`,
-                        `Follower cheats are available in 6 tiers: Tiny, Small, Medium, Large, Huge, Epic. These tiers correspond to those that are used by specific interactions behind the scenes. They are in order from least to most significant, and the exact amount of followers they add/remove depends on the sim's fame rank.`,
+                        `These debug follower cheats are available in 6 tiers: Tiny, Small, Medium, Large, Huge, Epic. These tiers correspond to those that are used by specific interactions behind the scenes. They are in order from least to most significant, and the exact amount of followers they add/remove depends on the sim's fame rank and current follower count.`,
                     ]
                 },
                 {
-                    title: 'planned for v1.1',
+                    title: 'follower cheats (console)',
                     bullets: [
-                        `Console cheats to add, remove, or set a specific number of followers for any sim.`,
-                        `Setting to disable automatic followers for particular sims.`,
+                        `<code>fkff.add_followers amount first last</code>: Adds the specified number of followers to the named sim.`,
+                        `<code>fkff.remove_followers amount first last</code>: Removes the specified number of followers from the named sim.`,
+                        `<code>fkff.set_followers amount first last</code>: Set the named sim's followers to the specified amount.`,
+                        `Replace <code>amount</code> with any integer.`,
+                        `Replace <code>first last</code> with the name of whatever sim you want. If you omit the name, the cheat applies to the active sim instead. The name must be supplied in two tokens (which are separated by spaces). If your sim's name has a space in it, use a % and it will be understood as a space.`,
+                        `<strong>Example</strong>: <code>fkff.add_followers 500 bella goth</code> will give Bella Goth 500 new followers.`,
+                        `<strong>Example</strong>: <code>fkff.remove_followers 250 eliza pancakes</code> will remove 250 followers from Eliza Pancakes.`,
+                        `<strong>Example</strong>: <code>fkff.set_followers 50000000 judith ward</code> will set Judith Ward's follower count to 50 million.`,
+                    ]
+                },
+                {
+                    title: 'planned for future versions',
+                    bullets: [
                         `Automatic follower gains for more careers and when you gain reputation.`,
                         `Automatic follower losses when you lose reputation.`,
                         `Periodic, random follower gains and losses for celebrity sims.`,
@@ -159,6 +185,17 @@ export const ModData = {
                 },
             ],
             versionHistory: [
+                {
+                    version: '1.1',
+                    date: 'November 24, 2020',
+                    bullets: [
+                        `Make follower gains/losses more realistic (consider current follower count when determining number of followers to add/remove, and lower follower gains for non-famous sims substantially).`,
+                        `Console cheats to add, remove, or set a specific number of followers for any sim.`,
+                        `Setting to disable automatic followers for particular sims.`,
+                        `Automatically give all existing famous sims a starting amount of followers.`,
+                        `Add Polish translation (by Osqar).`
+                    ]
+                },
                 {
                     version: '1.0.2',
                     date: 'September 15, 2020',
@@ -213,6 +250,12 @@ export const ModData = {
                     language: `English`,
                     languageNativeName: `English`,
                     translator: `Frankk`,
+                    updated: true,
+                },
+                {
+                    language: `Polish`,
+                    languageNativeName: `Polski`,
+                    translator: `<a href="https://www.instagram.com/ossqarr/" target="_blank">Osqar</a>`,
                     updated: true,
                 },
             ]
