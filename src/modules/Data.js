@@ -462,6 +462,14 @@ export const ModData = {
             ],
             versionHistory: [
                 {
+                    version: '1.1.5',
+                    date: 'November 28, 2020',
+                    bullets: [
+                        `Fix a bug that caused the language acquisition notification to show up for children that are not in the active household.`,
+                        `Update German (Possum) and add Russian (Raitowaka) translations.`,
+                    ]
+                },
+                {
                     version: '1.1.4',
                     date: 'November 25, 2020',
                     bullets: [
@@ -637,8 +645,14 @@ export const ModData = {
                 {
                     language: `German`,
                     languageNativeName: `Deutsch`,
-                    translator: `Leia`,
-                    updated: false,
+                    translator: `Leia and Possum`,
+                    updated: true,
+                },
+                {
+                    language: `Russian`,
+                    languageNativeName: `Русский`,
+                    translator: `Raitowaka`,
+                    updated: true,
                 },
             ]
         },
