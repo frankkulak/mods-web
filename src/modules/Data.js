@@ -462,6 +462,13 @@ export const ModData = {
             ],
             versionHistory: [
                 {
+                    version: '1.1.6',
+                    date: 'December 1, 2020',
+                    bullets: [
+                        `Update Russian translation (Luluuluru and Trail_of_blood).`,
+                    ]
+                },
+                {
                     version: '1.1.5',
                     date: 'November 28, 2020',
                     bullets: [
@@ -586,7 +593,7 @@ export const ModData = {
                     url: `https://drive.google.com/drive/folders/1-5D1REN-nvr2Lld3Db-ffCNuDjKlxyK-?usp=sharing`
                 },
             ],
-            warning: `If you have played Snowy Escape with a version of Language Barriers lower than v1.1, you will have to use the <code>fklb.reset komorebigo</code> cheat to ensure that all sims from Mt. Komorebi speak Komorebigo.`,
+            warning: null,
             translations: [
                 {
                     language: `English`,
@@ -651,7 +658,7 @@ export const ModData = {
                 {
                     language: `Russian`,
                     languageNativeName: `Русский`,
-                    translator: `Raitowaka`,
+                    translator: `Raitowaka, Luluuluru, and Trail_of_blood`,
                     updated: true,
                 },
             ]
