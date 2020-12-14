@@ -669,28 +669,31 @@ export const ModData = {
             name: 'Simway (MLM Mod)',
             developmentStage: DataEnums.developmentStage.wip,
             testingStatus: DataEnums.testingStatus.unreleased,
-            releaseDate: null,
-            description: `How would you like to be your own boss and set your own hours? Join Simway for just §500, and recruit other sims to make a profit! This mod adds MLMs (pyramid schemes) to the game.`,
-            thumbnail: 'sw-1.png',
+            releaseDate: 'February-March 2021',
+            description: `How would you like to be your own boss and set your own hours? Join Simway for just §500, then sell products and recruit other sims to make a profit! This mod adds MLMs to the game.`,
+            thumbnail: 'sw-simway.png',
             images: [
-                'sw-1.png',
+                'sw-simway.png',
+                'sw-plumbonne.png',
+                'sw-llamaware.png',
             ],
             videoUrl: null,
             overview: [
                 {
                     title: 'confirmed features',
                     bullets: [
-                        `Three different MLMs for your sims to be a part of.`,
+                        `At least three different MLMs for your sims to be a part of.`,
                         `You may be approached by an MLM member who wants to sell products to you, recruit you, or both.`,
-                        `You have to pay a startup fee to join an MLM and a weekly fee to remain in it.`,
-                        `You can earn money by buying and selling inventory and through recruiting other sims.`,
+                        `You have to pay a startup fee to join an MLM and a portion of your profits to remain in it.`,
+                        `You can earn money by selling products or recruiting other sims.`,
                     ]
                 },
                 {
                     title: 'potential features',
                     bullets: [
-                        `Host and attend selling parties to sell your own products or buy from others.`,
-                        `Create your own MLM empire.`
+                        `Host and attend parties to sell your own products or buy from others.`,
+                        `Illegitimate MLMs (pyramid schemes) may pop up every now and then to wreak havoc on your sims.`,
+                        `The ability to start your own MLM and/or pyramid scheme.`
                     ]
                 },
                 {
@@ -705,31 +708,35 @@ export const ModData = {
                     title: 'MLMs',
                     bullets: [
                         `Three different MLMs to join: Simway, Llamaware, and Plumbonne.`,
-                        `Each MLM specializes in a different category of products.`
+                        `<strong>Simway</strong>: Vitamins, supplements, and other health products.`,
+                        `<strong>Llamaware</strong>: Kitchen equipment and household gadgets.`,
+                        `<strong>Plumbonne</strong>: All-natural beauty and skincare products.`,
                     ]
                 },
                 {
                     title: 'being approached',
                     bullets: [
-                        `Any young adult, adult, or elder sim may be approached by an MLM member through a phone call, text message, knock on the door, or interaction in public.`,
+                        `Your sim may be approached by MLM members through phone, text, a knock on the door, or in public.`,
                         `MLM members may try to sell products to you, recruit you, or both.`,
                         `You can disable this feature for any sim you do not want to be bothered.`,
                     ]
                 },
                 {
-                    title: 'joining an MLM',
+                    title: 'being in an MLM',
                     bullets: [
-                        `Join an MLM by accepting a recruiter's offer or at a computer.`,
-                        `There is a §500 startup fee to join an MLM.`,
-                        `You must purchase some inventory when you sign up in order to get started.`
+                        `Only young adult, adult, and elder sims may participate in MLMs.`,
+                        `Join an MLM for §500 by accepting a recruiter's offer or by signing up at a computer.`,
+                        `You must stay stocked up and be prepared to sell to anyone you encounter.`,
+                        `You can recruit other sims, and earn a portion of their startup fee and future sales.`,
+                        `You must give a portion of your sales to the higher-ups every week, or else you may be kicked out.`,
                     ]
                 },
                 {
-                    title: 'being in an MLM',
+                    title: 'gullibility',
                     bullets: [
-                        `To remain in an MLM, you must pay a weekly fee and a portion of your profits to the person who recruited you.`,
-                        `If you do not make your payments, you will be kicked out and all inventory you own will be confiscated.`,
-                        `You can make money by selling inventory and recruiting other sims. You will get a percentage of their startup fee, as well as a portion of their sales.`,
+                        `Every sim has a gullibility score that predicts their likelihood to join an MLM.`,
+                        `This gullibility score is used to determine which sims will work for MLMs by default, as well as the chance that trying to recruit a sim to an MLM will succeed.`,
+                        `Gullibility is calculated by taking a base chance value and applying multipliers based on various factors, such as gender, age, home world, employment status, fame rank, and wealth. This base value and the multipliers will be complete configurable.`
                     ]
                 }
             ],
