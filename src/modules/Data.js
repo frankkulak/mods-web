@@ -16,7 +16,7 @@ export const DataEnums = {
 export const GameData = {
     ts4: {
         name: "The Sims 4",
-        lastUpdate: "December 7, 2020"
+        lastUpdate: "December 14, 2020"
     }
 };
 
@@ -380,6 +380,12 @@ export const ModData = {
                     ]
                 },
                 {
+                    title: 'integrated mods (so far)',
+                    bullets: [
+                        `<strong>SimDa Dating App by LittleMsSam</strong> (<a href="https://littlemssam.tumblr.com/post/175413426238/simda-dating-app-simda-dating-app-can-help-you" target="_blank">info + download</a>): Sims can participate in a one night stand even if they have not unlocked romance interactions yet.`
+                    ]
+                },
+                {
                     title: 'miscommunication',
                     bullets: [
                         `There is a chance for sims to miscommunicate if their shared language level is below 10. The chance starts at 99% for level 1, and then decreases by 11% every level (88% for level 2, 77% for level 3, and so on).`,
@@ -461,6 +467,14 @@ export const ModData = {
                 },
             ],
             versionHistory: [
+                {
+                    version: '1.1.7',
+                    date: 'December 16, 2020',
+                    bullets: [
+                        `Add support for LittleMsSam's SimDa mod (sims can now participate in a one night stand regardless of their language skills).`,
+                        `Add Dutch translation (by SPaauw).`
+                    ]
+                },
                 {
                     version: '1.1.6',
                     date: 'December 1, 2020',
@@ -661,6 +675,12 @@ export const ModData = {
                     translator: `Raitowaka, Luluuluru, and Trail_of_blood`,
                     updated: true,
                 },
+                {
+                    language: `Dutch`,
+                    languageNativeName: `Nederlands`,
+                    translator: `SPaauw`,
+                    updated: true,
+                },
             ]
         },
         simway: {
@@ -707,7 +727,7 @@ export const ModData = {
                 {
                     title: 'MLMs',
                     bullets: [
-                        `Three different MLMs to join: Simway, Llamaware, and Plumbonne.`,
+                        `Three different MLMs to join: Simway, Llamaware, and Plumbonne. Each of these MLMs will specialize in a certain category of products that you can actually buy, sell, and use.`,
                         `<strong>Simway</strong>: Vitamins, supplements, and other health products.`,
                         `<strong>Llamaware</strong>: Kitchen equipment and household gadgets.`,
                         `<strong>Plumbonne</strong>: All-natural beauty and skincare products.`,
@@ -732,11 +752,11 @@ export const ModData = {
                     ]
                 },
                 {
-                    title: 'gullibility',
+                    title: 'susceptibility',
                     bullets: [
-                        `Every sim has a gullibility score that predicts their likelihood to join an MLM.`,
-                        `This gullibility score is used to determine which sims will work for MLMs by default, as well as the chance that trying to recruit a sim to an MLM will succeed.`,
-                        `Gullibility is calculated by taking a base chance value and applying multipliers based on various factors, such as gender, age, home world, employment status, fame rank, and wealth. This base value and the multipliers will be complete configurable.`
+                        `Every sim has a susceptibility score that predicts their likelihood to join an MLM.`,
+                        `This susceptibility score is used to determine which sims will work for MLMs by default, as well as the chance that trying to recruit a sim to an MLM will succeed.`,
+                        `Susceptibility is calculated by taking a base chance value and applying multipliers based on various factors, such as gender, age, employment status, fame rank, and wealth. This base value and the multipliers will be configurable.`
                     ]
                 }
             ],
