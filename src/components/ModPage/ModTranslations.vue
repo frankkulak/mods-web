@@ -1,27 +1,22 @@
 <template>
     <section id="mod-translations" class="pb-5">
         <b-container fluid>
-            <h1 class="w-100 text-center mb-5">supported languages</h1>
+            <h1 class="w-100 text-center mb-5">translations</h1>
 
-            <b-row>
-                <b-col v-for="translation in translations" :key="translation.language" class="p-2"
-                       cols="12" sm="6" md="4">
-                    <div class="translation-container p-3">
-                        <h2>{{ translation.languageNativeName }}<span v-if="!translation.updated">*</span></h2>
-                        <p class="mt-2">by <span v-html="translation.translator"></span></p>
-                    </div>
-                </b-col>
-            </b-row>
+            <ul class="translations mb-5">
+                <li v-for="translation in translations" :key="translation.language">
+                    <span class="language">{{ translation.languageNativeName }}<span v-if="!translation.updated">*</span></span>
+                    by <span v-html="translation.translator"></span>
+                </li>
+            </ul>
 
             <p class="mt-3" v-if="somethingIsOutdated">
                 * = This language's translation is incomplete, and some text will appear in English.
             </p>
 
             <p class="mt-3">If you would like to provide a translation for this mod, please let me know on
-                <a href="https://discord.gg/qNhD3Jh" target="_blank">Discord</a>. I welcome and encourage
-                translations, but I do not appreciate re-posting of my work without permission.
-                Additionally, telling me about your translation will allow me include it in the official
-                download on this webpage. You will be credited for your translation.</p>
+                <a href="https://discord.gg/qNhD3Jh" target="_blank">Discord</a>. Telling me about your translation will
+                allow me include it in the download. You will be credited for your translation.</p>
         </b-container>
     </section>
 </template>
@@ -57,14 +52,32 @@
 
 <style lang="scss">
     #mod-translations {
-        .translation-container {
-            border: 1px solid var(--shadow-color);
-            border-radius: 5px;
-        }
+        ul.translations {
+            padding: 0;
+            list-style: none;
+            text-align: center;
+            line-height: 2em;
 
-        span.important {
-            text-decoration: underline;
-            font-weight: bold;
+            span.language {
+                color: var(--h-color);
+                font-size: 1.1em;
+            }
+
+            li {
+                display: inline;
+
+                &:after {
+                    content: " — ";
+                }
+
+                &:last-child:after {
+                    content: "";
+                }
+            }
+
+            a, a:focus, a:hover {
+                color: var(--text-color);
+            }
         }
     }
 </style>
