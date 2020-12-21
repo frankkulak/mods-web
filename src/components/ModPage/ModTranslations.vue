@@ -1,22 +1,28 @@
 <template>
     <section id="mod-translations" class="pb-5">
         <b-container fluid>
-            <h1 class="w-100 text-center mb-5">translations</h1>
+            <h1 class="w-100 text-center mb-5">supported languages</h1>
 
-            <ul class="translations mb-5">
-                <li v-for="translation in translations" :key="translation.language">
-                    <span class="language">{{ translation.languageNativeName }}<span v-if="!translation.updated">*</span></span>
-                    by <span v-html="translation.translator"></span>
-                </li>
-            </ul>
+            <div v-if="mod.hasStrings">
+                <ul class="translations mb-5">
+                    <li v-for="translation in translations" :key="translation.language">
+                        <span class="language">{{ translation.languageNativeName }}<span v-if="!translation.updated">*</span></span>
+                        by <span v-html="translation.translator"></span>
+                    </li>
+                </ul>
 
-            <p class="mt-3" v-if="somethingIsOutdated">
-                * = This language's translation is incomplete, and some text will appear in English.
-            </p>
+                <p class="mt-3" v-if="somethingIsOutdated">
+                    * = This language's translation is incomplete, and some text will appear in English.
+                </p>
 
-            <p class="mt-3">If you would like to provide a translation for this mod, please let me know on
-                <a href="https://discord.gg/qNhD3Jh" target="_blank">Discord</a>. Telling me about your translation will
-                allow me include it in the download. You will be credited for your translation.</p>
+                <p class="mt-3">If you would like to provide a translation for this mod, please let me know on
+                    <a href="https://discord.gg/qNhD3Jh" target="_blank">Discord</a>. Telling me about your translation
+                    will allow me include it in the download. You will be credited for your translation.</p>
+            </div>
+            <div v-else>
+                <p class="text-center">This mod re-uses text that appears in the base game, so
+                    <strong>all languages</strong> are supported. Yay!</p>
+            </div>
         </b-container>
     </section>
 </template>

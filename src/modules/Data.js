@@ -89,6 +89,7 @@ export const ModData = {
             },
             alternativeDownloads: [],
             warning: `This mod is obsolete, and I therefore no longer support it - you should not put it in your game. The only reason the download is still available is for you to reference the code, if you would like.`,
+            hasStrings: true,
             translations: [
                 {
                     language: `English`,
@@ -245,6 +246,7 @@ export const ModData = {
                 },
             ],
             warning: null,
+            hasStrings: true,
             translations: [
                 {
                     language: `English`,
@@ -608,6 +610,7 @@ export const ModData = {
                 },
             ],
             warning: null,
+            hasStrings: true,
             translations: [
                 {
                     language: `English`,
@@ -764,6 +767,7 @@ export const ModData = {
             primaryDownload: null,
             alternativeDownloads: [],
             warning: null,
+            hasStrings: true,
             translations: []
         },
         buybitsandpieces: {
@@ -874,6 +878,7 @@ export const ModData = {
                 },
             ],
             warning: null,
+            hasStrings: true,
             translations: [
                 {
                     language: `English`,
@@ -908,7 +913,7 @@ export const ModData = {
             developmentStage: DataEnums.developmentStage.active,
             testingStatus: DataEnums.testingStatus.working,
             releaseDate: 'October 6, 2020',
-            description: `Can't find your sim's notebook? Well, now you can do their homework at any computer or laptop. This mod currently only works for university students.`,
+            description: `Can't find your sim's notebook? Well, now you can do their homework at any computer or laptop. This mod works for children, teens, and university students.`,
             thumbnail: 'oh-thumbnail.png',
             images: [
                 'oh-thumbnail.png',
@@ -918,36 +923,44 @@ export const ModData = {
                 {
                     title: 'features',
                     bullets: [
-                        `Do your university homework at any computer or laptop.`,
+                        `Do your homework at any computer or laptop (including CC).`,
                     ]
                 },
                 {
                     title: 'compatability',
                     bullets: [
-                        `The Discover University expansion pack is required.`,
+                        `Children/teen homework is compatible with the Base Game.`,
+                        `University homework requires the Discover University expansion pack.`,
                         `This mod does not override any files, so it should be safe to use with any other mods.`,
                     ]
                 },
             ],
             details: [
                 {
-                    title: 'doing homework at the computer',
+                    title: 'children/teens homework',
                     bullets: [
-                        `Click on any computer or laptop and go the 'University > University Coursework > Do Homework' pie menu option to do your homework. This works with (most) CC computers!`,
-                        `You can only do your own homework at the computer, not homework for others.`,
-                        `This feature is currently only available for university students.`,
+                        `Click on any computer or laptop and select the 'Do Homework' option. This option will only appear if your sim actually has homework to do.`,
+                        `You cannot do school projects at the computer.`,
+                        `Parents cannot help their children do homework at the computer.`,
                     ]
                 },
                 {
-                    title: 'future plans',
+                    title: 'university homework',
                     bullets: [
-                        `I will soon expand this mod to work for children and teens as well.`,
-                        `When I add functionality for children and teens, I will make university homework an add-on so that Discover university is no longer required for the mod to work.`,
-                        `I do not plan on adding the ability to do other's homework at the computer. That would be tricky because the way that that works is because the notebooks are owned by certain sims, but computers are not. If someone <em>really</em> wants this feature added, reach out to me on Discord and I will see what I can do.`,
+                        `Click on any computer or laptop and go the 'University > University Coursework > Do Homework' pie menu option to do your homework.`,
+                        `You cannot do projects or presentations at the computer.`,
                     ]
                 },
             ],
             versionHistory: [
+                {
+                    version: '1.1',
+                    date: 'December 21, 2020',
+                    bullets: [
+                        `Remove custom strings so that all languages are supported.`,
+                        `Add online homework for children and teens.`
+                    ]
+                },
                 {
                     version: '1.0.4',
                     date: 'November 15, 2020',
@@ -994,39 +1007,9 @@ export const ModData = {
                     url: `https://drive.google.com/drive/folders/1GKkgjuWfSklSN7_cN2p0JJsbkF39eKhF?usp=sharing`
                 },
             ],
-            warning: null,
-            translations: [
-                {
-                    language: `English`,
-                    languageNativeName: `English`,
-                    translator: `Frankk`,
-                    updated: true,
-                },
-                {
-                    language: `Italian`,
-                    languageNativeName: `Italiano`,
-                    translator: `Frankk`,
-                    updated: true,
-                },
-                {
-                    language: `French`,
-                    languageNativeName: `Français`,
-                    translator: `<a href="https://modsims4.fr/" target="_blank">Kimikosoma</a>`,
-                    updated: true,
-                },
-                {
-                    language: `Chinese (Simplified)`,
-                    languageNativeName: `简体中文`,
-                    translator: `MuMu`,
-                    updated: true,
-                },
-                {
-                    language: `Polish`,
-                    languageNativeName: `Polski`,
-                    translator: `<a href="https://www.instagram.com/ossqarr/" target="_blank">Osqar</a>`,
-                    updated: true,
-                },
-            ]
+            warning: `If you do not have the Discover University expansion pack, delete the <code>frankk_OnlineHomework_University</code> file from the mod. If you leave it in, you may experience some errors.`,
+            hasStrings: false,
+            translations: []
         },
     }
 };

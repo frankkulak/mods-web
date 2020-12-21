@@ -138,7 +138,7 @@
                 if (details !== null && details.length > 0) tabs.push({title: "details", items: details});
                 if (versionHistory !== null && versionHistory.length > 0) {
                     tabs.push({
-                        title: "change log",
+                        title: "changes",
                         items: versionHistory.map(({version, date, bullets}) => {
                             return {
                                 title: `${version} (${date})`,
