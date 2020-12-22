@@ -470,6 +470,14 @@ export const ModData = {
             ],
             versionHistory: [
                 {
+                    version: '1.1.8',
+                    date: 'December 22, 2020',
+                    bullets: [
+                        `Fix bug where toddlers would learn all 6 languages at once while talking to Father Winter or the flower bunny.`,
+                        `Minor tuning fix for compatibility with LMS's SimDa mod.`
+                    ]
+                },
+                {
                     version: '1.1.7',
                     date: 'December 16, 2020',
                     bullets: [
