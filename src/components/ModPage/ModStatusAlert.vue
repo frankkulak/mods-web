@@ -42,7 +42,7 @@
             },
             alertContent: function () {
                 if (this.stageIs(retired)) return `This mod is retired, which means I no longer update or support it. Using it is not recommended, as it may cause issues with your game.`;
-                else if (this.stageIs(wip)) return `This mod is a work-in-progress, so the information on this page may be incomplete and is subject to change.`;
+                else if (this.stageIs(wip)) return `This mod is a work-in-progress, so the information on this page may be incomplete and is subject to change. Additionally, the expected release date is just an estimation and may be pushed back at any time.`;
 
                 const successSymbol = '&check;';
                 const warningSymbol = '&#9888;';

@@ -43,7 +43,7 @@
 </script>
 
 <style lang="scss">
-    .mod-preview-link, .mod-preview-link:focus, .mod-preview-link:hover  {
+    .mod-preview-link, .mod-preview-link:focus, .mod-preview-link:hover {
         color: var(--text-color);
         text-decoration: none;
     }

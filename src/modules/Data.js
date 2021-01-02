@@ -700,7 +700,7 @@ export const ModData = {
             name: 'Simway (MLM Mod)',
             developmentStage: DataEnums.developmentStage.wip,
             testingStatus: DataEnums.testingStatus.unreleased,
-            releaseDate: 'February-March 2021',
+            releaseDate: 'March-April 2021',
             description: `How would you like to be your own boss and set your own hours? Join Simway for just §500, then sell products and recruit other sims to make a profit! This mod adds MLMs to the game.`,
             thumbnail: 'sw-simway.png',
             images: [
