@@ -29,48 +29,74 @@
             </b-container>
         </section>
 
-        <section id="mods" class="px-4">
-            <mod-category header="available mods"
-                          description="These mods are currently available for download."
-                          :mods="activeMods"/>
+        <section id="home-content">
+            <b-container fluid>
+                <b-tabs pills fill align="center" class="pt-5">
+                    <b-tab title="mods">
+                        <mod-category header="available mods"
+                                      description="These mods are currently available for download."
+                                      :mods="activeMods"/>
 
-            <mod-category header="work-in-progress mods"
-                          description="These mods are in development and are not yet available for download."
-                          :mods="wipMods"/>
+                        <mod-category header="supporting mods"
+                                      description="These mods don't add anything on their own, but help other mods function properly."
+                                      :mods="toolMods"/>
 
-            <mod-category header="retired mods"
-                          description="These mods are no longer being maintained, and may be broken."
-                          :mods="retiredMods"/>
+                        <mod-category header="work-in-progress mods"
+                                      description="These mods are in development and are not yet available for download."
+                                      :mods="wipMods"/>
+
+                        <mod-category header="retired mods"
+                                      description="These mods are no longer being maintained, and may be broken."
+                                      :mods="retiredMods"/>
+                    </b-tab>
+                    <b-tab title="tutorials" lazy>
+                        <b-container fluid>
+                            <div class="py-5 text-center">
+                                <h1>scripting tutorials</h1>
+                                <p class="mx-0 mx-md-5">I've written some tutorials to help other modders with their
+                                    scripts. Here's a list of them.</p>
+                            </div>
+                            <tutorial-preview :tutorial="tutorial" v-for="tutorial in tutorials" :key="tutorial.id"/>
+                        </b-container>
+                    </b-tab>
+                </b-tabs>
+            </b-container>
         </section>
     </div>
 </template>
 
 <script>
-    import {DataEnums, ModData} from '../../modules/Data.js'
+    import {DataEnums, ModData, TutorialData} from '../../modules/Data.js'
     import ModCategory from "./ModCategory";
+    import TutorialPreview from "./TutorialPreview";
 
-    const mods = Object.values(ModData.ts4).sort((mod1, mod2) => {
-        const modName1 = mod1.name.toUpperCase();
-        const modName2 = mod2.name.toUpperCase();
-        if (modName1 < modName2) {
+    const sortByName = (val1, val2) => {
+        const val1Name = val1.name.toUpperCase();
+        const val2Name = val2.name.toUpperCase();
+        if (val1Name < val2Name) {
             return -1;
-        } else if (modName1 > modName2) {
+        } else if (val1Name > val2Name) {
             return 1;
         } else {
             return 0;
         }
-    });
+    };
+
+    const mods = Object.values(ModData.ts4).sort(sortByName);
+    const tutorials = Object.values(TutorialData.ts4).sort(sortByName);
 
     export default {
         name: "HomePage",
-        components: {ModCategory},
+        components: {TutorialPreview, ModCategory},
         data: function () {
-            const {active, wip, retired} = DataEnums.developmentStage;
+            const {active, wip, retired, tool} = DataEnums.developmentStage;
             const isInDevStage = stage => (mod => mod.developmentStage === stage);
             return {
                 activeMods: mods.filter(isInDevStage(active)),
                 wipMods: mods.filter(isInDevStage(wip)),
                 retiredMods: mods.filter(isInDevStage(retired)),
+                toolMods: mods.filter(isInDevStage(tool)),
+                tutorials: tutorials
             }
         }
     }
@@ -113,6 +139,39 @@
                 &:hover {
                     background-color: var(--brand-color);
                     color: white;
+                }
+            }
+        }
+
+        #home-content {
+            li.nav-item {
+                padding-right: 24px;
+
+                &:last-child {
+                    padding-right: 0;
+                }
+
+                a.nav-link, a.nav-link:hover, a.nav-link:focus {
+                    text-decoration: none;
+                    border-radius: 24px;
+                    border-width: 1px;
+                    border-style: solid;
+
+                    &.active {
+                        background-color: $dark-blue;
+                        color: white;
+                        border-color: white;
+                    }
+                }
+
+                a.nav-link, a.nav-link:focus {
+                    color: var(--link-color);
+                    border-color: var(--link-color);
+                }
+
+                a.nav-link:hover {
+                    color: $dark-blue;
+                    border-color: $dark-blue;
                 }
             }
         }

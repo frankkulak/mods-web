@@ -17,7 +17,7 @@
 
 <style lang="scss">
     #page-not-found {
-        height: 100vh;
+        height: 90vh;
         width: 100vw;
         display: table-cell;
         vertical-align: middle;

@@ -13,6 +13,8 @@
 </template>
 
 <script>
+    import { DataEnums } from "../../modules/Data";
+
     export default {
         name: "ModPreview",
         props: {
@@ -27,6 +29,10 @@
         computed: {
             thumbnail: function () {
                 try {
+                    if (this.mod.developmentStage === DataEnums.developmentStage.tool) {
+                        return require(`../../assets/${this.mod.game}/tools.png`);
+                    }
+
                     const thumbnailFilename = this.mod.thumbnail;
                     if (thumbnailFilename === null) {
                         return require(`../../assets/${this.mod.game}/default.png`);

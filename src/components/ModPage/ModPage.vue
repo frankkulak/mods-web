@@ -13,7 +13,7 @@
                         <p class="description" v-html="mod.description"></p>
                     </b-col>
 
-                    <b-col cols="12" sm="6" class="py-4">
+                    <b-col cols="12" sm="6" class="py-4" v-if="hasImages">
                         <mod-image-carousel :mod="mod"/>
                     </b-col>
                 </b-row>
@@ -28,7 +28,7 @@
             </b-container>
         </section>
 
-        <mod-translations :mod="mod" v-if="!isWip"/>
+        <mod-translations :mod="mod" v-if="showTranslations"/>
 
         <section id="mod-download" class="dark-vars py-5">
             <b-container fluid>
@@ -89,6 +89,22 @@
                         </div>
                     </div>
                 </div>
+
+                <div v-if="mod.documentationDownload !== null" class="documentation-download">
+                    <hr class="mt-5">
+                    <div class="text-center py-5">
+                        <h1 class="mb-5">modder's documentation</h1>
+                        <p>Want to use {{ mod.name }} for your mod? Download the documentation from below to get
+                            started.</p>
+                    </div>
+                    <div class="w-100 text-center">
+                        <div>
+                            <a :href="mod.documentationDownload.url" target="_blank" class="btn btn-outline-primary">
+                                Download from {{ mod.documentationDownload.title }}
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </b-container>
         </section>
     </div>
@@ -114,6 +130,14 @@
             isWip: function () {
                 return this.mod.developmentStage === DataEnums.developmentStage.wip;
             },
+            showTranslations: function() {
+                const devStage = this.mod.developmentStage;
+                const {wip, tool} = DataEnums.developmentStage;
+                return devStage !== wip && devStage !== tool;
+            },
+            hasImages: function () {
+                return this.mod.images.length > 0;
+            },
             versionText: function () {
                 try {
                     if (!this.isWip) {
@@ -134,8 +158,11 @@
                 let tabs = [];
 
                 const {overview, details, versionHistory} = this.mod;
-                if (overview !== null && overview.length > 0) tabs.push({title: "overview", items: overview});
-                if (details !== null && details.length > 0) tabs.push({title: "details", items: details});
+                const isTool = this.mod.developmentStage === DataEnums.developmentStage.tool;
+                const overviewTitle = isTool ? "for users" : "overview";
+                const detailsTitle = isTool ? "for modders" : "details";
+                if (overview !== null && overview.length > 0) tabs.push({title: overviewTitle, items: overview});
+                if (details !== null && details.length > 0) tabs.push({title: detailsTitle, items: details});
                 if (versionHistory !== null && versionHistory.length > 0) {
                     tabs.push({
                         title: "changes",
@@ -228,6 +255,14 @@
 
                 &:hover {
                     color: white;
+                }
+            }
+
+            .documentation-download {
+                hr {
+                    border-color: var(--h-color);
+                    border-width: 1px;
+                    width: 80%;
                 }
             }
         }

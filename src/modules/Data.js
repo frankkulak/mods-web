@@ -3,6 +3,7 @@ export const DataEnums = {
         wip: 0,
         active: 1,
         retired: 2,
+        tool: 3
     },
     testingStatus: {
         unreleased: 0,
@@ -88,6 +89,7 @@ export const ModData = {
                 url: `http://www.simfileshare.net/download/1895244/`
             },
             alternativeDownloads: [],
+            documentationDownload: null,
             warning: `This mod is obsolete, and I therefore no longer support it - you should not put it in your game. The only reason the download is still available is for you to reference the code, if you would like.`,
             hasStrings: true,
             translations: [
@@ -245,6 +247,7 @@ export const ModData = {
                     url: `https://drive.google.com/drive/folders/18eZztaSfaTo5PWO3pC1ITgiL8h8jqD9N?usp=sharing`
                 },
             ],
+            documentationDownload: null,
             warning: null,
             hasStrings: true,
             translations: [
@@ -617,6 +620,7 @@ export const ModData = {
                     url: `https://drive.google.com/drive/folders/1-5D1REN-nvr2Lld3Db-ffCNuDjKlxyK-?usp=sharing`
                 },
             ],
+            documentationDownload: null,
             warning: null,
             hasStrings: true,
             translations: [
@@ -774,6 +778,7 @@ export const ModData = {
             versionHistory: [],
             primaryDownload: null,
             alternativeDownloads: [],
+            documentationDownload: null,
             warning: null,
             hasStrings: true,
             translations: []
@@ -885,6 +890,7 @@ export const ModData = {
                     url: `https://drive.google.com/drive/folders/1igN6N0DPyIw8QwT-ZdOwp6TeQTovlqRz?usp=sharing`
                 },
             ],
+            documentationDownload: null,
             warning: null,
             hasStrings: true,
             translations: [
@@ -939,6 +945,7 @@ export const ModData = {
                     bullets: [
                         `Children/teen homework is compatible with the Base Game.`,
                         `University homework requires the Discover University expansion pack.`,
+                        `If you don't have Discover University, simply delete the <code>frankk_OnlineHomework_University.package</code> file from the mod and it will be safe to use with the Base Game for children and teens.`,
                         `This mod does not override any files, so it should be safe to use with any other mods.`,
                     ]
                 },
@@ -1015,9 +1022,114 @@ export const ModData = {
                     url: `https://drive.google.com/drive/folders/1GKkgjuWfSklSN7_cN2p0JJsbkF39eKhF?usp=sharing`
                 },
             ],
-            warning: `If you do not have the Discover University expansion pack, delete the <code>frankk_OnlineHomework_University</code> file from the mod. If you leave it in, you may experience some errors.`,
+            documentationDownload: null,
+            warning: `If you don't have Discover University, simply delete the <code>frankk_OnlineHomework_University.package</code> file from the mod and it will be safe to use with the Base Game for children and teens.`,
             hasStrings: false,
             translations: []
         },
+        packtests: {
+            game: 'ts4',
+            id: 'packtests',
+            name: 'Pack Tests',
+            developmentStage: DataEnums.developmentStage.tool,
+            testingStatus: DataEnums.testingStatus.working,
+            releaseDate: 'January 4, 2021',
+            description: `If you ever need to test whether your users have a particular pack installed or not, this script will allow you to do so directly in tuning - no scripting abilities required!`,
+            thumbnail: null,
+            images: [],
+            videoUrl: null,
+            overview: [
+                {
+                    title: 'what does this mod do?',
+                    bullets: [
+                        `This mod adds nothing to your game - all it does is make it easier for modders to check whether or not you have certain packs installed. There are many reasons why they may need to do this, but most likely they are trying to integrate their mod with certain packs while also keeping it Base Game compatible.`,
+                    ]
+                },
+                {
+                    title: 'should I install this mod?',
+                    bullets: [
+                        `You only have to install this mod if you have been instructed to do so by another creator.`,
+                        `If you have already installed this mod once, do NOT install it again. You only need one copy of it in your game, and it will work for every mod that requires it.`
+                    ]
+                },
+            ],
+            details: [
+                {
+                    title: 'what can this mod do for me?',
+                    bullets: [
+                        `This mod adds a new tunable test set that can check whether certain packs are installed or not. You can then reference these test sets anywhere you normally would (e.g. in a loot, interaction, other test set, etc.).`,
+                        `This is all completely possible via tuning, so you do not have to write a script of your own.`
+                    ]
+                },
+                {
+                    title: 'how often will this mod be updated?',
+                    bullets: [
+                        `It will only be updated when absolutely necessary (e.g. when a critical bug is fixed, if it breaks after a patch, etc.).`,
+                        `The packs are not hard-coded into this mod, so you don't have to worry about it breaking after new packs are released. You will even be able to test for the new pack immediately, without any updates needed to this mod.`,
+                        `If/when this mod does get updated, it should not cause any issues for you. I will never remove or edit the behavior of existing tests, unless it is absolutely unavoidable. And if I ever do, I will leave the previous version of the mod available for download so you and your users can still use the older version.`
+                    ]
+                },
+                {
+                    title: 'how can I use this mod?',
+                    bullets: [
+                        `Download the modder's documentation from the link at the very bottom of this page to get started - it contains information on how to write and use pack tests in your mod. If you get stuck, reach out to me on Discord.`,
+                        `If you use pack tests in your mod, it will require this one to function properly. Be very clear in instructing your users to download this mod <strong>from this webpage</strong>, because if they don't, your mod will cause an LE for them.`,
+                        `<strong>Do not include my script in your own download, and do not re-upload it anywhere</strong>. Doing so will inevitably lead to users having the same code in their game multiple times, and it will cause issues for them if this mod is ever updated.`
+                    ]
+                },
+            ],
+            versionHistory: [
+                {
+                    version: '1.0',
+                    date: 'January 4, 2021',
+                    bullets: [
+                        `Add pack test set.`,
+                    ]
+                }
+            ],
+            primaryDownload: {
+                title: `Sim File Share`,
+                url: `http://www.simfileshare.net/download/2251515/`
+            },
+            alternativeDownloads: [
+                {
+                    title: `Google Drive`,
+                    url: `https://drive.google.com/file/d/1p8_9WsERhDKogO87jl1yNVJIo_fHOfve/view?usp=sharing`
+                },
+            ],
+            documentationDownload: {
+                title: `Sim File Share`,
+                url: `http://www.simfileshare.net/download/2251516/`
+            },
+            warning: `If you have already installed this mod once, do NOT install it again. You only need one copy of it in your game, and it will work for every mod that requires it.`,
+            hasStrings: false,
+            translations: []
+        },
+    }
+};
+
+export const TutorialData = {
+    ts4: {
+        autotraits: {
+            id: 'autotraits',
+            name: 'Auto-Assign Traits to All Sims',
+            description: `This tutorial will show you how you can automatically assign traits from your mod to every sim in the game. An example use case is in my <em>Language Barriers</em> mod, where I automatically assign language traits to every sim that is a child or older.`,
+            platform: 'Sims 4 Studio',
+            link: 'https://sims4studio.com/thread/22036/automatically-add-traits-all-sims'
+        },
+        customtests: {
+            id: 'customtests',
+            name: 'Custom Tuning Tests',
+            description: `This tutorial will show you how you can create your own custom tuning tests with a script, so that you can use them in test sets. An example use case of this is my <em>Pack Tests</em> modding tool, which allows modders to write tests that check whether certain packs are installed or not.`,
+            platform: 'Sims 4 Studio',
+            link: 'https://sims4studio.com/thread/22471/create-custom-tuning-tests'
+        },
+        injectbysa: {
+            id: 'injectbysa',
+            name: 'Inject by Super Affordance',
+            description: `This tutorial demonstrates how you can inject your interactions to every single object in that game that has a particular super affordance. An example use case of this is in my <em>Online Homework</em> mod, where I add my homework interactions to every object that has the 'Lock Computer' interaction, so that it effectively becomes available on every computer and laptop.`,
+            platform: 'Sims 4 Studio',
+            link: 'https://sims4studio.com/thread/22556/inject-interactions-super-affordance'
+        }
     }
 };
