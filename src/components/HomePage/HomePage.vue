@@ -37,7 +37,7 @@
                                       description="These mods are currently available for download."
                                       :mods="activeMods"/>
 
-                        <mod-category header="supporting mods"
+                        <mod-category header="utility mods"
                                       description="These mods don't add anything on their own, but help other mods function properly."
                                       :mods="toolMods"/>
 

@@ -5,8 +5,9 @@
 
             <div v-if="mod.hasStrings">
                 <ul class="translations mb-5">
-                    <li v-for="translation in translations" :key="translation.language">
-                        <span class="language">{{ translation.languageNativeName }}<span v-if="!translation.updated">*</span></span>
+                    <li v-for="translation in translations" :key="translation.language.id">
+                        <span>{{ translation.language.emoji }} </span>
+                        <span class="language">{{ translation.language.display }}<span v-if="!translation.updated">*</span></span>
                         by <span v-html="translation.translator"></span>
                     </li>
                 </ul>
@@ -36,8 +37,8 @@
         computed: {
             translations: function () {
                 return Object.values(this.$props.mod.translations).sort((trans1, trans2) => {
-                    const transName1 = trans1.language.toUpperCase();
-                    const transName2 = trans2.language.toUpperCase();
+                    const transName1 = trans1.language.id;
+                    const transName2 = trans2.language.id;
                     if (transName1 < transName2) {
                         return -1;
                     } else if (transName1 > transName2) {

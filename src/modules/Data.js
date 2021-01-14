@@ -3,7 +3,8 @@ export const DataEnums = {
         wip: 0,
         active: 1,
         retired: 2,
-        tool: 3
+        tool: 3,
+        early: 4,
     },
     testingStatus: {
         unreleased: 0,
@@ -13,6 +14,70 @@ export const DataEnums = {
         broken: 4,
     },
 };
+
+export const Languages = {
+    cht_cn: {
+        id: 'chinese',
+        display: '简体中文',
+        emoji: '🇨🇳'
+    },
+    en_us: {
+        id: 'english',
+        display: 'English',
+        emoji: '🇺🇸'
+    },
+    dut_nl: {
+        id: 'dutch',
+        display: 'Nederlands',
+        emoji: '🇳🇱'
+    },
+    jpn_jp: {
+        id: `japanese`,
+        display: `日本語`,
+        emoji: '🇯🇵'
+    },
+    kor_kr: {
+        id: `korean`,
+        display: `한국어`,
+        emoji: '🇰🇷'
+    },
+    fre_fr: {
+        id: `french`,
+        display: `Français`,
+        emoji: '🇫🇷'
+    },
+    spa_es: {
+        id: `spanish`,
+        display: `Español`,
+        emoji: '🇪🇸'
+    },
+    por_br: {
+        id: `portuguese`,
+        display: `Português do Brasil`,
+        emoji: '🇧🇷'
+    },
+    pol_pl: {
+        id: `polish`,
+        display: `Polski`,
+        emoji: '🇵🇱'
+    },
+    ita_it: {
+        id: `italian`,
+        display: `Italiano`,
+        emoji: '🇮🇹'
+    },
+    ger_de: {
+        id: `german`,
+        display: `Deutsch`,
+        emoji: '🇩🇪'
+    },
+    rus_ru: {
+        id: `russian`,
+        display: `Русский`,
+        emoji: '🇷🇺'
+    },
+};
+
 
 export const GameData = {
     ts4: {
@@ -94,8 +159,7 @@ export const ModData = {
             hasStrings: true,
             translations: [
                 {
-                    language: `English`,
-                    languageNativeName: `English`,
+                    language: Languages.en_us,
                     translator: `Frankk`,
                     updated: true,
                 },
@@ -252,14 +316,12 @@ export const ModData = {
             hasStrings: true,
             translations: [
                 {
-                    language: `English`,
-                    languageNativeName: `English`,
+                    language: Languages.en_us,
                     translator: `Frankk`,
                     updated: true,
                 },
                 {
-                    language: `Polish`,
-                    languageNativeName: `Polski`,
+                    language: Languages.pol_pl,
                     translator: `<a href="https://www.instagram.com/ossqarr/" target="_blank">Osqar</a>`,
                     updated: true,
                 },
@@ -625,74 +687,62 @@ export const ModData = {
             hasStrings: true,
             translations: [
                 {
-                    language: `English`,
-                    languageNativeName: `English`,
+                    language: Languages.en_us,
                     translator: `Frankk`,
                     updated: true,
                 },
                 {
-                    language: `Japanese`,
-                    languageNativeName: `日本語`,
+                    language: Languages.jpn_jp,
                     translator: `Maru`,
                     updated: true,
                 },
                 {
-                    language: `Korean`,
-                    languageNativeName: `한국어`,
+                    language: Languages.kor_kr,
                     translator: `SHUSHU`,
                     updated: true,
                 },
                 {
-                    language: `French`,
-                    languageNativeName: `Français`,
+                    language: Languages.fre_fr,
                     translator: `Syngo9 and <a href="https://modsims4.fr/" target="_blank">Kimikosoma</a>`,
                     updated: true,
                 },
                 {
-                    language: `Spanish`,
-                    languageNativeName: `Español`,
+                    language: Languages.spa_es,
                     translator: `GeoSims`,
                     updated: true,
                 },
                 {
-                    language: `Chinese (Simplified)`,
-                    languageNativeName: `简体中文`,
+                    language: Languages.cht_cn,
                     translator: `GreenOnionC`,
                     updated: true,
                 },
                 {
-                    language: `Portuguese`,
-                    languageNativeName: `Português`,
+                    language: Languages.por_br,
                     translator: `AnayramProko`,
                     updated: true,
                 },
                 {
-                    language: `Polish`,
-                    languageNativeName: `Polski`,
+                    language: Languages.pol_pl,
                     translator: `<a href="https://www.instagram.com/ossqarr/" target="_blank">Osqar</a>`,
                     updated: true,
                 },
                 {
-                    language: `Italian`,
-                    languageNativeName: `Italiano`,
+                    language: Languages.ita_it,
                     translator: `Alex`,
                     updated: true,
                 },
                 {
-                    language: `German`,
-                    languageNativeName: `Deutsch`,
+                    language: Languages.ger_de,
                     translator: `Leia and Possum`,
                     updated: true,
                 },
                 {
-                    language: `Russian`,
-                    languageNativeName: `Русский`,
+                    language: Languages.rus_ru,
                     translator: `Raitowaka, Luluuluru, and Trail_of_blood`,
                     updated: true,
                 },
                 {
-                    language: `Dutch`,
-                    languageNativeName: `Nederlands`,
+                    language: Languages.dut_nl,
                     translator: `SPaauw`,
                     updated: true,
                 },
@@ -895,26 +945,22 @@ export const ModData = {
             hasStrings: true,
             translations: [
                 {
-                    language: `English`,
-                    languageNativeName: `English`,
+                    language: Languages.en_us,
                     translator: `Frankk`,
                     updated: true,
                 },
                 {
-                    language: `Italian`,
-                    languageNativeName: `Italiano`,
+                    language: Languages.ita_it,
                     translator: `Frankk`,
                     updated: true,
                 },
                 {
-                    language: `French`,
-                    languageNativeName: `Français`,
+                    language: Languages.fre_fr,
                     translator: `<a href="https://modsims4.fr/" target="_blank">Kimikosoma</a>`,
                     updated: true,
                 },
                 {
-                    language: `Chinese (Simplified)`,
-                    languageNativeName: `简体中文`,
+                    language: Languages.cht_cn,
                     translator: `MuMu`,
                     updated: true,
                 },
