@@ -81,12 +81,13 @@
             detailTabs: function () {
                 let tabs = [];
 
-                const {overview, details, versionHistory} = this.mod;
+                const {overview, details, faqs, versionHistory} = this.mod;
                 const isTool = this.mod.developmentStage === DataEnums.developmentStage.tool;
-                const overviewTitle = isTool ? "for users" : "overview";
+                const overviewTitle = isTool ? "for users" : "intro";
                 const detailsTitle = isTool ? "for modders" : "details";
                 if (overview !== null && overview.length > 0) tabs.push({title: overviewTitle, items: overview});
                 if (details !== null && details.length > 0) tabs.push({title: detailsTitle, items: details});
+                if (faqs !== null && faqs.length > 0) tabs.push({title: 'faqs', items: faqs});
                 if (versionHistory !== null && versionHistory.length > 0) {
                     tabs.push({
                         title: "changes",

@@ -125,6 +125,7 @@ export const ModData = {
                     ]
                 },
             ],
+            faqs: [],
             versionHistory: [
                 {
                     version: '1.0 beta 3',
@@ -251,6 +252,7 @@ export const ModData = {
                     ]
                 },
             ],
+            faqs: [],
             versionHistory: [
                 {
                     version: '1.1',
@@ -530,6 +532,58 @@ export const ModData = {
                         `<strong>Example</strong>: <code>fklb.remove tokisulani</code> will make the active sim no longer speak Toki Sulani.`,
                         `<strong>Example</strong>: <code>fklb.reset komorebigo</code> will reset the native languages of all sims that should speak Komorebigo, taking your custom settings into account.`,
                         `<strong>Example</strong>: <code>fklb.set_skill sixami 5 eliza pancakes</code> will make Eliza Pancakes speak Sixami at level 5.`,
+                    ]
+                },
+            ],
+            faqs: [
+                {
+                    title: 'Do the languages sound different when spoken?',
+                    bullets: [
+                        'No, and they probably never will - I do not think this is something that is possible.'
+                    ]
+                },
+                {
+                    title: 'Can you add [insert real language here]?',
+                    bullets: [
+                        'No, I do not add real languages. Adding real languages to the mod would break the immersion of the game, and risk misrepresenting real people and their cultures.'
+                    ]
+                },
+                {
+                    title: 'Can you add language classes/learning a language at school?',
+                    bullets: [
+                        `Yes, this is planned and already in development - Language Barriers v1.2 will be a major update focused on education and careers (plus some other goodies).`,
+                        `There is no confirmed release date for this yet, but it will likely come after <a href="#/ts4/simway" target="_blank">Simway</a> is finished, which is estimated to be released in March-April 2021. I am working on both Simway and LB v1.2 at the same time, so they might be ready around the same time.`
+                    ]
+                },
+                {
+                    title: `Why can't I set the language for destination worlds?`,
+                    bullets: [
+                        `Destination worlds do not work with the way that I currently assign languages to sims, because no one technically lives there. If EA ever makes destination worlds livable, I will allow you to customize them.`
+                    ]
+                },
+                {
+                    title: `Can you add a language for Batuu?`,
+                    bullets: [
+                        `Read the previous FAQ to understand why it's currently not possible. But more importantly, I know nothing about Star Wars, and feel like I would not implement it well, and it would get into the way of that pack's gameplay.`
+                    ]
+                },
+                {
+                    title: 'Can a world have multiple languages that sims can speak natively?',
+                    bullets: [
+                        `Currently, no. And this is not planned. I would like to implement this in a way, but have not yet figured out how to do it meaningfully.`
+                    ]
+                },
+                {
+                    title: 'Can you add a language for spellcasters/vampires?',
+                    bullets: [
+                        `This is planned for the future, but will work a bit differently. spellcasters/vampires will still have their primary native language(s), and the occult languages will be minor skill that can be used to cast spells, read tomes, etc.`,
+                        `This is likely two major updates away from being added (v1.3).`
+                    ]
+                },
+                {
+                    title: 'Can you make Sixami more exclusive (i.e. remove the Sixami Simlingo/textbook interactions)?',
+                    bullets: [
+                        `I can understand why you'd want this if you gravitate towards realistic gameplay, but I will not remove any features that have already been added. I am, however, considering an add-on or setting that would be able to disable this, but I'm not sure how that would work yet.`
                     ]
                 },
             ],
@@ -825,6 +879,7 @@ export const ModData = {
                     ]
                 }
             ],
+            faqs: [],
             versionHistory: [],
             primaryDownload: null,
             alternativeDownloads: [],
@@ -884,6 +939,7 @@ export const ModData = {
                     ]
                 },
             ],
+            faqs: [],
             versionHistory: [
                 {
                     version: '1.0.5',
@@ -1013,6 +1069,7 @@ export const ModData = {
                     ]
                 },
             ],
+            faqs: [],
             versionHistory: [
                 {
                     version: '1.1',
@@ -1124,6 +1181,7 @@ export const ModData = {
                     ]
                 },
             ],
+            faqs: [],
             versionHistory: [
                 {
                     version: '1.0',
