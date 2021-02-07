@@ -551,20 +551,21 @@ export const ModData = {
                 {
                     title: 'Can you add language classes/learning a language at school?',
                     bullets: [
-                        `Yes, this is planned and already in development - Language Barriers v1.2 will be a major update focused on education and careers (plus some other goodies).`,
-                        `There is no confirmed release date for this yet, but it will likely come after <a href="#/ts4/simway" target="_blank">Simway</a> is finished, which is estimated to be released in March-April 2021. I am working on both Simway and LB v1.2 at the same time, so they might be ready around the same time.`
+                        `Yes, this is planned and already in development. It will be part of a major update focused on education and careers (plus some other goodies).`,
+                        `There is no confirmed release date for this yet, but it will likely come around April 2021 (plus or minus a month).`
                     ]
                 },
                 {
                     title: `Why can't I set the language for destination worlds?`,
                     bullets: [
-                        `Destination worlds do not work with the way that I currently assign languages to sims, because no one technically lives there. If EA ever makes destination worlds livable, I will allow you to customize them.`
+                        `Destination worlds do not work with the way that I currently assign languages to sims, because no one technically lives there. If EA ever makes destination worlds livable, I will allow you to customize them.`,
+                        `If you're wondering how Selvadoradian works with a destination world, it's because Maxis assigns all sims from Selvadorada a special trait that I can use to identify them as Selvadoradian speakers. The same cannot be said for Granite Falls and Batuu.`
                     ]
                 },
                 {
                     title: `Can you add a language for Batuu?`,
                     bullets: [
-                        `Read the previous FAQ to understand why it's currently not possible. But more importantly, I know nothing about Star Wars, and feel like I would not implement it well, and it would get into the way of that pack's gameplay.`
+                        `Read the previous FAQ to understand why it's currently not possible. But more importantly, I know nothing about Star Wars, and feel like I would not implement it well, and it would get in the way of that pack's gameplay.`
                     ]
                 },
                 {
@@ -576,8 +577,8 @@ export const ModData = {
                 {
                     title: 'Can you add a language for spellcasters/vampires?',
                     bullets: [
-                        `This is planned for the future, but will work a bit differently. spellcasters/vampires will still have their primary native language(s), and the occult languages will be minor skill that can be used to cast spells, read tomes, etc.`,
-                        `This is likely two major updates away from being added (v1.3).`
+                        `This is planned for the future, but will work a bit differently. Spellcasters/vampires will still have their primary native language(s), and the occult languages will be minor skills that can be used to cast spells, read tomes, etc.`,
+                        `This is likely at least two major updates away from being added.`
                     ]
                 },
                 {
@@ -808,7 +809,7 @@ export const ModData = {
             name: 'Simway (MLM Mod)',
             developmentStage: DataEnums.developmentStage.wip,
             testingStatus: DataEnums.testingStatus.unreleased,
-            releaseDate: 'March-April 2021',
+            releaseDate: 'April-May 2021',
             description: `How would you like to be your own boss and set your own hours? Join Simway for just §500, then sell products and recruit other sims to make a profit! This mod adds MLMs to the game.`,
             thumbnail: 'sw-simway.png',
             images: [
