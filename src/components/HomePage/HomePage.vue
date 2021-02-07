@@ -25,6 +25,16 @@
                                   variant="outline-primary" size="sm" class="m-1" id="social-kofi">Ko-fi
                         </b-button>
                     </b-col>
+                    <b-col cols="12">
+                        <b-alert variant="warning" class="text-center mt-4" show>
+                            <p>
+                                <strong class="font-weight-bold">Hey there! I'm on bit of a hiatus.</strong>
+                                I'm currently in my final semester of college, and it's been taking up most of my time.
+                                I'm still here to answer questions, fix bugs, and help out when I can, but do not expect
+                                any new mods or updates until mid-April.
+                            </p>
+                        </b-alert>
+                    </b-col>
                 </b-row>
             </b-container>
         </section>
@@ -153,7 +163,7 @@
 
                 a.nav-link, a.nav-link:hover, a.nav-link:focus {
                     text-decoration: none;
-                    border-radius: 24px;
+                    border-radius: 12px;
                     border-width: 1px;
                     border-style: solid;
 
