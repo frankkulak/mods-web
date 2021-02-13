@@ -763,7 +763,7 @@ export const ModData = {
                 },
                 {
                     language: Languages.spa_es,
-                    translator: `GeoSims`,
+                    translator: `<a href="https://geosims.wixsite.com/geosimscr/mods-traducidos" target="_blank">GeoSims</a>`,
                     updated: true,
                 },
                 {
