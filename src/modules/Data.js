@@ -82,7 +82,7 @@ export const Languages = {
 export const GameData = {
     ts4: {
         name: "The Sims 4",
-        lastUpdate: "February 25, 2021"
+        lastUpdate: "March 23, 2021"
     }
 };
 
@@ -552,7 +552,7 @@ export const ModData = {
                     title: 'Can you add language classes/learning a language at school?',
                     bullets: [
                         `Yes, this is planned and already in development. It will be part of a major update focused on education and careers (plus some other goodies).`,
-                        `There is no confirmed release date for this yet, but it will likely come around April 2021 (plus or minus a month).`
+                        `There is no confirmed release date for this yet, but it will likely come around May 2021.`
                     ]
                 },
                 {
@@ -809,7 +809,7 @@ export const ModData = {
             name: 'Simway (MLM Mod)',
             developmentStage: DataEnums.developmentStage.wip,
             testingStatus: DataEnums.testingStatus.unreleased,
-            releaseDate: 'April-May 2021',
+            releaseDate: 'Summer 2021',
             description: `How would you like to be your own boss and set your own hours? Join Simway for just §500, then sell products and recruit other sims to make a profit! This mod adds MLMs to the game.`,
             thumbnail: 'sw-simway.png',
             images: [
