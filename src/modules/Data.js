@@ -1210,6 +1210,71 @@ export const ModData = {
             hasStrings: false,
             translations: []
         },
+        languagebarriers2: {
+            game: 'ts4',
+            id: 'languagebarriers2',
+            name: '<span class="meme">Language Barriers 2: Electric&nbsp;Boogaloo™</span>',
+            developmentStage: DataEnums.developmentStage.active,
+            testingStatus: DataEnums.testingStatus.working,
+            releaseDate: 'April 1, 2021',
+            description: `Is Language Barriers a little <em>too</em> easy for you? Now, with <span class="meme">Language Barriers 2: Electric Boogaloo™</span>, your sim cannot speak to anyone! Ever!`,
+            thumbnail: 'lb2-thumbnail.jpg',
+            images: [
+                `lb2-thumbnail.jpg`,
+            ],
+            videoUrl: null,
+            overview: [
+                {
+                    title: 'features',
+                    bullets: [
+                        `<strong>No languages!</strong> Languages were used in Language Barriers to make it harder for your sims to communicate with each other. <span class="meme">Language Barriers 2: Electric Boogaloo™</span> improves on this feature by cutting the middle man, and making your sims unable to speak to anyone!`,
+                        `<strong>No need for pools!</strong> What's that? You wanna leave your sim in a pool and remove the ladder? No need! With <span class="meme">Language Barriers 2: Electric Boogaloo™</span>, all your sim has to do is speak to someone, and they will get +8 negative moodlets!`,
+                        `<strong>Minimalism!</strong> Who doesn't love a short and sweet mod? That's all, folks!!!1!`,
+                    ]
+                },
+                {
+                    title: 'compatability',
+                    bullets: [
+                        `<span class="meme">Language Barriers 2: Electric Boogaloo™</span> is compatible with the Base Game and all packs.`,
+                        `<span class="meme">Language Barriers 2: Electric Boogaloo™</span> conflicts with Language Barriers and probably your sanity.`,
+                    ]
+                },
+            ],
+            details: [
+                {
+                    title: 'languages',
+                    bullets: [
+                        `None!`,
+                    ]
+                },
+                {
+                    title: 'miscommunication',
+                    bullets: [
+                        `All the time!`,
+                        `Usually results in death!`
+                    ]
+                },
+            ],
+            faqs: [],
+            versionHistory: [
+                {
+                    version: '1.0',
+                    date: 'April 1, 2021',
+                    bullets: [
+                        `Create the best mod in existence.`,
+                    ]
+                }
+            ],
+            primaryDownload: {
+                title: `Sim File Share`,
+                url: `https://www.youtube.com/watch?v=dQw4w9WgXcQ`
+            },
+            alternativeDownloads: [],
+            documentationDownload: null,
+            warning: null,
+            hasStrings: false,
+            translations: []
+        },
     }
 };
 

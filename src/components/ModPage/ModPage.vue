@@ -8,7 +8,7 @@
 
                 <b-row align-h="center" align-v="center" class="mt-5">
                     <b-col cols="12" sm="6" class="text-center">
-                        <h1>{{ mod.name }}</h1>
+                        <h1 v-html="mod.name"></h1>
                         <p class="version" v-html="versionText"></p>
                         <p class="description" v-html="mod.description"></p>
                     </b-col>

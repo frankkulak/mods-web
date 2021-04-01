@@ -5,7 +5,7 @@
                 <img :src="thumbnail" :alt="thumbnailAlt" :id="`preview-${mod.id}-img`"/>
             </b-col>
             <b-col cols="12" sm="7" md="9" :id="`preview-${mod.id}-col2`">
-                <h3 class="font-weight-bold" :id="`preview-${mod.id}-h3`">{{ mod.name }}</h3>
+                <h3 class="font-weight-bold" :id="`preview-${mod.id}-h3`" v-html="mod.name"></h3>
                 <p v-html="mod.description" :id="`preview-${mod.id}-p`"></p>
             </b-col>
         </b-row>
