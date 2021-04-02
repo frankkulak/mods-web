@@ -39,8 +39,4 @@
             vertical-align: middle;
         }
     }
-
-    span.meme {
-        font-family: "Comic Sans MS", "Comic Sans", cursive !important;
-    }
 </style>
