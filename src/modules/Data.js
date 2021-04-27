@@ -82,7 +82,7 @@ export const Languages = {
 export const GameData = {
     ts4: {
         name: "The Sims 4",
-        lastUpdate: "March 23, 2021"
+        lastUpdate: "April 27, 2021"
     }
 };
 
@@ -545,14 +545,15 @@ export const ModData = {
                 {
                     title: 'Can you add [insert real language here]?',
                     bullets: [
-                        'No, I do not add real languages. Adding real languages to the mod would break the immersion of the game, and risk misrepresenting real people and their cultures.'
+                        `No, I do not add real languages. Adding real languages to the mod would break the immersion of the game, and risk misrepresenting real people and their cultures. Additionally, since I cannot add every language, it would be unfair for me to add one and not others.`,
+                        //`If curious about this <a href="https://www.youtube.com" target="_blank">Buzzfeed video</a> where Language Barriers appears to include Spanish, it is because they are using a version of the mod which I made specifically for them, in which I replaced all mentions of "Selvadoradian" with "Spanish", and replaced the icon with the Cuban flag. This is because the topic of their video was to restyle Newcrest as Havana. This version is not available for download.`
                     ]
                 },
                 {
                     title: 'Can you add language classes/learning a language at school?',
                     bullets: [
                         `Yes, this is planned and already in development. It will be part of a major update focused on education and careers (plus some other goodies).`,
-                        `There is no confirmed release date for this yet, but it will likely come around May 2021.`
+                        `There is no confirmed release date for this yet, but it will likely come around May-June 2021, and will be available to patrons 2 weeks early.`
                     ]
                 },
                 {

@@ -31,7 +31,7 @@
                                 <strong class="font-weight-bold">Hey there! I'm on bit of a hiatus.</strong>
                                 I'm currently in my final semester of college, and it's been taking up most of my time.
                                 I'm still here to answer questions, fix bugs, and help out when I can, but do not expect
-                                any new mods or updates until April-May.
+                                any new mods or updates until at least May.
                             </p>
                         </b-alert>
                     </b-col>
