@@ -24,6 +24,7 @@
                 <ul class="mb-5">
                     <li>Do not share this mod without crediting me. A link to this website is sufficient.</li>
                     <li>Do not re-upload this mod anywhere or include it in any mod download folders.</li>
+                    <li>Do not create alternate versions of or add-ons to this mod without asking me first.</li>
                     <li>You may reference my code for use in your own mods, but must credit me if you do so.</li>
                     <li>I am not responsible for the misuse of this mod (e.g. changing the code, using it when it is
                         out-of-date, etc.).
