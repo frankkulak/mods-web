@@ -552,8 +552,8 @@ export const ModData = {
                 {
                     title: 'Can you add language classes/learning a language at school?',
                     bullets: [
-                        `Yes, this is planned and already in development. It will be part of a major update focused on education and careers (plus some other goodies).`,
-                        `There is no confirmed release date for this yet, but it will likely come around May-June 2021, and will be available to patrons 2 weeks early.`
+                        `Yes, this is planned and in early development. It will be part of a major update focused on education and careers (plus some other goodies).`,
+                        `There is no confirmed release date for this yet, but it will likely come around Summer 2021, and will be available to Patrons 2 weeks early.`
                     ]
                 },
                 {
@@ -572,7 +572,7 @@ export const ModData = {
                 {
                     title: 'Can a world have multiple languages that sims can speak natively?',
                     bullets: [
-                        `Currently, no. And this is not planned. I would like to implement this in a way, but have not yet figured out how to do it meaningfully.`
+                        `Currently, no. But I am looking into it and aiming to get it in for the next update.`
                     ]
                 },
                 {

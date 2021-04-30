@@ -7,7 +7,7 @@
                         <img src="../../assets/ts4/profilepic.png" alt="Simself" class="my-auto"/>
                     </b-col>
                     <b-col cols="12" sm="9" md="8" class="py-4 py-sm-0 text-center text-sm-left">
-                        <h1>Frank's TS4 Mods</h1>
+                        <h1>Frankk's Mods</h1>
                         <p>I'm Frank, and I make mods for The Sims 4 - you can browse and download them from below.
                             Please send bug reports, questions, and suggestions to my Discord server.</p>
                     </b-col>
@@ -28,10 +28,9 @@
                     <b-col cols="12">
                         <b-alert variant="warning" class="text-center mt-4" show>
                             <p>
-                                <strong class="font-weight-bold">Hey there! I'm on bit of a hiatus.</strong>
-                                I'm currently in my final semester of college, and it's been taking up most of my time.
-                                I'm still here to answer questions, fix bugs, and help out when I can, but do not expect
-                                any new mods or updates until at least May.
+                                I just finished school, and am back to modding! See
+                                <a href="https://www.patreon.com/posts/roadmap-for-50644822" target="_blank">this post
+                                    on Patreon</a> for information about what I'm currently working on.
                             </p>
                         </b-alert>
                     </b-col>
