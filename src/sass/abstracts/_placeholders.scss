@@ -1,5 +1,6 @@
 %default-gradient {
-  @include gradient($bottom: $blue, $top: $teal, $fallback: $blue);
+  @include gradient($bottom: $blue, $top: $blurple, $fallback: $blue);
+  color: white;
 }
 
 %floating-card {

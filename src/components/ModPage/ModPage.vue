@@ -1,26 +1,28 @@
 <template>
-    <b-container id="mod-page" class="py-5" fluid>
-        <b-row align-h="center" align-v="center">
-            <b-col cols="12" md="6" class="text-center">
-                <h1 v-html="mod.name"></h1>
-                <p class="version" v-html="versionText"></p>
-                <p class="description" v-html="mod.description"></p>
-                <mod-status-alert :mod="mod"/>
-            </b-col>
+    <div id="mod-page">
+        <b-container class="py-5" fluid>
+            <b-row align-h="center" align-v="center">
+                <b-col cols="12" md="6" class="text-center">
+                    <h1 v-html="mod.name"></h1>
+                    <p class="version" v-html="versionText"></p>
+                    <p class="description" v-html="mod.description"></p>
+                    <mod-status-alert :mod="mod"/>
+                </b-col>
 
-            <b-col cols="12" md="6" class="my-auto py-4" v-if="hasImages">
-                <mod-image-carousel :mod="mod"/>
-            </b-col>
-        </b-row>
+                <b-col cols="12" md="6" class="my-auto py-4" v-if="hasImages">
+                    <mod-image-carousel :mod="mod"/>
+                </b-col>
+            </b-row>
 
-        <b-tabs fill justified class="mt-5">
-            <mod-details-tab v-for="tab in detailTabs" :key="tab.title" :title="tab.title" :items="tab.items"/>
-        </b-tabs>
+            <b-tabs fill justified class="mt-5">
+                <mod-details-tab v-for="tab in detailTabs" :key="tab.title" :title="tab.title" :items="tab.items"/>
+            </b-tabs>
 
-        <mod-translations :mod="mod" v-if="showTranslations" class="mt-5"/>
+            <mod-translations :mod="mod" v-if="showTranslations" class="mt-5"/>
+        </b-container>
 
         <mod-download :mod="mod" v-if="!isWip"/>
-    </b-container>
+    </div>
 </template>
 
 <script>
@@ -72,8 +74,8 @@
 
                 const {overview, details, faqs, versionHistory} = this.mod;
                 const isTool = this.mod.developmentStage === DataEnums.developmentStage.tool;
-                const overviewTitle = isTool ? "for users" : "Overview";
-                const detailsTitle = isTool ? "for modders" : "Details";
+                const overviewTitle = isTool ? "For users" : "Overview";
+                const detailsTitle = isTool ? "For modders" : "Details";
                 if (overview !== null && overview.length > 0) tabs.push({title: overviewTitle, items: overview});
                 if (details !== null && details.length > 0) tabs.push({title: detailsTitle, items: details});
                 if (faqs !== null && faqs.length > 0) tabs.push({title: 'FAQs', items: faqs});
