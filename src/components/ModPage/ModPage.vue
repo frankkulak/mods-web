@@ -115,7 +115,7 @@
 <style lang="scss">
     #mod-page {
         #home-button {
-            background-color: $darker-blue;
+            background-color: $dark-blue;
             color: var(--link-color);
             border: 1px solid white;
             border-radius: 20px;

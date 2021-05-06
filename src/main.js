@@ -8,6 +8,9 @@ import { ModData } from './modules/Data.js'
 import HomePage from "./components/HomePage/HomePage";
 import ModPage from "./components/ModPage/ModPage";
 import ModVersion from "./components/ModPage/ModVersion";
+import AboutPage from "./components/InfoPages/AboutPage";
+import TutorialsPage from "./components/InfoPages/TutorialsPage";
+import PatreonPage from "./components/InfoPages/PatreonPage";
 import PageNotFound from "./components/PageNotFound";
 
 Vue.use(BootstrapVue);
@@ -16,6 +19,18 @@ Vue.use(BootstrapVue);
 // Routing
 
 const routes = [
+    {
+        path: '/patreon',
+        component: PatreonPage
+    },
+    {
+        path: '/about',
+        component: AboutPage
+    },
+    {
+        path: '/tutorials',
+        component: TutorialsPage
+    },
     {
         // fixme abstract this in case future mods also need to be renamed
         path: '/ts4/justiceforcowplants',

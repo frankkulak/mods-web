@@ -1,3 +1,8 @@
 %default-gradient {
   @include gradient($bottom: $blue, $top: $teal, $fallback: $blue);
 }
+
+%floating-card {
+  border-radius: 10px;
+  box-shadow: 0 4px 8px var(--shadow-color);
+}

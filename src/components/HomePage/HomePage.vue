@@ -1,42 +1,49 @@
 <template>
     <div id="home-page" class="pb-5">
-        <section id="welcome" class="dark-vars">
-            <b-container fluid>
-                <b-row align-h="center" align-v="center" class="py-4">
-                    <b-col cols="12" sm="3" md="2" class="text-center">
-                        <img src="../../assets/ts4/profilepic.png" alt="Simself" class="my-auto"/>
-                    </b-col>
-                    <b-col cols="12" sm="9" md="8" class="py-4 py-sm-0 text-center text-sm-left">
-                        <h1>Frankk's Mods</h1>
-                        <p>I'm Frank, and I make mods for The Sims 4 - you can browse and download them from below.
-                            Please send bug reports, questions, and suggestions to my Discord server.</p>
-                    </b-col>
-                    <b-col cols="12" md="2" class="text-center mt-0 mt-sm-4 mt-md-0">
-                        <b-button href="https://discord.gg/qNhD3Jh" target="_blank" variant="outline-primary"
-                                  size="sm" class="m-1" id="social-discord">Discord
-                        </b-button>
-                        <b-button href="https://twitter.com/frankkulakmods" target="_blank" variant="outline-primary"
-                                  size="sm" class="m-1" id="social-twitter">Twitter
-                        </b-button>
-                        <b-button href="https://www.patreon.com/frankkulakmods" target="_blank"
-                                  variant="outline-primary" size="sm" class="m-1" id="social-patreon">Patreon
-                        </b-button>
-                        <b-button href="https://ko-fi.com/frankkulak" target="_blank"
-                                  variant="outline-primary" size="sm" class="m-1" id="social-kofi">Ko-fi
-                        </b-button>
-                    </b-col>
-                    <b-col cols="12">
-                        <b-alert variant="warning" class="text-center mt-4" show>
-                            <p>
-                                I just finished school, and am back to modding! See
-                                <a href="https://www.patreon.com/posts/roadmap-for-50644822" target="_blank">this post
-                                    on Patreon</a> for information about what I'm currently working on.
-                            </p>
-                        </b-alert>
-                    </b-col>
-                </b-row>
-            </b-container>
-        </section>
+<!--        <section id="welcome" class="dark-vars">-->
+<!--            <b-container fluid>-->
+<!--                <b-row align-h="center" align-v="center" class="py-4">-->
+<!--                    <b-col cols="12" sm="3" md="2" class="text-center">-->
+<!--                        <img src="../../assets/ts4/profilepic.png" alt="Simself" class="my-auto"/>-->
+<!--                    </b-col>-->
+<!--                    <b-col cols="12" sm="9" md="8" class="py-4 py-sm-0 text-center text-sm-left">-->
+<!--                        <h1>Frankk's Mods</h1>-->
+<!--                        <p>I'm Frank, and I make mods for The Sims 4 - you can browse and download them from below.-->
+<!--                            Please send bug reports, questions, and suggestions to my Discord server.</p>-->
+<!--                    </b-col>-->
+<!--                    <b-col cols="12" md="2" class="text-center mt-0 mt-sm-4 mt-md-0">-->
+<!--                        <b-button href="https://discord.gg/qNhD3Jh" target="_blank" variant="outline-primary"-->
+<!--                                  size="sm" class="m-1" id="social-discord">Discord-->
+<!--                        </b-button>-->
+<!--                        <b-button href="https://twitter.com/frankkulakmods" target="_blank" variant="outline-primary"-->
+<!--                                  size="sm" class="m-1" id="social-twitter">Twitter-->
+<!--                        </b-button>-->
+<!--                        <b-button href="https://www.patreon.com/frankkulakmods" target="_blank"-->
+<!--                                  variant="outline-primary" size="sm" class="m-1" id="social-patreon">Patreon-->
+<!--                        </b-button>-->
+<!--                        <b-button href="https://ko-fi.com/frankkulak" target="_blank"-->
+<!--                                  variant="outline-primary" size="sm" class="m-1" id="social-kofi">Ko-fi-->
+<!--                        </b-button>-->
+<!--                    </b-col>-->
+<!--                    <b-col cols="12">-->
+<!--                        <b-alert variant="warning" class="text-center mt-4" show>-->
+<!--                            <p>-->
+<!--                                I just finished school, and am back to modding! See-->
+<!--                                <a href="https://www.patreon.com/posts/roadmap-for-50644822" target="_blank">this post-->
+<!--                                    on Patreon</a> for information about what I'm currently working on.-->
+<!--                            </p>-->
+<!--                        </b-alert>-->
+<!--                    </b-col>-->
+<!--                </b-row>-->
+<!--            </b-container>-->
+<!--        </section>-->
+
+<!--        <div id="test" class="p-2 m-5">-->
+<!--            <div class="test-content p-2">-->
+<!--                <h1>Construction zone</h1>-->
+<!--                <p>Here's what I'm currently working on.</p>-->
+<!--            </div>-->
+<!--        </div>-->
 
         <section id="home-content">
             <b-container fluid>
@@ -113,6 +120,24 @@
 
 <style lang="scss">
     #home-page {
+        #test {
+            border-radius: 12px;
+
+            .test-content {
+                border-radius: 12px;
+                background-color: white;
+                color: black;
+            }
+
+            background: repeating-linear-gradient(
+                            45deg,
+                            #eecb00,
+                            #eecb00 45px,
+                            #121212 45px,
+                            #121212 90px
+            );
+        }
+
         #welcome {
             img {
                 width: 100%;

@@ -1,14 +1,12 @@
 html {
-  --bg-color: #{white};
-  --card-bg-color: #{$off-white};
-  --h-color: #{$blue};
+  --bg-color: #{$off-white};
+  --card-bg-color: #{white};
+  --h-color: #{$blurple};
   --text-color: #{$dark-gray};
   --link-color: #{$blue};
   --shadow-color: #{transparentize($dark-gray, 0.82)};
   --danger-color: #{$red};
-
-  .dark-vars {
-    --bg-color: #{$dark-blue};
-    --text-color: #{white};
-  }
+  --help-color: #{$red};
+  --accent-color: #{$blurple};
+  --footer-color: #{$dark-blue};
 }
