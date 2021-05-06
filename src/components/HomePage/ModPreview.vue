@@ -12,6 +12,13 @@
                     <h3 class="font-weight-bold" :id="`preview-${mod.id}-h3`" v-html="mod.name"></h3>
                     <p v-html="mod.description" :id="`preview-${mod.id}-p`"></p>
                 </b-col>
+                <b-col cols="12" :sm="imgColsSm" :md="imgColsMd" v-if="mod.developmentStage === 0"
+                       class="my-auto text-center">
+                    <div class="release-date w-auto py-2 my-3">
+                        <p>expected</p>
+                        <p class="font-weight-bold">{{ mod.releaseDate }}</p>
+                    </div>
+                </b-col>
             </b-row>
         </router-link>
     </b-col>
@@ -85,6 +92,13 @@
 
         .desc-col {
             height: 100%;
+        }
+
+        .release-date {
+            border-radius: 10px;
+            border-color: var(--text-color);
+            border-width: 1px;
+            border-style: solid;
         }
     }
 </style>

@@ -98,6 +98,9 @@ export const ModCategoryData = {
         ],
         utility: [
             'packtests'
+        ],
+        wips: [
+            'simway'
         ]
     }
 };

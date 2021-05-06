@@ -1,7 +1,5 @@
 <template>
     <div id="mod-page">
-        <router-link id="home-button" class="px-3 py-2" to="/">&larr; more mods</router-link>
-
         <section id="mod-header">
             <b-container class="pt-5" fluid>
                 <mod-status-alert :mod="mod"/>
@@ -114,29 +112,6 @@
 
 <style lang="scss">
     #mod-page {
-        #home-button {
-            background-color: $dark-blue;
-            color: var(--link-color);
-            border: 1px solid white;
-            border-radius: 20px;
-            box-shadow: 0 4px 8px var(--shadow-color);
-            transition: all ease 200ms;
-            z-index: 1020;
-            position: fixed;
-            left: 12px;
-            top: 12px;
-            text-decoration: none;
-
-            &:hover {
-                top: 8px;
-                box-shadow: 0 5px 15px var(--shadow-color);
-            }
-        }
-
-        #mod-header {
-            // intentionally blank
-        }
-
         #mod-detail-tabs {
             .nav-link {
                 text-decoration: none;

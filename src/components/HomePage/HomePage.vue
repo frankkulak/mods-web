@@ -17,16 +17,20 @@
         <b-container fluid>
             <section-header text="utility mods" class="mt-5 mb-3"/>
             <b-row>
-                <mod-preview v-for="mod in utilityMods" :key="mod.id" :mod="mod" :major="false" :show-thumbnail="false"/>
+                <mod-preview v-for="mod in utilityMods" :key="mod.id" :mod="mod" :major="false"
+                             :show-thumbnail="false"/>
             </b-row>
         </b-container>
 
-        <!--        <div id="test" class="p-2 m-5">-->
-        <!--            <div class="test-content p-2">-->
-        <!--                <h1>Construction zone</h1>-->
-        <!--                <p>Here's what I'm currently working on.</p>-->
-        <!--            </div>-->
-        <!--        </div>-->
+        <section id="wips" class="p-2 my-5 mx-2">
+            <div class="wips-content px-4 pt-4">
+                <section-header text="construction zone" class="mb-4"/>
+                <p>These mods are currently being developed, and are not yet ready for download. Check back later!</p>
+                <b-row>
+                    <mod-preview v-for="mod in wipMods" :key="mod.id" :mod="mod" :major="true" :show-thumbnail="false"/>
+                </b-row>
+            </div>
+        </section>
     </b-container>
 </template>
 
@@ -46,7 +50,8 @@
             return {
                 majorMods: getMods('major'),
                 minorMods: getMods('minor'),
-                utilityMods: getMods('utility')
+                utilityMods: getMods('utility'),
+                wipMods: getMods('wips')
             }
         }
     }
@@ -54,54 +59,13 @@
 
 <style lang="scss">
     #home-page {
-        #test {
-            border-radius: 12px;
+        section#wips {
+            border-radius: 10px;
+            background: repeating-linear-gradient(45deg, #eecb00, #eecb00 30px, #121212 30px, #121212 60px);
 
-            .test-content {
-                border-radius: 12px;
-                background-color: white;
-                color: black;
-            }
-
-            background: repeating-linear-gradient(
-                            45deg,
-                            #eecb00,
-                            #eecb00 45px,
-                            #121212 45px,
-                            #121212 90px
-            );
-        }
-
-        #home-content {
-            li.nav-item {
-                padding-right: 24px;
-
-                &:last-child {
-                    padding-right: 0;
-                }
-
-                a.nav-link, a.nav-link:hover, a.nav-link:focus {
-                    text-decoration: none;
-                    border-radius: 12px;
-                    border-width: 1px;
-                    border-style: solid;
-
-                    &.active {
-                        background-color: $dark-blue;
-                        color: white;
-                        border-color: white;
-                    }
-                }
-
-                a.nav-link, a.nav-link:focus {
-                    color: var(--link-color);
-                    border-color: var(--link-color);
-                }
-
-                a.nav-link:hover {
-                    color: $dark-blue;
-                    border-color: $dark-blue;
-                }
+            .wips-content {
+                border-radius: 10px;
+                background-color: var(--bg-color);
             }
         }
     }
