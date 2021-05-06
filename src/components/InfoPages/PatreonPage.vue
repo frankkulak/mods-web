@@ -22,8 +22,8 @@
         <p><span class="benefit-title">Early access to alphas.</span> Alphas are incomplete snapshots of new mods and
             updates while they're being developed. While I hold them to the same standard of quality as betas and public
             releases, they may be missing some features and contain more bugs. Giving feedback and reporting issues
-            about alphas helps me make the betas and public released as good as they can be.</p>
-        <p><span class="benefit-title">Personalized mod versions*.</span>If you want any small tweaks made to any of my
+            about alphas helps me make betas and public releases the best they can be.</p>
+        <p><span class="benefit-title">Personalized mod versions*.</span> If you want any small tweaks made to any of my
             mods, I will create a custom version just for you. I will keep your version up-to-date with the latest
             version of the mod, and fix any issues that arise with patches. If you cancel your Landgraab pledge, I will
             no longer update your custom version.</p>
@@ -31,7 +31,7 @@
             if your idea is reasonable, ask me <a href="https://discord.gg/qNhD3Jh" target="_blank">on Discord</a>
             in the #patreon-questions channel before signing up.</p>
 
-        <div class="pt-5 pb-5 text-center">
+        <div class="pt-5 pb-3 text-center">
             <b-button variant="outline-primary" href="https://www.patreon.com/frankkulakmods" target="_blank" size="lg">
                 Go to Patreon</b-button>
         </div>

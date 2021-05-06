@@ -6,7 +6,6 @@
             </b-row>
         </b-container>
 
-
         <b-container fluid>
             <section-header text="small mods" class="mt-5 mb-3"/>
             <b-row>

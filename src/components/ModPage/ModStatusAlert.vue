@@ -1,6 +1,6 @@
 <template>
-    <div id="mod-status-alert w-100">
-        <b-alert :variant="alertVariant" v-html="alertContent" class="text-center m-0" show/>
+    <div id="mod-status-alert">
+        <b-alert :variant="alertVariant" v-html="alertContent" class="text-center m-0 px-4 py-2" show/>
     </div>
 </template>
 
@@ -28,7 +28,7 @@
         computed: {
             alertVariant: function () {
                 if (this.stageIs(retired)) return `danger`;
-                else if (this.stageIs(wip)) return `warning`;
+                else if (this.stageIs(wip)) return `primary`;
 
                 switch (this.mod.testingStatus) {
                     case DataEnums.testingStatus.working:
@@ -41,24 +41,24 @@
                 }
             },
             alertContent: function () {
-                if (this.stageIs(retired)) return `This mod is retired, which means I no longer update or support it. Using it is not recommended, as it may cause issues with your game.`;
-                else if (this.stageIs(wip)) return `This mod is a work-in-progress, so the information on this page may be incomplete and is subject to change. Additionally, the expected release date is just an estimation and may be pushed back at any time.`;
-
                 const successSymbol = '&check;';
                 const warningSymbol = '&#9888;';
                 const dangerSymbol = '&#10761;';
 
+                if (this.stageIs(retired)) return `${dangerSymbol} retired`;
+                else if (this.stageIs(wip)) return `work-in-progress`;
+
                 const lastUpdate = GameData[this.mod.game].lastUpdate;
-                const ending = `with latest patch <span class="text-nowrap">(${lastUpdate})</span>`;
+                const ending = `with <span class="text-nowrap">${lastUpdate}</span> patch`;
 
                 switch (this.mod.testingStatus) {
                     case DataEnums.testingStatus.working:
                     case DataEnums.testingStatus.beta:
                         return `${successSymbol} working ${ending}`;
                     case DataEnums.testingStatus.broken:
-                        return `${dangerSymbol} issues found ${ending}`;
+                        return `${dangerSymbol} conflicts ${ending}`;
                     default:
-                        return `${warningSymbol} not yet tested ${ending}`;
+                        return `${warningSymbol} not tested ${ending}`;
                 }
             }
         }
@@ -67,6 +67,8 @@
 
 <style lang="scss">
     #mod-status-alert {
-        // intentionally blank
+        .alert {
+            display: inline-block;
+        }
     }
 </style>

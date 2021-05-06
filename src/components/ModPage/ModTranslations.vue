@@ -1,44 +1,63 @@
 <template>
-    <section id="mod-translations" class="pb-5">
-        <b-container fluid>
-            <h1 class="w-100 text-center mb-5">supported languages</h1>
+    <b-row id="mod-translations" class="mx-0 px-3 py-4">
+        <b-col cols="12">
+            <section-header text="translations"/>
+            <b-button class="show-button" size="sm" :pressed.sync="showTranslations" variant="outline-primary"
+                      v-if="mod.hasStrings">
+                {{ showButtonText }}
+            </b-button>
+        </b-col>
 
-            <div v-if="mod.hasStrings">
-                <ul class="translations mb-5">
-                    <li v-for="translation in translations" :key="translation.language.id">
-                        <span>{{ translation.language.emoji }} </span>
-                        <span class="language">{{ translation.language.display }}<span v-if="!translation.updated">*</span></span>
-                        by <span v-html="translation.translator"></span>
-                    </li>
-                </ul>
+        <b-row v-show="mod.hasStrings && showTranslations" class="mx-0 mt-4">
+            <b-col cols="12" sm="6" md="4" lg="3" v-for="translation in translations" :key="translation.language.id"
+                   class="translation-wrapper p-2">
+                <div class="translation p-3 h-100">
+                    <h4>{{ translation.language.display }}<span v-if="!translation.updated">*</span>
+                        {{ translation.language.emoji }}</h4>
+                    <p>by <span v-html="translation.translator"></span></p>
+                </div>
+            </b-col>
 
-                <p class="mt-3" v-if="somethingIsOutdated">
-                    * = This language's translation is incomplete, and some text will appear in English.
-                </p>
+            <b-col cols="12">
+                <p v-if="somethingIsOutdated" class="mt-3">* = This language's translation is incomplete, and some text
+                    will
+                    appear in English.</p>
+
+                <p class="mt-3">All languages are included in the mod. No additional download is necessary.</p>
 
                 <p class="mt-3">If you would like to provide a translation for this mod, please let me know on
                     <a href="https://discord.gg/qNhD3Jh" target="_blank">Discord</a>. Telling me about your translation
-                    will allow me include it in the download. You will be credited for your translation.</p>
-            </div>
-            <div v-else>
-                <p class="text-center">This mod re-uses text that appears in the base game, so
-                    <strong>all languages</strong> are supported. Yay!</p>
-            </div>
-        </b-container>
-    </section>
+                    will
+                    allow me include it in the download. You will be credited for your translation.</p>
+            </b-col>
+        </b-row>
+        <b-row v-if="!mod.hasStrings" class="mx-0 mt-4">
+            <b-col cols="12">
+                <p>This mod does not contain any custom text, so all languages are supported. Yay!</p>
+            </b-col>
+        </b-row>
+    </b-row>
 </template>
 
 <script>
+    import SectionHeader from "../Common/SectionHeader";
+
     export default {
         name: "ModTranslations",
+        components: {SectionHeader},
         props: {
             mod: Object
+        },
+        data: function () {
+            return {
+                showTranslations: false
+            }
         },
         computed: {
             translations: function () {
                 return Object.values(this.$props.mod.translations).sort((trans1, trans2) => {
-                    const transName1 = trans1.language.id;
-                    const transName2 = trans2.language.id;
+                    const transName1 = trans1.language.display;
+                    const transName2 = trans2.language.display;
                     if (transName1 < transName2) {
                         return -1;
                     } else if (transName1 > transName2) {
@@ -52,6 +71,9 @@
                 return this.$props.mod.translations.some(function (translation) {
                     return !translation.updated;
                 });
+            },
+            showButtonText: function () {
+                return this.showTranslations ? 'hide' : 'show';
             }
         }
     }
@@ -59,32 +81,31 @@
 
 <style lang="scss">
     #mod-translations {
-        ul.translations {
-            padding: 0;
-            list-style: none;
-            text-align: center;
-            line-height: 2em;
+        background-color: var(--card-bg-color);
+        border: 1px solid var(--shadow-color);
+        border-radius: 10px;
 
-            span.language {
-                color: var(--h-color);
-                font-size: 1.1em;
-            }
+        .show-button {
+            float: right;
+            min-width: 80px;
 
-            li {
-                display: inline;
+            &.btn-outline-primary {
+                color: var(--accent-color);
+                border-color: var(--accent-color);
+                background-color: var(--card-bg-color);
 
-                &:after {
-                    content: " — ";
-                }
-
-                &:last-child:after {
-                    content: "";
+                &:hover {
+                    background-color: var(--accent-color);
+                    color: white;
                 }
             }
+        }
 
-            a, a:focus, a:hover {
-                color: var(--text-color);
-            }
+        .translation {
+            border-radius: 10px;
+            border-style: solid;
+            border-color: var(--text-color);
+            border-width: 1px;
         }
     }
 </style>

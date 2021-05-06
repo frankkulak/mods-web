@@ -3,12 +3,7 @@
         <b-container fluid>
             <h1 class="w-100 text-center mb-5">download</h1>
 
-            <div v-if="isWip" class="text-center">
-                <p>As this mod is a work-in-progress, it is not yet available for download.</p>
-                <p>If you would like updates on its development, feel free to join
-                    <a href="https://discord.gg/qNhD3Jh" target="_blank">my Discord server</a>.</p>
-            </div>
-            <div v-else>
+            <div>
                 <h3>installation instructions</h3>
                 <ul class="mb-4">
                     <li>Download the .zip folder from the link below.</li>
@@ -84,8 +79,7 @@
     export default {
         name: "ModDownload",
         props: {
-            mod: Object,
-            isWip:Boolean
+            mod: Object
         },
         data: function () {
             return {

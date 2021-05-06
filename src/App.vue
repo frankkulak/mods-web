@@ -8,9 +8,9 @@
             <b-collapse id="nav-collapse" is-nav>
                 <b-navbar-nav class="ml-auto">
                     <b-nav-item to="/">browse</b-nav-item>
-                    <b-nav-item to="patreon">patreon</b-nav-item>
-                    <b-nav-item to="tutorials">tutorials</b-nav-item>
-                    <b-nav-item to="about">info &amp; contact</b-nav-item>
+                    <b-nav-item to="/patreon">patreon</b-nav-item>
+                    <b-nav-item to="/tutorials">tutorials</b-nav-item>
+                    <b-nav-item to="/about">info &amp; contact</b-nav-item>
                 </b-navbar-nav>
             </b-collapse>
         </b-navbar>

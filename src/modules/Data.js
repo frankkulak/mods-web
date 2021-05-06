@@ -92,15 +92,18 @@ export const ModCategoryData = {
             'languagebarriers'
         ],
         minor: [
+            'buybitsandpieces',
             'followersforfame',
             'onlinehomework',
-            'buybitsandpieces'
         ],
         utility: [
             'packtests'
         ],
         wips: [
             'simway'
+        ],
+        retired: [
+            'nameablecowplants'
         ]
     }
 };
@@ -803,7 +806,7 @@ export const ModData = {
                 },
                 {
                     language: Languages.ita_it,
-                    translator: `Alex`,
+                    translator: `LittleDica`,
                     updated: true,
                 },
                 {

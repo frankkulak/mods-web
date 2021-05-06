@@ -1,6 +1,6 @@
 <template>
     <div class="section-header text-left">
-        <h2 v-html="text" class="mb-1"></h2>
+        <h2 class="mb-1">{{ text }}<b-badge v-if="badge !== undefined" class="ml-2">{{ badge }}</b-badge></h2>
         <hr class="m-0">
     </div>
 </template>
@@ -9,7 +9,8 @@
     export default {
         name: "SectionHeader",
         props: {
-            text: String
+            text: String,
+            badge: String
         }
     }
 </script>
