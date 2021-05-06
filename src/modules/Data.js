@@ -372,43 +372,37 @@ export const ModData = {
             videoUrl: null,
             overview: [
                 {
-                    title: 'features',
+                    title: 'main features',
                     bullets: [
-                        `Six languages: Komorebigo, Selvadoradian, Simlish, Sixami, Toki Sulani, and Windenburgish.`,
-                        `Native languages are assigned to sims (children and older) depending on their home world, traits, and occult type.`,
-                        `Toddlers will acquire their native language(s) once they become children. The languages they acquire depends on which ones they have been exposed to while growing up.`,
-                        `Sims can learn another language by using Simlingo, reading a textbook, or interacting with other sims who speak it.`,
-                        `Communication between sims is limited when they do not share a language. New interactions unlock as you learn more of the other sim's language(s).`,
-                        `Sims may miscommunicate when they do not share a language. This results in an embarrassed, angry, or tense moodlet that will get worse the more they talk.`,
-                    ]
-                },
-                {
-                    title: 'compatability',
-                    bullets: [
-                        `This mod is completely compatible with the Base Game. This means that you can study and speak any of the languages, even if you do not have their associated packs.`,
-                        `This mod does not override any files, so it <em>should</em> be safe to use with most other mods. However, if there are any other mods that alter the way that sims communicate, it may not play nicely with those.`,
+                        `Six languages: Simlish, Sixami, Windenburgish, Selvadoradian, Toki Sulani, and Komorebigo.`,
+                        `Every sim is assigned a native language based on their occult type, traits, and home world.`,
+                        `Sims can learn other languages by using Simlingo, reading textbooks, or speaking with other sims.`,
+                        `Toddlers learn languages from sims who speak to them, and acquire their native language(s) when they become children.`,
+                        `Communication is limited between sims that don't share a language, and they may miscommunicate with each other.`,
                     ]
                 },
                 {
                     title: 'customization options',
                     bullets: [
-                        `You can prevent sims from spawning with any languages you don't want to play with.`,
-                        `You can set any residential world to speak whatever language you wish.`,
-                        `Some sims spawn with random language skills, and you can fine-tune how this works.`,
-                        `You can change the skill level required for toddlers to acquire a language natively.`,
-                        `You can disable Language Barriers for any sim, and they'll be able to communicate like normal with anyone.`,
-                        `Detailed instructions for how to do all of these can be found in the 'details' tab above.`,
+                        `You can change any sim's native language(s) if you do not like the default that was assigned.`,
+                        `You can disable Language Barriers for any sim, and they'll be able to communicate like normal.`,
+                        `You can prevent sims from spawning with certain languages, change the language associated with a world, modify how random language skills work, and more by following <a href="https://www.patreon.com/posts/50945227" target="_blank">this guide on Patreon</a>.`,
+                    ]
+                },
+                {
+                    title: 'compatability',
+                    bullets: [
+                        `<strong>Base Game</strong>. You can use all of the languages, even if you don't have the associated pack.`,
+                        `There are no known conflicts with other mods, but it is possible for script mods to unexpectedly interfere with one another. If you notice weird behavior with another mod installed, please let me know.`,
                     ]
                 },
                 {
                     title: 'special thanks',
                     bullets: [
-                        `This mod took a village to pull off, and it wouldn't have been possible without the help I received along the way. I want to give a very big thank you to some amazing people:`,
-                        `<strong>MizoreYukii</strong>, who has helped me more times than I can count. I cannot even begin to list everything she's helped me with, or this thank you section would never end. Without her, I wouldn't have even been able to begin this mod.`,
-                        `<strong>Basemental</strong>, who helped me figure out some of the more advanced concepts of scripting for The Sims 4, which made my code more concise and resilient to game patches, and even enable it to work with new items and CC.`,
-                        `<strong>Lumpinou</strong> and <strong>Jamjars</strong>, who were always there to help me fix bugs and give me new ideas to work with.`,
-                        `All of the translators who took the time to make this mod more accessible to those who do not speak English.`,
-                        `And finally, to the members of my Discord server and anyone else who provided me with ideas, feedback, help, and encouragement along the way, thank you!`,
+                        `<strong>MizoreYukii</strong>, who helped get me started with modding and has continued to be a tremendous help ever since. Without her, I wouldn't have been able to begin this mod.`,
+                        `<strong>Basemental</strong>, who helped me learn how to make my script more concise and resilient to game patches, and even enable it to work with new items and CC.`,
+                        `<strong>Lumpinou</strong>, <strong>Jamjars</strong>, <strong>Cidira</strong>, <strong>ChippedSim</strong>, <strong>adeepindigo</strong> and many others from the Creator Musings server who have always been there to help me figure things out, fix bugs, and give me new ideas to work with.`,
+                        `And finally, to all of my patrons, translators, members of discord server, and anyone else who has provided me with ideas, feedback, and help along the way, thank you!`,
                     ]
                 }
             ],
@@ -427,9 +421,9 @@ export const ModData = {
                 {
                     title: 'native language traits',
                     bullets: [
-                        `Each language has a native language trait. These traits are not chosen in CAS - they are automatically assigned to sims when they spawn in to the world.`,
-                        `Sims must have at least one native language trait at all times, but you can change them or add more by using the 'Languages > Native Languages' pie menu option, or by using console cheats (described below).`,
-                        `Learn how to configure worlds to use any native language you wish in the 'configuring world languages' section below.`,
+                        `Each language has a native speaker trait. These traits are not chosen in CAS - they are automatically assigned to sims when they spawn in to the world.`,
+                        `Native languages are assigned based on a sim's occult type, traits (including hidden traits), and home world. You can customize how this works by following <a href="https://www.patreon.com/posts/50945227" target="_blank">this guide on Patreon</a>.`,
+                        `Sims must have at least one native language trait at all times, but you can change it or add more by using the 'Languages > Native Languages' pie menu option.`,
                     ]
                 },
                 {
@@ -437,15 +431,14 @@ export const ModData = {
                     bullets: [
                         `Each language has a skill. A sim may only learn a language skill if it is not their native language.`,
                         `You can study a language on Simlingo (computer/tablet), with a textbook, or by talking to a native speaker.`,
-                        `By default, non-played sims have a chance of spawning with random language skills between levels 2 and 4. Their chance to speak another language depends on their age, native language(s), and home world. The languages they may speak are also determined by their own native language(s) and their home world.`,
-                        `Learn how to configure automatic language skill assignment in the 'configuring random language skills' section below.`,
+                        `By default, non-played sims have a chance of spawning with random language skills between levels 2 and 4. Their chance to speak another language depends on their age, native language(s), and home world. The languages they may speak are also determined by their own native language(s) and their home world. You can somewhat tweak how this works by following <a href="https://www.patreon.com/posts/50945227" target="_blank">this guide on Patreon</a>.`,
                     ]
                 },
                 {
                     title: 'language levels',
                     bullets: [
                         `'Language level' refers to a sim's knowledge of a language. If they are a native speaker, their level is 10, otherwise it is equivalent to whatever their skill level is.`,
-                        `'Shared language level' refers to the highest language level that two sims have in common. For instance, if one sim is level 10 Simlish and level 3 Selvadoradian, and the other sim is level 10 Selvadoradian and level 5 Simlish, then their shared language skill is 5, because they both have at least a 5 in Simlish.`,
+                        `'Shared language level' refers to the highest language level that two sims have in common. For instance, if one sim is level 10 Simlish and level 3 Selvadoradian, and the other sim is level 10 Selvadoradian and level 5 Simlish, then their shared language skill is 5, because they both have at least a 5 in Simlish.`
                     ]
                 },
                 {
@@ -455,11 +448,11 @@ export const ModData = {
                         `Toddlers pick up the language skills associated with the native languages of whomever speaks to them.`,
                         `Toddlers can use Simlingo Jr. on any tablet to learn languages that their parents cannot teach them.`,
                         `NPC toddlers will automatically be given their parents' native language(s) at level 3.`,
-                        `When a toddler becomes a child, any languages at or above a certain threshold will be acquired as a native language. By default, this threshold is equal to 5, but you can modify this in lb_settings.cfg (learn how in the 'configuring language acquisition' section below). If there are no languages at this level, then their highest language will be used instead. If they have no language skills at all, then they will speak Simlish.`,
+                        `When a toddler becomes a child, any languages at or above a certain threshold will be acquired as a native language. By default, this threshold is 5, but you can change it by following <a href="https://www.patreon.com/posts/50945227" target="_blank">this guide on Patreon</a>. If there are no languages at this level, then their highest language will be used instead. If they have no language skills at all, then they will speak Simlish.`,
                     ]
                 },
                 {
-                    title: 'limited interactions',
+                    title: 'limited social interactions',
                     bullets: [
                         `Social interactions are extremely limited between two sims that have a shared language level of 1.`,
                         `At level 2, they unlock some more basic friendly interactions.`,
@@ -467,12 +460,12 @@ export const ModData = {
                         `At level 4, they unlock all friendly and mean interactions, and some simple funny and mischief interactions.`,
                         `At level 5, they unlock all interactions, including funny, mischief, and romantic.`,
                         `If a sim has Language Barriers disabled, they will be able to communicate with everyone normally.`,
-                        `This system will work with CC interactions only if they are in the friendly, funny, mischief, mean, or romance categories. If they are in their own CC categories, they will not be hidden. Reach out to me if you would like to see LB better integrated with another mod.`,
                     ]
                 },
                 {
-                    title: 'integrated mods (so far)',
+                    title: 'interactions from other mods',
                     bullets: [
+                        `The above system will work with CC interactions only if they are in the friendly, funny, mischief, mean, or romance categories. If they are in their own CC categories, they will not be hidden. Reach out to me if you would like to see LB better integrated with another mod.`,
                         `<strong>SimDa Dating App by LittleMsSam</strong> (<a href="https://littlemssam.tumblr.com/post/175413426238/simda-dating-app-simda-dating-app-can-help-you" target="_blank">info + download</a>): Sims can participate in a one night stand even if they have not unlocked romance interactions yet.`
                     ]
                 },
@@ -527,24 +520,24 @@ export const ModData = {
                     ]
                 },
                 {
-                    title: 'Can you add [insert real language here]?',
+                    title: 'Can you add [some real language]?',
                     bullets: [
-                        `No, I do not add real languages. Adding real languages to the mod would break the immersion of the game, and risk misrepresenting real people and their cultures. Additionally, since I cannot add every language, it would be unfair for me to add one and not others.`,
-                        //`If curious about this <a href="https://www.youtube.com" target="_blank">Buzzfeed video</a> where Language Barriers appears to include Spanish, it is because they are using a version of the mod which I made specifically for them, in which I replaced all mentions of "Selvadoradian" with "Spanish", and replaced the icon with the Cuban flag. This is because the topic of their video was to restyle Newcrest as Havana. This version is not available for download.`
+                        `No, I do not add real languages to the mod. Doing so would break the immersion of the game, and risk misrepresenting real people and their cultures. Additionally, since I cannot add every language, it would be unfair for me to add just one.`,
+                        `However, if you are a tier 3 patron (Landgraab), you are allowed to request that I change the name of one of the languages for your personalized version of the mod (for example, I can rename "Selvadoradian" to "Spanish"). Learn more about the benefits of being a patron <a href="#/patreon">here</a>.`,
+                        //`If curious about <a href="https://www.youtube.com" target="_blank">this Buzzfeed video</a> where Language Barriers appears to include Spanish, I created a special version of the mod for them to use for the video. This version is not available for download.`
                     ]
                 },
                 {
                     title: 'Can you add language classes/learning a language at school?',
                     bullets: [
-                        `Yes, this is planned and in early development. It will be part of a major update focused on education and careers (plus some other goodies).`,
-                        `There is no confirmed release date for this yet, but it will likely come around Summer 2021, and will be available to Patrons 2 weeks early.`
+                        `Yes, this is planned and in development. Read more about this upcoming update on <a href="https://www.patreon.com/posts/roadmap-for-50644822" target="_blank">this Patreon post</a>.`,
                     ]
                 },
                 {
                     title: `Why can't I set the language for destination worlds?`,
                     bullets: [
                         `Destination worlds do not work with the way that I currently assign languages to sims, because no one technically lives there. If EA ever makes destination worlds livable, I will allow you to customize them.`,
-                        `If you're wondering how Selvadoradian works with a destination world, it's because Maxis assigns all sims from Selvadorada a special trait that I can use to identify them as Selvadoradian speakers. The same cannot be said for Granite Falls and Batuu.`
+                        `If you're wondering how Selvadoradian works with a destination world, it's because EA assigns all sims from Selvadorada a special trait that I can use to identify them as Selvadoradian speakers. The same cannot be said for Granite Falls and Batuu.`
                     ]
                 },
                 {
@@ -556,7 +549,7 @@ export const ModData = {
                 {
                     title: 'Can a world have multiple languages that sims can speak natively?',
                     bullets: [
-                        `Currently, no. But I am looking into it and aiming to get it in for the next update.`
+                        `Currently, no. But I am looking into this and aiming to get it out in <a href="https://www.patreon.com/posts/roadmap-for-50644822" target="_blank">the next update</a>.`
                     ]
                 },
                 {
@@ -569,7 +562,8 @@ export const ModData = {
                 {
                     title: 'Can you make Sixami more exclusive (i.e. remove the Sixami Simlingo/textbook interactions)?',
                     bullets: [
-                        `I can understand why you'd want this if you gravitate towards realistic gameplay, but I will not remove any features that have already been added. I am, however, considering an add-on or setting that would be able to disable this, but I'm not sure how that would work yet.`
+                        `I can understand why you'd want this if you gravitate towards realistic gameplay, but I will not remove any features that have already been added. I am, however, considering an add-on or setting that would be able to disable this, but I'm not sure how that would work yet.`,
+                        `If you are a tier 3 patron (Landgraab), you can request a personalized version of the mod with Sixami removed entirely. Learn more about the benefits of being a patron <a href="#/patreon">here</a>.`
                     ]
                 },
             ],

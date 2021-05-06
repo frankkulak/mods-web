@@ -28,6 +28,7 @@
     .patreon-tier {
         .patreon-tier-content {
             @extend %floating-card;
+            background-color: var(--card-bg-color);
             height: 100%;
         }
     }

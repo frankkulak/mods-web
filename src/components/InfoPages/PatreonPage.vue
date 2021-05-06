@@ -6,8 +6,7 @@
 
         <section-header text="what is it?" class="mb-5"/>
         <p>Patreon is a way to support creators in the form of a monthly pledge. My patrons enjoy special perks like
-            early access to new content and personalized mods. Read more about my tiers below, or on
-            <a href="https://www.patreon.com/frankkulakmods" target="_blank">my Patreon</a>.</p>
+            early access to new content and personalized mods. The available tiers are described below.</p>
 
         <b-row align-h="around" class="mt-5">
             <patreon-tier name="The Pancakes" cost="2" :benefits="[betas]"/>
