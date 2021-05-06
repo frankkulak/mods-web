@@ -487,49 +487,11 @@ export const ModData = {
                     ]
                 },
                 {
-                    title: 'settings',
+                    title: 'settings and customization',
                     bullets: [
                         `If you do not want to run the chance of your sims dying from extreme emotions, then you can disable extreme emotions in the 'Languages' pie menu option. This will make miscommunication moodlets cap out at +4 for that sim (NOTE: If your sim already has a +8 moodlet and you disable extreme emotions, the moodlet will go away).`,
                         `You can disable Language Barriers for any sim by clicking on them and selecting the 'Languages' pie menu option. Disabling Language Barriers for a sim means that they will be able to communicate like normal and never experience miscommunication, regardless of their language skills.`,
-                    ]
-                },
-                {
-                    title: 'disabling languages',
-                    bullets: [
-                        `You can use the <code>[LANGUAGES]</code> section of the 'lb_settings.cfg' file to disable any languages that you don't want to play with.`,
-                        `If the value is set to <code>True</code>, then the language will be enabled and function normally. If it is set to <code>False</code>, then the language will be disabled, which means that the game will ignore traits and occult types when assigning it to sims.`,
-                        `If you want to also disable a language in terms of region, you must also change the value of its associated world in the <code>[REGIONS]</code> section (described below).`,
-                        `If you've already played with the mod installed, you will have to run either the <code>fklb.reset</code> or <code>fklb.reset_all</code> cheat in order for your new settings to take effect. These cheats are described in the 'console cheats' section below.`,
-                        `<strong>Example</strong>: Want to get rid of Windenburgish? Set <code>Windenburgish = False</code> and <code>Windenburg = Simlish</code>`,
-                        `<strong>Example</strong>: Want to get rid of Sixami? Just set <code>Sixami = False</code>`,
-                    ]
-                },
-                {
-                    title: 'configuring world languages',
-                    bullets: [
-                        `You can use the <code>[REGIONS]</code> section of the 'lb_settings.cfg' file to change the language that a particular world speaks.`,
-                        `The valid languages are <code>Simlish</code>, <code>Selvadoradian</code>, <code>Windenburgish</code>, <code>Komorebigo</code>, <code>Toki Sulani</code>, and <code>Sixami</code>. Capitalization doesn't matter, but spelling does, so be sure you have it right.`,
-                        `If changing the language for Mt. Komorebi, Windenburg, or Sulani, make sure you set those languages to <code>False</code> (described in 'disabling languages' above), or else some sims in these worlds may still speak the default language.`,
-                        `If you've already played with the mod installed, you will have to run either the <code>fklb.reset</code> or <code>fklb.reset_all</code> cheat in order for your new settings to take effect. These cheats are described in the 'console cheats' section below.`,
-                        `<strong>Example</strong>: Want to make sims from Oasis Springs speak Selvadoradian? Set <code>Oasis Springs = Selvadoradian</code>`
-                    ]
-                },
-                {
-                    title: 'configuring random language skills',
-                    bullets: [
-                        `You can use the <code>[RANDOM SKILLS]</code> section in the 'lb_settings.cfg' file to change the settings surrounding random language skill assignment.`,
-                        `<code>Enabled</code>: If <code>True</code>, then language skills will be randomly assigned to sims. If <code>False</code>, then sims will not spawn with any language skills, and will instead just speak their native language.`,
-                        `<code>Realistic</code>: If <code>True</code>, then the realistic algorithm described in the 'language skills' section will be used to determine who speaks what. If <code>False</code>, then language skill assignment will be entirely randomized, and equally probable for everyone.`,
-                        `<code>Played sims</code>: If <code>True</code>, played sims will be assigned random language skills as well. If <code>False</code>, random language skills will only be applied to NPC sims.`,
-                        `<code>Base chance</code>: The percent chance that a sim will have another language skill. This value must be an integer between 0 and 100. If using the realistic system, keep in mind that there are numerous multipliers that are used to determine which sims are going to be bilingual, so the actual percentage of bilingual sims is going to be higher than this base chance. I recommend sticking to a value between 5 and 15.`,
-                        `<code>Max per sim</code>: The maximum number of language skills that a sim may spawn with. This must be between 1 and 4.`,
-                    ]
-                },
-                {
-                    title: 'configuring language acquisition',
-                    bullets: [
-                        `You can use the <code>[ACQUISITION]</code> section in the 'lb_settings.cfg' file to set the skill level at which you would like children to acquire languages natively.`,
-                        `<code>Skill threshold</code>: When a toddler becomes a child, they will acquire all languages at or above this level natively. If no languages are at this level, they will just acquire their highest language instead. This must be an integer between 2 and 10.`
+                        `If you want to disable any of the languages, change the language used in a particular world, change the way random language skills are assigned, or change the level at which toddlers acquire a language natively, then read <a href="https://www.patreon.com/posts/50945227" target="_blank">this post on Patreon</a> to learn how using the provided lb_settings.cfg file.`
                     ]
                 },
                 {

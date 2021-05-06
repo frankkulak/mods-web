@@ -104,7 +104,7 @@
         .translation {
             border-radius: 10px;
             border-style: solid;
-            border-color: var(--text-color);
+            border-color: var(--shadow-color);
             border-width: 1px;
         }
     }
