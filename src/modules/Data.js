@@ -86,6 +86,22 @@ export const GameData = {
     }
 };
 
+export const ModCategoryData = {
+    ts4: {
+        major: [
+            'languagebarriers'
+        ],
+        minor: [
+            'followersforfame',
+            'onlinehomework',
+            'buybitsandpieces'
+        ],
+        utility: [
+            'packtests'
+        ]
+    }
+};
+
 export const ModData = {
     ts4: {
         nameablecowplants: {
