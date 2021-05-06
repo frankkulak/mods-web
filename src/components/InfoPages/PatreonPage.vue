@@ -72,12 +72,12 @@
 
         a.btn-outline-primary {
             text-decoration: none;
-            border-color: $patreon;
-            color: $patreon;
+            border-color: var(--link-color);
+            color: var(--link-color);
 
             &:hover {
+                @extend %default-gradient;
                 color: white;
-                background-color: $patreon;
             }
         }
     }
