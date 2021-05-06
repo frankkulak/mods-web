@@ -1235,29 +1235,3 @@ export const ModData = {
         },
     }
 };
-
-export const TutorialData = {
-    ts4: {
-        autotraits: {
-            id: 'autotraits',
-            name: 'Auto-Assign Traits to All Sims',
-            description: `This tutorial will show you how you can automatically assign traits from your mod to every sim in the game. An example use case is in my <em>Language Barriers</em> mod, where I automatically assign language traits to every sim that is a child or older.`,
-            platform: 'Sims 4 Studio',
-            link: 'https://sims4studio.com/thread/22036/automatically-add-traits-all-sims'
-        },
-        customtests: {
-            id: 'customtests',
-            name: 'Custom Tuning Tests',
-            description: `This tutorial will show you how you can create your own custom tuning tests with a script, so that you can use them in test sets. An example use case of this is my <em>Pack Tests</em> modding tool, which allows modders to write tests that check whether certain packs are installed or not.`,
-            platform: 'Sims 4 Studio',
-            link: 'https://sims4studio.com/thread/22471/create-custom-tuning-tests'
-        },
-        injectbysa: {
-            id: 'injectbysa',
-            name: 'Inject by Super Affordance',
-            description: `This tutorial demonstrates how you can inject your interactions to every single object in that game that has a particular super affordance. An example use case of this is in my <em>Online Homework</em> mod, where I add my homework interactions to every object that has the 'Lock Computer' interaction, so that it effectively becomes available on every computer and laptop.`,
-            platform: 'Sims 4 Studio',
-            link: 'https://sims4studio.com/thread/22556/inject-interactions-super-affordance'
-        }
-    }
-};
