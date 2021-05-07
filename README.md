@@ -1,6 +1,6 @@
-# mods-web (mods.frankkulak.com)
+# mods-web (frankkmods.com)
 
-This website showcases the mods I create for The Sims 4 with links to download them. View it online at [mods.frankkulak.com](https://mods.frankkulak.com).
+This website showcases the mods I create for The Sims 4 with links to download them. View it online at [frankkmods.com](https://frankkmods.com).
 
 It is built with Vue.js, Bootstrap, and Sass. It is served from the `gh-pages` branch of this repository. I'm a self-taught web developer, so any suggestions you have to improve the quality of my website and its code are very welcome!
 
