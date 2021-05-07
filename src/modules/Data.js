@@ -346,7 +346,7 @@ export const ModData = {
                 },
                 {
                     language: Languages.pol_pl,
-                    translator: `<a href="https://www.instagram.com/ossqarr/" target="_blank">Osqar</a>`,
+                    translator: `<a href="https://www.patreon.com/osqar" target="_blank">Osqar</a>`,
                     updated: true,
                 },
             ]
@@ -757,7 +757,7 @@ export const ModData = {
                 },
                 {
                     language: Languages.pol_pl,
-                    translator: `<a href="https://www.instagram.com/ossqarr/" target="_blank">Osqar</a>`,
+                    translator: `<a href="https://www.patreon.com/osqar" target="_blank">Osqar</a>`,
                     updated: true,
                 },
                 {

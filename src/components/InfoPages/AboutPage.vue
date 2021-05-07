@@ -30,9 +30,8 @@
                 <p>I make mods because it's something I enjoy doing, and I'm more than happy to share them with you for
                     free. However, they take a <em>lot</em> of work, and a <em>lot</em> of time - so, if you're willing
                     and able to support me on Patreon, it would be greatly appreciated (plus, you'll get some
-                    <a href="#/patreon">nice benefits</a> as well!). If you'd rather make a one-time donation than a
-                    monthly pledge, you can also support me Ko-fi.</p>
-                <p>Thank you!</p>
+                    <a href="#/patreon">nice benefits</a> as well!). If you want to make a one-time donation, you can do
+                    so on Ko-fi. Thank you!</p>
 
                 <b-row align-v="center" align-h="center">
                     <b-col cols="auto" class="p-1">
