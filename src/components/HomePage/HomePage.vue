@@ -22,7 +22,7 @@
         </b-container>
 
         <section id="wips" class="p-2 my-5 mx-2">
-            <div class="wips-content px-4 pt-4">
+            <div class="mod-section-content px-4 pt-4">
                 <section-header text="construction zone" class="mb-4"/>
                 <p>These mods are currently being developed, and are not yet ready for download. Check back later!</p>
                 <b-row>
@@ -30,6 +30,16 @@
                 </b-row>
             </div>
         </section>
+
+<!--        <section id="retired" class="p-2 my-5 mx-2">-->
+<!--            <div class="mod-section-content px-4 pt-4">-->
+<!--                <section-header text="graveyard" class="mb-4"/>-->
+<!--                <p>These mods are retired, which means they may not work and will not be updated.</p>-->
+<!--                <b-row>-->
+<!--                    <mod-preview v-for="mod in retiredMods" :key="mod.id" :mod="mod" :major="true" :show-thumbnail="false"/>-->
+<!--                </b-row>-->
+<!--            </div>-->
+<!--        </section>-->
     </b-container>
 </template>
 
@@ -50,7 +60,8 @@
                 majorMods: getMods('major'),
                 minorMods: getMods('minor'),
                 utilityMods: getMods('utility'),
-                wipMods: getMods('wips')
+                wipMods: getMods('wips'),
+                //retiredMods: getMods('retired')
             }
         }
     }
@@ -58,14 +69,27 @@
 
 <style lang="scss">
     #home-page {
+        $stripe-size: 30px;
+
         section#wips {
             border-radius: 10px;
-            background: repeating-linear-gradient(45deg, #eecb00, #eecb00 30px, #121212 30px, #121212 60px);
 
-            .wips-content {
-                border-radius: 10px;
-                background-color: var(--bg-color);
-            }
+            $color1: #eecb00;
+            $color2: #121212;
+            background: repeating-linear-gradient(45deg, $color1, $color1 $stripe-size, $color2 $stripe-size, $color2 ($stripe-size * 2));
+        }
+
+        /*section#retired {
+            border-radius: 10px;
+
+            $color1: #505050;
+            $color2: #121212;
+            background: repeating-linear-gradient(45deg, $color1, $color1 $stripe-size, $color2 $stripe-size, $color2 ($stripe-size * 2));
+        }*/
+
+        .mod-section-content {
+            border-radius: 10px;
+            background-color: var(--bg-color);
         }
     }
 </style>

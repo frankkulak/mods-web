@@ -96,7 +96,7 @@
 
         .release-date {
             border-radius: 10px;
-            border-color: var(--text-color);
+            border-color: var(--shadow-color);
             border-width: 1px;
             border-style: solid;
         }

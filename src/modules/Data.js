@@ -82,7 +82,7 @@ export const Languages = {
 export const GameData = {
     ts4: {
         name: "The Sims 4",
-        lastUpdate: "April 27, 2021"
+        lastUpdate: "May 13, 2021"
     }
 };
 
@@ -401,7 +401,7 @@ export const ModData = {
                     bullets: [
                         `<strong>MizoreYukii</strong>, who helped get me started with modding and has continued to be a tremendous help ever since. Without her, I wouldn't have been able to begin this mod.`,
                         `<strong>Basemental</strong>, who helped me learn how to make my script more concise and resilient to game patches, and even enable it to work with new items and CC.`,
-                        `<strong>Lumpinou</strong>, <strong>Jamjars</strong>, <strong>Cidira</strong>, <strong>ChippedSim</strong>, <strong>adeepindigo</strong> and many others from the Creator Musings server who have always been there to help me figure things out, fix bugs, and give me new ideas to work with.`,
+                        `<strong>Lumpinou</strong>, <strong>Jamjars</strong>, <strong>Cidira</strong>, <strong>ChippedSim</strong>, <strong>Adeepindigo</strong> and many others who have always been there to help me figure things out, fix bugs, and give me new ideas to work with.`,
                         `And finally, to all of my patrons, translators, members of discord server, and anyone else who has provided me with ideas, feedback, and help along the way, thank you!`,
                     ]
                 }
