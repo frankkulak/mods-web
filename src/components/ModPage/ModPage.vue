@@ -1,6 +1,12 @@
 <template>
     <div id="mod-page">
         <b-container class="py-5" fluid>
+            <b-alert show dismissible class="update-alert mx-2" v-if="mod.beingUpdated">
+                Hey! Did you know {{ mod.name }} is currently being updated?
+                Read more about the upcoming update <a :href="mod.updateInfo" target="_blank">here</a>, and stay
+                up-to-date with its progress on <a :href="mod.trelloBoard" target="_blank">Trello</a>.
+            </b-alert>
+
             <b-row align-h="center" align-v="center">
                 <b-col cols="12" md="6" class="text-center">
                     <h1 v-html="mod.name"></h1>
@@ -119,6 +125,12 @@
                     border-bottom: 1px solid var(--card-bg-color);
                 }
             }
+        }
+
+        .update-alert {
+            color: var(--accent-color);
+            background-color: var(--accent-color-light);
+            border-color: var(--shadow-color);
         }
     }
 </style>
