@@ -8,6 +8,7 @@ html {
   --danger-color: #{$red};
   --help-color: #{$red};
   --accent-color: #{$blurple};
+  --accent-color-light: #{transparentize($blurple, 0.92)};
   --footer-color: #{$darker-blue};
   --secondary-footer-color: #{$dark-blue};
 }

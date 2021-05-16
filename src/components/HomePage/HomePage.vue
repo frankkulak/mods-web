@@ -30,16 +30,6 @@
                 </b-row>
             </div>
         </section>
-
-<!--        <section id="retired" class="p-2 my-5 mx-2">-->
-<!--            <div class="mod-section-content px-4 pt-4">-->
-<!--                <section-header text="graveyard" class="mb-4"/>-->
-<!--                <p>These mods are retired, which means they may not work and will not be updated.</p>-->
-<!--                <b-row>-->
-<!--                    <mod-preview v-for="mod in retiredMods" :key="mod.id" :mod="mod" :major="true" :show-thumbnail="false"/>-->
-<!--                </b-row>-->
-<!--            </div>-->
-<!--        </section>-->
     </b-container>
 </template>
 
@@ -61,7 +51,6 @@
                 minorMods: getMods('minor'),
                 utilityMods: getMods('utility'),
                 wipMods: getMods('wips'),
-                //retiredMods: getMods('retired')
             }
         }
     }
@@ -78,14 +67,6 @@
             $color2: #121212;
             background: repeating-linear-gradient(45deg, $color1, $color1 $stripe-size, $color2 $stripe-size, $color2 ($stripe-size * 2));
         }
-
-        /*section#retired {
-            border-radius: 10px;
-
-            $color1: #505050;
-            $color2: #121212;
-            background: repeating-linear-gradient(45deg, $color1, $color1 $stripe-size, $color2 $stripe-size, $color2 ($stripe-size * 2));
-        }*/
 
         .mod-section-content {
             border-radius: 10px;
