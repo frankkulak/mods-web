@@ -24,8 +24,8 @@ export const TutorialData = {
             id: 'autotraits',
             name: 'Auto-Assign Traits to All Sims',
             description: `Learn how to automatically assign traits from your mod to every sim in the game. Example use: <em>Language Barriers</em> adds language traits to all human sims older than toddlers.`,
-            platform: 'Sims 4 Studio',
-            link: 'https://sims4studio.com/thread/22036/automatically-add-traits-all-sims'
+            platform: 'Medium',
+            link: 'https://frankkmods.medium.com/automatically-assign-traits-to-sims-sims-4-script-modding-60f8eeb2a08c'
         },
         customtests: {
             id: 'customtests',
