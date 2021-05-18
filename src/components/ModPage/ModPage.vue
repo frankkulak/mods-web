@@ -1,7 +1,7 @@
 <template>
     <div id="mod-page">
         <b-container class="py-5" fluid>
-            <b-alert show dismissible class="update-alert mx-2" v-if="mod.beingUpdated">
+            <b-alert show dismissible class="update-alert mx-2 mb-4" v-if="mod.beingUpdated">
                 Hey! Did you know {{ mod.name }} is currently being updated?
                 Read more about the upcoming update <a :href="mod.updateInfo" target="_blank">here</a>, and stay
                 up-to-date with its progress on <a :href="mod.trelloBoard" target="_blank">Trello</a>.
