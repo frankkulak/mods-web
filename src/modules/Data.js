@@ -1145,7 +1145,8 @@ export const ModData = {
                 {
                     title: 'what does this mod do?',
                     bullets: [
-                        `This mod adds nothing to your game - all it does is make it easier for modders to check whether or not you have certain packs installed. There are many reasons why they may need to do this, but most likely they are trying to integrate their mod with certain packs while also keeping it Base Game compatible.`,
+                        `This mod adds nothing to your game - all it does is make it easier for modders to check whether or not you have certain packs installed.`,
+                        `There are many reasons why they may need to do this, but most likely they are trying to integrate their mod with certain packs while also keeping it Base Game compatible.`,
                     ]
                 },
                 {
@@ -1153,6 +1154,13 @@ export const ModData = {
                     bullets: [
                         `You only have to install this mod if you have been instructed to do so by another creator.`,
                         `If you have already installed this mod once, do NOT install it again. You only need one copy of it in your game, and it will work for every mod that requires it.`
+                    ]
+                },
+                {
+                    title: 'do I still need this mod if I have all of the packs?',
+                    bullets: [
+                        `Yes. If a mod requires Pack Tests to work, you have to download it regardless of the packs you have.`,
+                        `Pack Tests allows mod creators to write code that the game itself cannot understand. If you attempt to use their mod without Pack Tests, the game will not know how to read some of their files, and they will fail to load.`
                     ]
                 },
             ],
