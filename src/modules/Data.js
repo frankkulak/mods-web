@@ -77,7 +77,6 @@ export const Languages = {
     },
 };
 
-
 export const GameData = {
     ts4: {
         name: "The Sims 4",
@@ -800,7 +799,7 @@ export const ModData = {
             beingUpdated: false,
             updateInfo: null,
             trelloBoard: null,
-            releaseDate: 'Summer 2021',
+            releaseDate: 'Fall 2021',
             description: `How would you like to be your own boss and set your own hours? Join Simway for just §500, then sell products and recruit other sims to make a profit! This mod adds MLMs to the game.`,
             thumbnail: 'sw-simway.png',
             images: [
