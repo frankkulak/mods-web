@@ -1,5 +1,5 @@
 <template>
-    <b-col class="patreon-tier mb-4" cols="12" sm="4">
+    <b-col class="patreon-tier mb-4" cols="12" md="4" sm="3">
         <div class="py-4 patreon-tier-content">
             <div class="text-center mb-4">
                 <h2>{{ name }}</h2>

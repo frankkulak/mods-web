@@ -5,8 +5,9 @@
         </div>
 
         <section-header text="what is it?" class="mb-5"/>
-        <p>Patreon is a way to support creators in the form of a monthly pledge. My patrons enjoy special perks like
-            early access to new content and personalized mods. The available tiers are described below.</p>
+        <p>Patreon is a way to support creators in the form of a monthly pledge. You may either pledge $1 for general
+            support, or join one of the higher tiers to enjoy early access to new content and personalized mods.
+            The available tiers are described below.</p>
 
         <b-row align-h="around" class="mt-5">
             <patreon-tier name="The Pancakes" cost="2" :benefits="[betas]"/>
