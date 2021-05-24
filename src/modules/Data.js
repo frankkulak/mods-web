@@ -178,6 +178,7 @@ export const ModData = {
                 url: `http://www.simfileshare.net/download/1895244/`
             },
             alternativeDownloads: [],
+            patreonBetaRelease: null,
             documentationDownload: null,
             warning: `This mod is obsolete, and I therefore no longer support it - you should not put it in your game. The only reason the download is still available is for you to reference the code, if you would like.`,
             hasStrings: true,
@@ -339,6 +340,7 @@ export const ModData = {
                     url: `https://drive.google.com/drive/folders/18eZztaSfaTo5PWO3pC1ITgiL8h8jqD9N?usp=sharing`
                 },
             ],
+            patreonBetaRelease: null,
             documentationDownload: null,
             warning: null,
             hasStrings: true,
@@ -724,6 +726,7 @@ export const ModData = {
                     url: `https://drive.google.com/drive/folders/1-5D1REN-nvr2Lld3Db-ffCNuDjKlxyK-?usp=sharing`
                 },
             ],
+            patreonBetaRelease: null,
             documentationDownload: null,
             warning: null,
             hasStrings: true,
@@ -874,6 +877,7 @@ export const ModData = {
             versionHistory: [],
             primaryDownload: null,
             alternativeDownloads: [],
+            patreonBetaRelease: null,
             documentationDownload: null,
             warning: null,
             hasStrings: true,
@@ -990,6 +994,7 @@ export const ModData = {
                     url: `https://drive.google.com/drive/folders/1igN6N0DPyIw8QwT-ZdOwp6TeQTovlqRz?usp=sharing`
                 },
             ],
+            patreonBetaRelease: null,
             documentationDownload: null,
             warning: null,
             hasStrings: true,
@@ -1121,6 +1126,7 @@ export const ModData = {
                     url: `https://drive.google.com/drive/folders/1GKkgjuWfSklSN7_cN2p0JJsbkF39eKhF?usp=sharing`
                 },
             ],
+            patreonBetaRelease: null,
             documentationDownload: null,
             warning: `If you don't have Discover University, simply delete the <code>frankk_OnlineHomework_University.package</code> file from the mod and it will be safe to use with the Base Game for children and teens.`,
             hasStrings: false,
@@ -1202,6 +1208,7 @@ export const ModData = {
                 title: `Sim File Share`,
                 url: `http://www.simfileshare.net/download/2251515/`
             },
+            patreonBetaRelease: null,
             alternativeDownloads: [
                 {
                     title: `Google Drive`,
