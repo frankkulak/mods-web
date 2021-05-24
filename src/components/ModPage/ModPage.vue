@@ -25,6 +25,25 @@
             </b-tabs>
 
             <mod-translations :mod="mod" v-if="showTranslations" class="mt-5"/>
+
+            <b-row id="patreon-download" class="mt-5 mx-0 px-3 py-4" v-if="mod.patreonBetaRelease" align-v="center">
+                <b-col cols="12" md="8" class="my-2">
+                    <img src="../../assets/brands/patreon-wordmark.png" alt="Patreon Logo" class="mb-2"/>
+                    <p class="ml-2">{{ mod.name }} {{ mod.patreonBetaRelease.version }} is currently in early
+                        access for patrons. You can read more about this update and join for $2 (USD) with the following
+                        links.</p>
+                </b-col>
+                <b-col cols="12" md="4" class="my-2">
+                    <b-button variant="outline-primary" href="https://www.patreon.com/bePatron?u=40823163"
+                              target="_blank" pill class="mb-4 w-100">
+                        See what's new
+                    </b-button>
+                    <b-button variant="outline-primary" href="https://www.patreon.com/bePatron?u=40823163"
+                              target="_blank" pill class="w-100">
+                        Become a patron
+                    </b-button>
+                </b-col>
+            </b-row>
         </b-container>
 
         <mod-download :mod="mod" v-if="!isWip"/>
@@ -131,6 +150,28 @@
             color: var(--accent-color);
             background-color: var(--accent-color-light);
             border-color: var(--shadow-color);
+        }
+
+        #patreon-download {
+            background-color: var(--card-bg-color);
+            border: 1px solid var(--shadow-color);
+            border-radius: 10px;
+
+            img {
+                width: 198px;
+            }
+
+            a.btn-outline-primary {
+                text-decoration: none;
+                font-weight: bold;
+                border-color: $patreon;
+                color: $patreon;
+
+                &:hover {
+                    background-color: $patreon;
+                    color: white;
+                }
+            }
         }
     }
 </style>
