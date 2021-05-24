@@ -1,7 +1,7 @@
 <template>
     <b-container id="patreon-page" class="py-5" fluid>
         <div class="text-center patreon-logo pb-5">
-            <img src="../../assets/brands/patreon-wordmark.png" alt="Patreon Logo" />
+            <img src="../../assets/brands/patreon-wordmark.png" alt="Patreon Logo"/>
         </div>
 
         <section-header text="what is it?" class="mb-5"/>
@@ -32,8 +32,9 @@
             in the #patreon-questions channel before signing up.</p>
 
         <div class="pt-5 pb-3 text-center">
-            <b-button variant="outline-primary" href="https://www.patreon.com/frankkulakmods" target="_blank" size="lg">
-                Go to Patreon</b-button>
+            <b-button variant="outline-primary" href="https://www.patreon.com/bePatron?u=40823163" target="_blank" pill>
+                Become a patron
+            </b-button>
         </div>
     </b-container>
 </template>
@@ -73,11 +74,12 @@
 
         a.btn-outline-primary {
             text-decoration: none;
-            border-color: var(--link-color);
-            color: var(--link-color);
+            font-weight: bold;
+            border-color: $patreon;
+            color: $patreon;
 
             &:hover {
-                @extend %default-gradient;
+                background-color: $patreon;
                 color: white;
             }
         }
