@@ -31,8 +31,8 @@ export const TutorialData = {
             id: 'customtests',
             name: 'Custom Tuning Tests',
             description: `Learn how to create your own custom tuning tests with a script. Example use: <em>Pack Tests</em> adds a test that can check whether certain packs are installed or not.`,
-            platform: 'Sims 4 Studio',
-            link: 'https://sims4studio.com/thread/22471/create-custom-tuning-tests'
+            platform: 'Medium',
+            link: 'https://frankkmods.medium.com/custom-tuning-tests-sims-4-script-modding-3837e214fb68'
         },
         injectbysa: {
             id: 'injectbysa',
