@@ -80,7 +80,7 @@ export const Languages = {
 export const GameData = {
     ts4: {
         name: "The Sims 4",
-        lastUpdate: "May 13, 2021"
+        lastUpdate: "May 27, 2021"
     }
 };
 
@@ -727,6 +727,10 @@ export const ModData = {
                 },
             ],
             patreonBetaRelease: null,
+            // patreonBetaRelease: {
+            //     version: 'v2.0 beta',
+            //     link: ``
+            // },
             documentationDownload: null,
             warning: null,
             hasStrings: true,
