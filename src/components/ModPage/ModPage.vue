@@ -34,7 +34,7 @@
                         links.</p>
                 </b-col>
                 <b-col cols="12" md="4" class="my-2">
-                    <b-button variant="outline-primary" href="https://www.patreon.com/bePatron?u=40823163"
+                    <b-button variant="outline-primary" :href="mod.patreonBetaRelease.link"
                               target="_blank" pill class="mb-4 w-100">
                         See what's new
                     </b-button>
@@ -161,7 +161,7 @@
                 width: 198px;
             }
 
-            a.btn-outline-primary {
+            .btn-outline-primary {
                 text-decoration: none;
                 font-weight: bold;
                 border-color: $patreon;
