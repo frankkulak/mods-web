@@ -26,15 +26,15 @@
 
             <mod-translations :mod="mod" v-if="showTranslations" class="mt-5"/>
 
-            <b-row id="patreon-download" class="mt-5 mx-0 px-3 py-4" v-if="mod.patreonBetaRelease" align-v="center">
+            <b-row id="patreon-download" class="mt-5 mx-0 px-3 py-4" v-if="mod.patreonRelease" align-v="center">
                 <b-col cols="12" md="8" class="my-2">
                     <img src="../../assets/brands/patreon-wordmark.png" alt="Patreon Logo" class="mb-2"/>
-                    <p class="ml-2">{{ mod.name }} {{ mod.patreonBetaRelease.version }} is currently in early
-                        access for patrons. You can read more about this update and join for $2 (USD) with the following
-                        links.</p>
+                    <p class="ml-2">{{ mod.name }} {{ mod.patreonRelease.version }} is currently in its
+                        {{  mod.patreonRelease.stage }} stage of early access for {{ mod.patreonRelease.tiers }}
+                        patrons. You can read more about this update and join with the following links.</p>
                 </b-col>
                 <b-col cols="12" md="4" class="my-2">
-                    <b-button variant="outline-primary" :href="mod.patreonBetaRelease.link"
+                    <b-button variant="outline-primary" :href="mod.patreonRelease.link"
                               target="_blank" pill class="mb-4 w-100">
                         See what's new
                     </b-button>
