@@ -178,7 +178,7 @@ export const ModData = {
                 url: `http://www.simfileshare.net/download/1895244/`
             },
             alternativeDownloads: [],
-            patreonBetaRelease: null,
+            patreonRelease: null,
             documentationDownload: null,
             warning: `This mod is obsolete, and I therefore no longer support it - you should not put it in your game. The only reason the download is still available is for you to reference the code, if you would like.`,
             hasStrings: true,
@@ -340,7 +340,7 @@ export const ModData = {
                     url: `https://drive.google.com/drive/folders/18eZztaSfaTo5PWO3pC1ITgiL8h8jqD9N?usp=sharing`
                 },
             ],
-            patreonBetaRelease: null,
+            patreonRelease: null,
             documentationDownload: null,
             warning: null,
             hasStrings: true,
@@ -533,8 +533,7 @@ export const ModData = {
                     title: 'Can you add [some real language]?',
                     bullets: [
                         `No, I do not add real languages to the mod. Doing so would break the immersion of the game, and risk misrepresenting real people and their cultures. Additionally, since I cannot add every language, it would be unfair for me to add just one.`,
-                        `However, if you are a tier 3 patron (Landgraab), you are allowed to request that I change the name of one of the languages for your personalized version of the mod (for example, I can rename "Selvadoradian" to "Spanish"). Learn more about the benefits of being a patron <a href="#/patreon">here</a>.`,
-                        //`If curious about <a href="https://www.youtube.com" target="_blank">this Buzzfeed video</a> where Language Barriers appears to include Spanish, I created a special version of the mod for them to use for the video. This version is not available for download.`
+                        `However, if you are a tier 3 patron (Landgraab), you are allowed to request that I change the name of one of the existing languages for your personalized version of the mod (for example, I can rename "Selvadoradian" to "Spanish"). Learn more about the benefits of being a patron <a href="#/patreon">here</a>.`,
                     ]
                 },
                 {
@@ -559,21 +558,20 @@ export const ModData = {
                 {
                     title: 'Can a world have multiple languages that sims can speak natively?',
                     bullets: [
-                        `Currently, no. But I am looking into this and aiming to get it out in <a href="https://www.patreon.com/posts/roadmap-for-50644822" target="_blank">the next update</a>.`
+                        `Currently, no. But they will be able to in <a href="https://www.patreon.com/posts/roadmap-for-50644822" target="_blank">Language Barriers v2.0</a>.`
                     ]
                 },
                 {
                     title: 'Can you add a language for spellcasters/vampires?',
                     bullets: [
                         `This is planned for the future, but will work a bit differently. Spellcasters/vampires will still have their primary native language(s), and the occult languages will be minor skills that can be used to cast spells, read tomes, etc.`,
-                        `This is likely at least two major updates away from being added.`
+                        `This is likely at least 2/3 major updates away from being added.`
                     ]
                 },
                 {
                     title: 'Can you make Sixami more exclusive (i.e. remove the Sixami Simlingo/textbook interactions)?',
                     bullets: [
-                        `I can understand why you'd want this if you gravitate towards realistic gameplay, but I will not remove any features that have already been added. I am, however, considering an add-on or setting that would be able to disable this, but I'm not sure how that would work yet.`,
-                        `If you are a tier 3 patron (Landgraab), you can request a personalized version of the mod with Sixami removed entirely. Learn more about the benefits of being a patron <a href="#/patreon">here</a>.`
+                        `I have created an add-on to get rid of Sixami from Simlingo in <a href="https://www.patreon.com/posts/roadmap-for-50644822" target="_blank">Language Barriers v2.0</a>. The add-on will be available alongside the new update when it is ready.`,
                     ]
                 },
             ],
@@ -726,11 +724,12 @@ export const ModData = {
                     url: `https://drive.google.com/drive/folders/1-5D1REN-nvr2Lld3Db-ffCNuDjKlxyK-?usp=sharing`
                 },
             ],
-            patreonBetaRelease: null,
-            // patreonBetaRelease: {
-            //     version: 'v2.0 beta',
-            //     link: ``
-            // },
+            patreonRelease: {
+                stage: 'alpha',
+                version: 'v2.0',
+                tiers: 'Goth and Landgraab',
+                link: `https://www.patreon.com/posts/51782482`
+            },
             documentationDownload: null,
             warning: null,
             hasStrings: true,
@@ -881,7 +880,7 @@ export const ModData = {
             versionHistory: [],
             primaryDownload: null,
             alternativeDownloads: [],
-            patreonBetaRelease: null,
+            patreonRelease: null,
             documentationDownload: null,
             warning: null,
             hasStrings: true,
@@ -998,7 +997,7 @@ export const ModData = {
                     url: `https://drive.google.com/drive/folders/1igN6N0DPyIw8QwT-ZdOwp6TeQTovlqRz?usp=sharing`
                 },
             ],
-            patreonBetaRelease: null,
+            patreonRelease: null,
             documentationDownload: null,
             warning: null,
             hasStrings: true,
@@ -1130,7 +1129,7 @@ export const ModData = {
                     url: `https://drive.google.com/drive/folders/1GKkgjuWfSklSN7_cN2p0JJsbkF39eKhF?usp=sharing`
                 },
             ],
-            patreonBetaRelease: null,
+            patreonRelease: null,
             documentationDownload: null,
             warning: `If you don't have Discover University, simply delete the <code>frankk_OnlineHomework_University.package</code> file from the mod and it will be safe to use with the Base Game for children and teens.`,
             hasStrings: false,
@@ -1212,7 +1211,7 @@ export const ModData = {
                 title: `Sim File Share`,
                 url: `http://www.simfileshare.net/download/2251515/`
             },
-            patreonBetaRelease: null,
+            patreonRelease: null,
             alternativeDownloads: [
                 {
                     title: `Google Drive`,
