@@ -728,7 +728,7 @@ export const ModData = {
                 stage: 'alpha',
                 version: 'v2.0',
                 tiers: 'Goth and Landgraab',
-                link: `https://www.patreon.com/posts/51782482`
+                link: `https://www.patreon.com/posts/52019381`
             },
             documentationDownload: null,
             warning: null,
