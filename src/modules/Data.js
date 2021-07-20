@@ -80,7 +80,7 @@ export const Languages = {
 export const GameData = {
     ts4: {
         name: "The Sims 4",
-        lastUpdate: "June 29, 2021"
+        lastUpdate: "July 20, 2021"
     }
 };
 
@@ -195,7 +195,7 @@ export const ModData = {
             id: 'followersforfame',
             name: 'Followers for Fame',
             developmentStage: DataEnums.developmentStage.active,
-            testingStatus: DataEnums.testingStatus.working,
+            testingStatus: DataEnums.testingStatus.untested,
             beingUpdated: false,
             trelloBoard: null,
             updateInfo: null,
@@ -362,7 +362,7 @@ export const ModData = {
             id: 'languagebarriers',
             name: 'Language Barriers',
             developmentStage: DataEnums.developmentStage.active,
-            testingStatus: DataEnums.testingStatus.working,
+            testingStatus: DataEnums.testingStatus.untested,
             beingUpdated: true,
             updateInfo: 'https://www.patreon.com/posts/50644822',
             trelloBoard: 'https://trello.com/b/96Sji6hd/language-barriers',
@@ -891,7 +891,7 @@ export const ModData = {
             id: 'buybitsandpieces',
             name: 'Buy Bits and Pieces',
             developmentStage: DataEnums.developmentStage.active,
-            testingStatus: DataEnums.testingStatus.working,
+            testingStatus: DataEnums.testingStatus.untested,
             beingUpdated: false,
             updateInfo: null,
             trelloBoard: null,
@@ -1029,7 +1029,7 @@ export const ModData = {
             id: 'onlinehomework',
             name: 'Online Homework',
             developmentStage: DataEnums.developmentStage.active,
-            testingStatus: DataEnums.testingStatus.working,
+            testingStatus: DataEnums.testingStatus.untested,
             beingUpdated: false,
             trelloBoard: null,
             releaseDate: 'October 6, 2020',
@@ -1140,7 +1140,7 @@ export const ModData = {
             id: 'packtests',
             name: 'Pack Tests',
             developmentStage: DataEnums.developmentStage.tool,
-            testingStatus: DataEnums.testingStatus.working,
+            testingStatus: DataEnums.testingStatus.untested,
             beingUpdated: false,
             updateInfo: null,
             trelloBoard: null,
