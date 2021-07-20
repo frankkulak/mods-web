@@ -195,7 +195,7 @@ export const ModData = {
             id: 'followersforfame',
             name: 'Followers for Fame',
             developmentStage: DataEnums.developmentStage.active,
-            testingStatus: DataEnums.testingStatus.untested,
+            testingStatus: DataEnums.testingStatus.working,
             beingUpdated: false,
             trelloBoard: null,
             updateInfo: null,
@@ -362,7 +362,7 @@ export const ModData = {
             id: 'languagebarriers',
             name: 'Language Barriers',
             developmentStage: DataEnums.developmentStage.active,
-            testingStatus: DataEnums.testingStatus.broken,
+            testingStatus: DataEnums.testingStatus.working,
             beingUpdated: true,
             updateInfo: 'https://www.patreon.com/posts/50644822',
             trelloBoard: 'https://trello.com/b/96Sji6hd/language-barriers',
@@ -577,6 +577,13 @@ export const ModData = {
             ],
             versionHistory: [
                 {
+                    version: '1.1.9',
+                    date: 'July 20, 2021',
+                    bullets: [
+                        `Fix issue that resulted from the Cottage Living patch.`
+                    ]
+                },
+                {
                     version: '1.1.8',
                     date: 'December 22, 2020',
                     bullets: [
@@ -731,7 +738,7 @@ export const ModData = {
                 link: `https://www.patreon.com/posts/53783308`
             },
             documentationDownload: null,
-            warning: null,
+            warning: "The July 20, 2021 patch broke v1.1.8, so please ensure that you update to v1.1.9. This is just a hotfix of the previous version, and does not include any of the v2.0 features.",
             hasStrings: true,
             translations: [
                 {
@@ -891,7 +898,7 @@ export const ModData = {
             id: 'buybitsandpieces',
             name: 'Buy Bits and Pieces',
             developmentStage: DataEnums.developmentStage.active,
-            testingStatus: DataEnums.testingStatus.untested,
+            testingStatus: DataEnums.testingStatus.working,
             beingUpdated: false,
             updateInfo: null,
             trelloBoard: null,
@@ -1029,7 +1036,7 @@ export const ModData = {
             id: 'onlinehomework',
             name: 'Online Homework',
             developmentStage: DataEnums.developmentStage.active,
-            testingStatus: DataEnums.testingStatus.untested,
+            testingStatus: DataEnums.testingStatus.working,
             beingUpdated: false,
             trelloBoard: null,
             releaseDate: 'October 6, 2020',
@@ -1140,7 +1147,7 @@ export const ModData = {
             id: 'packtests',
             name: 'Pack Tests',
             developmentStage: DataEnums.developmentStage.tool,
-            testingStatus: DataEnums.testingStatus.broken,
+            testingStatus: DataEnums.testingStatus.working,
             beingUpdated: false,
             updateInfo: null,
             trelloBoard: null,
@@ -1200,6 +1207,13 @@ export const ModData = {
             faqs: [],
             versionHistory: [
                 {
+                    version: '1.0.1',
+                    date: 'July 20, 2021',
+                    bullets: [
+                        `Fix issue that resulted from the Cottage Living patch.`,
+                    ]
+                },
+                {
                     version: '1.0',
                     date: 'January 4, 2021',
                     bullets: [
@@ -1222,7 +1236,7 @@ export const ModData = {
                 title: `Sim File Share`,
                 url: `http://www.simfileshare.net/download/2251516/`
             },
-            warning: `If you have already installed this mod once, do NOT install it again. You only need one copy of it in your game, and it will work for every mod that requires it.`,
+            warning: `The July 20, 2021 patch broke v1.0, so please ensure you are using v1.0.1.`,
             hasStrings: false,
             translations: []
         },
