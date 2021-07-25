@@ -75,6 +75,16 @@ export const Languages = {
         display: `Русский`,
         emoji: '🇷🇺'
     },
+    cze_cz: {
+        id: `czech`,
+        display: `Čeština`,
+        emoji: '🇨🇿'
+    },
+    nor_no: {
+        id: `norwegian`,
+        display: `Norsk`,
+        emoji: '🇳🇴'
+    },
 };
 
 export const GameData = {
@@ -282,6 +292,13 @@ export const ModData = {
             faqs: [],
             versionHistory: [
                 {
+                    version: '1.1.1',
+                    date: 'July 25, 2021',
+                    bullets: [
+                        `Add Spanish, Chinese, Portuguese, and Norwegian translations.`,
+                    ]
+                },
+                {
                     version: '1.1',
                     date: 'November 24, 2020',
                     bullets: [
@@ -353,6 +370,26 @@ export const ModData = {
                 {
                     language: Languages.pol_pl,
                     translator: `<a href="https://www.patreon.com/osqar" target="_blank">Osqar</a>`,
+                    updated: true,
+                },
+                {
+                    language: Languages.cht_cn,
+                    translator: `Ttchubb`,
+                    updated: true,
+                },
+                {
+                    language: Languages.por_br,
+                    translator: `Larissa Sousa`,
+                    updated: true,
+                },
+                {
+                    language: Languages.nor_no,
+                    translator: `Susanne`,
+                    updated: true,
+                },
+                {
+                    language: Languages.spa_es,
+                    translator: `Diavlo`,
                     updated: true,
                 },
             ]
