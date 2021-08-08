@@ -772,7 +772,7 @@ export const ModData = {
                 stage: 'alpha',
                 version: 'v2.0',
                 tiers: 'Goth and Landgraab',
-                link: `https://www.patreon.com/posts/53783308`
+                link: `https://www.patreon.com/posts/54357942`
             },
             documentationDownload: null,
             warning: "The July 20, 2021 patch broke v1.1.8, so please ensure that you update to v1.1.9. This is just a hotfix of the previous version, and does not include any of the v2.0 features.",
