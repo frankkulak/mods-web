@@ -400,9 +400,9 @@ export const ModData = {
             name: 'Language Barriers',
             developmentStage: DataEnums.developmentStage.active,
             testingStatus: DataEnums.testingStatus.working,
-            beingUpdated: true,
-            updateInfo: 'https://www.patreon.com/posts/50644822',
-            trelloBoard: 'https://trello.com/b/96Sji6hd/language-barriers',
+            beingUpdated: false,
+            updateInfo: null,
+            trelloBoard: null,
             releaseDate: 'October 10, 2020',
             description: `A world where everyone speaks the same language is unrealistic. This mod adds new languages to the Sims universe, which introduces a unique challenge to the game.`,
             thumbnail: 'lb-thumbnail.png',
@@ -769,13 +769,14 @@ export const ModData = {
                 },
             ],
             patreonRelease: {
-                stage: 'alpha',
+                stage: 'beta',
                 version: 'v2.0',
-                tiers: 'Goth and Landgraab',
-                link: `https://www.patreon.com/posts/54357942`
+                tiers: 'all $2+',
+                link: `https://www.patreon.com/posts/54672756`,
+                publicDate: `between August 23rd and 30th`
             },
             documentationDownload: null,
-            warning: "The July 20, 2021 patch broke v1.1.8, so please ensure that you update to v1.1.9. This is just a hotfix of the previous version, and does not include any of the v2.0 features.",
+            warning: "The July 20, 2021 patch broke v1.1.8, so please ensure that you update to v1.1.9. This is just a hotfix of the previous version, and does not include any of the v2.0 features. If you are looking for v2.0, it is currently in early access on Patreon.",
             hasStrings: true,
             translations: [
                 {

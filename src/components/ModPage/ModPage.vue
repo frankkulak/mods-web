@@ -29,9 +29,11 @@
             <b-row id="patreon-download" class="mt-5 mx-0 px-3 py-4" v-if="mod.patreonRelease" align-v="center">
                 <b-col cols="12" md="8" class="my-2">
                     <img src="../../assets/brands/patreon-wordmark.png" alt="Patreon Logo" class="mb-2"/>
-                    <p class="ml-2">{{ mod.name }} {{ mod.patreonRelease.version }} is currently in its
+                    <p class="ml-2 mt-2">{{ mod.name }} {{ mod.patreonRelease.version }} is currently in its
                         {{  mod.patreonRelease.stage }} stage of early access for {{ mod.patreonRelease.tiers }}
                         patrons. You can read more about this update and join with the following links.</p>
+                    <p class="ml-2" v-if="mod.patreonRelease.publicDate !== null">Public release will be
+                        {{ mod.patreonRelease.publicDate }}.</p>
                 </b-col>
                 <b-col cols="12" md="4" class="my-2">
                     <b-button variant="outline-primary" :href="mod.patreonRelease.link"
