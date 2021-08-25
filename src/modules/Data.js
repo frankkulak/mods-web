@@ -793,7 +793,7 @@ export const ModData = {
             ],
             primaryDownload: {
                 title: `Sim File Share`,
-                url: `http://www.simfileshare.net/download/2094858/`
+                url: `https://simfileshare.net/folder/113217/`
             },
             alternativeDownloads: [
                 {
