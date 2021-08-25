@@ -1,7 +1,7 @@
 <template>
     <b-tab :title="title" class="mod-details-tab py-4 px-3">
         <div v-for="item in items" :key="item.title" class="item mb-4">
-            <h3>{{ item.title }}</h3>
+            <h3 v-html="item.title"></h3>
             <ul>
                 <li v-for="(bullet, index) in item.bullets" :key="`${item.title}:${index}`" v-html="bullet"></li>
             </ul>
@@ -38,6 +38,15 @@
             &:last-child {
                 margin-bottom: 0 !important;
             }
+        }
+
+        mark.new {
+            background-color: transparentize($blurple, 0.65);
+            color: $dark-blue;
+            font-weight: bold;
+            border-radius: 6px;
+            padding: 1px 6px;
+            box-shadow: -1px 1px 5px #d5d5d5;
         }
     }
 </style>

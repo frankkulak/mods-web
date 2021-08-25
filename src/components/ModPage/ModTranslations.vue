@@ -20,8 +20,7 @@
 
             <b-col cols="12">
                 <p v-if="somethingIsOutdated" class="mt-3">* = This language's translation is incomplete, and some text
-                    will
-                    appear in English.</p>
+                    will appear in English. Please be patient, translations take time!</p>
 
                 <p class="mt-3">All languages are included in the mod. No additional download is necessary.</p>
 

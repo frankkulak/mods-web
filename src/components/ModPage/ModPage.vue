@@ -26,19 +26,30 @@
 
             <mod-translations :mod="mod" v-if="showTranslations" class="mt-5"/>
 
-            <b-row id="patreon-download" class="mt-5 mx-0 px-3 py-4" v-if="mod.patreonRelease" align-v="center">
+            <b-row id="patreon-download" class="mt-5 mx-0 px-3 py-4" align-v="center">
                 <b-col cols="12" md="8" class="my-2">
                     <img src="../../assets/brands/patreon-wordmark.png" alt="Patreon Logo" class="mb-2"/>
-                    <p class="ml-2 mt-2">{{ mod.name }} {{ mod.patreonRelease.version }} is currently in its
-                        {{  mod.patreonRelease.stage }} stage of early access for {{ mod.patreonRelease.tiers }}
-                        patrons. You can read more about this update and join with the following links.</p>
-                    <p class="ml-2" v-if="mod.patreonRelease.publicDate !== null">Public release will be
-                        {{ mod.patreonRelease.publicDate }}.</p>
-                </b-col>
+                    <div class="ml-2" v-if="mod.patreonRelease">
+                        <p class="mt-2">{{ mod.name }} {{ mod.patreonRelease.version }} is currently in its
+                            {{  mod.patreonRelease.stage }} stage of early access for {{ mod.patreonRelease.tiers }}
+                            patrons. You can read more about this update and join with the following links.</p>
+                        <p v-if="mod.patreonRelease.publicDate !== null">Public release will be
+                            {{ mod.patreonRelease.publicDate }}.</p>
+                    </div>
+                    <div class="ml-2" v-else>
+                        <p class="mt-2">Hey! Did you know that my patrons get early access to new mods and updates? You
+                            can learn more about the perks of being a patron and join with the following links.
+                        </p>
+                    </div>
+                </b-col >
                 <b-col cols="12" md="4" class="my-2">
                     <b-button variant="outline-primary" :href="mod.patreonRelease.link"
-                              target="_blank" pill class="mb-4 w-100">
+                              target="_blank" pill class="mb-4 w-100" v-if="mod.patreonRelease">
                         See what's new
+                    </b-button>
+                    <b-button variant="outline-primary" href="#/patreon"
+                              target="_blank" pill class="mb-4 w-100" v-else>
+                        Read more
                     </b-button>
                     <b-button variant="outline-primary" href="https://www.patreon.com/bePatron?u=40823163"
                               target="_blank" pill class="w-100">
