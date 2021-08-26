@@ -41,12 +41,14 @@
         }
 
         mark.new {
-            background-color: transparentize($blurple, 0.65);
+            background-color: transparentize($blurple, 0.55);
             color: $dark-blue;
             font-weight: bold;
             border-radius: 6px;
-            padding: 1px 6px;
+            padding: 2px 8px;
+            margin: 1px;
             box-shadow: -1px 1px 5px #d5d5d5;
+            font-size: 0.8em;
         }
     }
 </style>

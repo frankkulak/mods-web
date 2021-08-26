@@ -535,7 +535,7 @@ export const ModData = {
                     bullets: [
                         `Interaction locking will <em>kinda</em> work with CC interactions that are in the friendly, funny, mischief, mean, or romance categories. Some mis-matches can occur, though: (1) if they are non-verbal, they may be locked, (2) if they are in their own CC categories, they will not be affected at all.`,
                         `In order for LB to work properly with another mod that adds social interactions, either I or its creator has to make an integration for it. Integrations are small files that tell LB which interactions to lock or not. If you want to see LB better integrated with another mod, just let me know.`,
-                        `The only integration that is currently available is for <a href="https://littlemssam.tumblr.com/post/175413426238/simda-dating-app-simda-dating-app-can-help-you" target="_blank">SimDa Dating App by LittleMsSam</a>. If you use this mod, download the integration from the download page, and include it with LB when you install it.`
+                        `The only integrations that are currently available are for <a href="https://littlemssam.tumblr.com/post/175413426238/simda-dating-app-simda-dating-app-can-help-you" target="_blank">SimDa Dating App by LittleMsSam</a> and <a href="https://www.patreon.com/posts/nc4t-mod-48682571" target="_blank">Pickpocketing Mod by NeedCoffee4That</a>. If you use either of these mods, download their integrations from the download page, and include it with LB when you install it.`
                     ]
                 },
                 {
