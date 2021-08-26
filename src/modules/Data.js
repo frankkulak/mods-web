@@ -853,7 +853,7 @@ export const ModData = {
                 },
                 {
                     language: Languages.ita_it,
-                    translator: `LittleDica and ISY`,
+                    translator: `LittleDica`,  // add ISY when done
                     updated: false,
                 },
                 {
@@ -863,7 +863,7 @@ export const ModData = {
                 },
                 {
                     language: Languages.rus_ru,
-                    translator: `Raitowaka, Luluuluru, Trail_of_blood, and Татьяна`,
+                    translator: `Raitowaka, Luluuluru, Trail_of_blood, and Ciri`,
                     updated: true,
                 },
                 {
@@ -876,11 +876,11 @@ export const ModData = {
                     translator: `Susanne`,
                     updated: false,
                 },
-                {
-                    language: Languages.cze_cz,
-                    translator: `Mika`,
-                    updated: false,
-                },
+                // {
+                //     language: Languages.cze_cz,
+                //     translator: `Mika`,
+                //     updated: false,
+                // },
             ]
         },
         simway: {
