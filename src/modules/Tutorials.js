@@ -18,7 +18,7 @@ export const TutorialData = {
             name: 'Customize LB with lb_settings',
             description: `Learn how to make basic customizations for <em>Language Barriers</em> using the provided config file. This tutorial assumes absolutely no knowledge of modding, and just requires you to use a text editor.`,
             platform: 'Patreon',
-            link: 'https://www.patreon.com/posts/50945227'
+            link: 'https://www.patreon.com/posts/54392738'
         },
         autotraits: {
             id: 'autotraits',
