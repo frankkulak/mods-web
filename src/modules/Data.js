@@ -495,7 +495,8 @@ export const ModData = {
                         `<mark class="new">NEW</mark> Toddlers will automatically have some skill in their parents' native language(s), and will pick up new language skills depending on the language(s) that adults choose to use with them.`,
                         `Toddlers can use Simlingo Jr. on any tablet to learn languages that their parents cannot teach them.`,
                         `When a toddler becomes a child, any languages at or above a certain threshold will be acquired as a native language. By default, this threshold is 5, but you can change it by following <a href="https://www.patreon.com/posts/54392738" target="_blank">this guide on Patreon</a> (not locked to patrons).`,
-                        `If there are no languages at the acquisition threshold, then their highest language will be used instead. If they have no language skills at all, then they will speak Simlish.`
+                        `If there are no languages at the acquisition threshold, then their highest language will be used instead. If they have no language skills at all, then they will speak Simlish.`,
+                        `<mark class="new">NEW</mark> If a toddler acquires more than one native language, they will also get the Native Multilingual reward trait, which makes learning languages faster.`,
                     ]
                 },
                 {
