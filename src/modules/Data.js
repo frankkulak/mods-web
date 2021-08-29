@@ -844,7 +844,7 @@ export const ModData = {
                 },
                 {
                     language: Languages.por_br,
-                    translator: `AnayramProko`,
+                    translator: `Mariana Prokopowiski`,
                     updated: true,
                 },
                 {
@@ -854,8 +854,8 @@ export const ModData = {
                 },
                 {
                     language: Languages.ita_it,
-                    translator: `LittleDica`,  // add ISY when done
-                    updated: false,
+                    translator: `LittleDica and ISY`,
+                    updated: true,
                 },
                 {
                     language: Languages.ger_de,
@@ -870,7 +870,7 @@ export const ModData = {
                 {
                     language: Languages.dut_nl,
                     translator: `SPaauw`,
-                    updated: false,
+                    updated: true,
                 },
                 {
                     language: Languages.nor_no,
