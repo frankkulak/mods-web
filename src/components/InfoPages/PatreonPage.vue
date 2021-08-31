@@ -32,6 +32,14 @@
             if your idea is reasonable, ask me <a href="https://discord.gg/qNhD3Jh" target="_blank">on Discord</a>
             in the #patreon-questions channel before signing up.</p>
 
+        <b-alert show dismissible class="no-ea-alert mx-2 mb-4 mt-5">
+            <p>Hey there! Before signing up, please be aware that <strong>there are currently no mods available for
+                early access</strong>. If you're thinking about signing up for the early access benefits,
+                you should wait until I officially announce that something is ready.</p>
+            <p>If you accidentally signed up, thinking you would get early access to something, please let me know and
+                I would be more than happy to issue you a refund.</p>
+        </b-alert>
+
         <div class="pt-5 pb-3 text-center">
             <b-button variant="outline-primary" href="https://www.patreon.com/bePatron?u=40823163" target="_blank" pill>
                 Become a patron
@@ -41,48 +49,59 @@
 </template>
 
 <script>
-    import SectionHeader from "../Common/SectionHeader";
-    import PatreonTier from "./PatreonTier";
+import SectionHeader from "../Common/SectionHeader";
+import PatreonTier from "./PatreonTier";
 
-    export default {
-        name: "PatreonPage",
-        components: {PatreonTier, SectionHeader},
-        data: function () {
-            return {
-                betas: 'Early access to betas',
-                alphas: 'Early access to alphas',
-                customMods: 'Personalized mod versions',
-            }
+export default {
+    name: "PatreonPage",
+    components: {PatreonTier, SectionHeader},
+    data: function () {
+        return {
+            betas: 'Early access to betas',
+            alphas: 'Early access to alphas',
+            customMods: 'Personalized mod versions',
         }
     }
+}
 </script>
 
 <style lang="scss">
-    #patreon-page {
-        .patreon-logo {
-            width: 100%;
+#patreon-page {
+    .patreon-logo {
+        width: 100%;
 
-            img {
-                width: 256px;
-                height: auto;
-            }
-        }
-
-        span.benefit-title {
-            color: $blurple;
-            font-weight: bold;
-        }
-
-        a.btn-outline-primary {
-            text-decoration: none;
-            font-weight: bold;
-            border-color: $patreon;
-            color: $patreon;
-
-            &:hover {
-                background-color: $patreon;
-                color: white;
-            }
+        img {
+            width: 256px;
+            height: auto;
         }
     }
+
+    span.benefit-title {
+        color: $blurple;
+        font-weight: bold;
+    }
+
+    a.btn-outline-primary {
+        text-decoration: none;
+        font-weight: bold;
+        border-color: $patreon;
+        color: $patreon;
+
+        &:hover {
+            background-color: $patreon;
+            color: white;
+        }
+    }
+
+    .no-ea-alert {
+        strong {
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        color: var(--accent-color);
+        background-color: var(--accent-color-light);
+        border-color: var(--shadow-color);
+    }
+}
 </style>

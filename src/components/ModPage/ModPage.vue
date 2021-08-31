@@ -37,9 +37,10 @@
                             {{ mod.patreonRelease.publicDate }}.</p>
                     </div>
                     <div class="ml-2" v-else>
-                        <p class="mt-2">Hey! Did you know that my patrons get early access to new mods and updates? You
+                        <p class="mt-2">Hey! Did you know that patrons get early access to new mods and updates? You
                             can learn more about the perks of being a patron and join with the following links.
                         </p>
+                        <p class="mt-2">{{ mod.name }} does NOT currently have a Patron-only version.</p>
                     </div>
                 </b-col >
                 <b-col cols="12" md="4" class="my-2">
