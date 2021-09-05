@@ -12,6 +12,7 @@ import AboutPage from "./components/InfoPages/AboutPage";
 import TutorialsPage from "./components/InfoPages/TutorialsPage";
 import PatreonPage from "./components/InfoPages/PatreonPage";
 import PageNotFound from "./components/PageNotFound";
+import StblEditor from "./components/Tools/StblEditor";
 
 Vue.use(BootstrapVue);
 
@@ -30,6 +31,10 @@ const routes = [
     {
         path: '/tutorials',
         component: TutorialsPage
+    },
+    {
+        path: '/ts4-tools/stbl-editor',
+        component: StblEditor
     },
     {
         // fixme abstract this in case future mods also need to be renamed
