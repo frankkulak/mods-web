@@ -231,7 +231,7 @@ export default {
             errorMessage: null,
             languages: Languages,
             languageCode: '00',
-            isAskingForString: false
+            fileTGI: null
         }
     },
     methods: {
@@ -252,6 +252,16 @@ export default {
         getHexCode(index) {
             return formatKeyAsHex(this.fileContents[index].key);
         },
+        setLanguageAndTGIFromFilename() {
+            try {
+                this.fileTGI = this.stblFile.name.split('.')[0].split('!');
+                this.languageCode = this.fileTGI[2].substr(0, 2);
+            } catch (error) {
+                this.fileTGI = ["220557DA", "80000000", null];
+                alert("I could read the contents of your file, but not its type, group, instance, or locale code – you will have to set these manually.\n\nIn order for me to read these values, your filename must begin with TYPE!GROUP!INSTANCE");
+                console.log(error);
+            }
+        },
         refreshStbl() {
             getStblContents(this.stblFile).then(result => {
                 if (result === null || typeof result === "string") {
@@ -262,6 +272,7 @@ export default {
                     this.fileContents = result.stringEntries.map(entry => {
                         return {key: entry.key, string: entry.string};
                     });
+                    this.setLanguageAndTGIFromFilename();
                 }
             });
         },
@@ -271,11 +282,9 @@ export default {
             }
         },
         newString() {
-            this.isAskingForString = true;
             const string = prompt("Enter a string.");
             const key = fnv32a(string);
             this.fileContents.push({key, string});
-            this.isAskingForString = false;
         },
         newHash(index) {
             const stringEntry = this.fileContents[index];
