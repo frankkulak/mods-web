@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import { BootstrapVue } from 'bootstrap-vue'
+import Clipboard from 'v-clipboard'
 import VueRouter from 'vue-router'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
@@ -15,6 +16,7 @@ import PageNotFound from "./components/PageNotFound";
 import StblEditor from "./components/Tools/StblEditor";
 
 Vue.use(BootstrapVue);
+Vue.use(Clipboard);
 
 // ----------------------------------------------------------------------
 // Routing

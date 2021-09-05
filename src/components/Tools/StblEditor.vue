@@ -32,31 +32,75 @@
                 ></b-form-file>
             </b-col>
             <b-col cols="12" md="6" class="text-right">
-                <b-button id="new-stbl-btn" pill>
+                <b-button id="new-stbl-btn" v-on:click="printStbl()" pill>
                     <b-icon-plus></b-icon-plus>
                     New String Table
                 </b-button>
             </b-col>
         </b-row>
 
-        <b-row v-if="fileContents">
-            <b-table striped hover :items="fileContents"></b-table>
-        </b-row>
-        <b-alert v-else-if="Boolean(errorMessage)" class="py-3" variant="danger" show dismissible>
+        <b-alert v-if="Boolean(errorMessage)" class="py-3" variant="danger" show dismissible>
             <h2 class="alert-heading mb-3">Oops, something doesn't look right</h2>
             <pre class="mb-0">{{ errorMessage }}</pre>
         </b-alert>
+        <b-row v-if="fileContents" id="stbl-content">
+            <b-col cols="12" md="6" v-for="(stringEntry, n) in fileContents" :key="n" class="my-3">
+                <div>
+                    <b-card class="floating-card">
+                        <div class="d-flex flex-row mb-2">
+                            <h3>{{ stringEntry.key }}</h3>
+                            <div class="w-100 text-right" style="font-size: 1.2em">
+                                <b-icon-clipboard
+                                    v-clipboard="() => `${stringEntry.key}`"
+                                    class="clipboard-button"
+                                    :id="`clipboard-${n}`"
+                                    title="Save key to clipboard"
+                                ></b-icon-clipboard>
+                                <b-popover :target="`clipboard-${n}`" triggers="click blur" placement="top">
+                                    Copied!
+                                </b-popover>
+                                <b-icon-clipboard-plus
+                                    v-clipboard="() => `${stringEntry.key}<!--${stringEntry.string}-->`"
+                                    class="clipboard-button ml-2"
+                                    :id="`clipboard-plus-${n}`"
+                                    title="Save key and comment to clipboard"
+                                ></b-icon-clipboard-plus>
+                                <b-popover :target="`clipboard-plus-${n}`" triggers="click blur" placement="top">
+                                    Copied!
+                                </b-popover>
+                                <b-icon-three-dots class="ml-2" :id="`more-actions-${n}`"></b-icon-three-dots>
+                                <b-popover :target="`more-actions-${n}`" triggers="hover" placement="top">
+                                    <b-icon-arrow-repeat title="Rehash string"></b-icon-arrow-repeat>
+                                    <b-icon-trash-fill
+                                        variant="danger"
+                                        class="ml-2"
+                                        title="Delete string"
+                                    ></b-icon-trash-fill>
+                                </b-popover>
+                            </div>
+                        </div>
+
+                        <b-form-textarea
+                            v-model="stringEntry.string"
+                            placeholder="{0.SimFirstName} is reticulating {M0.his}{F0.her} splines."
+                            rows="3"
+                            max-rows="3"
+                        ></b-form-textarea>
+                    </b-card>
+                </div>
+            </b-col>
+        </b-row>
     </b-container>
 </template>
 
 <script>
 import SectionHeader from "@/components/Common/SectionHeader";
-import {BIconPlus} from 'bootstrap-vue';
+import {BIconPlus, BIconTrashFill, BIconClipboard, BIconClipboardPlus, BIconArrowRepeat, BIconThreeDots} from 'bootstrap-vue';
 import {getStblContents} from "@/components/scripts/stblReader";
 
 export default {
     name: "StblEditor",
-    components: {SectionHeader, BIconPlus},
+    components: {SectionHeader, BIconPlus, BIconTrashFill, BIconClipboard, BIconArrowRepeat, BIconThreeDots, BIconClipboardPlus},
     data() {
         return {
             stblFile: null,
@@ -80,6 +124,9 @@ export default {
                     });
                 }
             });
+        },
+        printStbl() {
+            console.log(this.fileContents);
         }
     }
 }
@@ -115,6 +162,18 @@ export default {
             top: -3px;
             box-shadow: 0 5px 15px var(--shadow-color);
         }
+    }
+
+    textarea {
+        resize: none;
+    }
+
+    .floating-card {
+        @extend %floating-card;
+    }
+
+    .clipboard-button:hover {
+        cursor: pointer;
     }
 }
 </style>
