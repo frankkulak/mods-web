@@ -45,9 +45,6 @@
                         <b-icon-clipboard-plus/>
                         instead.
                     </li>
-                    <li class="mb-2"><strong>Localizing.</strong> Choose the language that your string table is written
-                        in, and the program will use the correct hash prefix when exporting your file.
-                    </li>
                 </ul>
                 <p><strong>Step 3:</strong> Download your modified string table with the
                     <b-icon-download/>
@@ -56,7 +53,7 @@
         </div>
 
         <b-row class="text-center mb-5" id="upload-area">
-            <b-col cols="12" md="6">
+            <b-col cols="12" md="6" class="my-2">
                 <b-form-file
                     class="text-left"
                     v-model="stblFile"
@@ -67,7 +64,7 @@
                     v-on:input="refreshStbl()"
                 ></b-form-file>
             </b-col>
-            <b-col cols="12" md="6" class="text-right">
+            <b-col cols="12" md="6" class="text-center text-md-right my-2">
                 <b-button id="new-stbl-btn" v-on:click="newStbl()" class="gradient-button" pill>
                     New String Table
                 </b-button>
@@ -85,10 +82,10 @@
             <div id="utility-buttons-container">
                 <b-button-toolbar class="text-right float-right floating-card">
                     <b-button-group>
-                        <b-button v-on:click="downloadStbl()">
+                        <b-button v-on:click="downloadStbl()" title="Download string table">
                             <b-icon-download/>
                         </b-button>
-                        <b-button v-on:click="newString()">
+                        <b-button v-on:click="newString()" title="New string">
                             <b-icon-plus-circle/>
                         </b-button>
                     </b-button-group>
@@ -98,8 +95,8 @@
             <b-col cols="12">
                 <hr id="content-divider" class="mb-5">
             </b-col>
-            <b-col cols="12" md="6" class="my-3">
-                <b-form-select name="language" v-model="languageCode">
+            <b-col cols="6" md="3" class="my-3">
+                <b-form-select name="language" v-model="languageCode" @input="updateLocaleInInstance">
                     <option
                         v-for="language in languages"
                         :key="language.name"
@@ -108,7 +105,24 @@
                     </option>
                 </b-form-select>
             </b-col>
-            <b-col cols="12" md="6"></b-col>
+            <b-col cols="6" md="3" class="my-3">
+                <b-form-input
+                    v-model="fileTGI.t"
+                    placeholder="Type"
+                />
+            </b-col>
+            <b-col cols="6" md="3" class="my-3">
+                <b-form-input
+                    v-model="fileTGI.g"
+                    placeholder="Group"
+                />
+            </b-col>
+            <b-col cols="6" md="3" class="my-3">
+                <b-form-input
+                    v-model="fileTGI.i"
+                    placeholder="Instance"
+                />
+            </b-col>
             <b-col cols="12" v-if="fileContents === null || fileContents.length === 0" class="my-5 text-center">
                 <p>This string table is empty. To add a new string, either click the
                     <b-icon-plus-circle/>
@@ -241,25 +255,40 @@ export default {
                 this.newString();
             }
         },
+        updateLocaleInInstance(){
+            this.fileTGI.i = this.languageCode + this.fileTGI.i.substring(2);
+        },
         newStbl() {
-            if (this.fileContents === null) {
+            if (this.fileContents === null || (this.fileContents.length > 0 && confirm("Are you sure you want to overwrite the string table you currently have open? Its contents cannot be recovered once you do this."))) {
                 this.fileContents = [];
-            } else if (this.fileContents.length > 0) {
-                if (confirm("Are you sure you want to overwrite the string table you currently have open? Its contents cannot be recovered once you do this."))
-                    this.fileContents = [];
+                this.setDefaultTGI();
             }
         },
         getHexCode(index) {
             return formatKeyAsHex(this.fileContents[index].key);
         },
+        setDefaultTGI() {
+            this.fileTGI = {
+                t: "220557DA",
+                g: "80000000",
+                i: null
+            };
+
+            while (this.fileTGI.i === null) {
+                const name = prompt("Enter a name to hash for the instance ID of your string table. It should be a unique name, prefixed with your creator name, such as 'YourName:stringTable_UniqueDescription'.");
+                if (name) {
+                    this.fileTGI.i = `${fnv32a(name)}`; // FIXME : this should be converted to hex, and should be fnv64a, and should be prefixed with locale code
+                }
+            }
+        },
         setLanguageAndTGIFromFilename() {
             try {
-                this.fileTGI = this.stblFile.name.split('.')[0].split('!');
-                this.languageCode = this.fileTGI[2].substr(0, 2);
+                const [t, g, i] = this.stblFile.name.split('.')[0].split('!');
+                this.fileTGI = { t, g, i };
+                this.languageCode = i.substr(0, 2);
             } catch (error) {
-                this.fileTGI = ["220557DA", "80000000", null];
-                alert("I could read the contents of your file, but not its type, group, instance, or locale code – you will have to set these manually.\n\nIn order for me to read these values, your filename must begin with TYPE!GROUP!INSTANCE");
-                console.log(error);
+                alert("I could read the contents of your file, but not its type, group, instance, or locale code. In order for me to read these values, your filename must begin with TYPE!GROUP!INSTANCE.\n\nYou will be prompted to enter a name to hash for the instance ID of this string table.");
+                this.setDefaultTGI();
             }
         },
         refreshStbl() {
