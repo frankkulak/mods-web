@@ -45,9 +45,7 @@ class BinaryDecoder {
     }
 
     uint64() {
-        // const result = this.buff.readBigUInt64LE(this.offset)
-        // this.offset += 8;
-        // return result;
+        // for some reason this.buff.readBigUInt64LE(this.offset) does not work in this environment
         return this.uint32() + this.uint32();
     }
 }
@@ -87,6 +85,111 @@ export async function getStblContents(file) {
         const arrayBuffer = await file.arrayBuffer();
         return readSTBL(new BinaryDecoder(Buffer.from(arrayBuffer)));
     } catch (error) {
-        return `Cannot read file: ${error}`;
+        return `${error}`;
     }
 }
+
+export const Languages = [
+    {
+        name: 'Chinese, Simplified',
+        nativeName: '简体中文',
+        emoji: '🇨🇳',
+        stblCode: '01'
+    },
+    {
+        name: 'Chinese, Traditional',
+        nativeName: '繁體中文',
+        emoji: '🇨🇳',
+        stblCode: '02'
+    },
+    {
+        name: `Czech`,
+        nativeName: `Čeština`,
+        emoji: '🇨🇿',
+        stblCode: '03'
+    },
+    {
+        name: 'Danish',
+        nativeName: 'Dansk',
+        emoji: '🇩🇰',
+        stblCode: '04'
+    },
+    {
+        name: 'Dutch',
+        nativeName: 'Nederlands',
+        emoji: '🇳🇱',
+        stblCode: '05'
+    },
+    {
+        name: 'English',
+        nativeName: 'English',
+        emoji: '🇬🇧',
+        stblCode: '00'
+    },
+    {
+        name: `French`,
+        nativeName: `Français`,
+        emoji: '🇫🇷',
+        stblCode: '07'
+    },
+    {
+        name: `German`,
+        nativeName: `Deutsch`,
+        emoji: '🇩🇪',
+        stblCode: '08'
+    },
+    {
+        name: `Italian`,
+        nativeName: `Italiano`,
+        emoji: '🇮🇹',
+        stblCode: '0B'
+    },
+    {
+        name: `Japanese`,
+        nativeName: `日本語`,
+        emoji: '🇯🇵',
+        stblCode: '0C'
+    },
+    {
+        name: `Korean`,
+        nativeName: `한국어`,
+        emoji: '🇰🇷',
+        stblCode: '0D'
+    },
+    {
+        name: `Norwegian`,
+        nativeName: `Norsk`,
+        emoji: '🇳🇴',
+        stblCode: '0E'
+    },
+    {
+        name: `Polish`,
+        nativeName: `Polski`,
+        emoji: '🇵🇱',
+        stblCode: '03'
+    },
+    {
+        name: `Portuguese`,
+        nativeName: `Português`,
+        emoji: '🇧🇷',
+        stblCode: '0F'
+    },
+    {
+        name: `Russian`,
+        nativeName: `Русский`,
+        emoji: '🇷🇺',
+        stblCode: '12'
+    },
+    {
+        name: `Spanish`,
+        nativeName: `Español`,
+        emoji: '🇪🇸',
+        stblCode: '13'
+    },
+    {
+        name: 'Swedish',
+        nativeName: 'Svenska',
+        emoji: '🇸🇪',
+        stblCode: '15'
+    }
+];
