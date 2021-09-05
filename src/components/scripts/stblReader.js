@@ -89,6 +89,13 @@ export async function getStblContents(file) {
     }
 }
 
+export const EnglishData = {
+    name: 'English',
+    nativeName: 'English',
+    emoji: '🇬🇧',
+    stblCode: '00'
+}
+
 export const Languages = [
     {
         name: 'Chinese, Simplified',
@@ -120,12 +127,7 @@ export const Languages = [
         emoji: '🇳🇱',
         stblCode: '05'
     },
-    {
-        name: 'English',
-        nativeName: 'English',
-        emoji: '🇬🇧',
-        stblCode: '00'
-    },
+    EnglishData,
     {
         name: `French`,
         nativeName: `Français`,

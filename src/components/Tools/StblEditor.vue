@@ -19,7 +19,8 @@
                 <ul>
                     <li class="mb-2"><strong>Adding.</strong> Either use the
                         <b-icon-plus-circle/>
-                        button in the bottom-right corner of the screen or press <kbd>CTRL/CMD</kbd> + <kbd>N</kbd> to add a string. A popup will prompt you for a
+                        button in the bottom-right corner of the screen or press <kbd>CTRL/CMD</kbd> + <kbd>N</kbd> to
+                        add a string. A popup will prompt you for a
                         string to add, and will automatically hash and add it to the table when you are done.
                     </li>
                     <li class="mb-2"><strong>Editing.</strong> Simply click on the string you would like to edit, and
@@ -48,7 +49,8 @@
                 </ul>
                 <p><strong>Step 3:</strong> Download your modified string table with the
                     <b-icon-download/>
-                    button in the bottom-right corner of the screen.</p>
+                    button in the bottom-right corner of the screen.
+                </p>
             </div>
         </div>
 
@@ -82,12 +84,14 @@
             <div id="utility-buttons-container">
                 <b-button-toolbar class="text-right float-right floating-card">
                     <b-button-group>
-                        <b-button v-on:click="downloadStbl()" title="Download string table">
-                            <b-icon-download/>
-                        </b-button>
-                        <b-button v-on:click="newString()" title="New string">
+                        <a @click="downloadStbl()"
+                           :href="downloadLink"
+                           :download="downloadFilename"
+                           title="Download string table"
+                           class="btn btn-primary"><b-icon-download/></a>
+                        <button v-on:click="newString()" title="New string" class="btn btn-primary">
                             <b-icon-plus-circle/>
-                        </b-button>
+                        </button>
                     </b-button-group>
                 </b-button-toolbar>
             </div>
@@ -96,11 +100,11 @@
                 <hr id="content-divider" class="mb-5">
             </b-col>
             <b-col cols="6" md="3" class="my-3">
-                <b-form-select name="language" v-model="languageCode" @input="updateLocaleInInstance">
+                <b-form-select name="language" v-model="selectedLanguage" @input="updateLocaleInInstance">
                     <option
                         v-for="language in languages"
                         :key="language.name"
-                        :value="language.stblCode">
+                        :value="language">
                         {{ language.emoji }} {{ language.name }} ({{ language.nativeName }})
                     </option>
                 </b-form-select>
@@ -127,7 +131,8 @@
                 <p>This string table is empty. To add a new string, either click the
                     <b-icon-plus-circle/>
                     button, press the <kbd>CTRL/CMD</kbd> + <kbd>N</kbd> keys, or
-                    <span v-on:click="newString" class="clickable">click here</span>.</p>
+                    <span v-on:click="newString" class="clickable">click here</span>.
+                </p>
             </b-col>
             <b-col cols="12" md="6" v-for="(stringEntry, n) in fileContents" :key="n" class="my-3">
                 <div>
@@ -202,7 +207,7 @@ import {
     BIconKey,
     BIconDownload
 } from 'bootstrap-vue';
-import {getStblContents, Languages, fnv32a} from "@/components/scripts/stblReader";
+import {getStblContents, Languages, fnv32a, EnglishData} from "@/components/scripts/stblReader";
 
 
 function formatKeyAsHex(keyDec) {
@@ -244,8 +249,10 @@ export default {
             fileContents: null,
             errorMessage: null,
             languages: Languages,
-            languageCode: '00',
-            fileTGI: null
+            selectedLanguage: EnglishData,
+            fileTGI: null,
+            downloadLink: '',
+            downloadFilename: ''
         }
     },
     methods: {
@@ -255,11 +262,13 @@ export default {
                 this.newString();
             }
         },
-        updateLocaleInInstance(){
-            this.fileTGI.i = this.languageCode + this.fileTGI.i.substring(2);
+        updateLocaleInInstance() {
+            this.fileTGI.i = this.selectedLanguage.stblCode + this.fileTGI.i.substring(2);
         },
         newStbl() {
             if (this.fileContents === null || (this.fileContents.length > 0 && confirm("Are you sure you want to overwrite the string table you currently have open? Its contents cannot be recovered once you do this."))) {
+                this.stblFile = null;
+                this.errorMessage = null;
                 this.fileContents = [];
                 this.setDefaultTGI();
             }
@@ -284,14 +293,16 @@ export default {
         setLanguageAndTGIFromFilename() {
             try {
                 const [t, g, i] = this.stblFile.name.split('.')[0].split('!');
-                this.fileTGI = { t, g, i };
-                this.languageCode = i.substr(0, 2);
+                this.fileTGI = {t, g, i};
+                const localeCode = i.substr(0, 2);
+                this.selectedLanguage = this.languages.find(language => language.stblCode === localeCode);
             } catch (error) {
                 alert("I could read the contents of your file, but not its type, group, instance, or locale code. In order for me to read these values, your filename must begin with TYPE!GROUP!INSTANCE.\n\nYou will be prompted to enter a name to hash for the instance ID of this string table.");
                 this.setDefaultTGI();
             }
         },
         refreshStbl() {
+            if (this.stblFile === null) return;
             getStblContents(this.stblFile).then(result => {
                 if (result === null || typeof result === "string") {
                     this.fileContents = null;
@@ -335,6 +346,7 @@ export default {
             return formatKeyAsHex(stringEntry.key) + "<!--" + stringEntry.string + "-->";
         },
         downloadStbl() {
+
             console.log(this.fileContents);
         }
     }
@@ -376,6 +388,16 @@ export default {
         bottom: 20px;
         right: 20px;
         z-index: 1024;
+
+        .btn.btn-primary {
+            background-color: $blurple;
+            border-color: $blurple;
+            color: white;
+
+            &:hover {
+                border-color: white;
+            }
+        }
     }
 
     hr#content-divider {
