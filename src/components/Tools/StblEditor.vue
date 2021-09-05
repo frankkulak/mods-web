@@ -35,7 +35,8 @@
                         <b-icon-three-dots/>
                         and click the
                         <b-icon-trash-fill variant="danger"/>
-                        button to delete the string entry. This action cannot be undone.
+                        button. You will be asked to confirm if you want to delete the string, because this action
+                        cannot be undone.
                     </li>
                     <li class="mb-2"><strong>Copying strings.</strong> To copy the key (<code>0x00000000</code>),
                         click the
@@ -52,7 +53,7 @@
             </div>
         </div>
 
-        <b-row class="text-center mb-5">
+        <b-row class="text-center mb-5" id="upload-area">
             <b-col cols="12" md="6">
                 <b-form-file
                     class="text-left"
@@ -80,7 +81,7 @@
         </b-alert>
 
         <b-row v-if="fileContents" id="stbl-content">
-            <b-col cols="12">
+            <b-col cols="6" class="my-3">
                 <b-form-select name="language" v-model="languageCode">
                     <option
                         v-for="language in languages"
@@ -90,14 +91,15 @@
                     </option>
                 </b-form-select>
             </b-col>
+            <b-col cols="6"></b-col>
             <b-col cols="12" md="6" v-for="(stringEntry, n) in fileContents" :key="n" class="my-3">
                 <div>
                     <b-card class="floating-card">
                         <div class="d-flex flex-row mb-2">
-                            <h3>{{ stringEntry.key }}</h3>
+                            <h3>{{ getHexCode(n) }}</h3>
                             <div class="w-100 text-right" style="font-size: 1.2em">
                                 <b-icon-clipboard
-                                    v-clipboard="() => `${stringEntry.key}`"
+                                    v-clipboard="() => keyToClipboard(n)"
                                     class="hover-cursor"
                                     :id="`clipboard-${n}`"
                                     title="Copy key to clipboard"
@@ -106,7 +108,7 @@
                                     Copied!
                                 </b-popover>
                                 <b-icon-clipboard-plus
-                                    v-clipboard="() => `${stringEntry.key}<!--${stringEntry.string}-->`"
+                                    v-clipboard="() => keyAndStringToClipboard(n)"
                                     class="hover-cursor ml-2"
                                     :id="`clipboard-plus-${n}`"
                                     title="Copy key and comment to clipboard"
@@ -116,12 +118,21 @@
                                 </b-popover>
                                 <b-icon-three-dots class="ml-2" :id="`more-actions-${n}`"></b-icon-three-dots>
                                 <b-popover :target="`more-actions-${n}`" triggers="hover" placement="top">
-                                    <b-icon-key title="Edit existing key" class="hover-cursor"/>
-                                    <b-icon-arrow-repeat title="Generate new key" class="ml-2 hover-cursor"/>
+                                    <b-icon-key
+                                        title="Edit existing key"
+                                        class="hover-cursor"
+                                        v-on:click="setManualKey(n)"
+                                    />
+                                    <b-icon-arrow-repeat
+                                        title="Generate new key"
+                                        class="ml-2 hover-cursor"
+                                        v-on:click="newHash(n)"
+                                    />
                                     <b-icon-trash-fill
                                         variant="danger"
                                         class="ml-2 hover-cursor"
                                         title="Delete string"
+                                        v-on:click="deleteString(n)"
                                     />
                                 </b-popover>
                             </div>
@@ -129,21 +140,19 @@
 
                         <b-form-textarea
                             v-model="stringEntry.string"
-                            placeholder="{0.SimFirstName} is reticulating {M0.his}{F0.her} splines."
+                            placeholder="{0.SimFirstName} is reticulating {M0.his}{F0.her} splines!"
                             rows="3"
                             max-rows="3"
+                            no-resize
+                            debounce="500"
                         ></b-form-textarea>
                     </b-card>
                 </div>
             </b-col>
             <b-col cols="12" md="6" class="my-3 text-center h-100" style="font-size: 3rem;">
-                <b-icon-plus-circle class="blurple-text hover-cursor"/>
+                <b-icon-plus-circle class="blurple-text hover-cursor my-auto" v-on:click="newString()"/>
             </b-col>
         </b-row>
-
-        <!--        <div id="stbl-footer-container" v-if="Boolean(fileContents)">-->
-        <!--            <p>test</p>-->
-        <!--        </div>-->
     </b-container>
 </template>
 
@@ -159,7 +168,13 @@ import {
     BIconThreeDots,
     BIconKey
 } from 'bootstrap-vue';
-import {getStblContents, Languages} from "@/components/scripts/stblReader";
+import {getStblContents, Languages, fnv32a} from "@/components/scripts/stblReader";
+
+
+function formatKeyAsHex(keyDec) {
+    return "0x" + keyDec.toString(16).toUpperCase().padStart(8, "0");
+}
+
 
 export default {
     name: "StblEditor",
@@ -184,6 +199,9 @@ export default {
         }
     },
     methods: {
+        getHexCode(index) {
+            return formatKeyAsHex(this.fileContents[index].key);
+        },
         refreshStbl() {
             getStblContents(this.stblFile).then(result => {
                 if (result === null || typeof result === "string") {
@@ -191,17 +209,43 @@ export default {
                     this.errorMessage = result;
                 } else {
                     this.errorMessage = null;
-                    this.fileContents = result.stringEntries.map(({key, string}) => {
-                        return {
-                            key: "0x" + key.toString(16).toUpperCase().padStart(8, "0"),
-                            string
-                        };
+                    this.fileContents = result.stringEntries.map(entry => {
+                        return { key: entry.key, string: entry.string };
                     });
                 }
+            }).then(() => {
+                document.getElementById('upload-area').scrollIntoView();
             });
         },
         printStbl() {
             console.log(this.fileContents);
+        },
+        deleteString(index) {
+            if (confirm(`Are you sure you want to delete string ${formatKeyAsHex(this.fileContents[index].key)}? This action cannot be undone.`)) {
+                this.fileContents.splice(index, 1);
+            }
+        },
+        newString() {
+            this.fileContents.push({key: 0, string: ""});
+        },
+        newHash(index) {
+            const stringEntry = this.fileContents[index];
+            if (stringEntry.string) stringEntry.key = fnv32a(stringEntry.string);
+        },
+        keyToClipboard(index) {
+            return formatKeyAsHex(this.fileContents[index].key);
+        },
+        setManualKey(index) {
+            let newKey = prompt("Enter the 32-bit hash to use.", this.getHexCode(index));
+            if (newKey && newKey.match(/^0x([0-9A-F]{8})$/i)) {
+                this.fileContents[index].key = parseInt(newKey, 16);
+            } else {
+                alert(`${newKey} is not a valid key. It must be a 32-bit (8 digit) hex code, prefixed with 0x.`);
+            }
+        },
+        keyAndStringToClipboard(index) {
+            const stringEntry = this.fileContents[index];
+            return formatKeyAsHex(stringEntry.key) + "<!--" + stringEntry.string + "-->";
         }
     }
 }
@@ -237,25 +281,12 @@ export default {
         }
     }
 
-    textarea {
-        resize: none;
-    }
-
     .floating-card {
         @extend %floating-card;
     }
 
     .hover-cursor:hover {
-        cursor: pointer;
-    }
-
-    #stbl-footer-container {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 50px;
-        background-color: transparentize($off-white, 0.8);
+        cursor: pointer !important;
     }
 
     .blurple-text {
