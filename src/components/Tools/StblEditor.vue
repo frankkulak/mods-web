@@ -159,7 +159,7 @@
                 </b-button-toolbar>
             </div>
 
-            <div id="pagination-container" v-if="numEntries > entryChunkSize">
+            <div id="pagination-container" v-if="entriesToShow.length < numEntries">
                 <b-pagination
                     v-model="currentPage"
                     :total-rows="numEntries"
@@ -279,7 +279,7 @@
                     </b-card>
                 </div>
             </b-col>
-            <b-col cols="12" v-if="numEntries > entryChunkSize" class="text-center mt-4">
+            <b-col cols="12" v-if="entriesToShow.length < numEntries" class="text-center mt-4">
                 Page {{ currentPage }} of {{ totalPages }}
             </b-col>
         </b-row>
@@ -382,6 +382,7 @@ export default {
             }
         },
         entriesToShow() {
+            if (this.showAllStrings) return this.fileContents;
             const endIndex = Math.min(this.numEntries, this.currentPage * this.entryChunkSize);
             const offset = (this.currentPage - 1) * this.entryChunkSize;
             return this.fileContents.slice(offset, endIndex)
