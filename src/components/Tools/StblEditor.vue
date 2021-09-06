@@ -355,12 +355,19 @@ export default {
         },
         setLanguageAndTGIFromFilename() {
             try {
-                const [t, g, i] = this.stblFile.name.split('.')[0].split('!');
+                let t, g, i = undefined;
+
+                if (this.stblFile.name.includes('!')) {
+                    [t, g, i] = this.stblFile.name.split('.')[0].split('!');
+                } else {
+                    [, t, g, i] = this.stblFile.name.split('.')[0].split('_');
+                }
+
                 this.fileTGI = {t, g, i};
                 const localeCode = i.substr(0, 2);
                 this.selectedLanguage = this.languages.find(language => language.stblCode === localeCode);
             } catch (error) {
-                alert("I could read the contents of your file, but not its type, group, instance, or locale code. In order for me to read these values, your filename must begin with TYPE!GROUP!INSTANCE.\n\nYou will be prompted to enter a name to hash for the instance ID of this string table.");
+                alert("I could read the contents of your file, but not its type, group, instance, or locale code. In order for me to read these values, your filename must follow either the S4S or S4PE naming conventions.\n\nYou will be prompted to enter a name to hash for the instance ID of this string table.");
                 this.setDefaultTGI();
             }
         },
