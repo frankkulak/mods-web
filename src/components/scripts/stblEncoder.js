@@ -38,6 +38,7 @@ export function serializeStbl(contents) {
     let totalFileLength = 21; // 21 comes from the number of bytes in the header
     let totalStringLength = contents.length;
     contents.forEach(stringEntry => {
+        stringEntry.string = stringEntry.string.replace(/(\r\n|\r|\n)/g, '\\n');
         stringEntry.numBytes = Buffer.byteLength(stringEntry.string);
         totalStringLength += stringEntry.numBytes;
         totalFileLength += 7 + stringEntry.numBytes; // 7 comes from uint32 (4) + byte (1) + uint16 (2)

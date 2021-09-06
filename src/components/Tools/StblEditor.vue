@@ -96,7 +96,7 @@
                 </b-button-toolbar>
             </div>
 
-            <div id="pagination-container">
+            <div id="pagination-container" v-if="numEntries > entryChunkSize">
                 <b-pagination
                     v-model="currentPage"
                     :total-rows="numEntries"
@@ -235,20 +235,13 @@ import {
     BIconDownload
 } from 'bootstrap-vue';
 import {getStblContents} from "@/components/scripts/stblDecoder";
-import {Languages, fnv32a, fnv64a, EnglishData} from "@/components/scripts/stblUtils";
+import {Languages, EnglishData} from "@/components/scripts/stblUtils";
 import {serializeStbl} from "@/components/scripts/stblEncoder";
+import fnv from "fnv-plus";
 
-
-function _formatAsHex(dec, padding) {
-    return dec.toString(16).toUpperCase().padStart(padding, "0");
-}
 
 function formatKeyAsHex(dec) {
-    return "0x" + _formatAsHex(dec, 8);
-}
-
-function formatInstanceAsHex(dec) {
-    return _formatAsHex(dec, 16);
+    return "0x" + dec.toString(16).toUpperCase().padStart(8, "0");
 }
 
 
@@ -354,8 +347,7 @@ export default {
             while (this.fileTGI.i === null) {
                 const name = prompt("Enter a name to hash for the instance ID of your string table. It should be a unique name, prefixed with your creator name, such as 'YourName:stringTable_UniqueDescription'.");
                 if (name) {
-                    const instanceHex = formatInstanceAsHex(fnv64a(name));
-                    console.log(instanceHex);
+                    const instanceHex = fnv.hash(name, 64).hex().toUpperCase().padStart(16, "0");
                     this.fileTGI.i = this.selectedLanguage.stblCode + instanceHex.substring(2);
                 }
             }
@@ -394,12 +386,12 @@ export default {
         },
         newString() {
             const string = prompt("Enter a string.");
-            const key = fnv32a(string);
+            const key = parseInt(fnv.fast1a32hex(string), 16);
             this.fileContents.push({key, string});
         },
         newHash(index) {
             const stringEntry = this.entriesToShow[index];
-            if (stringEntry.string) stringEntry.key = fnv32a(stringEntry.string);
+            if (stringEntry.string) stringEntry.key = parseInt(fnv.fast1a32hex(stringEntry.string), 16);
         },
         keyToClipboard(index) {
             return formatKeyAsHex(this.entriesToShow[index].key);
