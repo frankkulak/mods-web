@@ -2,7 +2,7 @@
     <b-container id="stbl-editor-container" class="p-5" fluid>
         <div class="mb-5">
             <div class="mb-5">
-                <h1 class="mb-3">Easy String Tables</h1>
+                <h1 class="mb-3">String Table Editor</h1>
                 <p>This experimental tool provides an interface for creating and editing string tables. It
                     currently only works with string table binaries (<code>.binary</code>/<code>.stbl</code> files),
                     and can only edit one at a time. Support for packages and multiple string tables will come soon™.
@@ -148,11 +148,9 @@
                     :state="instanceIsValid"
                 />
                 <b-form-invalid-feedback>
-                    Instance must be a 64-bit hex code
+                    <p v-if="!instanceIs64Bit" class="mb-0">Instance must be a 64-bit hex code</p>
+                    <p v-if="!instanceMatchesLocale">First two digits must match locale ({{ selectedLanguage.stblCode }})</p>
                 </b-form-invalid-feedback>
-                <div class="invalid-feedback" v-if="!instanceMatchesLocale">
-                    First two digits must match locale ({{ selectedLanguage.stblCode }})
-                </div>
             </b-col>
             <b-col cols="12" v-if="fileContents === null || fileContents.length === 0" class="my-5 text-center">
                 <p>This string table is empty. To add a new string, either click the
@@ -282,7 +280,7 @@ export default {
             selectedLanguage: EnglishData,
             fileTGI: null,
             downloadUrl: '',
-            entryChunkSize: 10,
+            entryChunkSize: 40,
             currentPage: 1
         }
     },
@@ -310,6 +308,9 @@ export default {
             return /^([0-9A-F]{8})$/i.test(this.fileTGI.g);
         },
         instanceIsValid() {
+            return this.instanceIs64Bit && this.instanceMatchesLocale;
+        },
+        instanceIs64Bit() {
             return /^([0-9A-F]{16})$/i.test(this.fileTGI.i);
         },
         instanceMatchesLocale() {
