@@ -94,6 +94,69 @@
                         </button>
                     </b-button-group>
                 </b-button-toolbar>
+                <b-button-toolbar class="text-right float-right floating-card mr-3">
+                    <b-button-group>
+                        <button v-b-modal.settings-modal title="Settings" class="btn btn-primary">
+                            <b-icon-gear/>
+                        </button>
+                        <b-modal id="settings-modal" title="Settings" hide-footer>
+                            <b-container fluid>
+                                <b-row align-v="center" class="my-4">
+                                    <b-col>
+                                        <label class="mb-0">Auto hash filenames</label>
+                                    </b-col>
+                                    <b-col>
+                                        <b-form-checkbox v-model="autoHashFilenames" switch></b-form-checkbox>
+                                    </b-col>
+                                </b-row>
+                                <b-row align-v="center" class="my-4">
+                                    <b-col>
+                                        <label class="mb-0">Show all strings</label>
+                                    </b-col>
+                                    <b-col>
+                                        <b-form-checkbox v-model="showAllStrings" switch></b-form-checkbox>
+                                        <div class="text-danger" v-if="showAllStrings">
+                                            <p>This may impact performance</p>
+                                        </div>
+                                    </b-col>
+                                </b-row>
+                                <b-row align-v="center" class="my-4">
+                                    <b-col>
+                                        <label class="mb-0">Strings per page</label>
+                                    </b-col>
+                                    <b-col>
+                                        <b-form-input
+                                            id="chunk-size-input"
+                                            v-model="entryChunkSize"
+                                            type="number"
+                                            min="1"
+                                            step="1"
+                                            onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57"
+                                            :state="entryChunkSize >= 1"
+                                            :disabled="showAllStrings"
+                                            placeholder="Enter an integer"
+                                            size="sm"
+                                        ></b-form-input>
+                                        <div class="text-danger" v-if="!showAllStrings && entryChunkSize > 100">
+                                            <p>This may impact performance</p>
+                                        </div>
+                                    </b-col>
+                                </b-row>
+                                <b-row align-v="center" class="my-4">
+                                    <b-col>
+                                        <label class="mb-0">Export files as...</label>
+                                    </b-col>
+                                    <b-col>
+                                        <b-form-radio-group
+                                            v-model="filenameType"
+                                            :options="filenameTypeOptions"
+                                        ></b-form-radio-group>
+                                    </b-col>
+                                </b-row>
+                            </b-container>
+                        </b-modal>
+                    </b-button-group>
+                </b-button-toolbar>
             </div>
 
             <div id="pagination-container" v-if="numEntries > entryChunkSize">
@@ -233,7 +296,8 @@ import {
     BIconArrowRepeat,
     BIconThreeDots,
     BIconKey,
-    BIconDownload
+    BIconDownload,
+    BIconGear
 } from 'bootstrap-vue';
 import {getStblContents} from "@/scripts/tools/stblDecoder";
 import {Languages, EnglishData} from "@/scripts/tools/stblUtils";
@@ -260,7 +324,8 @@ export default {
         BIconThreeDots,
         BIconClipboardPlus,
         BIconKey,
-        BIconDownload
+        BIconDownload,
+        BIconGear
     },
     created() {
         if (previousHandlers.length > 0) {
@@ -284,17 +349,25 @@ export default {
             fileTGI: null,
             downloadUrl: '',
             entryChunkSize: 40,
-            currentPage: 1
+            currentPage: 1,
+            showAllStrings: false,
+            autoHashFilenames: false,
+            filenameType: 's4s',
+            filenameTypeOptions: [
+                { text: 'S4S', value: 's4s' },
+                { text: 'S4PE', value: 's4pe' }
+            ]
         }
     },
     computed: {
         downloadFilename() {
-            if (!this.fileTGI) {
-                return '';
+            if (this.filenameType === 's4s') {
+                const tgiPrefix = `${this.fileTGI.t}!${this.fileTGI.g}!${this.fileTGI.i}`;
+                return `${tgiPrefix}.${this.selectedLanguage.name}.StringTable.binary`;
+            } else {
+                const tgiPrefix = `${this.fileTGI.t}_${this.fileTGI.g}_${this.fileTGI.i}`;
+                return `S4_${tgiPrefix}.stbl`;
             }
-
-            const tgiPrefix = `${this.fileTGI.t}!${this.fileTGI.g}!${this.fileTGI.i}`;
-            return `${tgiPrefix}.${this.selectedLanguage.name}.StringTable.binary`;
         },
         entriesToShow() {
             const endIndex = Math.min(this.numEntries, this.currentPage * this.entryChunkSize);
@@ -351,6 +424,12 @@ export default {
                 i: null
             };
 
+            if (this.autoHashFilenames) {
+                const instanceHex = fnv.hash(this.stblFile.name, 64).hex().toUpperCase().padStart(16, "0");
+                this.fileTGI.i = this.selectedLanguage.stblCode + instanceHex.substring(2);
+                return;
+            }
+
             while (this.fileTGI.i === null) {
                 const defaultValue = this.stblFile ? this.stblFile.name : '';
                 const name = prompt("Enter a name to hash for the instance ID of your string table. It should be a unique name, prefixed with your creator name, such as 'YourName:stringTable_UniqueDescription'.", defaultValue);
@@ -367,7 +446,8 @@ export default {
                 const localeCode = i.substr(0, 2);
                 this.selectedLanguage = this.languages.find(language => language.stblCode === localeCode);
             } catch (error) {
-                alert("I could read the contents of your file, but not its type, group, instance, or locale code. In order for me to read these values, your filename must follow either the S4S or S4PE naming conventions.\n\nYou will be prompted to enter a name to hash for the instance ID of this string table.");
+                if (!this.autoHashFilenames)
+                    alert("I could read the contents of your file, but not its type, group, instance, or locale code. In order for me to read these values, your filename must follow either the S4S or S4PE naming conventions.\n\nYou will be prompted to enter a name to hash for the instance ID of this string table.");
                 this.setDefaultTGI();
             }
         },
@@ -408,7 +488,7 @@ export default {
             const newKey = prompt("Enter the 32-bit hash to use.", this.getHexCode(index));
             if (newKey && newKey.match(/^0x([0-9A-F]{8})$/i)) {
                 this.entriesToShow[index].key = parseInt(newKey, 16);
-            } else {
+            } else if (newKey !== null) {
                 alert(`${newKey} is not a valid key. It must be a 32-bit (8 digit) hex code, prefixed with 0x.`);
             }
         },
@@ -536,5 +616,9 @@ export default {
         font-size: 0.8em;
         border-style: solid;
     }
+}
+
+#settings-modal .text-danger p {
+    font-size: 0.8em;
 }
 </style>
