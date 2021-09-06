@@ -65,7 +65,7 @@
 </template>
 
 <script>
-    import {DataEnums, ModData} from '../../modules/Data.js'
+    import {DataEnums, ModData} from '../../scripts/modules/Data.js'
     import ModStatusAlert from "./ModStatusAlert";
     import ModImageCarousel from "./ModImageCarousel";
     import ModDetailsTab from "./ModDetailsTab";

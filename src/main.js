@@ -5,7 +5,7 @@ import VueRouter from 'vue-router'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import App from './App.vue'
-import { ModData } from './modules/Data.js'
+import { ModData } from './scripts/modules/Data.js'
 import HomePage from "./components/HomePage/HomePage";
 import ModPage from "./components/ModPage/ModPage";
 import ModVersion from "./components/ModPage/ModVersion";

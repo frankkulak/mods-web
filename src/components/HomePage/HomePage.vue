@@ -34,7 +34,7 @@
 </template>
 
 <script>
-    import {ModData, ModCategoryData} from '../../modules/Data.js'
+    import {ModData, ModCategoryData} from '../../scripts/modules/Data.js'
     import ModPreview from "./ModPreview";
     import SectionHeader from "../Common/SectionHeader";
 

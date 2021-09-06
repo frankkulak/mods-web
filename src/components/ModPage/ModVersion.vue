@@ -3,7 +3,7 @@
 </template>
 
 <script>
-    import {ModData} from "../../modules/Data";
+    import {ModData} from "../../scripts/modules/Data";
 
     export default {
         name: "ModVersion",

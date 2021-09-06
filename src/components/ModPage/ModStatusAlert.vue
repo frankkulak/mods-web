@@ -5,7 +5,7 @@
 </template>
 
 <script>
-    import {DataEnums, GameData} from '../../modules/Data.js'
+    import {DataEnums, GameData} from '../../scripts/modules/Data.js'
 
     const {wip, retired} = DataEnums.developmentStage;
 

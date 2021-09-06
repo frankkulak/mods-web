@@ -232,9 +232,9 @@ import {
     BIconKey,
     BIconDownload
 } from 'bootstrap-vue';
-import {getStblContents} from "@/components/scripts/stblDecoder";
-import {Languages, EnglishData} from "@/components/scripts/stblUtils";
-import {serializeStbl} from "@/components/scripts/stblEncoder";
+import {getStblContents} from "@/scripts/tools/stblDecoder";
+import {Languages, EnglishData} from "@/scripts/tools/stblUtils";
+import {serializeStbl} from "@/scripts/tools/stblEncoder";
 import fnv from "fnv-plus";
 
 

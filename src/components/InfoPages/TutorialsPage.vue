@@ -19,7 +19,7 @@
 <script>
     import SectionHeader from "../Common/SectionHeader";
     import TutorialPreview from "./TutorialPreview";
-    import {TutorialCategoryData, TutorialData} from "../../modules/Tutorials";
+    import {TutorialCategoryData, TutorialData} from "../../scripts/modules/Tutorials";
 
     function getTutorials(category) {
         return TutorialCategoryData.ts4[category].map(tutorial => TutorialData.ts4[tutorial]);
