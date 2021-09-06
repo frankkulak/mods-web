@@ -104,22 +104,3 @@ export const Languages = [
         stblCode: '15'
     }
 ];
-
-
-// function fnv(data, seed, prime, size) {
-//     let hval = seed;
-//     for (let i = 0; i < data.length; i++) {
-//         hval = (hval * prime) % size;
-//         hval ^= data.charCodeAt(i);
-//     }
-//     return hval;
-// }
-//
-// export function fnv32a(str) {
-//     return fnv(str, 0x811c9dc5, 0x01000193, 2 ** 32);
-// }
-//
-//
-// export function fnv64a(str) {
-//     return fnv(str, 0xcbf29ce484222325, 0x100000001b3, 2 ** 64);
-// }

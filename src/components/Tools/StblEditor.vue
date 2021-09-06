@@ -19,9 +19,9 @@
                 <ul>
                     <li class="mb-2"><strong>Adding.</strong> Either use the
                         <b-icon-plus-circle/>
-                        button in the bottom-right corner of the screen or press <kbd>CTRL/CMD</kbd> + <kbd>N</kbd> to
-                        add a string. A popup will prompt you for a
-                        string to add, and will automatically hash and add it to the table when you are done.
+                        button in the bottom-right corner of the screen or press <kbd>WIN/CTRL</kbd> + <kbd>N</kbd>
+                        to add a string (Windows use <kbd>WIN</kbd>, macOS use <kbd>CTRL</kbd>). You will be prompted
+                        for a string, and it will automatically be hashed and put in the table when you submit it.
                     </li>
                     <li class="mb-2"><strong>Editing.</strong> Simply click on the string you would like to edit, and
                         start typing. Editing a string will <strong>not</strong> rehash its key, but if you would like
