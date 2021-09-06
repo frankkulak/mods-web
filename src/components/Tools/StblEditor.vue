@@ -155,7 +155,7 @@
             <b-col cols="12" v-if="fileContents === null || fileContents.length === 0" class="my-5 text-center">
                 <p>This string table is empty. To add a new string, either click the
                     <b-icon-plus-circle/>
-                    button, press the <kbd>CTRL/CMD</kbd> + <kbd>N</kbd> keys, or
+                    button, press the <kbd>WIN/CTRL</kbd> + <kbd>N</kbd> keys, or
                     <span v-on:click="newString" class="clickable">click here</span>.
                 </p>
             </b-col>
@@ -346,7 +346,8 @@ export default {
             };
 
             while (this.fileTGI.i === null) {
-                const name = prompt("Enter a name to hash for the instance ID of your string table. It should be a unique name, prefixed with your creator name, such as 'YourName:stringTable_UniqueDescription'.");
+                const defaultValue = this.stblFile ? this.stblFile.name : '';
+                const name = prompt("Enter a name to hash for the instance ID of your string table. It should be a unique name, prefixed with your creator name, such as 'YourName:stringTable_UniqueDescription'.", defaultValue);
                 if (name) {
                     const instanceHex = fnv.hash(name, 64).hex().toUpperCase().padStart(16, "0");
                     this.fileTGI.i = this.selectedLanguage.stblCode + instanceHex.substring(2);
@@ -355,14 +356,7 @@ export default {
         },
         setLanguageAndTGIFromFilename() {
             try {
-                let t, g, i = undefined;
-
-                if (this.stblFile.name.includes('!')) {
-                    [t, g, i] = this.stblFile.name.split('.')[0].split('!');
-                } else {
-                    [, t, g, i] = this.stblFile.name.split('.')[0].split('_');
-                }
-
+                const { t, g, i } = /(?<t>[a-fA-F\d]{8})[_!](?<g>[a-fA-F\d]{8})[_!](?<i>[a-fA-F\d]{16})/.exec(this.stblFile.name).groups;
                 this.fileTGI = {t, g, i};
                 const localeCode = i.substr(0, 2);
                 this.selectedLanguage = this.languages.find(language => language.stblCode === localeCode);
