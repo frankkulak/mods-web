@@ -96,6 +96,17 @@
                 </b-button-toolbar>
             </div>
 
+            <div id="pagination-container">
+                <b-pagination
+                    v-model="currentPage"
+                    :total-rows="numEntries"
+                    :per-page="entryChunkSize"
+                    first-number
+                    last-number
+                    pills
+                ></b-pagination>
+            </div>
+
             <b-col cols="12">
                 <hr id="content-divider" class="mb-5">
             </b-col>
@@ -113,19 +124,35 @@
                 <b-form-input
                     v-model="fileTGI.t"
                     placeholder="Type"
+                    :state="typeIsValid"
+                    :disabled="typeIsValid"
                 />
+                <b-form-invalid-feedback>
+                    Type should be "220557DA"
+                </b-form-invalid-feedback>
             </b-col>
             <b-col cols="6" md="3" class="my-3">
                 <b-form-input
                     v-model="fileTGI.g"
                     placeholder="Group"
+                    :state="groupIsValid"
                 />
+                <b-form-invalid-feedback>
+                    Group must be a 32-bit hex code
+                </b-form-invalid-feedback>
             </b-col>
             <b-col cols="6" md="3" class="my-3">
                 <b-form-input
                     v-model="fileTGI.i"
                     placeholder="Instance"
+                    :state="instanceIsValid"
                 />
+                <b-form-invalid-feedback>
+                    Instance must be a 64-bit hex code
+                </b-form-invalid-feedback>
+                <div class="invalid-feedback" v-if="!instanceMatchesLocale">
+                    First two digits must match locale ({{ selectedLanguage.stblCode }})
+                </div>
             </b-col>
             <b-col cols="12" v-if="fileContents === null || fileContents.length === 0" class="my-5 text-center">
                 <p>This string table is empty. To add a new string, either click the
@@ -134,7 +161,7 @@
                     <span v-on:click="newString" class="clickable">click here</span>.
                 </p>
             </b-col>
-            <b-col cols="12" md="6" v-for="(stringEntry, n) in fileContents" :key="n" class="my-3">
+            <b-col cols="12" md="6" v-for="(stringEntry, n) in entriesToShow" :key="n" class="my-3">
                 <div>
                     <b-card class="floating-card">
                         <div class="d-flex flex-row mb-2">
@@ -208,11 +235,20 @@ import {
     BIconDownload
 } from 'bootstrap-vue';
 import {getStblContents} from "@/components/scripts/stblDecoder";
-import {Languages, fnv32a, EnglishData} from "@/components/scripts/stblUtils";
+import {Languages, fnv32a, fnv64a, EnglishData} from "@/components/scripts/stblUtils";
 import {serializeStbl} from "@/components/scripts/stblEncoder";
 
-function formatKeyAsHex(keyDec) {
-    return "0x" + keyDec.toString(16).toUpperCase().padStart(8, "0");
+
+function _formatAsHex(dec, padding) {
+    return dec.toString(16).toUpperCase().padStart(padding, "0");
+}
+
+function formatKeyAsHex(dec) {
+    return "0x" + _formatAsHex(dec, 8);
+}
+
+function formatInstanceAsHex(dec) {
+    return _formatAsHex(dec, 16);
 }
 
 
@@ -252,7 +288,9 @@ export default {
             languages: Languages,
             selectedLanguage: EnglishData,
             fileTGI: null,
-            downloadUrl: ''
+            downloadUrl: '',
+            entryChunkSize: 10,
+            currentPage: 1
         }
     },
     computed: {
@@ -263,6 +301,26 @@ export default {
 
             const tgiPrefix = `${this.fileTGI.t}!${this.fileTGI.g}!${this.fileTGI.i}`;
             return `${tgiPrefix}.${this.selectedLanguage.name}.StringTable.binary`;
+        },
+        entriesToShow() {
+            const endIndex = Math.min(this.numEntries, this.currentPage * this.entryChunkSize);
+            const offset = (this.currentPage - 1) * this.entryChunkSize;
+            return this.fileContents.slice(offset, endIndex)
+        },
+        numEntries() {
+            return this.fileContents.length;
+        },
+        typeIsValid() {
+            return this.fileTGI.t === "220557DA";
+        },
+        groupIsValid() {
+            return /^([0-9A-F]{8})$/i.test(this.fileTGI.g);
+        },
+        instanceIsValid() {
+            return /^([0-9A-F]{16})$/i.test(this.fileTGI.i);
+        },
+        instanceMatchesLocale() {
+            return this.selectedLanguage.stblCode === this.fileTGI.i.substr(0, 2);
         }
     },
     methods: {
@@ -276,7 +334,7 @@ export default {
             this.fileTGI.i = this.selectedLanguage.stblCode + this.fileTGI.i.substring(2);
         },
         newStbl() {
-            if (this.fileContents === null || (this.fileContents.length > 0 && confirm("Are you sure you want to overwrite the string table you currently have open? Its contents cannot be recovered once you do this."))) {
+            if (this.fileContents === null || confirm("Are you sure you want to overwrite the string table you currently have open? Its contents cannot be recovered once you do this.")) {
                 this.stblFile = null;
                 this.errorMessage = null;
                 this.fileContents = [];
@@ -284,7 +342,7 @@ export default {
             }
         },
         getHexCode(index) {
-            return formatKeyAsHex(this.fileContents[index].key);
+            return formatKeyAsHex(this.entriesToShow[index].key);
         },
         setDefaultTGI() {
             this.fileTGI = {
@@ -296,7 +354,9 @@ export default {
             while (this.fileTGI.i === null) {
                 const name = prompt("Enter a name to hash for the instance ID of your string table. It should be a unique name, prefixed with your creator name, such as 'YourName:stringTable_UniqueDescription'.");
                 if (name) {
-                    this.fileTGI.i = `${fnv32a(name)}`; // FIXME : this should be converted to hex, and should be fnv64a, and should be prefixed with locale code
+                    const instanceHex = formatInstanceAsHex(fnv64a(name));
+                    console.log(instanceHex);
+                    this.fileTGI.i = this.selectedLanguage.stblCode + instanceHex.substring(2);
                 }
             }
         },
@@ -327,8 +387,9 @@ export default {
             });
         },
         deleteString(index) {
-            if (confirm(`Are you sure you want to delete string ${formatKeyAsHex(this.fileContents[index].key)}? This action cannot be undone.`)) {
-                this.fileContents.splice(index, 1);
+            const indexToUse = index + ((this.currentPage - 1) * this.entryChunkSize);
+            if (confirm(`Are you sure you want to delete string ${formatKeyAsHex(this.fileContents[indexToUse].key)}? This action cannot be undone.`)) {
+                this.fileContents.splice(indexToUse, 1);
             }
         },
         newString() {
@@ -337,25 +398,28 @@ export default {
             this.fileContents.push({key, string});
         },
         newHash(index) {
-            const stringEntry = this.fileContents[index];
+            const stringEntry = this.entriesToShow[index];
             if (stringEntry.string) stringEntry.key = fnv32a(stringEntry.string);
         },
         keyToClipboard(index) {
-            return formatKeyAsHex(this.fileContents[index].key);
+            return formatKeyAsHex(this.entriesToShow[index].key);
         },
         setManualKey(index) {
             const newKey = prompt("Enter the 32-bit hash to use.", this.getHexCode(index));
             if (newKey && newKey.match(/^0x([0-9A-F]{8})$/i)) {
-                this.fileContents[index].key = parseInt(newKey, 16);
+                this.entriesToShow[index].key = parseInt(newKey, 16);
             } else {
                 alert(`${newKey} is not a valid key. It must be a 32-bit (8 digit) hex code, prefixed with 0x.`);
             }
         },
         keyAndStringToClipboard(index) {
-            const stringEntry = this.fileContents[index];
+            const stringEntry = this.entriesToShow[index];
             return formatKeyAsHex(stringEntry.key) + "<!--" + stringEntry.string + "-->";
         },
         downloadStbl() {
+            const tgiValid = this.typeIsValid && this.groupIsValid && this.instanceIsValid && this.instanceMatchesLocale;
+            if (!tgiValid)
+                alert('Your string table either does not have a valid type, group, or instance, or its instance does not match the locale you have selected. You may experience issues when importing your string table to S4S.');
             const stblBuffer = serializeStbl(this.fileContents);
             this.downloadUrl = `data:text/plain;base64,${stblBuffer.toString('base64')}`;
         }
@@ -407,6 +471,26 @@ export default {
             &:hover {
                 border-color: white;
             }
+        }
+    }
+
+    #pagination-container {
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        z-index: 1024;
+
+        ul.b-pagination {
+            margin-bottom: 0;
+        }
+
+        .page-item:not(.active) .page-link {
+            color: var(--accent-color);
+        }
+
+        .page-item.active .page-link {
+            background-color: var(--accent-color);
+            border-color: var(--accent-color);
         }
     }
 
