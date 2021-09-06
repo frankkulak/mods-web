@@ -85,7 +85,7 @@
                 <b-button-toolbar class="text-right float-right floating-card">
                     <b-button-group>
                         <a @click="downloadStbl()"
-                           :href="downloadLink"
+                           :href="downloadUrl"
                            :download="downloadFilename"
                            title="Download string table"
                            class="btn btn-primary"><b-icon-download/></a>
@@ -207,8 +207,9 @@ import {
     BIconKey,
     BIconDownload
 } from 'bootstrap-vue';
-import {getStblContents, Languages, fnv32a, EnglishData} from "@/components/scripts/stblReader";
-
+import {getStblContents} from "@/components/scripts/stblDecoder";
+import {Languages, fnv32a, EnglishData} from "@/components/scripts/stblUtils";
+import {serializeStbl} from "@/components/scripts/stblEncoder";
 
 function formatKeyAsHex(keyDec) {
     return "0x" + keyDec.toString(16).toUpperCase().padStart(8, "0");
@@ -251,8 +252,17 @@ export default {
             languages: Languages,
             selectedLanguage: EnglishData,
             fileTGI: null,
-            downloadLink: '',
-            downloadFilename: ''
+            downloadUrl: ''
+        }
+    },
+    computed: {
+        downloadFilename() {
+            if (!this.fileTGI) {
+                return '';
+            }
+
+            const tgiPrefix = `${this.fileTGI.t}!${this.fileTGI.g}!${this.fileTGI.i}`;
+            return `${tgiPrefix}.${this.selectedLanguage.name}.StringTable.binary`;
         }
     },
     methods: {
@@ -346,8 +356,8 @@ export default {
             return formatKeyAsHex(stringEntry.key) + "<!--" + stringEntry.string + "-->";
         },
         downloadStbl() {
-
-            console.log(this.fileContents);
+            const stblBuffer = serializeStbl(this.fileContents);
+            this.downloadUrl = `data:text/plain;base64,${stblBuffer.toString('base64')}`;
         }
     }
 }
