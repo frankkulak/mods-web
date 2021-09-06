@@ -338,6 +338,18 @@ export default {
 
         document.addEventListener('keydown', this.handleKeydown);
         previousHandlers.push(this.handleKeydown);
+
+        this.autoHashFilenames = localStorage.getItem('fkStblTool_AutoHashFiles') === "true";
+        this.showAllStrings = localStorage.getItem('fkStblTool_ShowAllStrings') === "true";
+        this.entryChunkSize = localStorage.getItem('fkStblTool_ChunkSize') || 40;
+        this.filenameType = localStorage.getItem('fkStblTool_OutputFormat') || 's4s';
+    },
+    mounted() {
+        this.$root.$on('bv::modal::hide', (bvEvent, modalId) => {
+            if (modalId === "settings-modal") {
+                this.saveSettings();
+            }
+        })
     },
     data() {
         return {
@@ -397,6 +409,12 @@ export default {
         }
     },
     methods: {
+        saveSettings() {
+            localStorage.setItem('fkStblTool_AutoHashFiles', this.autoHashFilenames);
+            localStorage.setItem('fkStblTool_ShowAllStrings', this.showAllStrings);
+            localStorage.setItem('fkStblTool_ChunkSize', this.entryChunkSize);
+            localStorage.setItem('fkStblTool_OutputFormat', this.filenameType);
+        },
         handleKeydown(event) {
             const keyComboPassed = (event.ctrlKey || event.metaKey) && event.key === 'n';
             if (keyComboPassed && (Array.isArray(this.fileContents))) {
@@ -424,7 +442,7 @@ export default {
                 i: null
             };
 
-            if (this.autoHashFilenames) {
+            if (this.autoHashFilenames && this.stblFile) {
                 const instanceHex = fnv.hash(this.stblFile.name, 64).hex().toUpperCase().padStart(16, "0");
                 this.fileTGI.i = this.selectedLanguage.stblCode + instanceHex.substring(2);
                 return;
