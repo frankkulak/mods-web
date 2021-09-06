@@ -1,7 +1,7 @@
 export const EnglishData = {
     name: 'English',
     nativeName: 'English',
-    emoji: '🇬🇧',
+    emoji: '🇺🇸',
     stblCode: '00'
 }
 
