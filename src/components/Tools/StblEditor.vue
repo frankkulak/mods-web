@@ -356,7 +356,7 @@ export default {
         },
         setLanguageAndTGIFromFilename() {
             try {
-                const { t, g, i } = /(?<t>[a-fA-F\d]{8})[_!](?<g>[a-fA-F\d]{8})[_!](?<i>[a-fA-F\d]{16})/.exec(this.stblFile.name).groups;
+                const { t, g, i } = /(?<t>[a-fA-F\d]{8})[_!]?(?<g>[a-fA-F\d]{8})[_!]?(?<i>[a-fA-F\d]{16})/.exec(this.stblFile.name).groups;
                 this.fileTGI = {t, g, i};
                 const localeCode = i.substr(0, 2);
                 this.selectedLanguage = this.languages.find(language => language.stblCode === localeCode);
