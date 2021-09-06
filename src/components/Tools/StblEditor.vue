@@ -216,6 +216,9 @@
                     </b-card>
                 </div>
             </b-col>
+            <b-col cols="12" v-if="numEntries > entryChunkSize" class="text-center mt-4">
+                Page {{ currentPage }} of {{ totalPages }}
+            </b-col>
         </b-row>
     </b-container>
 </template>
@@ -315,6 +318,9 @@ export default {
         },
         instanceMatchesLocale() {
             return this.selectedLanguage.stblCode === this.fileTGI.i.substr(0, 2);
+        },
+        totalPages() {
+            return Math.ceil(this.numEntries / this.entryChunkSize);
         }
     },
     methods: {
@@ -476,6 +482,10 @@ export default {
 
         ul.b-pagination {
             margin-bottom: 0;
+        }
+
+        .page-item .page-link {
+            @extend %floating-card;
         }
 
         .page-item:not(.active) .page-link {
