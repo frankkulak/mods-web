@@ -95,7 +95,7 @@ export const Languages = {
 export const GameData = {
     ts4: {
         name: "The Sims 4",
-        lastUpdate: "August 24, 2021"
+        lastUpdate: "September 7, 2021"
     }
 };
 
@@ -620,6 +620,14 @@ export const ModData = {
             ],
             versionHistory: [
                 {
+                    version: '2.0.1',
+                    date: 'September 7, 2021',
+                    bullets: [
+                        'Update French translation.',
+                        'Fix issue with error reporting related to mood switching (you should no longer get Language Barriers Exceptions for issues with moods related to other mods).'
+                    ]
+                },
+                {
                     version: '2.0',
                     date: 'August 25, 2021',
                     bullets: [
@@ -804,7 +812,7 @@ export const ModData = {
             ],
             patreonRelease: null,
             documentationDownload: null,
-            warning: `If you are updating from v1.1.9 to v2.0, please read <a href="https://www.patreon.com/posts/54672756" target="_blank">this post</a> for a summary of what's new. Also, <strong><u>please do not blindly install the new add-ons without reading what they do</u></strong>. Some of the add-ons disable content from the mod, so make sure you know what you're installing before you tell me something "isn't working".`,
+            warning: `If you are updating from v1.1.9 to v2.0, please read <a href="https://www.patreon.com/posts/54672756" target="_blank">this post</a> for a summary of what's new. Also, <strong><u>please do not blindly install the new add-ons without reading what they do</u></strong>. Some of the add-ons disable content from the mod, so make sure you know what you're installing before you tell me something isn't working.`,
             hasStrings: true,
             translations: [
                 {
