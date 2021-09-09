@@ -101,15 +101,22 @@
                         </button>
                         <b-modal id="settings-modal" title="Settings" hide-footer>
                             <b-container fluid>
-                                <b-row align-v="center" class="my-4">
+                                <b-row align-v="center" class="my-3">
+                                    <b-col cols="12">
+                                        <h4 class="mb-3">Importing</h4>
+                                    </b-col>
                                     <b-col>
-                                        <label class="mb-0">Auto hash filenames</label>
+                                        <label class="mb-0">Auto-hash filenames</label>
                                     </b-col>
                                     <b-col>
                                         <b-form-checkbox v-model="autoHashFilenames" switch></b-form-checkbox>
                                     </b-col>
                                 </b-row>
-                                <b-row align-v="center" class="my-4">
+                                <b-row align-v="center" class="my-3">
+                                    <b-col cols="12">
+                                        <hr>
+                                        <h4 class="mb-3">Display</h4>
+                                    </b-col>
                                     <b-col>
                                         <label class="mb-0">Show all strings</label>
                                     </b-col>
@@ -120,7 +127,7 @@
                                         </div>
                                     </b-col>
                                 </b-row>
-                                <b-row align-v="center" class="my-4">
+                                <b-row align-v="center" class="my-3">
                                     <b-col>
                                         <label class="mb-0">Strings per page</label>
                                     </b-col>
@@ -142,9 +149,24 @@
                                         </div>
                                     </b-col>
                                 </b-row>
-                                <b-row align-v="center" class="my-4">
+<!--                                <b-row align-v="center" class="my-3">-->
+<!--                                    <b-col>-->
+<!--                                        <label class="mb-0">Page layout</label>-->
+<!--                                    </b-col>-->
+<!--                                    <b-col>-->
+<!--                                        <b-form-radio-group-->
+<!--                                            v-model="chosenLayoutType"-->
+<!--                                            :options="layoutTypes"-->
+<!--                                        ></b-form-radio-group>-->
+<!--                                    </b-col>-->
+<!--                                </b-row>-->
+                                <b-row align-v="center" class="my-3">
+                                    <b-col cols="12">
+                                        <hr>
+                                        <h4 class="mb-3">Exporting</h4>
+                                    </b-col>
                                     <b-col>
-                                        <label class="mb-0">Export files as...</label>
+                                        <label class="mb-0">Naming convention</label>
                                     </b-col>
                                     <b-col>
                                         <b-form-radio-group
@@ -222,63 +244,65 @@
                     <span v-on:click="newString" class="clickable">click here</span>.
                 </p>
             </b-col>
-            <b-col cols="12" md="6" v-for="(stringEntry, n) in entriesToShow" :key="n" class="my-3">
-                <div>
-                    <b-card class="floating-card">
-                        <div class="d-flex flex-row mb-2">
-                            <h3>{{ getHexCode(n) }}</h3>
-                            <div class="w-100 text-right" style="font-size: 1.2em">
-                                <b-icon-clipboard
-                                    v-clipboard="() => keyToClipboard(n)"
-                                    class="hover-cursor"
-                                    :id="`clipboard-${n}`"
-                                    title="Copy key to clipboard"
-                                />
-                                <b-popover :target="`clipboard-${n}`" triggers="click blur" placement="top">
-                                    Copied!
-                                </b-popover>
-                                <b-icon-clipboard-plus
-                                    v-clipboard="() => keyAndStringToClipboard(n)"
-                                    class="hover-cursor ml-2"
-                                    :id="`clipboard-plus-${n}`"
-                                    title="Copy key and comment to clipboard"
-                                />
-                                <b-popover :target="`clipboard-plus-${n}`" triggers="click blur" placement="top">
-                                    Copied!
-                                </b-popover>
-                                <b-icon-three-dots class="ml-2" :id="`more-actions-${n}`"></b-icon-three-dots>
-                                <b-popover :target="`more-actions-${n}`" triggers="hover" placement="top">
-                                    <b-icon-key
-                                        title="Edit existing key"
+            <b-row class="w-100 m-0 p-0 text-center">
+                <b-col cols="12" sm="6" md="4"  v-for="(stringEntry, n) in entriesToShow" :key="n" class="my-3">
+                    <div>
+                        <b-card class="floating-card">
+                            <div class="d-flex flex-row mb-2">
+                                <h3>{{ getHexCode(n) }}</h3>
+                                <div class="w-100 text-right" style="font-size: 1.2em">
+                                    <b-icon-clipboard
+                                        v-clipboard="() => keyToClipboard(n)"
                                         class="hover-cursor"
-                                        v-on:click="setManualKey(n)"
+                                        :id="`clipboard-${n}`"
+                                        title="Copy key to clipboard"
                                     />
-                                    <b-icon-arrow-repeat
-                                        title="Generate new key"
-                                        class="ml-2 hover-cursor"
-                                        v-on:click="newHash(n)"
+                                    <b-popover :target="`clipboard-${n}`" triggers="click blur" placement="top">
+                                        Copied!
+                                    </b-popover>
+                                    <b-icon-clipboard-plus
+                                        v-clipboard="() => keyAndStringToClipboard(n)"
+                                        class="hover-cursor ml-2"
+                                        :id="`clipboard-plus-${n}`"
+                                        title="Copy key and comment to clipboard"
                                     />
-                                    <b-icon-trash-fill
-                                        variant="danger"
-                                        class="ml-2 hover-cursor"
-                                        title="Delete string"
-                                        v-on:click="deleteString(n)"
-                                    />
-                                </b-popover>
+                                    <b-popover :target="`clipboard-plus-${n}`" triggers="click blur" placement="top">
+                                        Copied!
+                                    </b-popover>
+                                    <b-icon-three-dots class="ml-2" :id="`more-actions-${n}`"></b-icon-three-dots>
+                                    <b-popover :target="`more-actions-${n}`" triggers="hover" placement="top">
+                                        <b-icon-key
+                                            title="Edit existing key"
+                                            class="hover-cursor"
+                                            v-on:click="setManualKey(n)"
+                                        />
+                                        <b-icon-arrow-repeat
+                                            title="Generate new key"
+                                            class="ml-2 hover-cursor"
+                                            v-on:click="newHash(n)"
+                                        />
+                                        <b-icon-trash-fill
+                                            variant="danger"
+                                            class="ml-2 hover-cursor"
+                                            title="Delete string"
+                                            v-on:click="deleteString(n)"
+                                        />
+                                    </b-popover>
+                                </div>
                             </div>
-                        </div>
 
-                        <b-form-textarea
-                            v-model="stringEntry.string"
-                            placeholder="{0.SimFirstName} is reticulating {M0.his}{F0.her} splines!"
-                            rows="3"
-                            max-rows="3"
-                            no-resize
-                            debounce="500"
-                        ></b-form-textarea>
-                    </b-card>
-                </div>
-            </b-col>
+                            <b-form-textarea
+                                v-model="stringEntry.string"
+                                placeholder="{0.SimFirstName} is reticulating {M0.his}{F0.her} splines!"
+                                rows="3"
+                                max-rows="3"
+                                no-resize
+                                debounce="500"
+                            ></b-form-textarea>
+                        </b-card>
+                    </div>
+                </b-col>
+            </b-row>
             <b-col cols="12" v-if="entriesToShow.length < numEntries" class="text-center mt-4">
                 Page {{ currentPage }} of {{ totalPages }}
             </b-col>
@@ -341,8 +365,9 @@ export default {
 
         this.autoHashFilenames = localStorage.getItem('fkStblTool_AutoHashFiles') === "true";
         this.showAllStrings = localStorage.getItem('fkStblTool_ShowAllStrings') === "true";
-        this.entryChunkSize = localStorage.getItem('fkStblTool_ChunkSize') || 40;
+        this.entryChunkSize = localStorage.getItem('fkStblTool_ChunkSize') || 24;
         this.filenameType = localStorage.getItem('fkStblTool_OutputFormat') || 's4s';
+        // this.chosenLayoutType = localStorage.getItem('fkStblTool_LayoutType') || 'cards';
     },
     mounted() {
         this.$root.$on('bv::modal::hide', (bvEvent, modalId) => {
@@ -360,7 +385,7 @@ export default {
             selectedLanguage: EnglishData,
             fileTGI: null,
             downloadUrl: '',
-            entryChunkSize: 40,
+            entryChunkSize: 24,
             currentPage: 1,
             showAllStrings: false,
             autoHashFilenames: false,
@@ -368,7 +393,12 @@ export default {
             filenameTypeOptions: [
                 { text: 'S4S', value: 's4s' },
                 { text: 'S4PE', value: 's4pe' }
-            ]
+            ],
+            // chosenLayoutType: 'cards',
+            // layoutTypes: [
+            //     { text: 'Cards', value: 'cards' },
+            //     { text: 'List', value: 'list' }
+            // ]
         }
     },
     computed: {
@@ -415,6 +445,7 @@ export default {
             localStorage.setItem('fkStblTool_ShowAllStrings', this.showAllStrings);
             localStorage.setItem('fkStblTool_ChunkSize', this.entryChunkSize);
             localStorage.setItem('fkStblTool_OutputFormat', this.filenameType);
+            // localStorage.setItem('fkStblTool_LayoutType', this.chosenLayoutType);
         },
         handleKeydown(event) {
             const keyComboPassed = (event.ctrlKey || event.metaKey) && event.key === 'n';

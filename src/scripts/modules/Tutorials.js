@@ -2,6 +2,7 @@ export const TutorialCategoryData = {
     ts4: {
         languagebarriers: [
             'lbconfig',
+            'lbintegrations'
         ],
         scripting: [
             'autotraits',
@@ -19,6 +20,13 @@ export const TutorialData = {
             description: `Learn how to make basic customizations for <em>Language Barriers</em> using the provided config file. This tutorial assumes absolutely no knowledge of modding, and just requires you to use a text editor.`,
             platform: 'Patreon',
             link: 'https://www.patreon.com/posts/54392738'
+        },
+        lbintegrations: {
+            id: 'lbintegrations',
+            name: 'Integrate Your Mod with LB',
+            description: `Learn how to create an integration snippet so that your mod works better with <em>Language Barriers</em> installed.`,
+            platform: 'Medium',
+            link: 'https://frankkmods.medium.com/how-to-integrate-your-mod-with-language-barriers-a1680c7bceab'
         },
         autotraits: {
             id: 'autotraits',
