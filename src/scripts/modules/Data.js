@@ -620,6 +620,15 @@ export const ModData = {
             ],
             versionHistory: [
                 {
+                    version: '2.0.2',
+                    date: 'September 13, 2021',
+                    bullets: [
+                        'Fix minor tuning errors.',
+                        'Fix issue that caused <code>fklb.audit</code> to not work properly.',
+                        'Fix bug where NPC toddlers who are never loaded in (due to MCCC story progression) would speak Sixami by default. This should no longer happen, and can be fixed retroactively by running the cheat <code>fklb.fix_sixami_bug</code> on each of your affected saves. The aforementioned cheat will only affect NPC sims, but if you need to also fix your played sims, you can do so with <code>fklb.fix_sixami_bug all_sims</code>.'
+                    ]
+                },
+                {
                     version: '2.0.1',
                     date: 'September 7, 2021',
                     bullets: [
@@ -812,7 +821,7 @@ export const ModData = {
             ],
             patreonRelease: null,
             documentationDownload: null,
-            warning: `If you are updating from v1.1.9 to v2.0, please read <a href="https://www.patreon.com/posts/54672756" target="_blank">this post</a> for a summary of what's new. Also, <strong><u>please do not blindly install the new add-ons without reading what they do</u></strong>. Some of the add-ons disable content from the mod, so make sure you know what you're installing before you tell me something isn't working.`,
+            warning: `If you were playing LB v2.0 or v2.0.1 with MCCC story progression enabled, you probably have a lot of random sims speaking Sixami. This has been patched and will no longer happen, but to fix your existing saves, you must run the cheat <code>fklb.fix_sixami_bug</code> on each one. Using that cheat will only affect NPC sims, so that your played sims do not have their languages changed. If you need to fix your played sims as well, please use <code>fklb.fix_sixami_bug all_sims</code>.`,
             hasStrings: true,
             translations: [
                 {

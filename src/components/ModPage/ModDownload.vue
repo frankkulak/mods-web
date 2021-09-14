@@ -29,7 +29,11 @@
                     </ul>
 
                     <b-alert variant="warning" class="text-left mb-5" v-if="mod.warning !== null" show>
-                        <strong>&#9888; NOTICE: </strong>
+                        <h1 class="notice-header my-3 w-100 text-center">
+                            <b-icon-exclamation-diamond-fill/>
+                            Before downloading, READ THIS!
+                            <b-icon-exclamation-diamond-fill/>
+                        </h1>
                         <span v-html="mod.warning"></span>
                     </b-alert>
 
@@ -80,10 +84,11 @@
 
 <script>
     import SectionHeader from "../Common/SectionHeader";
+    import { BIconExclamationDiamondFill } from 'bootstrap-vue';
 
     export default {
         name: "ModDownload",
-        components: {SectionHeader},
+        components: {SectionHeader, BIconExclamationDiamondFill},
         props: {
             mod: Object
         },
@@ -102,6 +107,10 @@
 
         h1, h2, h3, h4 {
             color: white;
+
+            &.notice-header {
+                color: #856404;
+            }
         }
 
         .alert strong {
