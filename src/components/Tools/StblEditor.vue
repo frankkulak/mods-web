@@ -98,6 +98,16 @@
                 </b-button-toolbar>
                 <b-button-toolbar class="text-right float-right floating-card mr-3">
                     <b-button-group>
+                        <button v-on:click="clearSearch()" title="Clear search" class="btn btn-primary" :disabled="searchTerm === null">
+                            <b-icon-x-circle/>
+                        </button>
+                        <button v-on:click="searchButtonClicked()" title="Search" class="btn btn-primary">
+                            <b-icon-search/>
+                        </button>
+                    </b-button-group>
+                </b-button-toolbar>
+                <b-button-toolbar class="text-right float-right floating-card mr-3">
+                    <b-button-group>
                         <button v-b-modal.settings-modal title="Settings" class="btn btn-primary">
                             <b-icon-gear/>
                         </button>
@@ -252,6 +262,12 @@
                     <span v-on:click="newString" class="clickable">click here</span>.
                 </p>
             </b-col>
+            <b-col cols="12" v-else-if="filteredStrings.length === 0 && searchTerm !== null" class="my-5 text-center">
+                <p>No strings in this table contain "{{ searchTerm }}". You can either
+                    <span @click="clearSearch" class="clickable">clear your search term</span>,
+                    or <span @click="searchButtonClicked" class="clickable">try another one</span>.
+                </p>
+            </b-col>
             <b-row class="w-100 m-0 p-0 text-center" v-if="this.chosenLayoutType === 'cards'">
                 <b-col cols="12" sm="6" md="4" v-for="(stringEntry, n) in entriesToShow" :key="n" class="my-3">
                     <div>
@@ -389,7 +405,9 @@ import {
     BIconThreeDots,
     BIconKey,
     BIconDownload,
-    BIconGear
+    BIconGear,
+    BIconSearch,
+    BIconXCircle
 } from 'bootstrap-vue';
 import {getStblContents} from "@/scripts/tools/stblDecoder";
 import {Languages, EnglishData} from "@/scripts/tools/stblUtils";
@@ -417,7 +435,9 @@ export default {
         BIconClipboardPlus,
         BIconKey,
         BIconDownload,
-        BIconGear
+        BIconGear,
+        BIconSearch,
+        BIconXCircle
     },
     created() {
         if (previousHandlers.length > 0) {
@@ -466,7 +486,8 @@ export default {
             layoutTypes: [
                 {text: 'Cards', value: 'cards'},
                 {text: 'List', value: 'list'}
-            ]
+            ],
+            searchTerm: null
         }
     },
     computed: {
@@ -480,13 +501,17 @@ export default {
             }
         },
         entriesToShow() {
-            if (this.showAllStrings) return this.fileContents;
+            if (this.showAllStrings) return this.filteredStrings;
             const endIndex = Math.min(this.numEntries, this.currentPage * this.entryChunkSize);
             const offset = (this.currentPage - 1) * this.entryChunkSize;
-            return this.fileContents.slice(offset, endIndex)
+            return this.filteredStrings.slice(offset, endIndex)
+        },
+        filteredStrings() {
+            if (this.searchTerm === null) return this.fileContents;
+            return this.fileContents.filter(entry => entry.string.toLowerCase().includes(this.searchTerm));
         },
         numEntries() {
-            return this.fileContents.length;
+            return this.filteredStrings.length;
         },
         typeIsValid() {
             return this.fileTGI.t === "220557DA";
@@ -590,14 +615,27 @@ export default {
         },
         deleteString(index) {
             const indexToUse = index + ((this.currentPage - 1) * this.entryChunkSize);
-            if (confirm(`Are you sure you want to delete string ${formatKeyAsHex(this.fileContents[indexToUse].key)}? This action cannot be undone.`)) {
-                this.fileContents.splice(indexToUse, 1);
+            const stringKey = this.filteredStrings[indexToUse].key;
+            if (confirm(`Are you sure you want to delete string ${formatKeyAsHex(stringKey)}? This action cannot be undone.`)) {
+                if (this.fileContents.length === this.filteredStrings.length) {
+                    this.fileContents.splice(indexToUse, 1);
+                } else {
+                    const indexToRemove = this.fileContents.findIndex(({key}) => key === stringKey);
+                    this.fileContents.splice(indexToRemove, 1);
+                }
             }
         },
         newString() {
             const string = prompt("Enter a string.");
             const key = parseInt(fnv.fast1a32hex(string), 16);
             this.fileContents.push({key, string});
+        },
+        searchButtonClicked() {
+            const result = prompt("Only show strings containing...", this.searchTerm || '');
+            this.searchTerm = result ? result.toLowerCase() : null;
+        },
+        clearSearch() {
+            this.searchTerm = null;
         },
         newHash(index) {
             const stringEntry = this.entriesToShow[index];
@@ -670,7 +708,7 @@ export default {
             border-color: $blurple;
             color: white;
 
-            &:hover {
+            &:hover:not(:disabled) {
                 border-color: white;
             }
         }
