@@ -317,6 +317,8 @@
 
                             <b-form-textarea
                                 v-model="stringEntry.string"
+                                @focusin="onStringInputFocused"
+                                @focusout="onStringInputUnfocused"
                                 placeholder="{0.SimFirstName} is reticulating {M0.his}{F0.her} splines!"
                                 rows="3"
                                 max-rows="3"
@@ -337,6 +339,8 @@
                             <b-col cols="12" md="8" xl="10">
                                 <b-form-input
                                     style=""
+                                    @focusin="onStringInputFocused"
+                                    @focusout="onStringInputUnfocused"
                                     v-model="stringEntry.string"
                                     placeholder="{0.SimFirstName} is reticulating {M0.his}{F0.her} splines!"
                                     debounce="500"
@@ -487,7 +491,8 @@ export default {
                 {text: 'Cards', value: 'cards'},
                 {text: 'List', value: 'list'}
             ],
-            searchTerm: null
+            searchTerm: null,
+            cachedFilteredStrings: null
         }
     },
     computed: {
@@ -508,7 +513,10 @@ export default {
         },
         filteredStrings() {
             if (this.searchTerm === null) return this.fileContents;
-            return this.fileContents.filter(entry => entry.string.toLowerCase().includes(this.searchTerm));
+            if (this.cachedFilteredStrings !== null) return this.cachedFilteredStrings;
+            return this.fileContents.filter(entry => {
+                return this.stringKeyBeingEdited === entry.key || entry.string.toLowerCase().includes(this.searchTerm);
+            });
         },
         numEntries() {
             return this.filteredStrings.length;
@@ -613,6 +621,14 @@ export default {
                 }
             });
         },
+        onStringInputFocused() {
+            if (this.searchTerm === null) return;
+            this.cachedFilteredStrings = this.filteredStrings;
+        },
+        onStringInputUnfocused() {
+            if (this.searchTerm === null) return;
+            this.cachedFilteredStrings = null;
+        },
         deleteString(index) {
             const indexToUse = index + ((this.currentPage - 1) * this.entryChunkSize);
             const stringKey = this.filteredStrings[indexToUse].key;
@@ -632,10 +648,12 @@ export default {
         },
         searchButtonClicked() {
             const result = prompt("Only show strings containing...", this.searchTerm || '');
-            this.searchTerm = result ? result.toLowerCase() : null;
+            if (result !== null) this.searchTerm = result ? result.toLowerCase() : null;
+            this.cachedFilteredStrings = null;
         },
         clearSearch() {
             this.searchTerm = null;
+            this.cachedFilteredStrings = null;
         },
         newHash(index) {
             const stringEntry = this.entriesToShow[index];
