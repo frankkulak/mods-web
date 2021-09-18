@@ -163,6 +163,14 @@
                                 </b-row>
                                 <b-row align-v="center" class="my-3">
                                     <b-col>
+                                        <label class="mb-0">Show previous text</label>
+                                    </b-col>
+                                    <b-col>
+                                        <b-form-checkbox v-model="showPreviousTextTooltip" switch></b-form-checkbox>
+                                    </b-col>
+                                </b-row>
+                                <b-row align-v="center" class="my-3">
+                                    <b-col>
                                         <label class="mb-0">Page layout</label>
                                     </b-col>
                                     <b-col>
@@ -331,7 +339,7 @@
                                 v-if="showStringEntryTooltip(stringEntry)"
                                 title="Previous Text"
                                 :content="selectedEntryPreviousState.string"
-                                placement="topleft">
+                                placement="top">
                             </b-popover>
                         </b-card>
                     </div>
@@ -360,7 +368,7 @@
                                     v-if="showStringEntryTooltip(stringEntry)"
                                     title="Previous Text"
                                     :content="selectedEntryPreviousState.string"
-                                    placement="topleft">
+                                    placement="top">
                                 </b-popover>
                             </b-col>
                             <b-col cols="12" md="2" xl="1" class="px-md-1 mt-2 mt-md-0">
@@ -477,12 +485,8 @@ export default {
         this.entryChunkSize = localStorage.getItem('fkStblTool_ChunkSize') || 24;
         this.filenameType = localStorage.getItem('fkStblTool_OutputFormat') || 's4s';
         this.chosenLayoutType = localStorage.getItem('fkStblTool_LayoutType') || 'cards';
-        const fkStblTool_PrevTextTooltip = localStorage.getItem('fkStblTool_PrevTextTooltip');
-        if (fkStblTool_PrevTextTooltip === null) {
-            this.showPreviousTextTooltip = true;
-        } else {
-            this.showPreviousTextTooltip = fkStblTool_PrevTextTooltip === "true";
-        }
+        const prevTextTooltip = localStorage.getItem('fkStblTool_PrevTextTooltip');
+        this.showPreviousTextTooltip = prevTextTooltip === null || prevTextTooltip === "true";
     },
     mounted() {
         this.$root.$on('bv::modal::hide', (bvEvent, modalId) => {
@@ -663,6 +667,7 @@ export default {
             this.cachedFilteredStrings = null;
         },
         showStringEntryTooltip(thisEntry) {
+            if (!this.showPreviousTextTooltip) return false;
             if (this.selectedEntryPreviousState === null) return false;
             return (thisEntry.key === this.selectedEntryPreviousState.key);
         },
