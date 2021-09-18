@@ -317,14 +317,22 @@
 
                             <b-form-textarea
                                 v-model="stringEntry.string"
-                                @focusin="onStringInputFocused"
+                                @focusin="onStringInputFocused(stringEntry)"
                                 @focusout="onStringInputUnfocused"
                                 placeholder="{0.SimFirstName} is reticulating {M0.his}{F0.her} splines!"
+                                :id="`string-input-${n}`"
                                 rows="3"
                                 max-rows="3"
                                 no-resize
                                 debounce="500"
                             ></b-form-textarea>
+                            <b-popover
+                                :target="`string-input-${n}`"
+                                v-if="showStringEntryTooltip(stringEntry)"
+                                title="Previous Text"
+                                :content="selectedEntryPreviousState.string"
+                                placement="topleft">
+                            </b-popover>
                         </b-card>
                     </div>
                 </b-col>
@@ -339,12 +347,21 @@
                             <b-col cols="12" md="8" xl="10">
                                 <b-form-input
                                     style=""
-                                    @focusin="onStringInputFocused"
+                                    :id="`string-input-${n}`"
+                                    @focusin="onStringInputFocused(stringEntry)"
                                     @focusout="onStringInputUnfocused"
                                     v-model="stringEntry.string"
                                     placeholder="{0.SimFirstName} is reticulating {M0.his}{F0.her} splines!"
                                     debounce="500"
+                                    autocomplete="off"
                                 ></b-form-input>
+                                <b-popover
+                                    :target="`string-input-${n}`"
+                                    v-if="showStringEntryTooltip(stringEntry)"
+                                    title="Previous Text"
+                                    :content="selectedEntryPreviousState.string"
+                                    placement="topleft">
+                                </b-popover>
                             </b-col>
                             <b-col cols="12" md="2" xl="1" class="px-md-1 mt-2 mt-md-0">
                                 <div style="font-size: 1.2em;" class="text-left text-md-center text-nowrap">
@@ -460,6 +477,12 @@ export default {
         this.entryChunkSize = localStorage.getItem('fkStblTool_ChunkSize') || 24;
         this.filenameType = localStorage.getItem('fkStblTool_OutputFormat') || 's4s';
         this.chosenLayoutType = localStorage.getItem('fkStblTool_LayoutType') || 'cards';
+        const fkStblTool_PrevTextTooltip = localStorage.getItem('fkStblTool_PrevTextTooltip');
+        if (fkStblTool_PrevTextTooltip === null) {
+            this.showPreviousTextTooltip = true;
+        } else {
+            this.showPreviousTextTooltip = fkStblTool_PrevTextTooltip === "true";
+        }
     },
     mounted() {
         this.$root.$on('bv::modal::hide', (bvEvent, modalId) => {
@@ -491,8 +514,10 @@ export default {
                 {text: 'Cards', value: 'cards'},
                 {text: 'List', value: 'list'}
             ],
+            showPreviousTextTooltip: true,
             searchTerm: null,
-            cachedFilteredStrings: null
+            cachedFilteredStrings: null,
+            selectedEntryPreviousState: null
         }
     },
     computed: {
@@ -547,6 +572,7 @@ export default {
             localStorage.setItem('fkStblTool_ChunkSize', this.entryChunkSize);
             localStorage.setItem('fkStblTool_OutputFormat', this.filenameType);
             localStorage.setItem('fkStblTool_LayoutType', this.chosenLayoutType);
+            localStorage.setItem('fkStblTool_PrevTextTooltip', this.showPreviousTextTooltip);
         },
         handleKeydown(event) {
             const keyComboPassed = (event.ctrlKey || event.metaKey) && event.key === 'n';
@@ -621,13 +647,24 @@ export default {
                 }
             });
         },
-        onStringInputFocused() {
+        onStringInputFocused(entryState) {
+            if (this.selectedEntryPreviousState === null) {
+                this.selectedEntryPreviousState = {
+                    key: entryState.key,
+                    string: entryState.string
+                };
+            }
             if (this.searchTerm === null) return;
             this.cachedFilteredStrings = this.filteredStrings;
         },
         onStringInputUnfocused() {
+            this.selectedEntryPreviousState = null;
             if (this.searchTerm === null) return;
             this.cachedFilteredStrings = null;
+        },
+        showStringEntryTooltip(thisEntry) {
+            if (this.selectedEntryPreviousState === null) return false;
+            return (thisEntry.key === this.selectedEntryPreviousState.key);
         },
         deleteString(index) {
             const indexToUse = index + ((this.currentPage - 1) * this.entryChunkSize);
