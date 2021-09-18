@@ -3,12 +3,12 @@
         <div class="mb-5">
             <div class="mb-5">
                 <h1 class="mb-3">String Table Editor</h1>
-                <p>This experimental tool provides an interface for creating and editing string tables. It
-                    currently only works with string table binaries (<code>.binary</code>/<code>.stbl</code> files),
-                    and can only edit one at a time. Support for packages and multiple string tables will come soon™.
-                    Reach out to me on Discord if you experience any issues while using it.</p>
-                <p>Please note that this tool does not edit the files you upload. It just uses their contents as a
-                    starting point, and then lets you download a modified version.</p>
+                <p>This experimental tool provides an interface for creating and editing string tables. It only works
+                    with string table binaries (<code>.binary</code>/<code>.stbl</code> files), not packages. Please
+                    note that this tool does not edit the files you upload, but allows you to modify and download a
+                    copy of it. Reach out to me on Discord if you experience any issues.</p>
+                <p>This is meant to be a temporary solution while I work on something larger, so I may discontinue
+                    support for it when my other tool is completed.</p>
             </div>
 
             <div class="mb-5">
@@ -88,7 +88,9 @@
                            :href="downloadUrl"
                            :download="downloadFilename"
                            title="Download string table"
-                           class="btn btn-primary"><b-icon-download/></a>
+                           class="btn btn-primary">
+                            <b-icon-download/>
+                        </a>
                         <button v-on:click="newString()" title="New string" class="btn btn-primary">
                             <b-icon-plus-circle/>
                         </button>
@@ -175,7 +177,8 @@
                                         ></b-form-radio-group>
                                     </b-col>
                                     <b-col cols="12">
-                                        <p class="mt-2" style="font-size: 0.8em;">Note: If making a translation for me, please use S4S.</p>
+                                        <p class="mt-2" style="font-size: 0.8em;">Note: If you are translating one of
+                                            my mods, please export as S4S.</p>
                                     </b-col>
                                 </b-row>
                             </b-container>
@@ -237,7 +240,9 @@
                 />
                 <b-form-invalid-feedback>
                     <p v-if="!instanceIs64Bit" class="mb-0">Instance must be a 64-bit hex code</p>
-                    <p v-if="!instanceMatchesLocale">First two digits must match locale ({{ selectedLanguage.stblCode }})</p>
+                    <p v-if="!instanceMatchesLocale">First two digits must match locale ({{
+                            selectedLanguage.stblCode
+                        }})</p>
                 </b-form-invalid-feedback>
             </b-col>
             <b-col cols="12" v-if="fileContents === null || fileContents.length === 0" class="my-5 text-center">
@@ -306,22 +311,23 @@
                     </div>
                 </b-col>
             </b-row>
-            <b-row class="w-100 m-0 p-0 text-center" v-else>
-                <b-col cols="12" v-for="(stringEntry, n) in entriesToShow" :key="n" class="py-1">
-                    <b-card>
+            <b-row class="w-100 mx-0 mb-0 mt-3 p-0 text-center" v-else>
+                <b-col cols="12" v-for="(stringEntry, n) in entriesToShow" :key="n" class="listview-column">
+                    <b-card :class="n % 2 === 0 ? 'listview-card' : 'listview-card listview-card-dark'">
                         <b-row align-v="center">
-                            <b-col cols="12" md="2" class="text-md-center text-left px-1">
-                                <h4>{{ getHexCode(n) }}</h4>
+                            <b-col cols="12" md="2" xl="1" class="px-md-1 mb-2 mb-md-0 text-left text-md-center text-nowrap">
+                                <h4 class="my-auto">{{ getHexCode(n) }}</h4>
                             </b-col>
-                            <b-col cols="12" md="8" class="px-1">
+                            <b-col cols="12" md="8" xl="10">
                                 <b-form-input
+                                    style=""
                                     v-model="stringEntry.string"
                                     placeholder="{0.SimFirstName} is reticulating {M0.his}{F0.her} splines!"
                                     debounce="500"
                                 ></b-form-input>
                             </b-col>
-                            <b-col cols="12" md="2" class="text-md-center text-left px-1">
-                                <div style="font-size: 1.2em;">
+                            <b-col cols="12" md="2" xl="1" class="px-md-1 mt-2 mt-md-0">
+                                <div style="font-size: 1.2em;" class="text-left text-md-center text-nowrap">
                                     <b-icon-clipboard
                                         v-clipboard="() => keyToClipboard(n)"
                                         class="hover-cursor"
@@ -453,13 +459,13 @@ export default {
             autoHashFilenames: false,
             filenameType: 's4s',
             filenameTypeOptions: [
-                { text: 'S4S', value: 's4s' },
-                { text: 'S4PE', value: 's4pe' }
+                {text: 'S4S', value: 's4s'},
+                {text: 'S4PE', value: 's4pe'}
             ],
             chosenLayoutType: 'cards',
             layoutTypes: [
-                { text: 'Cards', value: 'cards' },
-                { text: 'List', value: 'list' }
+                {text: 'Cards', value: 'cards'},
+                {text: 'List', value: 'list'}
             ]
         }
     },
@@ -553,7 +559,11 @@ export default {
         },
         setLanguageAndTGIFromFilename() {
             try {
-                const { t, g, i } = /(?<t>[a-fA-F\d]{8})[_!]?(?<g>[a-fA-F\d]{8})[_!]?(?<i>[a-fA-F\d]{16})/.exec(this.stblFile.name).groups;
+                const {
+                    t,
+                    g,
+                    i
+                } = /(?<t>[a-fA-F\d]{8})[_!]?(?<g>[a-fA-F\d]{8})[_!]?(?<i>[a-fA-F\d]{16})/.exec(this.stblFile.name).groups;
                 this.fileTGI = {t, g, i};
                 const localeCode = i.substr(0, 2);
                 this.selectedLanguage = this.languages.find(language => language.stblCode === localeCode);
@@ -700,6 +710,30 @@ export default {
 
     .floating-card {
         @extend %floating-card;
+    }
+
+    .listview-column {
+        .listview-card {
+            border-radius: 0;
+            border-top: none;
+            border-bottom: none;
+
+            &.listview-card-dark {
+                background-color: #f7f7f7;
+
+                input {
+                    background-color: #fbfbfb;
+                }
+            }
+        }
+
+        &:first-child .listview-card {
+            border-top: 1px solid rgba(0, 0, 0, 0.125);
+        }
+
+        &:last-child .listview-card {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+        }
     }
 
     .hover-cursor:hover {
