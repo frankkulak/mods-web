@@ -1,7 +1,7 @@
 <template>
     <b-container id="tools-page" class="py-5" fluid>
         <b-container fluid>
-            <section-header text="string tables" class="mb-4"/>
+            <section-header text="web tools" class="mb-4"/>
             <p>Please note that these tools are currently considered experimental, and you should double-check
                 their output before using anything they produce in your releases.</p>
             <b-row>
@@ -10,8 +10,10 @@
                         <b-row align-h="center" class="tutorial-link-row text-left mb-3 py-3 h-100">
                             <b-col cols="12">
                                 <h3 class="font-weight-bold">String Table Editor</h3>
-                                <p class="mt-3">A tool that provides an interface for creating and editing string
-                                    tables.</p>
+                                <p class="mt-3">Allows you to create, modify, and search through string tables of any
+                                    size (tested up to 60k!). Features include autohashing, autosave, quick copying, two
+                                    views to choose from, and more. Be sure to check out the settings (click on the gear
+                                    icon after opening a string table) to customize your experience.</p>
                             </b-col>
                         </b-row>
                     </a>
@@ -22,7 +24,10 @@
                         <b-row align-h="center" class="tutorial-link-row text-left mb-3 py-3 h-100">
                             <b-col cols="12">
                                 <h3 class="font-weight-bold">String Table Merger</h3>
-                                <p class="mt-3">A tool that makes combining string tables easy.</p>
+                                <p class="mt-3">Allows you to quickly and easily combine many string tables into one.
+                                    You can choose the language, type, group, and instance of the file that is output,
+                                    as well as the naming convention to use. Support for merging multiple languages at a
+                                    time is planned, but not implemented yet.</p>
                             </b-col>
                         </b-row>
                     </a>
