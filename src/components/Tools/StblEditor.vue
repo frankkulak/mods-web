@@ -125,6 +125,17 @@
                                     </b-col>
                                 </b-row>
                                 <b-row align-v="center" class="my-3">
+                                    <b-col>
+                                        <label class="mb-0">Autosave & recovery</label>
+                                    </b-col>
+                                    <b-col>
+                                        <b-form-checkbox
+                                            v-model="shouldCacheFileContents"
+                                            switch
+                                            @change="cacheSettingChanged"></b-form-checkbox>
+                                    </b-col>
+                                </b-row>
+                                <b-row align-v="center" class="my-3">
                                     <b-col cols="12">
                                         <hr>
                                         <h4 class="mb-3">Display</h4>
@@ -619,6 +630,9 @@ export default {
                     localStorage.setItem('fkStblTool_FileTGI', JSON.stringify(this.fileTGI));
                 }
             }
+        },
+        cacheSettingChanged() {
+            if (!this.shouldCacheFileContents) this.clearFileCache();
         },
         clearFileCache() {
             localStorage.removeItem('fkStblTool_FileContents');
