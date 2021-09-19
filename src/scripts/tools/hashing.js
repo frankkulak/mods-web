@@ -7,12 +7,12 @@ const fnvOptions = {
     bit32: {
         prime: 0x01000193n,
         offset: 0x811C9DC5n,
-        max: 0xFFFFFFFFn
+        max: 0x100000000n
     },
     bit64: {
         prime: 0x00000100000001B3n,
         offset: 0xCBF29CE484222325n,
-        max: 0xFFFFFFFFFFFFFFFFn
+        max: 0x10000000000000000n
     }
 }
 

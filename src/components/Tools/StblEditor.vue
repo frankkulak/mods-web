@@ -114,17 +114,6 @@
                         <b-modal id="settings-modal" title="Settings" hide-footer>
                             <b-container fluid>
                                 <b-row align-v="center" class="my-3">
-                                    <b-col cols="12">
-                                        <h4 class="mb-3">Importing</h4>
-                                    </b-col>
-                                    <b-col>
-                                        <label class="mb-0">Auto-hash filenames</label>
-                                    </b-col>
-                                    <b-col>
-                                        <b-form-checkbox v-model="autoHashFilenames" switch></b-form-checkbox>
-                                    </b-col>
-                                </b-row>
-                                <b-row align-v="center" class="my-3">
                                     <b-col>
                                         <label class="mb-0">Autosave & recovery</label>
                                     </b-col>
@@ -133,6 +122,34 @@
                                             v-model="shouldCacheFileContents"
                                             switch
                                             @change="cacheSettingChanged"></b-form-checkbox>
+                                    </b-col>
+                                </b-row>
+                                <b-row align-v="center" class="my-3">
+                                    <b-col cols="12">
+                                        <hr>
+                                        <h4 class="mb-3">Hashing</h4>
+                                    </b-col>
+                                    <b-col cols="6">
+                                        <label class="mb-0">Auto-hash filenames</label>
+                                    </b-col>
+                                    <b-col cols="6">
+                                        <b-form-checkbox v-model="autoHashFilenames" switch></b-form-checkbox>
+                                    </b-col>
+                                </b-row>
+                                <b-row align-v="center" class="my-3">
+                                    <b-col cols="6">
+                                        <label class="mb-0">Hash prefix</label>
+                                    </b-col>
+                                    <b-col cols="6">
+                                        <b-form-input
+                                            v-model="hashPrefix"
+                                            placeholder="YourName_YourModName"
+                                            size="sm"
+                                        ></b-form-input>
+                                    </b-col>
+                                    <b-col cols="12">
+                                        <p class="mt-2" style="font-size: 0.8em;">Using a prefix helps make your hashes
+                                            unique.</p>
                                     </b-col>
                                 </b-row>
                                 <b-row align-v="center" class="my-3">
@@ -507,6 +524,7 @@ export default {
         this.showPreviousTextTooltip = prevTextTooltip === null || prevTextTooltip === "true";
         const cacheFileContents = localStorage.getItem('fkStblTool_CacheFileContents');
         this.shouldCacheFileContents = cacheFileContents === null || cacheFileContents === "true";
+        this.hashPrefix = localStorage.getItem('fkStblTool_HashPrefix');
 
         // load file data
         const fileContents = localStorage.getItem('fkStblTool_FileContents');
@@ -554,7 +572,8 @@ export default {
             cachedFilteredStrings: null,
             selectedEntryPreviousState: null,
             shouldCacheFileContents: true,
-            autosaveDisabled: false
+            autosaveDisabled: false,
+            hashPrefix: null
         }
     },
     watch: {
@@ -633,6 +652,7 @@ export default {
             localStorage.setItem('fkStblTool_LayoutType', this.chosenLayoutType);
             localStorage.setItem('fkStblTool_PrevTextTooltip', this.showPreviousTextTooltip);
             localStorage.setItem('fkStblTool_CacheFileContents', this.shouldCacheFileContents);
+            localStorage.setItem('fkStblTool_HashPrefix', this.hashPrefix);
         },
         tryCacheFileContents() {
             if (this.shouldCacheFileContents) {
@@ -764,7 +784,8 @@ export default {
         },
         newString() {
             const string = prompt("Enter a string.");
-            const key = Number(fnv32(string));
+            const stringToHash = this.hashPrefix ? `${this.hashPrefix}:${string}` : string;
+            const key = Number(fnv32(stringToHash));
             this.fileContents.push({key, string});
         },
         searchButtonClicked() {
@@ -779,7 +800,8 @@ export default {
         newHash(index) {
             const stringEntry = this.entriesToShow[index];
             if (stringEntry.string) {
-                stringEntry.key = Number(fnv32(stringEntry.string));
+                const stringToHash = this.hashPrefix ? `${this.hashPrefix}:${stringEntry.string}` : stringEntry.string;
+                stringEntry.key = Number(fnv32(stringToHash));
                 this.tryCacheFileContents();
             }
         },
