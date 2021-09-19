@@ -459,7 +459,7 @@ import {
 import {getStblContents} from "@/scripts/tools/stblDecoder";
 import {Languages, EnglishData, getTGI, getLocale} from "@/scripts/tools/stblUtils";
 import {serializeStbl} from "@/scripts/tools/stblEncoder";
-import fnv from "fnv-plus";
+import {fnv32, fnv64} from "@/scripts/tools/hashing";
 
 
 function formatKeyAsHex(dec) {
@@ -612,13 +612,16 @@ export default {
             return /^([0-9A-F]{16})$/i.test(this.fileTGI.i);
         },
         instanceMatchesLocale() {
+            if (this.fileTGI.i === null) return false;
             return this.selectedLanguage.stblCode === this.fileTGI.i.substr(0, 2);
         },
         totalPages() {
             return Math.ceil(this.numEntries / this.entryChunkSize);
         },
         tgilValues() {
-            return {locale: this.selectedLanguage, tgi: this.fileTGI};
+            // just to watch these values
+            const tgi = Object.assign({}, this.fileTGI);
+            return {locale: this.selectedLanguage, tgi};
         }
     },
     methods: {
@@ -685,7 +688,7 @@ export default {
             };
 
             if (this.autoHashFilenames && this.stblFile) {
-                const instanceHex = fnv.hash(this.stblFile.name, 64).hex().toUpperCase().padStart(16, "0");
+                const instanceHex = fnv64(this.stblFile.name).toString(16).toUpperCase().padStart(16, "0");
                 this.fileTGI.i = this.selectedLanguage.stblCode + instanceHex.substring(2);
                 return;
             }
@@ -694,7 +697,7 @@ export default {
                 const defaultValue = this.stblFile ? this.stblFile.name : '';
                 const name = prompt("Enter a name to hash for the instance ID of your string table. It should be a unique name, prefixed with your creator name, such as 'YourName:stringTable_UniqueDescription'.", defaultValue);
                 if (name) {
-                    const instanceHex = fnv.hash(name, 64).hex().toUpperCase().padStart(16, "0");
+                    const instanceHex = fnv64(name).toString(16).toUpperCase().padStart(16, "0");
                     this.fileTGI.i = this.selectedLanguage.stblCode + instanceHex.substring(2);
                 }
             }
@@ -761,7 +764,7 @@ export default {
         },
         newString() {
             const string = prompt("Enter a string.");
-            const key = parseInt(fnv.fast1a32hex(string), 16);
+            const key = Number(fnv32(string));
             this.fileContents.push({key, string});
         },
         searchButtonClicked() {
@@ -776,7 +779,7 @@ export default {
         newHash(index) {
             const stringEntry = this.entriesToShow[index];
             if (stringEntry.string) {
-                stringEntry.key = parseInt(fnv.fast1a32hex(stringEntry.string), 16);
+                stringEntry.key = Number(fnv32(stringEntry.string));
                 this.tryCacheFileContents();
             }
         },

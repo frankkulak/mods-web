@@ -136,7 +136,7 @@ import {getStblContents} from "@/scripts/tools/stblDecoder";
 import {serializeStbl} from "@/scripts/tools/stblEncoder";
 import {getTGI, getLocale, Languages, EnglishData} from "@/scripts/tools/stblUtils";
 import {BIconDownload} from 'bootstrap-vue';
-import fnv from "fnv-plus";
+import {fnv64} from "@/scripts/tools/hashing";
 
 export default {
     name: "StblMerger",
@@ -241,7 +241,7 @@ export default {
         hashNewInstance() {
             const newName = prompt('Enter a name to hash for the instance ID of your string table. It should be a unique name, prefixed with your creator name, such as \'YourName:stringTable_UniqueDescription\'.');
             if (newName) {
-                const instanceHex = fnv.hash(newName, 64).hex().toUpperCase().padStart(16, "0");
+                const instanceHex = fnv64(newName).toString(16).toUpperCase().padStart(16, "0");
                 this.outputTGI.i = this.outputLanguage.stblCode + instanceHex.substring(2);
             }
         }
