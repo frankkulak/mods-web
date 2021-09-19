@@ -1,5 +1,5 @@
 <template>
-    <b-container id="stbl-editor-container" class="p-5" fluid>
+    <b-container id="stbl-editor-container" class="px-2 px-sm-3 px-md-5 py-5" fluid>
         <div class="mb-5">
             <div class="mb-5">
                 <h1 class="mb-3">String Table Editor</h1>
@@ -235,6 +235,7 @@
                     placeholder="Type"
                     :state="typeIsValid"
                     :disabled="typeIsValid"
+                    autocomplete="off"
                 />
                 <b-form-invalid-feedback>
                     Type should be "220557DA"
@@ -245,6 +246,7 @@
                     v-model="fileTGI.g"
                     placeholder="Group"
                     :state="groupIsValid"
+                    autocomplete="off"
                 />
                 <b-form-invalid-feedback>
                     Group must be a 32-bit hex code
@@ -255,6 +257,7 @@
                     v-model="fileTGI.i"
                     placeholder="Instance"
                     :state="instanceIsValid"
+                    autocomplete="off"
                 />
                 <b-form-invalid-feedback>
                     <p v-if="!instanceIs64Bit" class="mb-0">Instance must be a 64-bit hex code</p>
@@ -439,7 +442,7 @@ import {
     BIconXCircle
 } from 'bootstrap-vue';
 import {getStblContents} from "@/scripts/tools/stblDecoder";
-import {Languages, EnglishData} from "@/scripts/tools/stblUtils";
+import {Languages, EnglishData, getTGI, getLocale} from "@/scripts/tools/stblUtils";
 import {serializeStbl} from "@/scripts/tools/stblEncoder";
 import fnv from "fnv-plus";
 
@@ -622,14 +625,8 @@ export default {
         },
         setLanguageAndTGIFromFilename() {
             try {
-                const {
-                    t,
-                    g,
-                    i
-                } = /(?<t>[a-fA-F\d]{8})[_!]?(?<g>[a-fA-F\d]{8})[_!]?(?<i>[a-fA-F\d]{16})/.exec(this.stblFile.name).groups;
-                this.fileTGI = {t, g, i};
-                const localeCode = i.substr(0, 2);
-                this.selectedLanguage = this.languages.find(language => language.stblCode === localeCode);
+                this.fileTGI = getTGI(this.stblFile.name);
+                this.selectedLanguage = getLocale(this.fileTGI.i);
             } catch (error) {
                 if (!this.autoHashFilenames)
                     alert("I could read the contents of your file, but not its type, group, instance, or locale code. In order for me to read these values, your filename must follow either the S4S or S4PE naming conventions.\n\nYou will be prompted to enter a name to hash for the instance ID of this string table.");
@@ -739,24 +736,6 @@ export default {
         box-shadow: 0 0 0 0.2rem transparentize($blurple, 0.8);
     }
 
-    button.gradient-button {
-        @extend %default-gradient;
-        @extend %floating-card;
-
-        background-color: white;
-        border-color: transparent;
-        color: white;
-        position: relative;
-        height: 100%;
-        transition: all ease 300ms;
-        top: 0;
-
-        &:hover:not(:disabled) {
-            top: -3px;
-            box-shadow: 0 5px 15px var(--shadow-color);
-        }
-    }
-
     #utility-buttons-container {
         position: fixed;
         bottom: 20px;
@@ -840,15 +819,6 @@ export default {
 
     .blurple-text {
         color: $blurple;
-    }
-
-    .clickable {
-        color: $blurple;
-        text-decoration: underline;
-
-        &:hover {
-            cursor: pointer;
-        }
     }
 
     kbd {

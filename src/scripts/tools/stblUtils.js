@@ -104,3 +104,15 @@ export const Languages = [
         stblCode: '15'
     }
 ];
+
+
+export function getTGI(stblName) {
+    const {t, g, i} = /(?<t>[a-fA-F\d]{8})[_!]?(?<g>[a-fA-F\d]{8})[_!]?(?<i>[a-fA-F\d]{16})/.exec(stblName).groups;
+    return {t, g, i};
+}
+
+
+export function getLocale(instanceId) {
+    const localeCode = instanceId.substr(0, 2);
+    return Languages.find(language => language.stblCode === localeCode);
+}

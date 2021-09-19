@@ -14,6 +14,7 @@ import TutorialsPage from "./components/InfoPages/TutorialsPage";
 import PatreonPage from "./components/InfoPages/PatreonPage";
 import PageNotFound from "./components/PageNotFound";
 import StblEditor from "./components/Tools/StblEditor";
+import StblMerger from "@/components/Tools/StblMerger";
 
 Vue.use(BootstrapVue);
 Vue.use(Clipboard);
@@ -37,6 +38,10 @@ const routes = [
     {
         path: '/ts4-tools/stbl-editor',
         component: StblEditor
+    },
+    {
+        path: '/ts4-tools/stbl-merger',
+        component: StblMerger
     },
     {
         // fixme abstract this in case future mods also need to be renamed
