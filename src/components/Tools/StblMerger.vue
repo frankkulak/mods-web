@@ -14,7 +14,7 @@
             <b-form-file
                 class="text-left"
                 v-model="stblFiles"
-                placeholder="Choose or drop your .binary and .stbl files here..."
+                placeholder="Choose or drop .StringTable, .binary, and .stbl files here..."
                 drop-placeholder="Drop files here..."
                 accept=".binary, .stbl, .StringTable"
                 v-on:input="filesUploaded()"

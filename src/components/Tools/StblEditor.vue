@@ -4,9 +4,9 @@
             <div class="mb-5">
                 <h1 class="mb-3">String Table Editor</h1>
                 <p>This experimental tool provides an interface for creating and editing string tables. It only works
-                    with string table binaries (<code>.binary</code>/<code>.stbl</code> files), not packages. Please
-                    note that this tool does not edit the files you upload, but allows you to modify and download a
-                    copy of it. Reach out to me on Discord if you experience any issues.</p>
+                    with string table binaries (<code>.StringTable</code>/</code><code>.binary</code>/<code>.stbl</code>
+                    files), not packages. Please note that this tool does not edit the files you upload, but allows you
+                    to modify and download a copy of it. Reach out to me on Discord if you experience any issues.</p>
                 <p>This is meant to be a temporary solution while I work on something larger, so I may discontinue
                     support for it when my other tool is completed.</p>
             </div>
@@ -60,7 +60,7 @@
                     class="text-left"
                     v-model="stblFile"
                     :state="Boolean(stblFile)"
-                    placeholder="Choose/drop a .binary or .stbl file here..."
+                    placeholder="Choose or drop a .StringTable, .binary, or .stbl file here..."
                     drop-placeholder="Drop file here..."
                     accept=".binary, .stbl, .StringTable"
                     v-on:input="refreshStbl()"
