@@ -211,6 +211,13 @@ export default {
                             result.locale = {name: "Unknown", emoji: "[?]"};
                             this.decodedStbls.push(result);
                         }
+                    } else {
+                        this.decodedStbls.push({
+                            tgi: {t: "220557DA", g: "80000000", i: "Invalid"},
+                            locale: {name: "Invalid", emoji: "[!]"},
+                            stringEntries: [],
+                            numEntries: "Invalid"
+                        });
                     }
                 });
             });

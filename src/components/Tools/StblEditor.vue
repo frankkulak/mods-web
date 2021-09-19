@@ -563,7 +563,7 @@ export default {
         totalEntries() {
             this.tryCacheFileContents();
         },
-        tgiIsValid() {
+        instanceIsValid() {
             this.tryCacheFileContents();
         }
     },
@@ -603,13 +603,11 @@ export default {
             return /^([0-9A-F]{8})$/i.test(this.fileTGI.g);
         },
         instanceIsValid() {
+            if (this.fileTGI === null) return false; // for watcher
             return this.instanceIs64Bit && this.instanceMatchesLocale;
         },
         instanceIs64Bit() {
             return /^([0-9A-F]{16})$/i.test(this.fileTGI.i);
-        },
-        tgiIsValid() {
-            return this.typeIsValid && this.groupIsValid && this.instanceIsValid;
         },
         instanceMatchesLocale() {
             return this.selectedLanguage.stblCode === this.fileTGI.i.substr(0, 2);
@@ -630,6 +628,7 @@ export default {
         },
         tryCacheFileContents() {
             if (this.shouldCacheFileContents) {
+                if (this.fileContents === null) return;
                 if (this.fileContents.length > 350) {
                     if (!this.autosaveDisabled) {
                         alert('Autosave is disabled for this string table.\n\nFor performance and storage reasons, autosave is only available for string tables with 350 or fewer entries. To continue using autosave, please export this string table and start working on a new one. You can merge your string tables together later (I have a tool for that as well!).');
