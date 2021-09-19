@@ -1,10 +1,11 @@
-button.gradient-button {
+.gradient-button {
   @extend %default-gradient;
   @extend %floating-card;
 
   background-color: white;
   border-color: transparent;
   color: white;
+  text-decoration: none;
   position: relative;
   height: 100%;
   transition: all ease 300ms;
@@ -16,7 +17,7 @@ button.gradient-button {
   }
 }
 
-span.clickable {
+.clickable {
   color: $blurple;
   text-decoration: underline;
 

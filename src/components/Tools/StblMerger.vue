@@ -1,13 +1,13 @@
 <template>
     <b-container id="stbl-merger-container" class="px-2 px-sm-3 px-md-5 py-5" fluid>
-        <div>
+        <div class="mb-5">
             <h1 class="mb-3">String Table Merger</h1>
             <p>This experimental tool allows you to merge multiple string tables into one. Upload as many
                 <code>.binary</code> and/or <code>.stbl</code> files as you want, follow the prompts, and then you will
                 be able to download your merged string table in either S4S or S4PE format.</p>
         </div>
 
-        <div class="py-5">
+        <div class="my-5">
             <section-header text="upload your files" class="mb-4"></section-header>
             <p>Upload the string tables you would like to merge. Only <code>.binary</code> and <code>.stbl</code> files
                 are supported.</p>
@@ -44,7 +44,7 @@
             </div>
         </div>
 
-        <div class="mb-5" v-if="allFilesDecoded">
+        <div class="my-5" v-if="allFilesDecoded">
             <section-header text="merge your files" class="mb-4"></section-header>
             <p>Choose the locale, type, group, and instance of your output file. To hash a name for your new string
                 table, <span class="clickable" @click="hashNewInstance">click here</span>.</p>
@@ -99,13 +99,27 @@
             </b-row>
             <b-row align-v="center" class="text-center mt-5">
                 <b-col>
-                    <b-button size="lg" pill class="gradient-button" @click="download('s4s')">
+                    <b-button
+                        @click="download('s4s')"
+                        :href="downloadUrl"
+                        :download="downloadFilename"
+                        title="Download string table"
+                        class="gradient-button"
+                        size="lg"
+                        pill>
                         <b-icon-download class="mr-2"/>
                         Download for S4S
                     </b-button>
                 </b-col>
                 <b-col>
-                    <b-button size="lg" pill class="gradient-button" @click="download('s4pe')">
+                    <b-button
+                        @click="download('s4pe')"
+                        :href="downloadUrl"
+                        :download="downloadFilename"
+                        title="Download string table"
+                        class="gradient-button"
+                        size="lg"
+                        pill>
                         <b-icon-download class="mr-2"/>
                         Download for S4PE
                     </b-button>
@@ -118,6 +132,7 @@
 <script>
 import SectionHeader from "@/components/Common/SectionHeader";
 import {getStblContents} from "@/scripts/tools/stblDecoder";
+import {serializeStbl} from "@/scripts/tools/stblEncoder";
 import {getTGI, getLocale, Languages} from "@/scripts/tools/stblUtils";
 import {BIconDownload} from 'bootstrap-vue';
 import fnv from "fnv-plus";
@@ -134,7 +149,9 @@ export default {
             decodedStbls: null,
             languages: Languages,
             outputLanguage: null,
-            outputTGI: null
+            outputTGI: null,
+            downloadUrl: '',
+            downloadFilename: ''
         }
     },
     computed: {
@@ -157,17 +174,29 @@ export default {
             return this.outputLanguage.stblCode === this.outputTGI.i.substr(0, 2);
         }
     },
+    watch: {
+        allFilesDecoded(newValue) {
+            if (newValue) {
+                const combinedStrings = [];
+                this.decodedStbls.forEach(({stringEntries}) => {
+                    stringEntries.forEach(e => { combinedStrings.push(e); });
+                });
+                const encodedStbl = serializeStbl(combinedStrings).toString('base64');
+                this.downloadUrl = `data:text/plain;base64,${encodedStbl}`;
+            }
+        }
+    },
     methods: {
         filesUploaded() {
-            console.log("Files uploaded", this.stblFiles);
-
             this.decodedStbls = [];
+            this.outputTGI = null;
+            this.outputLanguage = null;
             this.stblFiles.forEach(file => {
                 getStblContents(file).then(result => {
                     if (result !== null && typeof result !== "string") {
                         result.tgi = getTGI(file.name);
                         result.locale = getLocale(result.tgi.i);
-                        if (this.outputTGI === null) this.outputTGI = result.tgi;
+                        if (this.outputTGI === null) this.outputTGI = Object.assign({}, result.tgi);
                         if (this.outputLanguage === null) this.outputLanguage = result.locale;
                         this.decodedStbls.push(result);
                     }
@@ -179,15 +208,20 @@ export default {
         },
         download(namingConvention) {
             if (namingConvention === 's4s') {
-                console.log('s4s');
+                const tgiPrefix = `${this.outputTGI.t}!${this.outputTGI.g}!${this.outputTGI.i}`;
+                this.downloadFilename = `${tgiPrefix}.${this.outputLanguage.name}.StringTable.binary`;
             } else {
-                console.log('s4pe');
+                const tgiPrefix = `${this.outputTGI.t}_${this.outputTGI.g}_${this.outputTGI.i}`;
+                this.downloadFilename = `S4_${tgiPrefix}.stbl`;
             }
+            const tgiValid = this.typeIsValid && this.groupIsValid && this.instanceIsValid;
+            if (!tgiValid)
+                alert(`Your string table either does not have a valid type, group, or instance, or its instance does not match the locale you have selected. You may experience issues when importing your string table to ${namingConvention.toUpperCase()}.`);
         },
         hashNewInstance() {
             const newName = prompt('Enter a name to hash for the instance ID of your string table. It should be a unique name, prefixed with your creator name, such as \'YourName:stringTable_UniqueDescription\'.');
             if (newName) {
-                const instanceHex = fnv.hash(name, 64).hex().toUpperCase().padStart(16, "0");
+                const instanceHex = fnv.hash(newName, 64).hex().toUpperCase().padStart(16, "0");
                 this.outputTGI.i = this.outputLanguage.stblCode + instanceHex.substring(2);
             }
         }
