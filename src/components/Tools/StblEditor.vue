@@ -4,7 +4,7 @@
             <div class="mb-5">
                 <h1 class="mb-3">String Table Editor</h1>
                 <p>This experimental tool provides an interface for creating and editing string tables. It only works
-                    with string table binaries (<code>.StringTable</code>/</code><code>.binary</code>/<code>.stbl</code>
+                    with string table binaries (<code>.StringTable</code>/<code>.binary</code>/<code>.stbl</code>
                     files), not packages. Please note that this tool does not edit the files you upload, but allows you
                     to modify and download a copy of it. Reach out to me on Discord if you experience any issues.</p>
                 <p>This is meant to be a temporary solution while I work on something larger, so I may discontinue
@@ -13,8 +13,8 @@
 
             <div class="mb-5">
                 <section-header text="how to use" class="mb-4"></section-header>
-                <p><strong>Step 1:</strong> Upload an existing <code>.binary</code>/<code>.stbl</code> file, or
-                    create a fresh one with the "New String Table" button. This will bring up the editor.</p>
+                <p><strong>Step 1:</strong> Upload an existing <code>.StringTable</code>/<code>.binary</code>/<code>.stbl</code>
+                    file, or create a fresh one with the "New String Table" button. This will bring up the editor.</p>
                 <p><strong>Step 2:</strong> Modify and interact with your string table.</p>
                 <ul>
                     <li class="mb-2"><strong>Adding.</strong> Either use the

@@ -3,14 +3,15 @@
         <div class="mb-5">
             <h1 class="mb-3">String Table Merger</h1>
             <p>This experimental tool allows you to merge multiple string tables into one. Upload as many
-                <code>.binary</code> and/or <code>.stbl</code> files as you want, follow the prompts, and then you will
-                be able to download your merged string table in either S4S or S4PE format.</p>
+                <code>.StringTable</code>, <code>.binary</code>, and/or <code>.stbl</code> files as you want, follow the
+                prompts, and then you will be able to download your merged string table in either S4S or S4PE format.
+            </p>
         </div>
 
         <div class="my-5">
             <section-header text="upload your files" class="mb-4"></section-header>
-            <p>Upload the string tables you would like to merge. Only <code>.binary</code> and <code>.stbl</code> files
-                are supported.</p>
+            <p>Upload the string tables you would like to merge. Only <code>.StringTable</code>, <code>.binary</code>,
+                and <code>.stbl</code> files are supported.</p>
             <b-form-file
                 class="text-left"
                 v-model="stblFiles"
