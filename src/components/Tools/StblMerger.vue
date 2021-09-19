@@ -133,7 +133,7 @@
 import SectionHeader from "@/components/Common/SectionHeader";
 import {getStblContents} from "@/scripts/tools/stblDecoder";
 import {serializeStbl} from "@/scripts/tools/stblEncoder";
-import {getTGI, getLocale, Languages} from "@/scripts/tools/stblUtils";
+import {getTGI, getLocale, Languages, EnglishData} from "@/scripts/tools/stblUtils";
 import {BIconDownload} from 'bootstrap-vue';
 import fnv from "fnv-plus";
 
@@ -183,6 +183,12 @@ export default {
                 });
                 const encodedStbl = serializeStbl(combinedStrings).toString('base64');
                 this.downloadUrl = `data:text/plain;base64,${encodedStbl}`;
+                if (this.outputTGI === null) {
+                    this.outputTGI = {t: "220557DA", g: "80000000", i: "Unknown"};
+                }
+                if (this.outputLanguage === null) {
+                    this.outputLanguage = EnglishData;
+                }
             }
         }
     },
@@ -194,11 +200,17 @@ export default {
             this.stblFiles.forEach(file => {
                 getStblContents(file).then(result => {
                     if (result !== null && typeof result !== "string") {
-                        result.tgi = getTGI(file.name);
-                        result.locale = getLocale(result.tgi.i);
-                        if (this.outputTGI === null) this.outputTGI = Object.assign({}, result.tgi);
-                        if (this.outputLanguage === null) this.outputLanguage = result.locale;
-                        this.decodedStbls.push(result);
+                        try {
+                            result.tgi = getTGI(file.name);
+                            result.locale = getLocale(result.tgi.i);
+                            if (this.outputTGI === null) this.outputTGI = Object.assign({}, result.tgi);
+                            if (this.outputLanguage === null) this.outputLanguage = result.locale;
+                            this.decodedStbls.push(result);
+                        } catch (e) {
+                            result.tgi = {t: "220557DA", g: "80000000", i: "Unknown"};
+                            result.locale = {name: "Unknown", emoji: "[?]"};
+                            this.decodedStbls.push(result);
+                        }
                     }
                 });
             });
