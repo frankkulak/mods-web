@@ -507,13 +507,9 @@ export default {
         // load file data
         const fileContents = localStorage.getItem('fkStblTool_FileContents');
         if (fileContents !== null) {
-            if (confirm("Load cache?")) {
-                this.fileContents = JSON.parse(fileContents);
-                const fileTGI = localStorage.getItem('fkStblTool_FileTGI');
-                this.fileTGI = JSON.parse(fileTGI);
-            } else {
-                this.clearFileCache();
-            }
+            this.fileContents = JSON.parse(fileContents);
+            const fileTGI = localStorage.getItem('fkStblTool_FileTGI');
+            this.fileTGI = JSON.parse(fileTGI);
         }
     },
     mounted() {
