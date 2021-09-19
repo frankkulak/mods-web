@@ -490,6 +490,20 @@ export default {
         this.chosenLayoutType = localStorage.getItem('fkStblTool_LayoutType') || 'cards';
         const prevTextTooltip = localStorage.getItem('fkStblTool_PrevTextTooltip');
         this.showPreviousTextTooltip = prevTextTooltip === null || prevTextTooltip === "true";
+        const cacheFileContents = localStorage.getItem('fkStblTool_CacheFileContents');
+        this.shouldCacheFileContents = cacheFileContents === null || cacheFileContents === "true";
+
+        // load file data
+        const fileContents = localStorage.getItem('fkStblTool_FileContents');
+        if (fileContents !== null) {
+            if (confirm("Load cache?")) {
+                this.fileContents = JSON.parse(fileContents);
+                const fileTGI = localStorage.getItem('fkStblTool_FileTGI');
+                this.fileTGI = JSON.parse(fileTGI);
+            } else {
+                this.clearFileCache();
+            }
+        }
     },
     mounted() {
         this.$root.$on('bv::modal::hide', (bvEvent, modalId) => {
@@ -524,7 +538,18 @@ export default {
             showPreviousTextTooltip: true,
             searchTerm: null,
             cachedFilteredStrings: null,
-            selectedEntryPreviousState: null
+            selectedEntryPreviousState: null,
+            shouldCacheFileContents: true
+        }
+    },
+    watch: {
+        shouldCacheFileContents(newValue) {
+            if (!newValue) {
+                this.clearFileCache();
+            }
+        },
+        totalEntries() {
+            this.tryCacheFileContents();
         }
     },
     computed: {
@@ -553,6 +578,9 @@ export default {
         numEntries() {
             return this.filteredStrings.length;
         },
+        totalEntries() {
+            return this.fileContents === null ? 0 : this.fileContents.length;
+        },
         typeIsValid() {
             return this.fileTGI.t === "220557DA";
         },
@@ -580,6 +608,21 @@ export default {
             localStorage.setItem('fkStblTool_OutputFormat', this.filenameType);
             localStorage.setItem('fkStblTool_LayoutType', this.chosenLayoutType);
             localStorage.setItem('fkStblTool_PrevTextTooltip', this.showPreviousTextTooltip);
+            localStorage.setItem('fkStblTool_CacheFileContents', this.shouldCacheFileContents);
+        },
+        tryCacheFileContents() {
+            if (this.shouldCacheFileContents) {
+                if (this.fileContents.length > 500) {
+                    alert('Sorry, this STBL is too large to cache. Please download your string table as-is, and create a new one. You can merge them together with my other tool.');
+                } else {
+                    localStorage.setItem('fkStblTool_FileContents', JSON.stringify(this.fileContents));
+                    localStorage.setItem('fkStblTool_FileTGI', JSON.stringify(this.fileTGI));
+                }
+            }
+        },
+        clearFileCache() {
+            localStorage.removeItem('fkStblTool_FileContents');
+            localStorage.removeItem('fkStblTool_FileTGI');
         },
         handleKeydown(event) {
             const keyComboPassed = (event.ctrlKey || event.metaKey) && event.key === 'n';
@@ -659,6 +702,9 @@ export default {
             this.cachedFilteredStrings = this.filteredStrings;
         },
         onStringInputUnfocused() {
+            this.tryCacheFileContents();
+
+            // cacheing tooltip
             this.selectedEntryPreviousState = null;
             if (this.searchTerm === null) return;
             this.cachedFilteredStrings = null;
@@ -696,7 +742,10 @@ export default {
         },
         newHash(index) {
             const stringEntry = this.entriesToShow[index];
-            if (stringEntry.string) stringEntry.key = parseInt(fnv.fast1a32hex(stringEntry.string), 16);
+            if (stringEntry.string) {
+                stringEntry.key = parseInt(fnv.fast1a32hex(stringEntry.string), 16);
+                this.tryCacheFileContents();
+            }
         },
         keyToClipboard(index) {
             return formatKeyAsHex(this.entriesToShow[index].key);
@@ -705,6 +754,7 @@ export default {
             const newKey = prompt("Enter the 32-bit hash to use.", this.getHexCode(index));
             if (newKey && newKey.match(/^0x([0-9A-F]{8})$/i)) {
                 this.entriesToShow[index].key = parseInt(newKey, 16);
+                this.tryCacheFileContents();
             } else if (newKey !== null) {
                 alert(`${newKey} is not a valid key. It must be a 32-bit (8 digit) hex code, prefixed with 0x.`);
             }
