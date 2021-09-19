@@ -813,7 +813,7 @@ export default {
         right: 20px;
         z-index: 1024;
         border-radius: 4px;
-        opacity: 85%;
+        opacity: 0.85;
     }
 
     #utility-buttons-container {
