@@ -25,3 +25,20 @@
     cursor: pointer;
   }
 }
+
+.show-button {
+  float: right;
+  min-width: 80px;
+
+  &.btn-outline-primary {
+    // this is hacky but the bootstrap classes need to be overriden without flashing blue
+    color: var(--accent-color) !important;
+    border-color: var(--accent-color) !important;
+    background-color: var(--card-bg-color) !important;
+
+    &:hover {
+      background-color: var(--accent-color) !important;
+      color: white !important;
+    }
+  }
+}

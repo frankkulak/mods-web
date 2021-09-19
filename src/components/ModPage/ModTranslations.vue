@@ -84,22 +84,6 @@
         border: 1px solid var(--shadow-color);
         border-radius: 10px;
 
-        .show-button {
-            float: right;
-            min-width: 80px;
-
-            &.btn-outline-primary {
-                color: var(--accent-color);
-                border-color: var(--accent-color);
-                background-color: var(--card-bg-color);
-
-                &:hover {
-                    background-color: var(--accent-color);
-                    color: white;
-                }
-            }
-        }
-
         .translation {
             border-radius: 10px;
             border-style: solid;

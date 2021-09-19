@@ -3,54 +3,73 @@
         <div class="mb-5">
             <div class="mb-5">
                 <h1 class="mb-3">String Table Editor</h1>
-                <p>This experimental tool provides an interface for creating and editing string tables. It only works
-                    with string table binaries (<code>.StringTable</code>/<code>.binary</code>/<code>.stbl</code>
-                    files), not packages. Please note that this tool does not edit the files you upload, but allows you
-                    to modify and download a copy of it. Reach out to me on Discord if you experience any issues.</p>
-                <p>This is meant to be a temporary solution while I work on something larger, so I may discontinue
-                    support for it when my other tool is completed.</p>
+                <p>This experimental tool provides an interface for creating and editing string tables. Strings you
+                    create will automatically be hashed (be sure to set your hash prefix in
+                    <b-icon-gear/>
+                    settings to help your hashes be unique!), and the table will be autosaved after every edit so you
+                    can leave the site without losing any progress. Please note that this editor does
+                    <strong>not</strong> modify the files that you upload, but rather allows you to download a copy.
+                </p>
+                <p>Please reach out to me on Discord if you need help or are experiencing any issues.</p>
             </div>
 
-            <div class="mb-5">
-                <section-header text="how to use" class="mb-4"></section-header>
-                <p><strong>Step 1:</strong> Upload an existing <code>.StringTable</code>/<code>.binary</code>/<code>.stbl</code>
-                    file, or create a fresh one with the "New String Table" button. This will bring up the editor.</p>
-                <p><strong>Step 2:</strong> Modify and interact with your string table.</p>
-                <ul>
-                    <li class="mb-2"><strong>Adding.</strong> Either use the
-                        <b-icon-plus-circle/>
-                        button in the bottom-right corner of the screen or press <kbd>WIN/CTRL</kbd> + <kbd>N</kbd>
-                        to add a string (Windows use <kbd>WIN</kbd>, macOS use <kbd>CTRL</kbd>). You will be prompted
-                        for a string, and it will automatically be hashed and put in the table when you submit it.
-                    </li>
-                    <li class="mb-2"><strong>Editing.</strong> Simply click on the string you would like to edit, and
-                        start typing. Editing a string will <strong>not</strong> rehash its key, but if you would like
-                        to generate a new hash, you can hover over
-                        <b-icon-three-dots/>
-                        and click the
-                        <b-icon-arrow-repeat/>
-                        icon. To manually set the key, click the
-                        <b-icon-key/>
-                        icon.
-                    </li>
-                    <li class="mb-2"><strong>Deleting.</strong> Hover over
-                        <b-icon-three-dots/>
-                        and click the
-                        <b-icon-trash-fill variant="danger"/>
-                        button. You will then be asked for confirmation, because this action cannot be undone.
-                    </li>
-                    <li class="mb-2"><strong>Copying.</strong> To copy the key (<code>0x00000000</code>),
-                        click the
-                        <b-icon-clipboard/>
-                        button. To copy both the key and string (<code>0x00000000&lt;!--String--&gt;</code>), use
-                        <b-icon-clipboard-plus/>
-                        instead.
-                    </li>
-                </ul>
-                <p><strong>Step 3:</strong> Download your modified string table with the
-                    <b-icon-download/>
-                    button in the bottom-right corner of the screen.
-                </p>
+            <div class="mb-5 p-4" id="how-to-use-section">
+                <b-row>
+                    <b-col class="text-left">
+                        <section-header text="how to use"></section-header>
+                    </b-col>
+                    <b-col class="text-right">
+                        <b-button
+                            class="show-button"
+                            size="sm"
+                            :pressed.sync="showInstructions"
+                            variant="outline-primary"
+                        >
+                            {{ showInstructionsButtonText }}
+                        </b-button>
+                    </b-col>
+                </b-row>
+
+                <div v-if="showInstructions" class="mt-4">
+                    <p><strong>Step 1:</strong> Upload an existing <code>.StringTable</code>/<code>.binary</code>/<code>.stbl</code>
+                        file, or create a fresh one with the "New String Table" button. This will bring up the editor.</p>
+                    <p><strong>Step 2:</strong> Modify and interact with your string table.</p>
+                    <ul>
+                        <li class="mb-2"><strong>Adding.</strong> Either use the
+                            <b-icon-plus-circle/>
+                            button in the bottom-right corner of the screen or press <kbd>WIN/CTRL</kbd> + <kbd>N</kbd>
+                            to add a string (Windows use <kbd>WIN</kbd>, macOS use <kbd>CTRL</kbd>). You will be prompted
+                            for a string, and it will automatically be hashed and put in the table when you submit it.
+                        </li>
+                        <li class="mb-2"><strong>Editing.</strong> Simply click on the string you would like to edit, and
+                            start typing. Editing a string will <strong>not</strong> rehash its key, but if you would like
+                            to generate a new hash, you can hover over
+                            <b-icon-three-dots/>
+                            and click the
+                            <b-icon-arrow-repeat/>
+                            icon. To manually set the key, click the
+                            <b-icon-key/>
+                            icon.
+                        </li>
+                        <li class="mb-2"><strong>Deleting.</strong> Hover over
+                            <b-icon-three-dots/>
+                            and click the
+                            <b-icon-trash-fill variant="danger"/>
+                            button. You will then be asked for confirmation, because this action cannot be undone.
+                        </li>
+                        <li class="mb-2"><strong>Copying.</strong> To copy the key (<code>0x00000000</code>),
+                            click the
+                            <b-icon-clipboard/>
+                            button. To copy both the key and string (<code>0x00000000&lt;!--String--&gt;</code>), use
+                            <b-icon-clipboard-plus/>
+                            instead.
+                        </li>
+                    </ul>
+                    <p><strong>Step 3:</strong> Download your modified string table with the
+                        <b-icon-download/>
+                        button in the bottom-right corner of the screen.
+                    </p>
+                </div>
             </div>
         </div>
 
@@ -573,7 +592,8 @@ export default {
             selectedEntryPreviousState: null,
             shouldCacheFileContents: true,
             autosaveDisabled: false,
-            hashPrefix: null
+            hashPrefix: null,
+            showInstructions: false
         }
     },
     watch: {
@@ -590,6 +610,9 @@ export default {
         }
     },
     computed: {
+        showInstructionsButtonText() {
+            return this.showInstructions ? "hide" : "show";
+        },
         downloadFilename() {
             if (this.filenameType === 's4s') {
                 const tgiPrefix = `${this.fileTGI.t}!${this.fileTGI.g}!${this.fileTGI.i}`;
@@ -835,6 +858,12 @@ export default {
 <style lang="scss">
 #stbl-editor-container {
     max-width: 100%;
+
+    #how-to-use-section {
+        background-color: var(--card-bg-color);
+        border: 1px solid var(--shadow-color);
+        border-radius: 10px;
+    }
 
     .custom-file-input ~ .custom-file-label {
         border-color: var(--accent-color);
