@@ -62,7 +62,7 @@
                     :state="Boolean(stblFile)"
                     placeholder="Choose/drop a .binary or .stbl file here..."
                     drop-placeholder="Drop file here..."
-                    accept=".binary, .stbl"
+                    accept=".binary, .stbl, .StringTable"
                     v-on:input="refreshStbl()"
                 ></b-form-file>
             </b-col>
