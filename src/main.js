@@ -15,6 +15,7 @@ import PatreonPage from "./components/InfoPages/PatreonPage";
 import PageNotFound from "./components/PageNotFound";
 import StblEditor from "./components/Tools/StblEditor";
 import StblMerger from "@/components/Tools/StblMerger";
+import ToolsPage from "@/components/InfoPages/ToolsPage";
 
 Vue.use(BootstrapVue);
 Vue.use(Clipboard);
@@ -34,6 +35,10 @@ const routes = [
     {
         path: '/tutorials',
         component: TutorialsPage
+    },
+    {
+        path: '/ts4-tools',
+        component: ToolsPage
     },
     {
         path: '/ts4-tools/stbl-editor',
