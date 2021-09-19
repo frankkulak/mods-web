@@ -22,19 +22,19 @@
             ></b-form-file>
             <div v-if="allFilesDecoded" class="mt-4 px-3 files-uploaded-area">
                 <b-row>
-                    <b-col cols="6" v-for="(stbl, n) in decodedStbls" :key="n" class="p-2">
+                    <b-col cols="12" md="6" v-for="(stbl, n) in decodedStbls" :key="n" class="p-2">
                         <b-card>
                             <b-row align-v="center" class="text-center">
                                 <b-col cols="12" sm="3" class="mb-2 mb-sm-0">
-                                    <h4>Language</h4>
+                                    <h4 class="text-nowrap">Language</h4>
                                     <p>{{ stbl.locale.emoji }} {{ stbl.locale.name }}</p>
                                 </b-col>
                                 <b-col cols="12" sm="6" class="mb-2 mb-sm-0">
-                                    <h4>Instance ID</h4>
+                                    <h4 class="text-nowrap">Instance ID</h4>
                                     <p>{{ stbl.tgi.i }}</p>
                                 </b-col>
                                 <b-col cols="12" sm="3">
-                                    <h4>Strings</h4>
+                                    <h4 class="text-nowrap">Strings</h4>
                                     <p>{{ stbl.numEntries }}</p>
                                 </b-col>
                             </b-row>

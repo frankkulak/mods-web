@@ -514,6 +514,9 @@ export default {
             this.fileContents = JSON.parse(fileContents);
             const fileTGI = localStorage.getItem('fkStblTool_FileTGI');
             this.fileTGI = JSON.parse(fileTGI);
+            const languageName = localStorage.getItem('fkStblTool_FileLanguageName');
+            const language = this.languages.find(({name}) => name === languageName);
+            this.selectedLanguage = language || EnglishData;
         }
     },
     mounted() {
@@ -563,7 +566,7 @@ export default {
         totalEntries() {
             this.tryCacheFileContents();
         },
-        instanceIsValid() {
+        tgilValues() {
             this.tryCacheFileContents();
         }
     },
@@ -603,7 +606,6 @@ export default {
             return /^([0-9A-F]{8})$/i.test(this.fileTGI.g);
         },
         instanceIsValid() {
-            if (this.fileTGI === null) return false; // for watcher
             return this.instanceIs64Bit && this.instanceMatchesLocale;
         },
         instanceIs64Bit() {
@@ -614,6 +616,9 @@ export default {
         },
         totalPages() {
             return Math.ceil(this.numEntries / this.entryChunkSize);
+        },
+        tgilValues() {
+            return {locale: this.selectedLanguage, tgi: this.fileTGI};
         }
     },
     methods: {
@@ -629,14 +634,15 @@ export default {
         tryCacheFileContents() {
             if (this.shouldCacheFileContents) {
                 if (this.fileContents === null) return;
-                if (this.fileContents.length > 350) {
+                if (this.fileContents.length > 500) {
                     if (!this.autosaveDisabled) {
-                        alert('Autosave is disabled for this string table.\n\nFor performance and storage reasons, autosave is only available for string tables with 350 or fewer entries. To continue using autosave, please export this string table and start working on a new one. You can merge your string tables together later (I have a tool for that as well!).');
+                        alert('Autosave is disabled for this string table.\n\nFor performance and storage reasons, autosave is only available for string tables with 500 or fewer entries. To continue using autosave, please export this string table and start working on a new one. You can merge your string tables together later (I have a tool for that as well!).');
                         this.autosaveDisabled = true;
                     }
                 } else {
                     localStorage.setItem('fkStblTool_FileContents', JSON.stringify(this.fileContents));
                     localStorage.setItem('fkStblTool_FileTGI', JSON.stringify(this.fileTGI));
+                    localStorage.setItem('fkStblTool_FileLanguageName', this.selectedLanguage.name);
                     this.autosaveDisabled = false;
                 }
             } else {
@@ -649,6 +655,7 @@ export default {
         clearFileCache() {
             localStorage.removeItem('fkStblTool_FileContents');
             localStorage.removeItem('fkStblTool_FileTGI');
+            localStorage.removeItem('fkStblTool_FileLanguageName');
         },
         handleKeydown(event) {
             const keyComboPassed = (event.ctrlKey || event.metaKey) && event.key === 'n';
