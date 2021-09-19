@@ -227,6 +227,10 @@
                 ></b-pagination>
             </div>
 
+            <div id="autosave-disabled-warning" v-if="autosaveDisabled && shouldCacheFileContents" class="px-3 py-1 alert-danger">
+                <p>Autosave Disabled!</p>
+            </div>
+
             <b-col cols="12">
                 <hr id="content-divider" class="mb-5">
             </b-col>
@@ -546,7 +550,8 @@ export default {
             searchTerm: null,
             cachedFilteredStrings: null,
             selectedEntryPreviousState: null,
-            shouldCacheFileContents: true
+            shouldCacheFileContents: true,
+            autosaveDisabled: false
         }
     },
     watch: {
@@ -619,12 +624,18 @@ export default {
         },
         tryCacheFileContents() {
             if (this.shouldCacheFileContents) {
-                if (this.fileContents.length > 500) {
-                    alert('Sorry, this STBL is too large to cache. Please download your string table as-is, and create a new one. You can merge them together with my other tool.');
+                if (this.fileContents.length > 250) {
+                    if (!this.autosaveDisabled) {
+                        alert('Autosave is disabled for this string table.\n\nFor performance and storage reasons, autosave is only available for string tables with 250 or fewer entries. To continue using autosave, please export this string table and start working on a new one. You can merge your string tables together later (I have a tool for that as well!).');
+                        this.autosaveDisabled = true;
+                    }
                 } else {
                     localStorage.setItem('fkStblTool_FileContents', JSON.stringify(this.fileContents));
                     localStorage.setItem('fkStblTool_FileTGI', JSON.stringify(this.fileTGI));
+                    this.autosaveDisabled = false;
                 }
+            } else {
+                this.autosaveDisabled = false;
             }
         },
         cacheSettingChanged() {
@@ -794,6 +805,15 @@ export default {
 
     .custom-file-input:focus ~ .custom-file-label {
         box-shadow: 0 0 0 0.2rem transparentize($blurple, 0.8);
+    }
+
+    #autosave-disabled-warning {
+        position: fixed;
+        top: 90px;
+        right: 20px;
+        z-index: 1024;
+        border-radius: 4px;
+        opacity: 85%;
     }
 
     #utility-buttons-container {
