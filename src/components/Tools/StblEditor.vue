@@ -117,10 +117,13 @@
                 </b-button-toolbar>
                 <b-button-toolbar class="text-right float-right floating-card mr-3">
                     <b-button-group>
-                        <button v-on:click="clearSearch()" title="Clear search" class="btn btn-primary" :disabled="searchTerm === null">
+                        <button v-on:click="clearSearch()" title="Clear search" class="btn btn-primary" :disabled="searchTerm === null && searchByIDTerm === null">
                             <b-icon-x-circle/>
                         </button>
-                        <button v-on:click="searchButtonClicked()" title="Search" class="btn btn-primary">
+                        <button v-on:click="searchByIdButtonClicked()" title="Search by ID" class="btn btn-primary">
+                            <b-icon-key/>
+                        </button>
+                        <button v-on:click="searchButtonClicked()" title="Search by String" class="btn btn-primary">
                             <b-icon-search/>
                         </button>
                     </b-button-group>
@@ -328,6 +331,12 @@
                 <p>No strings in this table contain "{{ searchTerm }}". You can either
                     <span @click="clearSearch" class="clickable">clear your search term</span>,
                     or <span @click="searchButtonClicked" class="clickable">try another one</span>.
+                </p>
+            </b-col>
+            <b-col cols="12" v-else-if="filteredStrings.length === 0 && searchByIDTerm !== null" class="my-5 text-center">
+                <p>No strings in this table have the key "{{ searchByIDTerm }}". You can either
+                    <span @click="clearSearch" class="clickable">clear your search term</span>,
+                    or <span @click="searchByIdButtonClicked" class="clickable">try another one</span>.
                 </p>
             </b-col>
             <b-row class="w-100 m-0 p-0 text-center" v-if="this.chosenLayoutType === 'cards'">
@@ -588,6 +597,7 @@ export default {
             ],
             showPreviousTextTooltip: true,
             searchTerm: null,
+            searchByIDTerm: null,
             cachedFilteredStrings: null,
             selectedEntryPreviousState: null,
             shouldCacheFileContents: true,
@@ -629,11 +639,19 @@ export default {
             return this.filteredStrings.slice(offset, endIndex)
         },
         filteredStrings() {
-            if (this.searchTerm === null) return this.fileContents;
-            if (this.cachedFilteredStrings !== null) return this.cachedFilteredStrings;
-            return this.fileContents.filter(entry => {
-                return this.stringKeyBeingEdited === entry.key || entry.string.toLowerCase().includes(this.searchTerm);
-            });
+            if (this.searchTerm !== null) {
+                if (this.cachedFilteredStrings !== null) return this.cachedFilteredStrings;
+                return this.fileContents.filter(entry => {
+                    return this.stringKeyBeingEdited === entry.key || entry.string.toLowerCase().includes(this.searchTerm);
+                });
+            } else if (this.searchByIDTerm !== null) {
+                if (this.cachedFilteredStrings !== null) return this.cachedFilteredStrings;
+                return this.fileContents.filter(entry => {
+                    return formatKeyAsHex(entry.key).toLowerCase().includes(this.searchByIDTerm);
+                });
+            } else {
+                return this.fileContents;
+            }
         },
         numEntries() {
             return this.filteredStrings.length;
@@ -777,7 +795,7 @@ export default {
                     string: entryState.string
                 };
             }
-            if (this.searchTerm === null) return;
+            if (this.searchTerm === null && this.searchByIDTerm === null) return;
             this.cachedFilteredStrings = this.filteredStrings;
         },
         onStringInputUnfocused() {
@@ -785,7 +803,7 @@ export default {
 
             // cacheing tooltip
             this.selectedEntryPreviousState = null;
-            if (this.searchTerm === null) return;
+            if (this.searchTerm === null && this.searchByIDTerm === null) return;
             this.cachedFilteredStrings = null;
         },
         showStringEntryTooltip(thisEntry) {
@@ -813,11 +831,23 @@ export default {
         },
         searchButtonClicked() {
             const result = prompt("Only show strings containing...", this.searchTerm || '');
-            if (result !== null) this.searchTerm = result ? result.toLowerCase() : null;
+            if (result !== null) {
+                this.searchTerm = result ? result.toLowerCase() : null;
+                this.searchByIDTerm = null;
+            }
+            this.cachedFilteredStrings = null;
+        },
+        searchByIdButtonClicked() {
+            const result = prompt("Find string by ID...", this.searchByIDTerm || '');
+            if (result !== null) {
+                this.searchByIDTerm = result ? result.toLowerCase() : null;
+                this.searchTerm = null;
+            }
             this.cachedFilteredStrings = null;
         },
         clearSearch() {
             this.searchTerm = null;
+            this.searchByIDTerm = null;
             this.cachedFilteredStrings = null;
         },
         newHash(index) {
