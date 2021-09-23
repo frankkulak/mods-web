@@ -754,13 +754,14 @@ export default {
                 return;
             }
 
-            while (this.fileTGI.i === null) {
-                const defaultValue = this.stblFile ? this.stblFile.name : '';
-                const name = prompt("Enter a name to hash for the instance ID of your string table. It should be a unique name, prefixed with your creator name, such as 'YourName:stringTable_UniqueDescription'.", defaultValue);
-                if (name) {
-                    const instanceHex = fnv64(name).toString(16).toUpperCase().padStart(16, "0");
-                    this.fileTGI.i = this.selectedLanguage.stblCode + instanceHex.substring(2);
-                }
+            const defaultValue = this.stblFile ? this.stblFile.name : '';
+            const name = prompt("Enter a name to hash for the instance ID of your string table. It should be a unique name, prefixed with your creator name, such as 'YourName:stringTable_UniqueDescription'.", defaultValue);
+
+            if (name) {
+                const instanceHex = fnv64(name).toString(16).toUpperCase().padStart(16, "0");
+                this.fileTGI.i = this.selectedLanguage.stblCode + instanceHex.substring(2);
+            } else {
+                this.fileTGI.i = "Unknown";
             }
         },
         setLanguageAndTGIFromFilename() {
