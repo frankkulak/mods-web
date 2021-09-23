@@ -825,6 +825,7 @@ export default {
         },
         newString() {
             const string = prompt("Enter a string.");
+            if (string === null) return;
             const stringToHash = this.hashPrefix ? `${this.hashPrefix}:${string}` : string;
             const key = Number(fnv32(stringToHash));
             this.fileContents.push({key, string});
