@@ -1077,7 +1077,7 @@ input[type="number"]:focus,{
 
     &:disabled {
         background-color: var(--bg-color);
-        opacity: 50%;
+        opacity: 0.5;
     }
 }
 
