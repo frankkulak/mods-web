@@ -33,7 +33,7 @@
 <style lang="scss">
     nav {
         box-shadow: 0 4px 8px var(--shadow-color);
-        background-color: var(--bg-color);
+        background-color: var(--nav-bg);
 
         a, a:hover, a:focus {
             text-decoration: none;
@@ -41,9 +41,19 @@
 
         a.navbar-brand {
             font-weight: bold;
+            color: var(--text-color) !important;
         }
 
         ul.navbar-nav {
+            a:not(.router-link-exact-active) {
+                color: var(--text-color) !important;
+                opacity: 60%;
+
+                &:hover {
+                    opacity: 100%;
+                }
+            }
+
             a.router-link-exact-active {
                 color: var(--accent-color) !important;
                 font-weight: bold;

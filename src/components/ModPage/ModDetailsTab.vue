@@ -41,13 +41,13 @@
         }
 
         mark.new {
-            background-color: transparentize($blurple, 0.55);
-            color: $dark-blue;
+            background-color: transparentize($blurple, 0.8);
+            color: var(--text-color);
             font-weight: bold;
             border-radius: 6px;
             padding: 2px 8px;
             margin: 1px;
-            box-shadow: -1px 1px 5px #d5d5d5;
+            box-shadow: -1px 1px 5px var(--shadow-color);
             font-size: 0.8em;
         }
     }

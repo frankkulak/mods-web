@@ -109,7 +109,7 @@
             color: white;
 
             &.notice-header {
-                color: #856404;
+                color: var(--alert-warning-text);
             }
         }
 
