@@ -68,10 +68,10 @@
         ul.navbar-nav {
             a:not(.router-link-exact-active) {
                 color: var(--text-color) !important;
-                opacity: 60%;
+                opacity: 0.6;
 
                 &:hover {
-                    opacity: 100%;
+                    opacity: 1;
                 }
             }
 
@@ -83,11 +83,11 @@
 
         #theme-switcher {
             font-size: 1.5em;
-            opacity: 60%;
+            opacity: 0.6;
 
             &:hover {
                 cursor: pointer;
-                opacity: 100%;
+                opacity: 1;
             }
         }
     }
