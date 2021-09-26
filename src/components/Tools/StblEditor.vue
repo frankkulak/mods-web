@@ -825,6 +825,11 @@ export default {
             }
         },
         newString() {
+            if (!this.hashPrefix) {
+                alert("As mentioned in the directions, you must set a hash prefix in settings before creating strings. This should be something unique to you, such as your creator name. It will be appended to strings before they are hashed to help keep your hashes unique.");
+                return;
+            }
+
             const string = prompt("Enter a string.");
             if (string === null) return;
             const stringToHash = this.hashPrefix ? `${this.hashPrefix}:${string}` : string;
