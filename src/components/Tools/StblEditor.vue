@@ -979,11 +979,7 @@ export default {
             border-bottom: none;
 
             &.listview-card-dark {
-                background-color: var(--card-bg-color);
-
-                input {
-                    background-color: var(--bg-color);
-                }
+                background-color: var(--bg-color);
             }
         }
 
