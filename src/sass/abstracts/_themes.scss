@@ -14,8 +14,8 @@
   --secondary-footer-color: #{$dark-blue};
   --alert-success-text: #{darken($teal, 18%)};
   --alert-success-bg: #{lighten($teal, 45%)};
-  --alert-warning-text: #{darken($gold, 18%)};
-  --alert-warning-bg: #{lighten($gold, 45%)};
+  --alert-warning-text: #{darken($gold, 22%)};
+  --alert-warning-bg: #{lighten($gold, 20%)};
   --alert-danger-text: #{darken($red, 18%)};
   --alert-danger-bg: #{lighten($red, 36%)};
   --alert-primary-text: #{darken($blue, 18%)};
@@ -38,8 +38,8 @@
   --secondary-footer-color: #{darken($dark-blue, 8%)};
   --alert-success-text: #{lighten($teal, 32%)};
   --alert-success-bg: #{darken($teal, 26%)};
-  --alert-warning-text: #{lighten($gold, 32%)};
-  --alert-warning-bg: #{darken($gold, 26%)};
+  --alert-warning-text: #{lighten($gold, 24%)};
+  --alert-warning-bg: #{darken($gold, 40%)};
   --alert-danger-text: #{lighten($red, 32%)};
   --alert-danger-bg: #{darken($red, 26%)};
   --alert-primary-text: #{lighten($blue, 32%)};
