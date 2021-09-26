@@ -926,8 +926,8 @@ export default {
         z-index: 1024;
 
         .btn.btn-primary {
-            background-color: $blurple;
-            border-color: $blurple;
+            background-color: var(--accent-color);
+            border-color: var(--accent-color);
             color: white;
 
             &:hover:not(:disabled) {
@@ -979,10 +979,10 @@ export default {
             border-bottom: none;
 
             &.listview-card-dark {
-                background-color: #f7f7f7;
+                background-color: var(--card-bg-color);
 
                 input {
-                    background-color: #fbfbfb;
+                    background-color: var(--bg-color);
                 }
             }
         }
@@ -1001,21 +1001,115 @@ export default {
     }
 
     .blurple-text {
-        color: $blurple;
+        color: var(--accent-color);
     }
 
     kbd {
-        background-color: white;
-        color: $dark-gray;
-        border-color: $dark-gray;
+        background-color: var(--card-bg-color);
+        color: var(--text-color);
+        border-color: var(--text-color);
         border-radius: 6px;
         border-width: 1px;
         font-size: 0.8em;
         border-style: solid;
     }
+
+    pre {
+        color: var(--text-color);
+    }
 }
 
-#settings-modal .text-danger p {
-    font-size: 0.8em;
+#settings-modal {
+    .modal-header {
+        background-color: var(--bg-color);
+        border-bottom-color: var(--shadow-color);
+    }
+
+    .modal-body {
+        background-color: var(--card-bg-color);
+    }
+
+    button.close {
+        color: var(--text-color);
+    }
+
+    .text-danger p {
+        font-size: 0.8em;
+    }
+
+    .custom-switch input[type="checkbox"] {
+        &:checked + label {
+            &::before {
+                background-color: var(--accent-color);
+                border-color: var(--accent-color-light);
+            }
+
+            &::after {
+                background-color: white;
+            }
+        }
+
+        &:not(:checked) + label {
+            &::before {
+                background-color: var(--text-color);
+                border-color: var(--bg-color);
+            }
+
+            &::after {
+                background-color: var(--card-bg-color);
+            }
+        }
+    }
+
+    .custom-radio input[type="radio"]:checked + label::before {
+        background-color: var(--accent-color);
+        border-color: var(--accent-color-light);
+    }
 }
+
+select.custom-select,
+input[type="text"],
+input[type="text"]:focus,
+input[type="number"],
+input[type="number"]:focus,{
+    background-color: var(--card-bg-color);
+    color: var(--text-color);
+
+    &:disabled {
+        background-color: var(--bg-color);
+        opacity: 50%;
+    }
+}
+
+label.custom-file-label {
+    background-color: var(--card-bg-color);
+    color: var(--text-color);
+
+    &::after {
+        background-color: var(--bg-color);
+        color: var(--text-color);
+    }
+}
+
+.card, .card textarea, .card input {
+    background-color: var(--card-bg-color);
+    color: var(--text-color);
+}
+
+.popover {
+    .popover-header {
+        background-color: var(--bg-color);
+        border-bottom: var(--shadow-color);
+    }
+
+    .popover-body {
+        background-color: var(--card-bg-color);
+        color: var(--text-color);
+    }
+
+    .arrow::after {
+        border-top-color: var(--card-bg-color);
+    }
+}
+
 </style>
