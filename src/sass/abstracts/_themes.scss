@@ -1,5 +1,6 @@
 :root[data-theme="light"] {
   --bg-color: #{$off-white};
+  --bg-color-darker: #{darken($off-white, 5%)};
   --nav-bg: #{transparentize($off-white, 0.12)};
   --card-bg-color: #{white};
   --h-color: #{$blurple};
@@ -24,6 +25,7 @@
 
 :root[data-theme="dark"] {
   --bg-color: #{$darkest-gray};
+  --bg-color-darker: #{darken($darkest-gray, 5%)};
   --nav-bg: #{transparentize($darkest-gray, 0.12)};
   --card-bg-color: #{$darker-gray};
   --h-color: #{$bright-blurple};

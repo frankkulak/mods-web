@@ -973,13 +973,27 @@ export default {
     }
 
     .listview-column {
+        .card-body {
+            padding-top: 12px;
+            padding-bottom: 12px;
+        }
+
         .listview-card {
             border-radius: 0;
             border-top: none;
             border-bottom: none;
 
+            input {
+                border-color: var(--bg-color);
+                background-color: transparent;
+            }
+
             &.listview-card-dark {
                 background-color: var(--bg-color);
+
+                input {
+                    border-color: var(--bg-color-darker);
+                }
             }
         }
 
