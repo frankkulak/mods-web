@@ -423,7 +423,7 @@ export const ModData = {
             videoUrl: null,
             overview: [
                 {
-                    title: 'main features <mark class="new">NEW</mark>',
+                    title: 'main features',
                     bullets: [
                         `Six languages: Simlish, Windenburgish, Selvadoradian, Toki Sulani, Komorebigo, and Sixami.`,
                         `Sims are assigned their native language(s) based on their family, occult type, traits, and home world. They may also speak some other languages at varying levels of fluency, depending on their age, family, traits, and home world.`,
@@ -439,7 +439,7 @@ export const ModData = {
                         `You can change any sim's native language(s) and/or language skills if you do not like their defaults.`,
                         `You can disable Language Barriers for any sim, and they'll be able to communicate like normal.`,
                         `You can change how language assignment, language acquisition, and regional languages work by editing the settings file. No technical skills are required to do this, just follow <a href="https://www.patreon.com/posts/54392738" target="_blank">this guide on Patreon</a> (not locked to patrons).`,
-                        `<mark class="new">NEW</mark> If you're more tech-savvy, Language Barriers is much more customizable with its tuning modules. A guide for this will be coming soon, but if you want to poke around now, feel free to check out the <code>frankk_LanguageBarriers_Data</code> package.`
+                        `If you're more tech-savvy, Language Barriers is much more customizable with its tuning modules. A guide for this will be coming soon, but if you want to poke around now, feel free to check out the <code>frankk_LanguageBarriers_Data</code> package.`
                     ]
                 },
                 {
@@ -447,7 +447,7 @@ export const ModData = {
                     bullets: [
                         `Language Barriers is Base Game Compatible. You can use all of the languages, even if you don't have the associated pack.`,
                         `There are no known conflicts with other mods, but it is possible for script mods to unexpectedly interfere with one another. If you notice weird behavior with another mod installed, please let me know.`,
-                        `<mark class="new">NEW</mark> It is easier than ever to integrate a mod with Language Barriers, and some mod integrations are available now alongside the main download. A guide for creators to create integrations for their mods is coming soon.`,
+                        `It is easier than ever to integrate a mod with Language Barriers, and some mod integrations are available now alongside the main download. A guide for creators to create integrations for their mods is coming soon.`,
                     ]
                 },
                 {
@@ -475,7 +475,7 @@ export const ModData = {
                     title: 'native language traits',
                     bullets: [
                         `Each language has a native speaker trait. These traits are not chosen in CAS - they are automatically assigned to sims when they spawn in to the world. These traits can be added and removed using cheats.`,
-                        `<mark class="new">NEW</mark> A sim's native language(s) will be determined based on their parents' language(s). If they don't have parents, their occult type, culture-related traits, and home world are used instead (in that order). You can customize how this works by following <a href="https://www.patreon.com/posts/54392738" target="_blank">this guide on Patreon</a> (not locked to patrons).`,
+                        `A sim's native language(s) will be determined based on their parents' language(s). If they don't have parents, their occult type, culture-related traits, and home world are used instead (in that order). You can customize how this works by following <a href="https://www.patreon.com/posts/54392738" target="_blank">this guide on Patreon</a> (not locked to patrons).`,
                         `Sims must have at least one native language trait at all times, but you can change it or add more by using the 'Languages > Native Languages' pie menu option. The 'Switch' option will remove all native languages, and add the one that is chosen instead.`,
                     ]
                 },
@@ -484,37 +484,37 @@ export const ModData = {
                     bullets: [
                         `Each language has a skill. A sim may only learn a language skill if it is not their native language.`,
                         `Sims can study a language on Simlingo (phone/computer/tablet), with a textbook, or by talking to someone who speaks it better than them.`,
-                        `<mark class="new">NEW</mark> Sims are guaranteed to share at least one fluent language with their parents and partner, and are guaranteed to know at least one of their home world's official languages. Additionally, children are likely to speak each of their parents' native language(s) in some capacity. You can customize this by following <a href="https://www.patreon.com/posts/54392738" target="_blank">this guide on Patreon</a> (not locked to patrons).`,
-                        `<mark class="new">NEW</mark> Sims may have random language skills by default. The languages they may speak depends on their home world and native language(s), and their proficiency in each one depends on its genetic closeness to languages they speak fluently, their traits, their age, and some other factors. This can also be customized by following the link above.`,
+                        `Sims are guaranteed to share at least one fluent language with their parents and partner, and are guaranteed to know at least one of their home world's official languages. Additionally, children are likely to speak each of their parents' native language(s) in some capacity. You can customize this by following <a href="https://www.patreon.com/posts/54392738" target="_blank">this guide on Patreon</a> (not locked to patrons).`,
+                        `Sims may have random language skills by default. The languages they may speak depends on their home world and native language(s), and their proficiency in each one depends on its genetic closeness to languages they speak fluently, their traits, their age, and some other factors. This can also be customized by following the link above.`,
                     ]
                 },
                 {
                     title: 'toddler language acquisition',
                     bullets: [
                         `Babies and toddlers do not have native languages - they are acquired once they become a child.`,
-                        `<mark class="new">NEW</mark> Toddlers will automatically have some skill in their parents' native language(s), and will pick up new language skills depending on the language(s) that adults choose to use with them.`,
+                        `Toddlers will automatically have some skill in their parents' native language(s), and will pick up new language skills depending on the language(s) that adults choose to use with them.`,
                         `Toddlers can use Simlingo Jr. on any tablet to learn languages that their parents cannot teach them.`,
                         `When a toddler becomes a child, any languages at or above a certain threshold will be acquired as a native language. By default, this threshold is 5, but you can change it by following <a href="https://www.patreon.com/posts/54392738" target="_blank">this guide on Patreon</a> (not locked to patrons).`,
                         `If there are no languages at the acquisition threshold, then their highest language will be used instead. If they have no language skills at all, then they will speak Simlish.`,
-                        `<mark class="new">NEW</mark> If a toddler acquires more than one native language, they will also get the Native Multilingual reward trait, which makes learning languages faster.`,
+                        `If a toddler acquires more than one native language, they will also get the Native Multilingual reward trait, which makes learning languages faster.`,
                     ]
                 },
                 {
-                    title: 'regional languages <mark class="new">NEW</mark>',
+                    title: 'regional languages',
                     bullets: [
                         `Each world has official and minority languages. Official languages are used to determine the native languages of sims who live there, and minority languages are used to determine skills.`,
                         `Each world has only one official language by default, and multiple minority languages. These can be customized by following <a href="https://www.patreon.com/posts/54392738" target="_blank">this guide on Patreon</a> (not locked to patrons).`
                     ]
                 },
                 {
-                    title: 'language genetics <mark class="new">NEW</mark>',
+                    title: 'language genetics',
                     bullets: [
                         `Languages are organized in a family tree, loosely based off of their real-world counterparts, with some creative liberty taken. Language genetics affect how difficult it is for a sim to learn another language, and how likely they are to make mistakes while speaking it.`,
                         `Simlish and Windenburgish are very closely related to one another, and are somewhat related to Selvadoradian. Komorebigo and Toki Sulani are somewhat related to one another, and are distantly related to Simlish, Windenburgish, and Selvadoradian. Sixami is not related to the other languages at all.`
                     ]
                 },
                 {
-                    title: 'language contexts and preferences <mark class="new">NEW</mark>',
+                    title: 'language contexts and preferences',
                     bullets: [
                         `Each pair of sims has one agreed-upon language to use with one another (their language context). Which language they use is determined when they first meet, but can be changed at any time. The language context between two sims can be seen in the sim's profile, and it determines how often communication events occurs, what happens when they do, and which language skills are increased while speaking.`,
                         `Sims can declare a language preference, and will always use that language with other sims when they meet for the first time (i.e. it will be chosen as the default context).`,
@@ -523,7 +523,7 @@ export const ModData = {
                     ]
                 },
                 {
-                    title: 'interaction locking <mark class="new">NEW</mark>',
+                    title: 'interaction locking',
                     bullets: [
                         `If either sim has a low skill in the current language context, some interactions will be locked. Interactions gradually unlock as each sim increases their skill in the language.`,
                         `If a sim has Language Barriers disabled, they will be able to communicate with everyone normally.`,
@@ -531,7 +531,7 @@ export const ModData = {
                     ]
                 },
                 {
-                    title: 'integration with other mods <mark class="new">NEW</mark>',
+                    title: 'integration with other mods',
                     bullets: [
                         `Interaction locking will <em>kinda</em> work with CC interactions that are in the friendly, funny, mischief, mean, or romance categories. Some mis-matches can occur, though: (1) if they are non-verbal, they may be locked, (2) if they are in their own CC categories, they will not be affected at all.`,
                         `In order for LB to work properly with another mod that adds social interactions, either I or its creator has to make an integration for it. Integrations are small files that tell LB which interactions to lock or not. If you want to see LB better integrated with another mod, just let me know.`,
@@ -539,7 +539,7 @@ export const ModData = {
                     ]
                 },
                 {
-                    title: `communication events <mark class="new">NEW</mark>`,
+                    title: `communication events`,
                     bullets: [
                         `This has replaced the old "miscommunication" system. If two sims are speaking in a language which at least one of them does not speak fluently, there is a chance for a communication event to occur (i.e. accidentally saying something inappropriate or offensive, not being able to understand another sim, speaking too fast, talking down to someone, etc.).`,
                         `Communication events can result in either positive or negative buffs, depending on the sim's current mood, traits, and chance. There are over 150+ buffs, but once a sim reacts in a particular mood, they will stick with that mood for a while, and it will gradually get more intense. Moodlets are different for speakers and listeners.`,
@@ -547,7 +547,7 @@ export const ModData = {
                     ]
                 },
                 {
-                    title: `optional add-ons <mark class="new">NEW</mark>`,
+                    title: `optional add-ons`,
                     bullets: [
                         `There are 5 add-ons for you to change existing content in LB. These are completely optional, and must be downloaded manually from the download page if you want them. Simply add the ones you want to the Language Barriers mod folder.`,
                         `<strong>Ask to change language always succeeds</strong>: Will make the chance that a sim agrees to speak another language 100%, meaning that you can always guarantee a change in language context without cheating.`,
@@ -619,6 +619,14 @@ export const ModData = {
                 },
             ],
             versionHistory: [
+                {
+                    version: '2.0.3',
+                    date: 'October 2, 2021',
+                    bullets: [
+                        "Silence a common error that doesn't actually cause issues (it will no longer show the 'Language Barriers Exception' notification).",
+                        'Update the Spanish translation for LB v2.0.',
+                    ]
+                },
                 {
                     version: '2.0.2',
                     date: 'September 13, 2021',
@@ -846,8 +854,8 @@ export const ModData = {
                 },
                 {
                     language: Languages.spa_es,
-                    translator: `<a href="https://geosims.wixsite.com/geosimscr/mods-traducidos" target="_blank">GeoSims</a>`,
-                    updated: false,
+                    translator: `<a href="https://geosims.wixsite.com/geosimscr/mods-traducidos" target="_blank">GeoSims</a> and Juliet26`,
+                    updated: true,
                 },
                 {
                     language: Languages.cht_cn,
