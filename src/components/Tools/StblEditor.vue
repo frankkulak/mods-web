@@ -1090,6 +1090,7 @@ label.custom-file-label {
 .card, .card textarea, .card textarea:focus, .card input, .card input:focus {
     background-color: var(--card-bg-color);
     color: var(--text-color);
+    border-color: var(--shadow-color);
 }
 
 .popover {
