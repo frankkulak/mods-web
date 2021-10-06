@@ -77,7 +77,7 @@ export default {
     }
 
     span.benefit-title {
-        color: $blurple;
+        color: var(--accent-color);
         font-weight: bold;
     }
 
