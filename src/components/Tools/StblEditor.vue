@@ -69,6 +69,13 @@
                         <b-icon-download/>
                         button in the bottom-right corner of the screen.
                     </p>
+                    <hr>
+                    <p><strong>Bonus info:</strong> You can export your string table as a JSON file by changing the
+                        'Export As...' setting. You can then do whatever you want with it, and re-upload it here to
+                        convert it back to a string table binary. The JSON must be formatted as a list of objects
+                        containing <code>key</code> and <code>string</code> fields, which should be a 32-bit integer
+                        and string, respectively.
+                    </p>
                 </div>
             </div>
         </div>
@@ -79,9 +86,9 @@
                     class="text-left"
                     v-model="stblFile"
                     :state="Boolean(stblFile)"
-                    placeholder="Choose or drop a .StringTable, .binary, or .stbl file here..."
+                    placeholder="Choose or drop a String Table file here..."
                     drop-placeholder="Drop file here..."
-                    accept=".binary, .stbl, .StringTable"
+                    accept=".binary, .stbl, .StringTable, .json"
                     v-on:input="refreshStbl()"
                 ></b-form-file>
             </b-col>
@@ -245,8 +252,22 @@
                                         ></b-form-radio-group>
                                     </b-col>
                                     <b-col cols="12">
-                                        <p class="mt-2" style="font-size: 0.8em;">Note: If you are translating one of
-                                            my mods, please export as S4S.</p>
+                                        <p class="mt-2" style="font-size: 0.8em;">If translating my mods, use S4S.</p>
+                                    </b-col>
+                                </b-row>
+                                <b-row align-v="center" class="my-3">
+                                    <b-col>
+                                        <label class="mb-0">Export as</label>
+                                    </b-col>
+                                    <b-col>
+                                        <b-form-radio-group
+                                            v-model="downloadOption"
+                                            :options="downloadOptions"
+                                        ></b-form-radio-group>
+                                    </b-col>
+                                    <b-col cols="12">
+                                        <p class="mt-2" style="font-size: 0.8em;">If you don't know what this means, just use
+                                            "Binary".</p>
                                     </b-col>
                                 </b-row>
                             </b-container>
@@ -501,7 +522,7 @@ import {
     BIconSearch,
     BIconXCircle
 } from 'bootstrap-vue';
-import {getStblContents} from "@/scripts/tools/stblDecoder";
+import {getStblContents, readJsonFileAsStbl} from "@/scripts/tools/stblDecoder";
 import {Languages, EnglishData, getTGI, getLocale} from "@/scripts/tools/stblUtils";
 import {serializeStbl} from "@/scripts/tools/stblEncoder";
 import {fnv32, fnv64} from "@/scripts/tools/hashing";
@@ -553,6 +574,7 @@ export default {
         const cacheFileContents = localStorage.getItem('fkStblTool_CacheFileContents');
         this.shouldCacheFileContents = cacheFileContents === null || cacheFileContents === "true";
         this.hashPrefix = localStorage.getItem('fkStblTool_HashPrefix');
+        this.downloadOption = localStorage.getItem('fkStblTool_DownloadAs') || 'binary';
 
         // load file data
         const fileContents = localStorage.getItem('fkStblTool_FileContents');
@@ -590,6 +612,11 @@ export default {
                 {text: 'S4S', value: 's4s'},
                 {text: 'S4PE', value: 's4pe'}
             ],
+            downloadOption: 'binary',
+            downloadOptions: [
+                {text: 'Binary', value: 'binary'},
+                {text: 'JSON', value: 'json'}
+            ],
             chosenLayoutType: 'cards',
             layoutTypes: [
                 {text: 'Cards', value: 'cards'},
@@ -626,10 +653,12 @@ export default {
         downloadFilename() {
             if (this.filenameType === 's4s') {
                 const tgiPrefix = `${this.fileTGI.t}!${this.fileTGI.g}!${this.fileTGI.i}`;
-                return `${tgiPrefix}.${this.selectedLanguage.name}.StringTable.binary`;
+                const extension = this.downloadOption === 'json' ? 'json' : 'binary';
+                return `${tgiPrefix}.${this.selectedLanguage.name}.StringTable.${extension}`;
             } else {
                 const tgiPrefix = `${this.fileTGI.t}_${this.fileTGI.g}_${this.fileTGI.i}`;
-                return `S4_${tgiPrefix}.stbl`;
+                const extension = this.downloadOption === 'json' ? 'json' : 'stbl';
+                return `S4_${tgiPrefix}.${extension}`;
             }
         },
         entriesToShow() {
@@ -694,6 +723,7 @@ export default {
             localStorage.setItem('fkStblTool_PrevTextTooltip', this.showPreviousTextTooltip);
             localStorage.setItem('fkStblTool_CacheFileContents', this.shouldCacheFileContents);
             localStorage.setItem('fkStblTool_HashPrefix', this.hashPrefix);
+            localStorage.setItem('fkStblTool_DownloadAs', this.downloadOption);
         },
         tryCacheFileContents() {
             if (this.shouldCacheFileContents) {
@@ -776,18 +806,50 @@ export default {
         },
         refreshStbl() {
             if (this.stblFile === null) return;
-            getStblContents(this.stblFile).then(result => {
-                if (result === null || typeof result === "string") {
-                    this.fileContents = null;
-                    this.errorMessage = result;
-                } else {
-                    this.errorMessage = null;
-                    this.fileContents = result.stringEntries.map(entry => {
-                        return {key: entry.key, string: entry.string};
+            try {
+                const filenameSplit = this.stblFile.name.split('.');
+                const parseAsJson = filenameSplit[filenameSplit.length - 1] === 'json';
+                if (parseAsJson) {
+                    readJsonFileAsStbl(this.stblFile).then(result => {
+                        if (result === null || typeof result === "string") {
+                            this.fileContents = null;
+                            this.errorMessage = result;
+                        } else {
+                            this.errorMessage = null;
+                            if (!Array.isArray(result)) throw "JSON is not an array.";
+                            this.fileContents = result.map(({ key, string }) => {
+                                if (key === undefined || string === undefined)
+                                    throw "At least one entry is missing a key and/or string value.";
+                                if (typeof key !== "number")
+                                    throw "At least one key is not a number.";
+                                if (typeof string !== "string")
+                                    throw "At least one string value is not a string.";
+                                return { key, string };
+                            });
+                            this.setLanguageAndTGIFromFilename();
+                        }
+                    }).catch(reason => {
+                        this.fileContents = null;
+                        this.errorMessage = reason;
                     });
-                    this.setLanguageAndTGIFromFilename();
+                } else {
+                    getStblContents(this.stblFile).then(result => {
+                        if (result === null || typeof result === "string") {
+                            this.fileContents = null;
+                            this.errorMessage = result;
+                        } else {
+                            this.errorMessage = null;
+                            this.fileContents = result.stringEntries.map(entry => {
+                                return {key: entry.key, string: entry.string};
+                            });
+                            this.setLanguageAndTGIFromFilename();
+                        }
+                    });
                 }
-            });
+            } catch (e) {
+                this.fileContents = null;
+                this.errorMessage = e;
+            }
         },
         onStringInputFocused(entryState) {
             if (this.selectedEntryPreviousState === null) {
@@ -885,8 +947,17 @@ export default {
             const tgiValid = this.typeIsValid && this.groupIsValid && this.instanceIsValid && this.instanceMatchesLocale;
             if (!tgiValid)
                 alert('Your string table either does not have a valid type, group, or instance, or its instance does not match the locale you have selected. You may experience issues when importing your string table to S4S.');
-            const stblBuffer = serializeStbl(this.fileContents);
-            this.downloadUrl = `data:text/plain;base64,${stblBuffer.toString('base64')}`;
+
+            let encoding, contents;
+            if (this.downloadOption === 'binary') {
+                encoding = 'base64';
+                contents = serializeStbl(this.fileContents).toString(encoding);
+            } else {
+                encoding = 'utf-8';
+                contents = JSON.stringify(this.fileContents, null, 2);
+            }
+
+            this.downloadUrl = `data:text/plain;${encoding},${contents}`;
         }
     }
 }
@@ -900,6 +971,12 @@ export default {
         background-color: var(--card-bg-color);
         border: 1px solid var(--shadow-color);
         border-radius: 10px;
+
+        hr {
+            border: none;
+            height: 2px;
+            background-color: var(--accent-color);
+        }
     }
 
     .custom-file-input ~ .custom-file-label {

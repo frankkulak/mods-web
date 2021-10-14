@@ -88,3 +88,15 @@ export async function getStblContents(file) {
         return `${error}`;
     }
 }
+
+export async function readJsonFileAsStbl(file) {
+    if (!file) return null;
+
+    try {
+        const arrayBuffer = await file.arrayBuffer();
+        const jsonContent = Buffer.from(arrayBuffer).toString('utf-8');
+        return JSON.parse(jsonContent);
+    } catch (error) {
+        return `${error}`;
+    }
+}
