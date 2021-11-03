@@ -204,6 +204,7 @@ export default {
                         try {
                             result.tgi = getTGI(file.name);
                             result.locale = getLocale(result.tgi.i);
+                            if (result.locale === undefined) result.locale = {name: "Unknown", emoji: "[?]"};
                             if (this.outputTGI === null) this.outputTGI = Object.assign({}, result.tgi);
                             if (this.outputLanguage === null) this.outputLanguage = result.locale;
                             this.decodedStbls.push(result);
