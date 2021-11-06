@@ -439,7 +439,7 @@ export const ModData = {
                         `You can change any sim's native language(s) and/or language skills if you do not like their defaults.`,
                         `You can disable Language Barriers for any sim, and they'll be able to communicate like normal.`,
                         `You can change how language assignment, language acquisition, and regional languages work by editing the settings file. No technical skills are required to do this, just follow <a href="https://www.patreon.com/posts/54392738" target="_blank">this guide on Patreon</a> (not locked to patrons).`,
-                        `If you're more tech-savvy, Language Barriers is much more customizable with its tuning modules. A guide for this will be coming soon, but if you want to poke around now, feel free to check out the <code>frankk_LanguageBarriers_Data</code> package.`
+                        `If you're more tech-savvy, Language Barriers is much more customizable with its tuning modules. A guide for this will be coming soon™, but if you want to poke around now, feel free to check out the <code>frankk_LanguageBarriers_Data</code> package.`
                     ]
                 },
                 {
@@ -447,7 +447,7 @@ export const ModData = {
                     bullets: [
                         `Language Barriers is Base Game Compatible. You can use all of the languages, even if you don't have the associated pack.`,
                         `There are no known conflicts with other mods, but it is possible for script mods to unexpectedly interfere with one another. If you notice weird behavior with another mod installed, please let me know.`,
-                        `It is easier than ever to integrate a mod with Language Barriers, and some mod integrations are available now alongside the main download. A guide for creators to create integrations for their mods is coming soon.`,
+                        `It is easier than ever to integrate a mod with Language Barriers, and some mod integrations are available now alongside the main download. A guide for creators to make integrations for their mods can be found <a href="https://frankkmods.medium.com/how-to-integrate-your-mod-with-language-barriers-a1680c7bceab" target="_blank">here</a>.`,
                     ]
                 },
                 {
