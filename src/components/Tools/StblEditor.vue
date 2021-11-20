@@ -932,11 +932,11 @@ export default {
         },
         setManualKey(index) {
             const newKey = prompt("Enter the 32-bit hash to use.", this.getHexCode(index));
-            if (newKey && newKey.match(/^0x([0-9A-F]{8})$/i)) {
+            if (newKey && newKey.match(/^(0x)?([0-9A-F]{8})$/i)) {
                 this.entriesToShow[index].key = parseInt(newKey, 16);
                 this.tryCacheFileContents();
             } else if (newKey !== null) {
-                alert(`${newKey} is not a valid key. It must be a 32-bit (8 digit) hex code, prefixed with 0x.`);
+                alert(`${newKey} is not a valid key. It must be a 32-bit (8 digit) hex code.`);
             }
         },
         keyAndStringToClipboard(index) {
