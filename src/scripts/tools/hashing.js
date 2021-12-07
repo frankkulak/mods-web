@@ -17,13 +17,14 @@ const fnvOptions = {
 }
 
 
-function fnv(name, { offset, prime, max }) {
+function fnv(value, { offset, prime, max }) {
     let hash = offset;
-    Buffer.from(name.toLowerCase(), 'utf-8').forEach(byte => {
+    const lowerString = value.toLowerCase();
+    for (let i = 0; i < value.length; i++) {
         hash *= prime;
         hash %= max;
-        hash ^= BigInt(byte);
-    });
+        hash ^= BigInt(lowerString.charCodeAt(i));
+    }
     return hash;
 }
 
