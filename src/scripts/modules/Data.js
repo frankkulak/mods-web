@@ -11,6 +11,7 @@ export const DataEnums = {
         working: 2,
         untested: 3,
         broken: 4,
+        experimental: 5
     },
 };
 
@@ -108,6 +109,7 @@ export const ModCategoryData = {
             'buybitsandpieces',
             'followersforfame',
             'onlinehomework',
+            'utterchaos',
         ],
         utility: [
             'packtests'
@@ -1343,6 +1345,96 @@ export const ModData = {
                 url: `http://www.simfileshare.net/download/2251516/`
             },
             warning: `The July 20, 2021 patch broke v1.0, so please ensure you are using v1.0.1.`,
+            hasStrings: false,
+            translations: []
+        },
+        utterchaos: {
+            game: 'ts4',
+            id: 'utterchaos',
+            name: 'Utter Chaos',
+            developmentStage: DataEnums.developmentStage.active,
+            testingStatus: DataEnums.testingStatus.working,
+            beingUpdated: false,
+            updateInfo: null,
+            trelloBoard: null,
+            releaseDate: 'December 13, 2021',
+            description: `Saying "hello" to your neighbor? You just might burst into flames, turn into an alien, or both. This mod adds a chance for random outcomes to every action in the game.`,
+            thumbnail: 'uc-fire.png',
+            images: [
+                'uc-fire.png',
+                'uc-hospital.png',
+                'uc-outside.png',
+            ],
+            videoUrl: null,
+            overview: [
+                {
+                    title: 'random outcomes',
+                    bullets: [
+                        `Every time a sim or object does anything, there is a chance for the outcome of their action to be randomized.`,
+                        `Random outcomes can be anything in the game, from getting a single notification to being abducted by an alien. There is no bias in which outcome is chosen, so you are equally likely to experience any of them. This includes ones from other mods.`,
+                        `Random outcomes also count as actions, and can therefore trigger even more randomness when they finish. When it rains, it pours.`
+                    ]
+                },
+                {
+                    title: 'fair warning, lol',
+                    bullets: [
+                        `You should <strong>NOT</strong> use this mod in saves that you care about. If you do, you should not save your game before exiting. Your sims can and will have their lives turned upside down in an instant, and can die without warning.`,
+                        `This mod produces a lot of randomness. It can therefore cause your game to behave unexpectedly, especially if you are using it with other mods installed.`
+                    ]
+                },
+                {
+                    title: 'note on exceptions',
+                    bullets: [
+                        `If you are playing with mods that show an "exception" notification (such as MC Command Center or Better Exceptions), you may see an error pop up every now and then. This is expected and unavoidable, due to the high degree of randomness this mod produces. These errors are generally safe to ignore, so to avoid seeing them, you can remove MCCC and BE.`,
+                        `<strong><u>DO NOT REPORT ERRORS/BUGS TO MOD CREATORS WHILE YOU HAVE THIS MOD INSTALLED.</u></strong> If you notice other mods acting weirdly with Utter Chaos installed, there is a 110% chance it is due to Utter Chaos. It is utterly chaotic, as one might guess from the name.`,
+                        `<strong><u>DO NOT REPORT ERRORS/BUGS ABOUT THIS MOD TO ME, UNLESS THEY MAKE THE GAME UNPLAYABLE.</u></strong> By its nature, this mod is going to be highly unpredictable. I will not even attempt to fix any errors this mod causes, unless they make the game unplayable (such as freezing, messing up the UI, or anything similar).`
+                    ]
+                },
+                {
+                    title: 'why would you make this?',
+                    bullets: [
+                        `I was bored. I also have <a href="/">normal mods</a>, if this isn't your cup of tea.`
+                    ]
+                },
+            ],
+            details: [
+                {
+                    title: 'random outcome triggers',
+                    bullets: [
+                        `<strong>Action being completed</strong>: 10% chance of a random outcome`,
+                        `<strong>Sim spawns in world</strong>: 15% chance of them experiencing a random outcome on their own, plus a 5% chance of them experiencing a random outcome with the current active sim`,
+                    ]
+                },
+                {
+                    title: 'random outcome selection',
+                    bullets: [
+                        `When a random outcome is going to occur, one will be picked entirely at random. There are nearly 16,000 potential outcomes to choose from if you own every pack, and this number does not include outcomes from mods and CC.`
+                    ]
+                },
+            ],
+            faqs: [],
+            versionHistory: [
+                {
+                    version: '1.0',
+                    date: 'December 13, 2021',
+                    bullets: [
+                        `Incite chaos.`,
+                    ]
+                }
+            ],
+            primaryDownload: {
+                title: `Sim File Share`,
+                url: `http://www.simfileshare.net/download/2251515/`
+            },
+            patreonRelease: null,
+            alternativeDownloads: [
+                {
+                    title: `Google Drive`,
+                    url: `https://drive.google.com/file/d/1p8_9WsERhDKogO87jl1yNVJIo_fHOfve/view?usp=sharing`
+                },
+            ],
+            documentationDownload: null,
+            warning: `This mod is just for dumb fun. You should <strong>NOT</strong> be using it in saves that you care about, because literally anything can happen at any moment (pregnancy, death, turning into a mermaid...). Due to the degree of randomness caused by this mod, it may make other mods behave unpredictably as well. <strong><u>Do not report any bugs to creators while you have this mod installed</u></strong>, because chances are, this is what's breaking things.`,
             hasStrings: false,
             translations: []
         },

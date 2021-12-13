@@ -7,9 +7,10 @@
 
                     <section-header text="installation instructions" class="mb-3"/>
                     <ul class="mb-5">
-                        <li>Download the .zip folder from the link below.</li>
-                        <li>Unzip the folder and place it directly in your "The Sims 4 > Mods" directory. Do not place
-                            it in any sub-folders, or the script will not load and the mod will not work properly.
+                        <li>Download the mod from the link below. If it is zipped (has a .zip extension), you must
+                            unzip it before installing.</li>
+                        <li>Place the unzipped mod directly in your "The Sims 4 > Mods" directory. Do not place
+                            it in more than one sub-folder, or the script will not load and the mod will not work properly.
                         </li>
                         <li>Ensure that custom content and script mods are enabled (go to "Game Options > Other" in your
                             game settings).
