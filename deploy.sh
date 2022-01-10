@@ -3,6 +3,9 @@
 # abort on errors
 set -e
 
+# temporary bandaid
+export NODE_OPTIONS=--openssl-legacy-provider
+
 # build
 npm run build
 
