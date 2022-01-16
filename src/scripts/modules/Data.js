@@ -1419,7 +1419,7 @@ export const ModData = {
             faqs: [],
             versionHistory: [
                 {
-                    version: '1.0',
+                    version: '1.0 beta 1',
                     date: 'January 16, 2022',
                     bullets: [
                         `Incite chaos.`,
@@ -1428,13 +1428,13 @@ export const ModData = {
             ],
             primaryDownload: {
                 title: `Sim File Share`,
-                url: `http://www.simfileshare.net/download/2251515/`
+                url: `http://www.simfileshare.net/download/2929952/`
             },
             patreonRelease: null,
             alternativeDownloads: [
                 {
                     title: `Google Drive`,
-                    url: `https://drive.google.com/file/d/1p8_9WsERhDKogO87jl1yNVJIo_fHOfve/view?usp=sharing`
+                    url: `https://drive.google.com/file/d/1ufzQziu243gPupzp4LAamW22qSFQXVf5/view?usp=sharing`
                 },
             ],
             documentationDownload: null,
