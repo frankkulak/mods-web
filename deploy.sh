@@ -18,7 +18,7 @@ git add -A
 git commit -m 'Deploy.'
 
 # overwrite the gh-pages branch
-git push -f git@github.com:frankkulak/mods-web.git master:gh-pages
+git push -f git@github.com:frankkulak/mods-web.git main:gh-pages
 
 # navigate back
 cd -
