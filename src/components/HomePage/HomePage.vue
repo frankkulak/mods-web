@@ -25,6 +25,9 @@
             <div class="mod-section-content px-4 pt-4">
                 <section-header text="construction zone" class="mb-4"/>
                 <p>These mods are currently being developed, and are not yet ready for download. Check back later!</p>
+                <p><strong>NOTICE</strong>: I am not working on mods at the moment. I am working hard on wrapping up
+                    <a href="https://www.patreon.com/posts/sims-4-toolkit-58936217" target="_blank">Sims 4 Toolkit</a>,
+                and will get back to my regular mods when it is done. I do not have an estimated date at this time.</p>
                 <b-row>
                     <mod-preview v-for="mod in wipMods" :key="mod.id" :mod="mod" :major="true" :show-thumbnail="false"/>
                 </b-row>
