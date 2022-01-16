@@ -41,7 +41,7 @@
   --alert-success-text: #{$darkest-gray};
   --alert-success-bg: #{$teal};
   --alert-warning-text: #{$gold};
-  --alert-warning-bg: #{darken($gold, 70%)};
+  --alert-warning-bg: #{darken($darker-blue, 8%)};
   --alert-danger-text: #{lighten($red, 32%)};
   --alert-danger-bg: #{darken($red, 26%)};
   --alert-primary-text: #{lighten($blue, 32%)};
