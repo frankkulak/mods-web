@@ -1371,7 +1371,7 @@ export const ModData = {
                     title: 'random outcomes',
                     bullets: [
                         `Every time a sim or object does or receives anything, there is a chance for the outcome to be randomized.`,
-                        `Random outcomes can be anything in the game, from a notification to an alien abduction. There is no bias* in which outcome is chosen, so you are equally likely to experience any of them. This includes ones from other mods. (* = That statement is sort of a lie. There is a 1% chance that a chaotic outcome will involve fire, just to keep things spicy.)`,
+                        `Random outcomes can be anything in the game, from a notification to an alien abduction. There is a 1 in 400 chance that an outcome will involve fire, but other than that, all of them are equally likely to occur.`,
                         `Random outcomes also count as actions, and can therefore trigger even more randomness when they finish. When it rains, it pours. Have fun.`
                     ]
                 },
@@ -1380,6 +1380,14 @@ export const ModData = {
                     bullets: [
                         `<strong><u>You should NOT use this mod in saves that you care about</u></strong>. If you do, you should not save your game before exiting. Your sims can and will have their lives turned upside down in an instant, and can die without warning.`,
                         `<strong><u>No, seriously. Do NOT use this mod in a save you care about</u></strong>. There is a chance that an outcome will put your save in a state where there is an unsolvable problem. Common ones include permanently shutting off power on a lot, getting constantly spammed with notifications from a baby chicken that is traveling the world (not a joke, and way more annoying than it sounds), and catastrophic fires that destroy a build.`
+                    ]
+                },
+                {
+                    title: 'recommendations for best gameplay',
+                    bullets: [
+                        `If there is <em>too much</em> chaos, <strong><u>try removing other mods from the game</u></strong>. Other mods may perform actions in the background, and may do so very frequently. This can lead to an unbearable amount of notification or buff spam.`,
+                        `<strong><u>Disable Cottage Living, if you have it</u></strong>. The chicken thing I mentioned? Yeah, it's relentless. The notifications will pop up faster than you can close them. To avoid this altogether, I recommend disabling Cottage Living while playing. You can do this by using <a href="https://jamesturner.yt/disablepacks" target="_blank">James Turner's pack disabling tool</a>.`,
+                        `If you've followed the first two tips but there is still too much happening, restart your game on a fresh save. Sometimes a single session can become beyond cursed, and you just need to reset.`
                     ]
                 },
                 {
