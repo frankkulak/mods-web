@@ -831,7 +831,7 @@ export const ModData = {
             ],
             patreonRelease: null,
             documentationDownload: null,
-            warning: `If you were playing LB v2.0 or v2.0.1 with MCCC story progression enabled, you probably have a lot of random sims speaking Sixami. This has been patched and will no longer happen, but to fix your existing saves, you must run the cheat <code>fklb.fix_sixami_bug</code> on each one. Using that cheat will only affect NPC sims, so that your played sims do not have their languages changed. If you need to fix your played sims as well, please use <code>fklb.fix_sixami_bug all_sims</code>.`,
+            warning: null,
             hasStrings: true,
             translations: [
                 {

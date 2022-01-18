@@ -61,6 +61,8 @@
         </b-container>
 
         <mod-download :mod="mod" v-if="!isWip"/>
+
+        <scroll-to-bottom/>
     </div>
 </template>
 
@@ -71,10 +73,11 @@
     import ModDetailsTab from "./ModDetailsTab";
     import ModDownload from "./ModDownload";
     import ModTranslations from "./ModTranslations";
+    import ScrollToBottom from "./ScrollToBottom";
 
     export default {
         name: "ModPage",
-        components: {ModTranslations, ModStatusAlert, ModImageCarousel, ModDetailsTab, ModDownload},
+        components: {ModTranslations, ModStatusAlert, ModImageCarousel, ModDetailsTab, ModDownload, ScrollToBottom},
         data: function () {
             return {
                 mod: ModData[this.$route.params.game][this.$route.params.mod]
