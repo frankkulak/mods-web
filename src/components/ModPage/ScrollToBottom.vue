@@ -19,7 +19,6 @@ export default {
         }
     },
     mounted() {
-        this.scrollPos = window.pageYOffset || document.documentElement.scrollTop;
         document.addEventListener('scroll', () => this.scrollPos = window.pageYOffset || document.documentElement.scrollTop);
     },
     methods: {
@@ -34,7 +33,7 @@ export default {
     computed: {
         isViewingDownload() {
             const downloadPos = document.getElementById('mod-download')?.offsetTop ?? 0;
-            return this.scrollPos >= downloadPos - 70;
+            return this.scrollPos >= downloadPos - 70 && downloadPos !== 0;
         }
     }
 }
