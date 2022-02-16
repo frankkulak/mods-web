@@ -38,6 +38,12 @@ export const Languages = [
     },
     EnglishData,
     {
+        name: 'Finnish',
+        nativeName: 'Suomi',
+        emoji: '🇫🇮',
+        stblCode: '06'
+    },
+    {
         name: `French`,
         nativeName: `Français`,
         emoji: '🇫🇷',
@@ -77,13 +83,13 @@ export const Languages = [
         name: `Polish`,
         nativeName: `Polski`,
         emoji: '🇵🇱',
-        stblCode: '03'
+        stblCode: '0F'
     },
     {
         name: `Portuguese`,
         nativeName: `Português`,
         emoji: '🇧🇷',
-        stblCode: '0F'
+        stblCode: '11'
     },
     {
         name: `Russian`,
