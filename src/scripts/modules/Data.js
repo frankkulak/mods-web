@@ -96,7 +96,7 @@ export const Languages = {
 export const GameData = {
     ts4: {
         name: "The Sims 4",
-        lastUpdate: "February 15, 2022"
+        lastUpdate: "February 23, 2022"
     }
 };
 
@@ -427,7 +427,7 @@ export const ModData = {
                 {
                     title: 'main features',
                     bullets: [
-                        `Six languages: Simlish, Windenburgish, Selvadoradian, Toki Sulani, Komorebigo, and Sixami.`,
+                        `Seven languages: Simlish, Windenburgish, Selvadoradian, Toki Sulani, Komorebigo, Tartosiano, and Sixami.`,
                         `Sims are assigned their native language(s) based on their family, occult type, traits, and home world. They may also speak some other languages at varying levels of fluency, depending on their age, family, traits, and home world.`,
                         `Sims can learn other languages by using Simlingo (phone/tablet/computer), reading textbooks, or speaking with other sims.`,
                         `Toddlers learn languages from sims who speak to them, and acquire their native language(s) when they become children. Adults can choose to use any language they know with toddlers.`,
@@ -468,6 +468,7 @@ export const ModData = {
                         `<strong>Komorebigo</strong>: Everyone from Mt. Komorebi.`,
                         `<strong>Selvadoradian</strong>: Everyone from Selvadorada.`,
                         `<strong>Windenburgish</strong>: Everyone from Windenburg.`,
+                        `<strong>Tartosiano</strong>: Everyone from Tartosa.`,
                         `<strong>Toki Sulani</strong>: Everyone from Sulani, all mermaids, and anyone with islander traits.`,
                         `<strong>Sixami</strong>: All aliens (regardless of where they live).`,
                         `<strong>Simlish</strong>: Default language for everyone else.`,
@@ -621,6 +622,14 @@ export const ModData = {
                 },
             ],
             versionHistory: [
+                {
+                    version: '2.1',
+                    date: 'February 23, 2022',
+                    bullets: [
+                        "Add Tartosiano language for Tartosa.",
+                        "Update Polish translation for strings from LB v2.0 (by lunan)."
+                    ]
+                },
                 {
                     version: '2.0.3',
                     date: 'October 2, 2021',
@@ -862,22 +871,22 @@ export const ModData = {
                 {
                     language: Languages.cht_cn,
                     translator: `GreenOnionC`,
-                    updated: true,
+                    updated: false,
                 },
                 {
                     language: Languages.chs_cn,
                     translator: `GreenOnionC`,
-                    updated: true,
+                    updated: false,
                 },
                 {
                     language: Languages.por_br,
                     translator: `Mariana Prokopowiski`,
-                    updated: true,
+                    updated: false,
                 },
                 {
                     language: Languages.pol_pl,
-                    translator: `<a href="https://www.patreon.com/osqar" target="_blank">Osqar</a>`,
-                    updated: false,
+                    translator: `<a href="https://www.patreon.com/osqar" target="_blank">Osqar</a> and lunan`,
+                    updated: true,
                 },
                 {
                     language: Languages.ita_it,
@@ -892,12 +901,12 @@ export const ModData = {
                 {
                     language: Languages.rus_ru,
                     translator: `Raitowaka, Luluuluru, Trail_of_blood, and Ciri`,
-                    updated: true,
+                    updated: false,
                 },
                 {
                     language: Languages.dut_nl,
                     translator: `SPaauw`,
-                    updated: true,
+                    updated: false,
                 },
                 {
                     language: Languages.nor_no,
