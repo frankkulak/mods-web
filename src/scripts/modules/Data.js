@@ -299,6 +299,13 @@ export const ModData = {
             faqs: [],
             versionHistory: [
                 {
+                    version: '1.1.2',
+                    date: 'March 11, 2022',
+                    bullets: [
+                        `Add Italian and Russian translations.`,
+                    ]
+                },
+                {
                     version: '1.1.1',
                     date: 'July 25, 2021',
                     bullets: [
@@ -397,6 +404,16 @@ export const ModData = {
                 {
                     language: Languages.spa_es,
                     translator: `Diavlo`,
+                    updated: true,
+                },
+                {
+                    language: Languages.ita_it,
+                    translator: `ISY`,
+                    updated: true,
+                },
+                {
+                    language: Languages.rus_ru,
+                    translator: `dep4ikk`,
                     updated: true,
                 },
             ]
@@ -622,6 +639,14 @@ export const ModData = {
                 },
             ],
             versionHistory: [
+                {
+                    version: '2.1.1',
+                    date: 'March 11, 2022',
+                    bullets: [
+                        "Update Italian, Polish, and Russian translations.",
+                        "Minor technical changes."
+                    ]
+                },
                 {
                     version: '2.1',
                     date: 'February 23, 2022',
@@ -900,8 +925,8 @@ export const ModData = {
                 },
                 {
                     language: Languages.rus_ru,
-                    translator: `Raitowaka, Luluuluru, Trail_of_blood, and Ciri`,
-                    updated: false,
+                    translator: `Luluuluru, Trail_of_blood, Ciri, and Цири`,
+                    updated: true,
                 },
                 {
                     language: Languages.dut_nl,
@@ -913,11 +938,6 @@ export const ModData = {
                     translator: `Susanne`,
                     updated: false,
                 },
-                // {
-                //     language: Languages.cze_cz,
-                //     translator: `Mika`,
-                //     updated: false,
-                // },
             ]
         },
         simway: {
