@@ -34,6 +34,26 @@
                 </b-col>
             </b-row>
         </b-container>
+        <b-container class="mt-5">
+            <section-header text="other tools" class="mb-4"/>
+            <b-row>
+                <b-col cols="12" sm="6" class="tool-col p-4">
+                    <a class="tutorial-link" href="https://sims4toolkit.com" target="_blank">
+                        <b-row align-h="center" class="tutorial-link-row text-left mb-3 py-3 h-100">
+                            <b-col cols="12">
+                                <h3 class="font-weight-bold">Sims 4 Toolkit</h3>
+                                <p class="mt-3">
+                                    A Node.js library for reading and writing .package files and the resources they
+                                    contain. All aspects of Sims 4 Toolkit are in active development, and are subject to
+                                    change. Use at your own risk, knowing that breaking changes are likely to occur
+                                    until version 1.0.0 is released.
+                                </p>
+                            </b-col>
+                        </b-row>
+                    </a>
+                </b-col>
+            </b-row>
+        </b-container>
     </b-container>
 </template>
 
