@@ -48,7 +48,7 @@
 
                         <b-button size="sm" @click="showAltDownloads = true" class="mt-3"
                                   v-if="mod.alternativeDownloads.length > 0 && !showAltDownloads">
-                            {{ mod.primaryDownload.title }} not working?
+                            Alternate Download
                         </b-button>
 
                         <div v-if="showAltDownloads">
@@ -133,10 +133,10 @@
         button, button.btn-secondary {
             border: none;
             background-color: transparent;
-            color: $red;
+            color: white;
 
             &:hover {
-                color: white;
+                text-decoration: underline;
             }
         }
 
