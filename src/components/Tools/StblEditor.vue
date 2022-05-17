@@ -728,9 +728,9 @@ export default {
         tryCacheFileContents() {
             if (this.shouldCacheFileContents) {
                 if (this.fileContents === null) return;
-                if (this.fileContents.length > 500) {
+                if (this.fileContents.length > 10000) {
                     if (!this.autosaveDisabled) {
-                        alert('Autosave is disabled for this string table.\n\nFor performance and storage reasons, autosave is only available for string tables with 500 or fewer entries. To continue using autosave, please export this string table and start working on a new one. You can merge your string tables together later (I have a tool for that as well!).');
+                        alert('Autosave is disabled for this string table.\n\nFor performance and storage reasons, autosave is only available for string tables with 10,000 or fewer entries. To continue using autosave, please export this string table and start working on a new one. You can merge your string tables together later (I have a tool for that as well!).');
                         this.autosaveDisabled = true;
                     }
                 } else {
