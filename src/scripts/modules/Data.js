@@ -299,6 +299,13 @@ export const ModData = {
             faqs: [],
             versionHistory: [
                 {
+                    version: '1.1.3',
+                    date: 'May 25, 2022',
+                    bullets: [
+                        `Update English strings for pronoun patch.`,
+                    ]
+                },
+                {
                     version: '1.1.2',
                     date: 'March 11, 2022',
                     bullets: [
@@ -639,6 +646,13 @@ export const ModData = {
                 },
             ],
             versionHistory: [
+                {
+                    version: '2.1.2',
+                    date: 'May 25, 2022',
+                    bullets: [
+                        `Update English strings for pronoun patch.`,
+                    ]
+                },
                 {
                     version: '2.1.1',
                     date: 'March 11, 2022',
