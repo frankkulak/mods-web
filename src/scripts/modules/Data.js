@@ -96,7 +96,7 @@ export const Languages = {
 export const GameData = {
     ts4: {
         name: "The Sims 4",
-        lastUpdate: "April 26, 2022"
+        lastUpdate: "June 14, 2022"
     }
 };
 
@@ -646,6 +646,13 @@ export const ModData = {
                 },
             ],
             versionHistory: [
+                {
+                    version: '2.1.3',
+                    date: 'June 16, 2022',
+                    bullets: [
+                        `Add Moonwood Mill to list of regions.`,
+                    ]
+                },
                 {
                     version: '2.1.2',
                     date: 'May 25, 2022',
