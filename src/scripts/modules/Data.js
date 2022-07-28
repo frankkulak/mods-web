@@ -1544,13 +1544,13 @@ export const ModData = {
             ],
             primaryDownload: {
                 title: `Sim File Share`,
-                url: ``
+                url: `http://simfileshare.net/folder/167469/`
             },
             patreonRelease: null,
             alternativeDownloads: [
                 {
                     title: `Google Drive`,
-                    url: ``
+                    url: `https://drive.google.com/drive/folders/1LysKnKrwf_dkunwtNRuBnDa81p0WeGX-?usp=sharing`
                 },
             ],
             documentationDownload: null,
