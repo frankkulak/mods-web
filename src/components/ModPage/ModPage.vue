@@ -26,7 +26,7 @@
 
             <mod-translations :mod="mod" v-if="showTranslations" class="mt-5"/>
 
-            <b-row id="patreon-download" class="mt-5 mx-0 px-3 py-4" align-v="center">
+            <b-row id="patreon-download" class="mt-5 mx-0 px-3 py-4" align-v="center" v-if="showPatreon">
                 <b-col cols="12" md="8" class="my-2">
                     <img src="../../assets/brands/patreon-wordmark.png" alt="Patreon Logo" class="mb-2"/>
                     <div class="ml-2" v-if="mod.patreonRelease">
@@ -40,7 +40,7 @@
                         <p class="mt-2">Hey! Did you know that patrons get early access to new mods and updates? You
                             can learn more about the perks of being a patron and join with the following links.
                         </p>
-                        <p class="mt-2">{{ mod.name }} does NOT currently have a Patron-only version.</p>
+                        <p class="mt-2">{{ mod.name }} does <strong>NOT</strong> currently have a Patron-only version.</p>
                     </div>
                 </b-col >
                 <b-col cols="12" md="4" class="my-2">
@@ -89,8 +89,13 @@
             },
             showTranslations: function () {
                 const devStage = this.mod.developmentStage;
-                const {wip, tool} = DataEnums.developmentStage;
-                return devStage !== wip && devStage !== tool;
+                const {wip, tool, adopted} = DataEnums.developmentStage;
+                return devStage !== wip && devStage !== tool && devStage !== adopted;
+            },
+            showPatreon: function () {
+                const devStage = this.mod.developmentStage;
+                const {adopted} = DataEnums.developmentStage;
+                return devStage !== adopted;
             },
             hasImages: function () {
                 return this.mod.images.length > 0;

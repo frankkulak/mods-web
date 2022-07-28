@@ -4,6 +4,7 @@ export const DataEnums = {
         active: 1,
         retired: 2,
         tool: 3,
+        adopted: 4,
     },
     testingStatus: {
         unreleased: 0,
@@ -112,7 +113,8 @@ export const ModCategoryData = {
             'utterchaos',
         ],
         utility: [
-            'packtests'
+            'packtests',
+            'showsiminfo'
         ],
         wips: [
             'simway'
@@ -1498,6 +1500,62 @@ export const ModData = {
             documentationDownload: null,
             warning: `This mod is just for dumb fun. <strong><u>You should NOT be using it in saves that you care about</u></strong>, because literally anything can happen at any moment (pregnancy, death, turning into a mermaid...). Due to the degree of randomness caused by this mod, it may make other mods behave unpredictably as well. <strong><u>Do NOT report any bugs to creators while you have this mod installed</u></strong>, because chances are, this is what's breaking things.`,
             hasStrings: false,
+            translations: []
+        },
+        showsiminfo: {
+            game: 'ts4',
+            id: 'showsiminfo',
+            name: 'Show Sim Info',
+            developmentStage: DataEnums.developmentStage.adopted,
+            testingStatus: DataEnums.testingStatus.working,
+            beingUpdated: false,
+            updateInfo: null,
+            trelloBoard: null,
+            releaseDate: 'July 27, 2022',
+            description: `View all of the internal data for particular sims with an interaction. Originally by Itasan.`,
+            thumbnail: null,
+            images: [],
+            videoUrl: null,
+            overview: [
+                {
+                    title: 'what does this mod do?',
+                    bullets: [
+                        `This mod allows you to view the internal data associated with your sims through interactions. For screenshots and more in-depth details, please visit <a href="https://modthesims.info/d/576053/show-search-sim-info-mod.html" target="_blank">the original page by Itasan on MTS</a>.`,
+                    ]
+                },
+                {
+                    title: 'why is this mod on this website?',
+                    bullets: [
+                        `Show Sim Info broke after the July 27, 2022 patch for the High School Years pack, and its original creator, Itasan, no longer updates it. This is a very important mod for many modders and players, so I fixed it myself and wanted to share it with others.`,
+                        `<strong>To Itasan</strong>: I assumed that you would be alright with someone else maintaining your mod because you have not been active in a couple of years. If this is not the case, please reach out to me and I will remove the mod from my website.`
+                    ]
+                },
+            ],
+            details: [],
+            faqs: [],
+            versionHistory: [
+                {
+                    version: '3.8.2',
+                    date: 'July 27, 2022',
+                    bullets: [
+                        `Fix issues that resulted from High School Years patch.`,
+                    ]
+                }
+            ],
+            primaryDownload: {
+                title: `Sim File Share`,
+                url: ``
+            },
+            patreonRelease: null,
+            alternativeDownloads: [
+                {
+                    title: `Google Drive`,
+                    url: ``
+                },
+            ],
+            documentationDownload: null,
+            warning: null,
+            hasStrings: true,
             translations: []
         },
     }
