@@ -649,6 +649,15 @@ export const ModData = {
             ],
             versionHistory: [
                 {
+                    version: '2.2',
+                    date: 'July 31, 2022',
+                    bullets: [
+                        `Add Copperdale to list of regions.`,
+                        `Allow teens to choose which language to learn at school.`,
+                        `Fix minor autonomy issues with romance interactions.`
+                    ]
+                },
+                {
                     version: '2.1.3',
                     date: 'June 16, 2022',
                     bullets: [
