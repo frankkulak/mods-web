@@ -34,6 +34,19 @@
                 </b-col>
 
                 <b-col cols="12" sm="6" class="tool-col p-4">
+                    <a class="tutorial-link" href="https://pkg.sims4toolkit.com/#/view" target="_blank">
+                        <b-row align-h="center" class="tutorial-link-row text-left mb-3 py-3 h-100">
+                            <b-col cols="12">
+                                <h3 class="font-weight-bold">Package Scanner</h3>
+                                <p class="mt-3">Upload your package to have a pair of robot eyes scan it for common
+                                    issues. It looks for mismatched tuning IDs, SimData groups, 32-bit instances, and
+                                    more.</p>
+                            </b-col>
+                        </b-row>
+                    </a>
+                </b-col>
+
+                <b-col cols="12" sm="6" class="tool-col p-4">
                     <a class="tutorial-link" href="https://stbl.sims4toolkit.com/#/batch-fix/pronouns" target="_blank">
                         <b-row align-h="center" class="tutorial-link-row text-left mb-3 py-3 h-100">
                             <b-col cols="12">
