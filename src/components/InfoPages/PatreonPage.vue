@@ -6,9 +6,8 @@
 
         <section-header text="what is it?" class="mb-5"/>
         <p>Patreon is a way to support creators in the form of a monthly pledge. You may either pledge $1 for general
-            support, or join one of the higher tiers to enjoy early access to new content and personalized mods.
-            The available tiers are described below, with their prices listed in USD. Prices may differ depending on
-            your nation's currency.</p>
+            support, or join one of the higher tiers to enjoy other benefits. The available tiers are described below,
+            with their prices listed in USD. Prices may differ depending on your nation's currency.</p>
 
         <b-row align-h="around" class="mt-5">
             <patreon-tier name="The Pancakes" cost="2" :benefits="[betas]"/>
@@ -17,13 +16,11 @@
         </b-row>
 
         <section-header text="what do the benefits mean?" class="my-5"/>
-        <p><span class="benefit-title">Early access to betas.</span> Betas are feature-complete versions of new mods and
-            updates. They are released to patrons 2-3 weeks before the public, depending on whether any issues need to
-            be fixed or not.</p>
-        <p><span class="benefit-title">Early access to alphas.</span> Alphas are incomplete snapshots of new mods and
-            updates while they're being developed. While I hold them to the same standard of quality as betas and public
-            releases, they may be missing some features and contain more bugs. Giving feedback and reporting issues
-            about alphas helps me make betas and public releases the best they can be.</p>
+        <p><span class="benefit-title">Replacement benefits.</span> These "benefits" are in place of the old alpha/beta
+            early access benefits, which have been removed due to <a
+                href="https://help.ea.com/en-gb/help/the-sims/the-sims-4/mods-and-the-sims-4-game-updates/#policy"
+                target="_blank">EA's new policy</a>. These benefits offer nothing at the moment - keep an eye out for
+            the new benefits I come up with.</p>
         <p><span class="benefit-title">Personalized mod versions*.</span> If you want any small tweaks made to any of my
             mods, I will create a custom version just for you. I will keep your version up-to-date with the latest
             version of the mod, and fix any issues that arise with patches. If you cancel your Landgraab pledge, I will
@@ -33,11 +30,11 @@
             in the #patreon-questions channel before signing up.</p>
 
         <b-alert show dismissible class="no-ea-alert mx-2 mb-4 mt-5">
-            <p>Hey there! Before signing up, please be aware that <strong>there are currently no mods available for
-                early access</strong>. If you're thinking about signing up for the early access benefits,
-                you should wait until I officially announce that something is ready.</p>
-            <p>If you accidentally signed up, thinking you would get early access to something, please let me know and
-                I would be more than happy to issue you a refund.</p>
+            <p>Hey there! Since early access benefits have been removed, most tiers are now for general support only. If
+                you want a refund for the current month of one of these tiers, please reach out to me and I will grant
+                it - no questions asked.</p>
+            <p>The only exception is Landgraab patrons who have received a personalized mod version - no refunds will be
+                issued if you have already received this benefit.</p>
         </b-alert>
 
         <div class="pt-5 pb-3 text-center">
@@ -57,8 +54,8 @@ export default {
     components: {PatreonTier, SectionHeader},
     data: function () {
         return {
-            betas: 'Early access to betas',
-            alphas: 'Early access to alphas',
+            betas: 'Replacement (coming soon).',
+            alphas: 'Replacement (coming soon).',
             customMods: 'Personalized mod versions',
         }
     }
