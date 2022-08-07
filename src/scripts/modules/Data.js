@@ -1535,7 +1535,7 @@ export const ModData = {
                 {
                     title: 'why is this mod on this website?',
                     bullets: [
-                        `Show Sim Info broke after the July 27, 2022 patch for the High School Years pack, and its original creator, Itasan, no longer updates it. This is a very important mod for many modders and players, so I fixed it myself and wanted to share it with others.`,
+                        `Show Sim Info broke after the July 26, 2022 patch for the High School Years pack, and its original creator, Itasan, no longer updates it. This is a very important mod for many modders and players, so I fixed it myself and wanted to share it with others.`,
                         `<strong>To Itasan</strong>: I assumed that you would be alright with someone else maintaining your mod because you have not been active in a couple of years. If this is not the case, please reach out to me and I will remove the mod from my website.`
                     ]
                 },
@@ -1543,6 +1543,13 @@ export const ModData = {
             details: [],
             faqs: [],
             versionHistory: [
+                {
+                    version: '3.8.3',
+                    date: 'August 7, 2022',
+                    bullets: [
+                        `Fix more issues from the High School Years patch.`,
+                    ]
+                },
                 {
                     version: '3.8.2',
                     date: 'July 27, 2022',
