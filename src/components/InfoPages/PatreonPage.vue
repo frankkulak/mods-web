@@ -6,17 +6,23 @@
 
         <section-header text="what is it?" class="mb-5"/>
         <p>Patreon is a way to support creators in the form of a monthly pledge. You may either pledge $1 for general
-            support, or join one of the higher tiers to enjoy early access and personalized mod versions. The available
-            tiers are described below, with their prices listed in USD. Prices may differ depending on your nation's
-            currency.</p>
+            support (which will grant you access to my dev diary posts), or join one of the higher tiers to enjoy some
+            more benefits. The available tiers are described below, with their prices listed in USD. Prices may differ
+            depending on your nation's currency.</p>
 
         <b-row align-h="around" class="mt-5">
-            <patreon-tier name="The Pancakes" cost="2" :benefits="[betas]"/>
-            <patreon-tier name="The Goths" cost="4" :benefits="[betas, alphas]"/>
-            <patreon-tier name="The Landgraabs" cost="8" :benefits="[betas, alphas, customMods]"/>
+            <patreon-tier name="The Pancakes" cost="2" :benefits="[diary, betas]"/>
+            <patreon-tier name="The Goths" cost="4" :benefits="[diary, votes, betas, alphas]"/>
+            <patreon-tier name="The Landgraabs" cost="8" :benefits="[diary, votes, betas, alphas, customMods]"/>
         </b-row>
 
         <section-header text="what do the benefits mean?" class="my-5"/>
+        <p><span class="benefit-title">Access to dev diaries.</span> There's a lot of work that goes on behind the
+            scenes when creating mods and modding tools, and this benefit grants you access to weekly/bi-weekly posts
+            detailing the progress that I've made.</p>
+        <p><span class="benefit-title">Voting on projects.</span> Occasionally, I'll ask my patrons for ideas, feedback,
+            and how to prioritize projects. This benefit gives you a voice in these posts, so you can have a say in the
+            things I'm working on.</p>
         <p><span class="benefit-title">Early access to betas.</span> Betas are feature-complete versions of new mods and
             updates. They are released to patrons 2-3 weeks before the public, depending on whether any issues need to
             be fixed or not.</p>
@@ -33,15 +39,14 @@
             in the #patreon-questions channel before signing up.</p>
 
         <b-alert show dismissible class="no-ea-alert mx-2 mb-4 mt-5">
-            <p>Hey there! Please note that <strong><u>there are currently no mods in either beta or alpha</u></strong>,
-                which means that most tiers are currently for general support only. If you sign up for early access only
-                to realize that there is nothing currently available, please reach out to me and I will gladly issue you
-                a refund.</p>
+            <p>Hey there! Please note that <strong><u>there are currently no mods in either beta or alpha</u></strong>.
+                If you sign up for early access only to realize that there is nothing currently available, please reach
+                out to me and I will issue you a refund.</p>
         </b-alert>
 
-        <div class="pt-5 pb-3 text-center">
-            <b-button variant="outline-primary" href="https://www.patreon.com/bePatron?u=40823163" target="_blank" pill>
-                Become a patron
+        <div id="become-a-patron" class="pt-5 pb-3 text-center">
+            <b-button variant="primary" href="https://www.patreon.com/bePatron?u=40823163" target="_blank" pill>
+                Become a Patron
             </b-button>
         </div>
     </b-container>
@@ -59,6 +64,8 @@ export default {
             betas: 'Early access to betas.',
             alphas: 'Early access to alphas.',
             customMods: 'Personalized mod versions',
+            diary: 'Access to dev diaries.',
+            votes: 'Voting on projects.'
         }
     }
 }
@@ -80,10 +87,11 @@ export default {
         font-weight: bold;
     }
 
-    a.btn-outline-primary {
+    a.btn-primary {
         text-decoration: none;
         font-weight: bold;
         border-color: $patreon;
+        background-color: transparentize($patreon, 0.8);
         color: $patreon;
 
         &:hover {
@@ -102,5 +110,11 @@ export default {
         background-color: var(--accent-color-light);
         border-color: var(--shadow-color);
     }
+}
+
+#become-a-patron {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
 }
 </style>
