@@ -18,3 +18,7 @@ h1, h2, h3, h4, h5, h6, p {
 .container-fluid {
   max-width: 992px;
 }
+
+code {
+  color: var(--accent-color);
+}

@@ -36,12 +36,12 @@
   --help-color: #{$red};
   --accent-color: #{$bright-blurple};
   --accent-color-light: #{transparentize($bright-blurple, 0.92)};
-  --footer-color: #{darken($darker-blue, 8%)};
-  --secondary-footer-color: #{darken($dark-blue, 8%)};
+  --footer-color: #121414;
+  --secondary-footer-color: rgb(21, 23, 23);
   --alert-success-text: #{$darkest-gray};
   --alert-success-bg: #{$teal};
-  --alert-warning-text: #{$gold};
-  --alert-warning-bg: #{darken($darker-blue, 8%)};
+  --alert-warning-text: #eac97a;
+  --alert-warning-bg: #{$dark-gray};
   --alert-danger-text: #{lighten($red, 32%)};
   --alert-danger-bg: #{darken($red, 26%)};
   --alert-primary-text: #{lighten($blue, 32%)};
