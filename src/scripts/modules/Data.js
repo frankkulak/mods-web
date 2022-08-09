@@ -97,7 +97,7 @@ export const Languages = {
 export const GameData = {
     ts4: {
         name: "The Sims 4",
-        lastUpdate: "June 26, 2022"
+        lastUpdate: "August 2, 2022"
     }
 };
 
@@ -649,6 +649,14 @@ export const ModData = {
             ],
             versionHistory: [
                 {
+                    version: '2.2.1',
+                    date: 'August 9, 2022',
+                    bullets: [
+                        `Fix bug with werewolves introducing themselves.`,
+                        `Update Japanese, French, and Russian translations.`
+                    ]
+                },
+                {
                     version: '2.2',
                     date: 'July 31, 2022',
                     bullets: [
@@ -923,7 +931,7 @@ export const ModData = {
                 {
                     language: Languages.spa_es,
                     translator: `<a href="https://geosims.wixsite.com/geosimscr/mods-traducidos" target="_blank">GeoSims</a> and Juliet26`,
-                    updated: true,
+                    updated: false,
                 },
                 {
                     language: Languages.cht_cn,
@@ -943,17 +951,17 @@ export const ModData = {
                 {
                     language: Languages.pol_pl,
                     translator: `<a href="https://www.patreon.com/osqar" target="_blank">Osqar</a> and lunan`,
-                    updated: true,
+                    updated: false,
                 },
                 {
                     language: Languages.ita_it,
                     translator: `LittleDica and ISY`,
-                    updated: true,
+                    updated: false,
                 },
                 {
                     language: Languages.ger_de,
                     translator: `Leia and Possum`,
-                    updated: true,
+                    updated: false,
                 },
                 {
                     language: Languages.rus_ru,
