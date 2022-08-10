@@ -90,6 +90,12 @@ const router = new VueRouter({
 
 function isValidModPage(to) {
     const {game, mod} = to.params;
+
+    if (mod === "npcc") {
+        window.location.replace("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+        return false;
+    }
+
     // eslint-disable-next-line no-prototype-builtins
     return ModData.hasOwnProperty(game) && ModData[game].hasOwnProperty(mod);
 }
