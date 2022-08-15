@@ -154,6 +154,16 @@
                                     </b-col>
                                 </b-row>
                                 <b-row align-v="center" class="my-3">
+                                    <b-col>
+                                        <label class="mb-0">Prompt until cancel</label>
+                                    </b-col>
+                                    <b-col>
+                                        <b-form-checkbox
+                                            v-model="chainMode"
+                                            switch></b-form-checkbox>
+                                    </b-col>
+                                </b-row>
+                                <b-row align-v="center" class="my-3">
                                     <b-col cols="12">
                                         <hr>
                                         <h4 class="mb-3">Hashing</h4>
@@ -575,6 +585,7 @@ export default {
         this.shouldCacheFileContents = cacheFileContents === null || cacheFileContents === "true";
         this.hashPrefix = localStorage.getItem('fkStblTool_HashPrefix');
         this.downloadOption = localStorage.getItem('fkStblTool_DownloadAs') || 'binary';
+        this.chainMode = localStorage.getItem('fkStblTool_ChainMode') === "true";
 
         // load file data
         const fileContents = localStorage.getItem('fkStblTool_FileContents');
@@ -630,7 +641,8 @@ export default {
             shouldCacheFileContents: true,
             autosaveDisabled: false,
             hashPrefix: null,
-            showInstructions: false
+            showInstructions: false,
+            chainMode: false
         }
     },
     watch: {
@@ -724,6 +736,7 @@ export default {
             localStorage.setItem('fkStblTool_CacheFileContents', this.shouldCacheFileContents);
             localStorage.setItem('fkStblTool_HashPrefix', this.hashPrefix);
             localStorage.setItem('fkStblTool_DownloadAs', this.downloadOption);
+            localStorage.setItem('fkStblTool_ChainMode', this.chainMode);
         },
         tryCacheFileContents() {
             if (this.shouldCacheFileContents) {
@@ -893,10 +906,11 @@ export default {
             }
 
             const string = prompt("Enter a string.");
-            if (string === null) return;
+            if (!string) return;
             const stringToHash = this.hashPrefix ? `${this.hashPrefix}:${string}` : string;
             const key = Number(fnv32(stringToHash));
             this.fileContents.push({key, string});
+            if (this.chainMode) this.newString();
         },
         searchButtonClicked() {
             const result = prompt("Only show strings containing...", this.searchTerm || '');
