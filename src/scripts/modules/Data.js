@@ -1596,7 +1596,8 @@ export const ModData = {
             description: `Wonder how game look when translations? Now know! This mod translates every line of text in the game to another language and then back to English, leading to some jumbled garbage.`,
             thumbnail: 'bt-primary.png',
             images: [
-                'bt-primary.png'
+                'bt-primary.png',
+                'bt-loading.png'
             ],
             videoUrl: null,
             overview: [
