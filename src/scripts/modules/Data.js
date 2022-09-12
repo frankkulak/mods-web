@@ -1619,7 +1619,7 @@ export const ModData = {
                     title: "two versions: clean and explicit",
                     bullets: [
                         `If vulgar language does not bother you, you should download the <strong>Explicit</strong> version of the mod. This version was only cleaned to get rid of spam, errors, and slurs, but other vulgarities (such as swears and sex terms) are left intact.`,
-                        `If you prefer that your game stays PC, you should download the <strong>Clean</strong> version of the mod - this version has had all vulgar language replaced with milder terms.`,
+                        `If you prefer that your game stays PG, you should download the <strong>Clean</strong> version of the mod - this version has had all vulgar language replaced with milder terms.`,
                         `<strong><u>ONLY DOWNLOAD ONE VERSION</u></strong>`
                     ]
                 },
