@@ -1605,7 +1605,7 @@ export const ModData = {
                     title: 'random translations',
                     bullets: [
                         `All of the text in the game was translated to one of 15 random languages 1-3 times and then back to English. This leads to some text being funnier than the original, unchanged, or mangled beyond recognition.`,
-                        `That's it, that the mod. It overrides the game's text, so it will of course conflict with any other mods that do the same.`
+                        `That's it, that's the mod. It overrides the game's text, so it will of course conflict with any other mods that do the same.`
                     ]
                 },
                 {
