@@ -6,6 +6,10 @@
                 <code>.StringTable</code>, <code>.binary</code>, and/or <code>.stbl</code> files as you want, follow the
                 prompts, and then you will be able to download your merged string table in either S4S or S4PE format.
             </p>
+            <p class="text-danger font-weight-bold">This tool is now outdated and will be decommissioned at some
+                point in the future. Please migrate to <a href="https://stbl.sims4toolkit.com"
+                                                          target="_blank">String Table Studio</a>,
+                a new and improved STBL editor and manager.</p>
         </div>
 
         <div class="my-5">

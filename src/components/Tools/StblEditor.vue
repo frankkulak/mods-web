@@ -11,6 +11,10 @@
                     <strong>not</strong> modify the files that you upload, but rather allows you to download a copy.
                 </p>
                 <p>Please reach out to me on Discord if you need help or are experiencing any issues.</p>
+                <p class="text-danger font-weight-bold">This tool is now outdated and will be decommissioned at some
+                    point in the future. Please migrate to <a href="https://stbl.sims4toolkit.com"
+                                                              target="_blank">String Table Studio</a>,
+                    a new and improved STBL editor and manager.</p>
             </div>
 
             <div class="mb-5 p-4" id="how-to-use-section">
@@ -32,17 +36,21 @@
 
                 <div v-if="showInstructions" class="mt-4">
                     <p><strong>Step 1:</strong> Upload an existing <code>.StringTable</code>/<code>.binary</code>/<code>.stbl</code>
-                        file, or create a fresh one with the "New String Table" button. This will bring up the editor.</p>
+                        file, or create a fresh one with the "New String Table" button. This will bring up the editor.
+                    </p>
                     <p><strong>Step 2:</strong> Modify and interact with your string table.</p>
                     <ul>
                         <li class="mb-2"><strong>Adding.</strong> Either use the
                             <b-icon-plus-circle/>
                             button in the bottom-right corner of the screen or press <kbd>WIN/CTRL</kbd> + <kbd>N</kbd>
-                            to add a string (Windows use <kbd>WIN</kbd>, macOS use <kbd>CTRL</kbd>). You will be prompted
+                            to add a string (Windows use <kbd>WIN</kbd>, macOS use <kbd>CTRL</kbd>). You will be
+                            prompted
                             for a string, and it will automatically be hashed and put in the table when you submit it.
                         </li>
-                        <li class="mb-2"><strong>Editing.</strong> Simply click on the string you would like to edit, and
-                            start typing. Editing a string will <strong>not</strong> rehash its key, but if you would like
+                        <li class="mb-2"><strong>Editing.</strong> Simply click on the string you would like to edit,
+                            and
+                            start typing. Editing a string will <strong>not</strong> rehash its key, but if you would
+                            like
                             to generate a new hash, you can hover over
                             <b-icon-three-dots/>
                             and click the
@@ -124,7 +132,8 @@
                 </b-button-toolbar>
                 <b-button-toolbar class="text-right float-right floating-card mr-3">
                     <b-button-group>
-                        <button v-on:click="clearSearch()" title="Clear search" class="btn btn-primary" :disabled="searchTerm === null && searchByIDTerm === null">
+                        <button v-on:click="clearSearch()" title="Clear search" class="btn btn-primary"
+                                :disabled="searchTerm === null && searchByIDTerm === null">
                             <b-icon-x-circle/>
                         </button>
                         <button v-on:click="searchByIdButtonClicked()" title="Search by ID" class="btn btn-primary">
@@ -276,7 +285,8 @@
                                         ></b-form-radio-group>
                                     </b-col>
                                     <b-col cols="12">
-                                        <p class="mt-2" style="font-size: 0.8em;">If you don't know what this means, just use
+                                        <p class="mt-2" style="font-size: 0.8em;">If you don't know what this means,
+                                            just use
                                             "Binary".</p>
                                     </b-col>
                                 </b-row>
@@ -297,7 +307,8 @@
                 ></b-pagination>
             </div>
 
-            <div id="autosave-disabled-warning" v-if="autosaveDisabled && shouldCacheFileContents" class="px-3 py-1 alert-danger">
+            <div id="autosave-disabled-warning" v-if="autosaveDisabled && shouldCacheFileContents"
+                 class="px-3 py-1 alert-danger">
                 <p>Autosave Disabled!</p>
             </div>
 
@@ -364,7 +375,8 @@
                     or <span @click="searchButtonClicked" class="clickable">try another one</span>.
                 </p>
             </b-col>
-            <b-col cols="12" v-else-if="filteredStrings.length === 0 && searchByIDTerm !== null" class="my-5 text-center">
+            <b-col cols="12" v-else-if="filteredStrings.length === 0 && searchByIDTerm !== null"
+                   class="my-5 text-center">
                 <p>No strings in this table have the key "{{ searchByIDTerm }}". You can either
                     <span @click="clearSearch" class="clickable">clear your search term</span>,
                     or <span @click="searchByIdButtonClicked" class="clickable">try another one</span>.
@@ -443,7 +455,8 @@
                 <b-col cols="12" v-for="(stringEntry, n) in entriesToShow" :key="n" class="listview-column">
                     <b-card :class="n % 2 === 0 ? 'listview-card' : 'listview-card listview-card-dark'">
                         <b-row align-v="center">
-                            <b-col cols="12" md="2" xl="1" class="px-md-1 mb-2 mb-md-0 text-left text-md-center text-nowrap">
+                            <b-col cols="12" md="2" xl="1"
+                                   class="px-md-1 mb-2 mb-md-0 text-left text-md-center text-nowrap">
                                 <h4 class="my-auto">{{ getHexCode(n) }}</h4>
                             </b-col>
                             <b-col cols="12" md="8" xl="10">
@@ -830,14 +843,14 @@ export default {
                         } else {
                             this.errorMessage = null;
                             if (!Array.isArray(result)) throw "JSON is not an array.";
-                            this.fileContents = result.map(({ key, string }) => {
+                            this.fileContents = result.map(({key, string}) => {
                                 if (key === undefined || string === undefined)
                                     throw "At least one entry is missing a key and/or string value.";
                                 if (typeof key !== "number")
                                     throw "At least one key is not a number.";
                                 if (typeof string !== "string")
                                     throw "At least one string value is not a string.";
-                                return { key, string };
+                                return {key, string};
                             });
                             this.setLanguageAndTGIFromFilename();
                         }
@@ -1172,7 +1185,7 @@ select.custom-select,
 input[type="text"],
 input[type="text"]:focus,
 input[type="number"],
-input[type="number"]:focus,{
+input[type="number"]:focus, {
     background-color: var(--card-bg-color);
     color: var(--text-color);
 
