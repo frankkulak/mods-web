@@ -97,7 +97,7 @@ export const Languages = {
 export const GameData = {
     ts4: {
         name: "The Sims 4",
-        lastUpdate: "August 2, 2022"
+        lastUpdate: "August 30, 2022"
     }
 };
 
@@ -107,6 +107,7 @@ export const ModCategoryData = {
             'languagebarriers'
         ],
         minor: [
+            'badtranslations',
             'buybitsandpieces',
             'followersforfame',
             'onlinehomework',
@@ -1582,5 +1583,103 @@ export const ModData = {
             hasStrings: true,
             translations: []
         },
+        badtranslations: {
+            game: 'ts4',
+            id: 'badtranslations',
+            name: 'Bad Translations',
+            developmentStage: DataEnums.developmentStage.active,
+            testingStatus: DataEnums.testingStatus.working,
+            beingUpdated: false,
+            updateInfo: null,
+            trelloBoard: null,
+            releaseDate: 'September 12, 2022',
+            description: `Wonder how game look when translations? Now know! This mod translates every line of text in the game to another language and then back to English, leading to some jumbled garbage.`,
+            thumbnail: 'bt-primary.png',
+            images: [
+                'bt-primary.png'
+            ],
+            videoUrl: null,
+            overview: [
+                {
+                    title: 'random translations',
+                    bullets: [
+                        `All of the text in the game was translated to one of 15 random languages 1-3 times and then back to English. This leads to some text being funnier than the original, unchanged, or mangled beyond recognition.`,
+                        `That's it, that the mod. It overrides the game's text, so it will of course conflict with any other mods that do the same.`
+                    ]
+                },
+                {
+                    title: 'content/language warning',
+                    bullets: [
+                        `The translation process was fully automated, and the translator occasionally outputs <strong>vulgar</strong> and <strong>sexual</strong> language, as well as some <strong>spam</strong>, such as links to suspicious and/or adult websites.`,
+                        `The text went through about 20 rounds of cleaning (detecting and removing sensitive language, spam, and errors), as well as manual review by me, but it is still very possible that I missed some things. There are over 115k strings in the game, and I cannot possibly verify all of them myself. Please report any such occurrences to me as you find them.`,
+                    ]
+                },
+                {
+                    title: "two versions: clean and explicit",
+                    bullets: [
+                        `If vulgar language does not bother you, you should download the <strong>Explicit</strong> version of the mod. This version was only cleaned to get rid of spam, errors, and slurs, but other vulgarities (such as swears and sex terms) are left intact.`,
+                        `If you prefer that your game stays PC, you should download the <strong>Clean</strong> version of the mod - this version has had all vulgar language replaced with milder terms.`,
+                        `<strong><u>ONLY DOWNLOAD ONE VERSION</u></strong>`
+                    ]
+                },
+                {
+                    title: 'are you a chaos enthusiast?',
+                    bullets: [
+                        `You might be interested in my other stupid mod, <a href="#/ts4/utterchaos">Utter Chaos</a>.`,
+                        `I also have <a href="/">normal mods</a>, if these aren't your cup of tea.`
+                    ]
+                },
+                {
+                    title: 'special thanks',
+                    bullets: [
+                        `Thanks to <a href="https://twitter.com/Waffle_64" target="_blank">Waffle</a> for mentioning this mod concept in the Creator Musings Discord server, which is where I got the idea from.`
+                    ]
+                },
+            ],
+            details: [
+                {
+                    title: 'how the translations were done',
+                    bullets: [
+                        `For translating from one language to another, a locally hosted <a href="https://libretranslate.com/" target="_blank">Libre Translate</a> server was used. Libre Translate is powered by the open source <a href="https://github.com/argosopentech/argos-translate/" target="_blank">Argos Translate</a> library.`,
+                        `Using <a href="https://sims4toolkit.com/" target="_blank">Sims 4 Toolkit</a>, I extracted all of the strings from the game, filtered out the ones that don't need to be translated (such as strings that only consists of tokens), then translated them all to 1-2 random languages each and back to English. Steps were taken to ensure that tokens, newlines, and string formatting stays intact and doesn't get mangled by the translator.`,
+                        `It took approximately 50 hours to translate all 115k strings in the game - NLP is no small task, folks.`,
+                        `Several scripts were run on the output of the previous step to check for irregularities, errors, vulgar language, and spam. Such entries would be flagged for manual review, and I would update the cleaning scripts as needed. This process was repeated around 20 times to get the strings to a place where I was happy with them.`,
+                        `When the strings were all set, I did one final step to spice things up. Select strings, such as those on the main menu UI, moods, motives, and loading screen tips, were chosen to be translated 3 times between a wider variety of languages, just to get them as borked as I possibly could. These were manually curated to ensure no new issues were introduced after the cleaning steps.`
+                    ]
+                },
+                {
+                    title: 'can this process be done for mods?',
+                    bullets: [
+                        `Technically, yes, it can. But due to the amount of work that goes into preparing and reviewing the translated strings, I will not be creating a tool for it.`,
+                        `I am considering creating bad translations for my own mods, but not for anyone else's.`
+                    ]
+                },
+            ],
+            faqs: [],
+            versionHistory: [
+                {
+                    version: '1.0',
+                    date: 'September 12, 2022',
+                    bullets: [
+                        `Ruin all text in the game.`,
+                    ]
+                }
+            ],
+            primaryDownload: {
+                title: `Sim File Share`,
+                url: `http://simfileshare.net/folder/170883/`
+            },
+            patreonRelease: null,
+            alternativeDownloads: [
+                {
+                    title: `Google Drive`,
+                    url: `https://drive.google.com/drive/folders/10noucQcaL-FZJ7kULLC1TgSFdS0712FC?usp=sharing`
+                },
+            ],
+            documentationDownload: null,
+            warning: `There are two versions of this mod available - <strong>Clean</strong> and <strong>Explicit</strong>. The explicit version retains vulgar language output by the translator, while the clean version replaces them with milder terms. <strong><u>ONLY DOWNLOAD ONE VERSION</u></strong>.`,
+            hasStrings: true,
+            translations: []
+        }
     }
 };
