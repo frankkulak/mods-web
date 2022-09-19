@@ -1407,14 +1407,14 @@ export const ModData = {
             alternativeDownloads: [
                 {
                     title: `Google Drive`,
-                    url: `https://drive.google.com/file/d/1p8_9WsERhDKogO87jl1yNVJIo_fHOfve/view?usp=sharing`
+                    url: `https://drive.google.com/drive/folders/19Xw1Yt1FEvT2AzZmnq7dYwe6ImgDZKiv?usp=sharing`
                 },
             ],
             documentationDownload: {
                 title: `Sim File Share`,
                 url: `http://www.simfileshare.net/download/2251516/`
             },
-            warning: `The July 20, 2021 patch broke v1.0, so please ensure you are using v1.0.1.`,
+            warning: null,
             hasStrings: false,
             translations: []
         },
