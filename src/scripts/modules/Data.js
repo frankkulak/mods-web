@@ -97,7 +97,7 @@ export const Languages = {
 export const GameData = {
     ts4: {
         name: "The Sims 4",
-        lastUpdate: "August 30, 2022"
+        lastUpdate: "October 11, 2022"
     }
 };
 
