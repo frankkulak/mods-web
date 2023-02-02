@@ -12,8 +12,21 @@
                                 <h3 class="font-weight-bold">Core Library</h3>
                                 <p class="mt-3">
                                     A Node.js library for reading and writing .package files and the resources they
-                                    contain. This library is intended for use with web tools and build scripts. All
-                                    aspects of Sims 4 Toolkit are in active development, and are subject to change.
+                                    contain. This library is intended for use with web tools and build scripts.
+                                </p>
+                            </b-col>
+                        </b-row>
+                    </a>
+                </b-col>
+
+                <b-col cols="12" sm="6" class="tool-col p-4">
+                    <a class="tutorial-link" href="https://sandbox.sims4toolkit.com" target="_blank">
+                        <b-row align-h="center" class="tutorial-link-row text-left py-3 h-100">
+                            <b-col cols="12">
+                                <h3 class="font-weight-bold">Online Sandbox</h3>
+                                <p class="mt-3">
+                                    An online environment for you to write and run S4TK scripts, without the need to set
+                                    up Node.
                                 </p>
                             </b-col>
                         </b-row>
@@ -26,9 +39,8 @@
                             <b-col cols="12">
                                 <h3 class="font-weight-bold">String Table Studio</h3>
                                 <p class="mt-3">The new and improved string table editor. It has all the features of the
-                                    previous one, plus: unlimited projects/locales/strings, error detection, translation
-                                    mode, uploading/downloading packages, advanced search tools, token assistance, and
-                                    more.</p>
+                                    previous one, plus: unlimited projects, error detection, translation mode, token
+                                    assistance, and more.</p>
                             </b-col>
                         </b-row>
                     </a>

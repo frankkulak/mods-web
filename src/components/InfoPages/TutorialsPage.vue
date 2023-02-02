@@ -1,6 +1,13 @@
 <template>
     <b-container id="tutorials-page" class="py-5" fluid>
         <b-container fluid>
+            <section-header text="Sims 4 Toolkit" class="mb-4"/>
+            <b-row>
+                <tutorial-preview v-for="tutorial in s4tkTutorials" :key="tutorial.id" :tutorial="tutorial"/>
+            </b-row>
+        </b-container>
+
+        <b-container class="mt-5" fluid>
             <section-header text="Language Barriers" class="mb-4"/>
             <b-row>
                 <tutorial-preview v-for="tutorial in lbTutorials" :key="tutorial.id" :tutorial="tutorial"/>
@@ -31,7 +38,8 @@
         data: function () {
             return {
                 lbTutorials: getTutorials('languagebarriers'),
-                scriptTutorials: getTutorials('scripting')
+                scriptTutorials: getTutorials('scripting'),
+                s4tkTutorials: getTutorials('s4tk'),
             }
         }
     }

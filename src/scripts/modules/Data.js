@@ -97,7 +97,7 @@ export const Languages = {
 export const GameData = {
     ts4: {
         name: "The Sims 4",
-        lastUpdate: "October 11, 2022"
+        lastUpdate: "January 31, 2023"
     }
 };
 
@@ -1579,7 +1579,7 @@ export const ModData = {
                 },
             ],
             documentationDownload: null,
-            warning: null,
+            warning: "Even though this is a \"fixed\" version of Itasan's mod, there are still some known issues. Please be aware that <em>not</em> all of the advertised features on Itasan's page will work entirely as expected. Please continue reporting these issues to me as they come up.",
             hasStrings: true,
             translations: []
         },
