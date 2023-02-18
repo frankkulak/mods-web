@@ -14,6 +14,7 @@
   import ModStatusIndicator from "./ModStatusIndicator.svelte";
   import DownloadSection from "./DownloadSection.svelte";
   import PacksList from "./PacksList.svelte";
+  import VideosSection from "./VideosSection.svelte";
 
   //#region Variables
 
@@ -152,6 +153,12 @@
 
         <HtmlRenderer modId={params.modId} htmlContent={currentPage.html} />
       </div>
+
+      {#if Boolean(modData?.videos?.length)}
+        <div class="mt-8 w-full">
+          <VideosSection modName={modData.name} videos={modData.videos} />
+        </div>
+      {/if}
 
       {#if needsDivider}
         <SectionSeparator />

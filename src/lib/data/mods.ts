@@ -44,6 +44,7 @@ export interface ModData extends ModIndexDisplayData {
   requiredPacks?: ModPacks;
   stage: ModStage;
   translations?: ModTranslation[];
+  videos?: ModVideo[];
 }
 
 export interface ModDownload {
@@ -72,6 +73,13 @@ export interface ModPacks {
   gps?: string[];
   sps?: string[];
   kits?: string[];
+}
+
+export interface ModVideo {
+  creator: string;
+  href: string;
+  name: string;
+  platform: string;
 }
 
 //#endregion
