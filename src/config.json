@@ -1,5 +1,5 @@
 {
-  "dataBaseUrl": "http://127.0.0.1:5500/",
+  "dataBaseUrl": "https://raw.githubusercontent.com/frankkulak/mods-web-data/prod/",
   "dataFolders": {
     "jsons": "build/",
     "mods": "mods/",
