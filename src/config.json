@@ -55,5 +55,11 @@
     "/ts4/simway": "/mods/simway",
     "/ts4-tools/stbl-editor": "/tools/stbl-editor",
     "/ts4-tools/stbl-merger": "/tools/stbl-merger"
+  },
+  "rickRolls": {
+    "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    "endpoints": [
+      "/let-you-down"
+    ]
   }
 }

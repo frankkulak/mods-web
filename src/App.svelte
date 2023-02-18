@@ -45,7 +45,12 @@
 
   function routeLoaded(event: any) {
     const { location } = event.detail;
-    if (location in config.redirects) replace(config.redirects[location]);
+
+    if (location in config.rickRolls.endpoints) {
+      window.open(config.rickRolls.url, "_self");
+    } else if (location in config.redirects) {
+      replace(config.redirects[location]);
+    }
   }
 </script>
 

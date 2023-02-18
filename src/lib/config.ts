@@ -20,6 +20,11 @@ export interface Config {
   navItems: NavItem[];
 
   redirects: { [key: string]: string; };
+
+  rickRolls: {
+    url: string;
+    endpoints: string[];
+  };
 }
 
 const config: Config = _config;
