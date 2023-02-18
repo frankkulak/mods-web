@@ -1,0 +1,73 @@
+:root {
+  $gray-50: #f9fafb;
+  $gray-100: #f3f4f6;
+  $gray-200: #e5e7eb;
+  $gray-300: #d1d5db;
+  $gray-400: #9ca3af;
+  $gray-500: #6b7280;
+  $gray-600: #4b5563;
+  $gray-700: #374151;
+  $gray-800: #1f2937;
+  $gray-900: #111827;
+  $accent-primary-dark: #6366f1;
+  $accent-primary-light: #4338ca;
+  $accent-secondary-dark: #38bdf8;
+  $accent-secondary-light: #0093f4;
+  $s4tk-dark: #70cfb6;
+  $s4tk-light: #06bb8e;
+
+  // filters
+  --filter-dark: invert(13%) sepia(3%) saturate(427%) hue-rotate(314deg) brightness(105%) contrast(84%);
+  --filter-light: invert(99%) sepia(74%) saturate(352%) hue-rotate(196deg) brightness(121%) contrast(100%);
+  --filter-bg-blur: blur(8px);
+  --filter-svg-red: invert(43%) sepia(68%) saturate(5209%) hue-rotate(338deg) brightness(100%) contrast(87%);
+  --filter-svg-green: invert(38%) sepia(96%) saturate(423%) hue-rotate(89deg) brightness(108%) contrast(89%);
+
+  &.dark {
+    // colors
+    --color-text: #{$gray-50};
+    --color-text-subtle: #{$gray-400};
+    --color-bg: #{$gray-800};
+    --color-bg-blur: #{transparentize($gray-900, 0.2)};
+    --color-accent: #{$accent-primary-dark};
+    --color-accent-invert: #{$accent-primary-light};
+    --color-accent-secondary: #{$accent-secondary-dark};
+    --color-accent-secondary-invert: #{$accent-secondary-light};
+    --color-s4tk: #{$s4tk-dark};
+    --color-shadow: rgba(0, 0, 0, 0.2);
+    --color-scrollbar-bg: #{$gray-800};
+    --color-scrollbar-fg: #{$gray-500};
+    --color-scrollbar-hover: #{$gray-400};
+    --color-danger: #f87171;
+
+    // filters
+    --filter-svg: var(--filter-light);
+    --filter-svg-invert: var(--filter-dark);
+    --filter-svg-accent: invert(36%) sepia(60%) saturate(1991%) hue-rotate(237deg) brightness(98%) contrast(97%);
+    --filter-svg-gold: invert(78%) sepia(47%) saturate(513%) hue-rotate(360deg) brightness(105%) contrast(90%);
+  }
+
+  &:not(.dark) {
+    // colors
+    --color-text: #1b1b1b;
+    --color-text-subtle: #{$gray-600};
+    --color-bg: #{$gray-100};
+    --color-bg-blur: #{transparentize($gray-100, 0.3)};
+    --color-accent: #{$accent-primary-light};
+    --color-accent-invert: #{$accent-primary-dark};
+    --color-accent-secondary: #{$accent-secondary-light};
+    --color-accent-secondary-invert: #{$accent-secondary-dark};
+    --color-s4tk: #{$s4tk-light};
+    --color-shadow: rgba(64, 64, 64, 0.15);
+    --color-scrollbar-bg: #{$gray-200};
+    --color-scrollbar-fg: #{$gray-400};
+    --color-scrollbar-hover: #{$gray-500};
+    --color-danger: #dc2626;
+
+    // filters
+    --filter-svg: var(--filter-dark);
+    --filter-svg-invert: var(--filter-light);
+    --filter-svg-accent: invert(19%) sepia(77%) saturate(3846%) hue-rotate(259deg) brightness(85%) contrast(101%);
+    --filter-svg-gold: invert(62%) sepia(85%) saturate(1249%) hue-rotate(11deg) brightness(97%) contrast(86%);
+  }
+}

@@ -1,0 +1,147 @@
+//#region SVG
+
+.svg {
+  filter: var(--filter-svg);
+}
+
+.svg-invert {
+  filter: var(--filter-svg-invert);
+}
+
+.svg-dark {
+  filter: var(--filter-dark);
+}
+
+.svg-light {
+  filter: var(--filter-light);
+}
+
+.svg-accent {
+  filter: var(--filter-svg-accent);
+}
+
+.svg-red {
+  filter: var(--filter-svg-red);
+}
+
+.svg-gold {
+  filter: var(--filter-svg-gold);
+}
+
+.svg-green {
+  filter: var(--filter-svg-green);
+}
+
+//#endregion SVG
+
+//#region Blurred Background
+
+.blurred-bg {
+  background: var(--color-bg-blur);
+  -webkit-backdrop-filter: var(--filter-bg-blur);
+  backdrop-filter: var(--filter-bg-blur);
+}
+
+//#endregion Blurred Background
+
+//#region Utilities
+
+.bottom-shadow {
+  -webkit-box-shadow: 0px 2px 4px var(--color-shadow);
+  box-shadow: 0px 2px 4px var(--color-shadow);
+}
+
+.tint-on-hover:hover {
+  opacity: 0.65;
+}
+
+.zoom-on-hover {
+  transition: transform 200ms;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.zoom-on-hover-sm {
+  transition: transform 200ms;
+
+  &:hover {
+    transform: scale(1.02);
+  }
+}
+
+//#endregion Utilities
+
+//#region Colors
+
+.text-primary {
+  color: var(--color-accent);
+}
+
+.text-secondary {
+  color: var(--color-accent-secondary);
+}
+
+.text-subtle,
+.hover\:text-subtle:hover {
+  color: var(--color-text-subtle);
+}
+
+.text-gradient {
+  color: var(--color-accent); // fallback
+  background-image: linear-gradient(45deg, var(--color-accent) 0%, var(--color-accent-secondary) 100%);
+  display: inline-block;
+  -moz-background-clip: text;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.s4tk-text-gradient {
+  color: var(--color-s4tk); // fallback
+  background-image: linear-gradient(45deg, var(--color-s4tk) 0%, var(--color-accent-secondary) 100%);
+  display: inline-block;
+  -moz-background-clip: text;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bg-primary {
+  background-color: var(--color-accent);
+}
+
+.bg-secondary {
+  background-color: var(--color-accent-secondary);
+}
+
+.border-primary {
+  border-color: var(--color-accent);
+}
+
+.border-secondary {
+  border-color: var(--color-accent-secondary);
+}
+
+.bg-gradient {
+  background-color: var(--color-accent); // fallback
+
+  background-image: linear-gradient(
+    45deg,
+    var(--color-accent) 0%,
+    var(--color-accent-secondary) 100%
+  );
+}
+
+.bg-gradient-invert {
+  background-color: var(--color-accent-invert); // fallback
+
+  background-image: linear-gradient(
+    45deg,
+    var(--color-accent-invert) 0%,
+    var(--color-accent-secondary-invert) 100%
+  );
+}
+
+//#endregion Colors

@@ -1,0 +1,59 @@
+{
+  "dataBaseUrl": "http://127.0.0.1:5500/",
+  "dataFolders": {
+    "jsons": "build/",
+    "mods": "mods/",
+    "thumbnails": "thumbnails/",
+    "images": "images/"
+  },
+  "dataEndpoints": {
+    "game": "game.json",
+    "patreon": "patreon.json",
+    "tools": "tools.json",
+    "tutorials": "tutorials.json"
+  },
+  "navItems": [
+    {
+      "href": "/mods",
+      "icon": "game-controller",
+      "label": "Mods"
+    },
+    {
+      "href": "/tools",
+      "icon": "hammer",
+      "label": "Tools"
+    },
+    {
+      "href": "/learn",
+      "icon": "school",
+      "label": "Learn"
+    },
+    {
+      "href": "/contact",
+      "icon": "chatbubbles",
+      "label": "Contact"
+    },
+    {
+      "href": "/donate",
+      "icon": "cash",
+      "label": "Donate"
+    }
+  ],
+  "redirects": {
+    "/about": "/contact",
+    "/patreon": "/donate",
+    "/ts4-tools": "/tools",
+    "/tutorials": "/learn",
+    "/ts4/languagebarriers": "/mods/language-barriers",
+    "/ts4/badtranslations": "/mods/bad-translations",
+    "/ts4/buybitsandpieces": "/mods/buy-bits-and-pieces",
+    "/ts4/followersforfame": "/mods/followers-for-fame",
+    "/ts4/onlinehomework": "/mods/online-homework",
+    "/ts4/utterchaos": "/mods/utter-chaos",
+    "/ts4/packtests": "/mods/pack-tests",
+    "/ts4/showsiminfo": "/mods/show-sim-info",
+    "/ts4/simway": "/mods/simway",
+    "/ts4-tools/stbl-editor": "/tools/stbl-editor",
+    "/ts4-tools/stbl-merger": "/tools/stbl-merger"
+  }
+}
