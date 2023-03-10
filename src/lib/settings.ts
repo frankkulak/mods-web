@@ -172,6 +172,9 @@ const Settings = getSettingsProxy({
     callbacks: [
       (value) => DocumentUtils.toggleLightTheme(value, true)
     ]
+  },
+  lastViewedAlert: {
+    cls: StoredInteger
   }
 });
 

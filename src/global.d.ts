@@ -2,6 +2,7 @@
 
 interface UserSettings {
   isLightTheme: boolean;
+  lastViewedAlert: number;
 }
 
 interface NavItem {

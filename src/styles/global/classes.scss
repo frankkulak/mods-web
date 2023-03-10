@@ -37,9 +37,15 @@
 //#region Blurred Background
 
 .blurred-bg {
-  background: var(--color-bg-blur);
-  -webkit-backdrop-filter: var(--filter-bg-blur);
-  backdrop-filter: var(--filter-bg-blur);
+  background-color: var(--color-bg-blur);
+}
+
+@supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+  .blurred-bg {
+    // background-color: transparent;
+    backdrop-filter: var(--filter-bg-blur);
+    -webkit-backdrop-filter: var(--filter-bg-blur);
+  }
 }
 
 //#endregion Blurred Background

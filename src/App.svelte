@@ -3,8 +3,11 @@
   import Router, { replace } from "svelte-spa-router";
   import config from "src/lib/config";
   import { fetchModIndex, ModIndexDisplayData } from "src/lib/data/mods";
+  import { fetchGameData, GameData } from "src/lib/data/game";
   import Navbar from "src/components/Navbar.svelte";
   import Footer from "src/components/Footer.svelte";
+  import BlurOverlay from "src/components/layout/BlurOverlay.svelte";
+  import WholeScreenAlert from "src/components/views/WholeScreenAlert.svelte";
   import HomePage from "src/pages/home/HomePage.svelte";
   import NotFoundPage from "src/pages/NotFoundPage.svelte";
   import ToolsPage from "src/pages/tools/ToolsPage.svelte";
@@ -15,6 +18,7 @@
   import ModsPage from "src/pages/mods/ModsPage.svelte";
   import ModDetailPage from "src/pages/mods/ModDetailPage.svelte";
   import DonatePage from "src/pages/donate/DonatePage.svelte";
+  import Settings from "src/lib/settings";
 
   const routes = {
     "/": HomePage,
@@ -30,6 +34,8 @@
   };
 
   let seoMods: ModIndexDisplayData[];
+  let gameData: GameData;
+  let showAlerts = false;
 
   onMount(() => {
     fetchModIndex()
@@ -37,6 +43,19 @@
         seoMods = data.allMods
           .map((id) => data.displayData[id])
           .filter((d) => Boolean(d));
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+
+    fetchGameData()
+      .then((data) => {
+        gameData = data;
+        if (Settings.lastViewedAlert < data.currentAlertIndex) {
+          showAlerts = true;
+        } else if (data.alerts.some(({ persistant }) => persistant)) {
+          showAlerts = true;
+        }
       })
       .catch((err) => {
         console.error(err);
@@ -52,6 +71,20 @@
       window.open(config.rickRolls.url, "_self");
     }
   }
+
+  function getAlertsToShow(): string[] {
+    return gameData.alerts
+      .filter(
+        ({ index, persistant }) =>
+          persistant || index >= gameData.currentAlertIndex
+      )
+      .map(({ text }) => text);
+  }
+
+  function dismissAlerts() {
+    showAlerts = false;
+    Settings.lastViewedAlert = gameData.currentAlertIndex;
+  }
 </script>
 
 <Navbar />
@@ -59,6 +92,12 @@
   <Router {routes} restoreScrollState={true} on:routeLoaded={routeLoaded} />
 </main>
 <Footer />
+
+{#if showAlerts}
+  <BlurOverlay>
+    <WholeScreenAlert alerts={getAlertsToShow()} onClose={dismissAlerts} />
+  </BlurOverlay>
+{/if}
 
 <!-- Just something hacky for SEO since site uses hash paths -->
 {#if Boolean(seoMods)}
