@@ -1,0 +1,74 @@
+// This is an easter egg. Do not take it seriously.
+:root[data-90s-theme="true"] {
+  // colors
+  --color-text: black;
+  --color-text-subtle: gray;
+  --color-bg: white;
+  --color-accent: blue;
+  --color-accent-secondary: green;
+  --color-shadow: transparent;
+  --color-scrollbar-bg: white;
+  --color-scrollbar-fg: gray;
+  --color-scrollbar-hover: black;
+  --color-blur-fallback: rgba(0, 0, 0, 0.8);
+
+  *,
+  *::before,
+  *::after,
+  *::placeholder {
+    font-family: serif !important;
+    box-shadow: none !important;
+    transform: none !important;
+  }
+
+  nav {
+    border-bottom-width: 1px;
+    border-bottom-color: black !important;
+  }
+
+  footer {
+    border-top-width: 1px;
+    border-top-color: black !important;
+  }
+
+  a {
+    color: blue !important;
+
+    &:visited {
+      color: purple !important;
+    }
+  }
+
+  nav,
+  footer,
+  body {
+    background-color: white !important;
+  }
+
+  input,
+  textarea,
+  select {
+    background-color: gray !important;
+  }
+
+  .rounded-full,
+  .rounded-lg,
+  .rounded-md,
+  .rounded-sm {
+    border-radius: 0 !important;
+  }
+
+  .bg-gradient,
+  .bg-gradient-invert {
+    background-color: steelblue !important;
+    background-image: none !important;
+  }
+
+  .svg,
+  .svg-invert,
+  .svg-light,
+  .svg-dark,
+  .svg-gold {
+    display: none;
+  }
+}
