@@ -51,10 +51,12 @@
     fetchGameData()
       .then((data) => {
         gameData = data;
-        if (Settings.lastViewedAlert < data.currentAlertIndex) {
-          showAlerts = true;
-        } else if (data.alerts.some(({ persistant }) => persistant)) {
-          showAlerts = true;
+        if (data.alerts?.length) {
+          if (Settings.lastViewedAlert < data.currentAlertIndex) {
+            showAlerts = true;
+          } else if (data.alerts.some(({ persistant }) => persistant)) {
+            showAlerts = true;
+          }
         }
       })
       .catch((err) => {
@@ -73,6 +75,7 @@
   }
 
   function getAlertsToShow(): string[] {
+    if (!gameData.alerts?.length) return [];
     return gameData.alerts
       .filter(
         ({ index, persistant }) =>
