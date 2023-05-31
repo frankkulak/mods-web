@@ -25,7 +25,10 @@
           on:error={setDefaultThumbnail}
         />
         <div class="absolute top-5 left-1/2 -translate-x-1/2">
-          <ModStatusIndicator status={mod.data.status} />
+          <ModStatusIndicator
+            status={mod.data.status}
+            earlyAccess={mod.data.earlyAccess}
+          />
         </div>
         {#if Boolean(mod.data.version)}
           <div

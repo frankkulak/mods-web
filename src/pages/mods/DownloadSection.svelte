@@ -40,7 +40,7 @@
       </div>
     </div>
     {#if Boolean(modData.downloadWarning)}
-      <div class="w-full p-4 bg-yellow-400 dark:bg-yellow-200 rounded-lg">
+      <div class="w-full p-4 bg-yellow-300 dark:bg-yellow-200 rounded-lg">
         <p class="text-gray-800 dark:text-yellow-800">
           <strong class="text-gray-900 dark:text-yellow-900">Attention</strong>:
           {@html modData.downloadWarning}

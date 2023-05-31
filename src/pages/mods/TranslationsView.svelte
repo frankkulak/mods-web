@@ -60,12 +60,7 @@
     </div>
     {#if !modData.notTranslatable}
       <p class="mb-2 text-xs text-subtle">
-        Want to submit a new translation? You can use <a
-          href="https://stbl.sims4toolkit.com/"
-          class="text-secondary"
-          target="_blank">String Table Studio</a
-        >
-        and send your translation to me
+        Want to submit a new translation? Send it to me
         <a href="#/contact" class="text-secondary">on Discord</a>.
       </p>
     {/if}

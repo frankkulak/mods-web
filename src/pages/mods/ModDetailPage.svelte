@@ -15,6 +15,7 @@
   import DownloadSection from "./DownloadSection.svelte";
   import PacksList from "./PacksList.svelte";
   import VideosSection from "./VideosSection.svelte";
+  import EarlyAccessDownloadSection from "./EarlyAccessDownloadSection.svelte";
 
   //#region Variables
 
@@ -122,7 +123,10 @@
             <h1 class="text-gradient font-bold text-2xl drop-shadow">
               {modData.name}
             </h1>
-            <ModStatusIndicator status={modData.status} />
+            <ModStatusIndicator
+              status={modData.status}
+              earlyAccess={modData.earlyAccess}
+            />
           </div>
           <p class="mb-1">{modData.tagline}</p>
           {#if Boolean(modData.version)}
@@ -181,7 +185,14 @@
           packs={modData.requiredPacks}
         />
         {#if hasDownloads}
-          <DownloadSection bind:element={downloadSection} {modData} />
+          {#if modData.earlyAccess}
+            <EarlyAccessDownloadSection
+              bind:element={downloadSection}
+              {modData}
+            />
+          {:else}
+            <DownloadSection bind:element={downloadSection} {modData} />
+          {/if}
         {/if}
       </div>
     </DataFetchBlock>

@@ -27,6 +27,7 @@ export interface ModIndexDisplayData {
   name: string;
   seoTags?: string[];
   status: ModStatus;
+  earlyAccess?: boolean;
   tagline: string;
   version?: string;
 }
@@ -35,7 +36,6 @@ export interface ModData extends ModIndexDisplayData {
   documentation?: { host: string; href: string; }[];
   downloads?: ModDownload[];
   downloadWarning?: string;
-  earlyAccess?: boolean;
   hasNoCustomStrings?: boolean;
   hideTranslations?: boolean;
   notTranslatable?: boolean;
