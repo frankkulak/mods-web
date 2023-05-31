@@ -23,11 +23,17 @@
           />
           <h2 class="text-xl font-bold">Early Access</h2>
         </div>
-        <p class="mt-4 text-subtle">
-          {modData.name} is currently in {modData.stage}, and is only available
-          to "The {modData.stage === "alpha" ? "Goths" : "Pancakes"}" and
-          higher.
+        <p class="mt-4">
+          {modData.name} is in {modData.stage}, and is only available to "The {modData.stage ===
+          "alpha"
+            ? "Goths"
+            : "Pancakes"}" and higher.
         </p>
+        {#if Boolean(modData.publicRelease)}
+          <p class="mt-1 text-subtle">
+            Public release is on {modData.publicRelease}
+          </p>
+        {/if}
       </div>
       <div class="flex justify-center gap-4">
         {#each modData.downloads as download, key (key)}

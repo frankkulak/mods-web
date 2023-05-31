@@ -40,6 +40,7 @@ export interface ModData extends ModIndexDisplayData {
   hideTranslations?: boolean;
   notTranslatable?: boolean;
   pages: ModPage[];
+  publicRelease?: string;
   recommendedPacks?: ModPacks;
   requiredPacks?: ModPacks;
   stage: ModStage;

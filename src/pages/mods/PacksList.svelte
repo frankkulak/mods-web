@@ -13,7 +13,7 @@
       <img class="svg h-6 w-6" src="./assets/icons/{icon}.svg" alt={icon} />
       <h2 class="text-xl font-bold">{title}</h2>
     </div>
-    <p class="my-4 text-subtle">{subtitle}</p>
+    <p class="my-4">{subtitle}</p>
     <div class="w-full flex flex-wrap gap-2">
       {#if Boolean(packs.eps?.length)}
         {#each packs.eps as ep, key (key)}

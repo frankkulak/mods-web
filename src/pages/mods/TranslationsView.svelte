@@ -27,11 +27,11 @@
 
   {#if !modData.hasNoCustomStrings}
     {#if !modData.notTranslatable}
-      <p class="my-4 text-subtle">
+      <p class="my-4">
         All listed languages are included. No additional download is necessary.
       </p>
     {:else}
-      <p class="my-4 text-subtle">
+      <p class="my-4">
         Sorry, but this mod cannot be translated. The only supported language is
         English (US).
       </p>
@@ -77,7 +77,7 @@
       >.
     </p>
   {:else}
-    <p class="mt-4 text-subtle">
+    <p class="mt-4">
       This mod doesn't contain any custom text, so it's able to be used by all
       players.
     </p>
