@@ -2,6 +2,7 @@
   import { onDestroy, onMount } from "svelte";
   import {
     fetchModData,
+    fetchModIndex,
     getModThumbnailSrc,
     setDefaultThumbnail,
   } from "src/lib/data/mods";
@@ -16,12 +17,11 @@
   import PacksList from "./PacksList.svelte";
   import VideosSection from "./VideosSection.svelte";
   import EarlyAccessDownloadSection from "./EarlyAccessDownloadSection.svelte";
+  import { replace } from "svelte-spa-router";
 
   //#region Variables
 
   export let params: { modId: string };
-
-  const thumbnailSrc = getModThumbnailSrc(params.modId);
 
   let modData: ModData;
   let fetchError = false;
@@ -30,6 +30,7 @@
   let downloadPosition = 0;
   let currentScrollPos = 0;
 
+  $: thumbnailSrc = getModThumbnailSrc(params.modId);
   $: dataFetched = Boolean(modData);
   $: tabName = modData?.name ?? "Loading...";
   $: currentPage = modData?.pages[currentPageIndex];
@@ -48,10 +49,11 @@
   //#region Lifecycle
 
   onMount(() => {
-    fetchData();
-    document.addEventListener("scroll", updateScrollPos);
-    document.addEventListener("resize", updateScrollPos);
-    updateScrollPos();
+    fetchData().then((_) => {
+      document.addEventListener("scroll", updateScrollPos);
+      document.addEventListener("resize", updateScrollPos);
+      updateScrollPos();
+    });
   });
 
   onDestroy(() => {
@@ -63,17 +65,26 @@
 
   //#region Functions
 
-  function fetchData() {
+  async function fetchData() {
     fetchError = false;
 
-    fetchModData(params.modId)
-      .then((data) => {
-        modData = data;
-      })
-      .catch((err) => {
-        console.error(err);
-        fetchError = true;
-      });
+    const loadContent = () => {
+      fetchModData(params.modId)
+        .then((data) => {
+          modData = data;
+        })
+        .catch((err) => {
+          console.error(err);
+          fetchError = true;
+        });
+    };
+
+    const index = await fetchModIndex();
+    if (index.redirects && params.modId in index.redirects) {
+      replace(`#/mods/${index.redirects[params.modId]}`).then(loadContent);
+    } else {
+      loadContent();
+    }
   }
 
   function scrollToDownload() {

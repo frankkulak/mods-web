@@ -13,6 +13,7 @@ export interface ModIndex {
   allMods: ModId[];
   categories: ModIndexCategory[];
   displayData: { [key: string]: ModIndexDisplayData; };
+  redirects: { [key: string]: string; };
 }
 
 export interface ModIndexCategory {

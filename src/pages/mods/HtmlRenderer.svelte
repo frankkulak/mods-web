@@ -127,6 +127,19 @@
       }
     }
 
+    .collapse-split-view {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    @media (max-width: 768px) {
+      .collapse-split-view {
+        flex-direction: column;
+      }
+    }
+
     .images-sm,
     .images-md,
     .images-lg {
@@ -141,6 +154,12 @@
         -webkit-box-shadow: 2px 2px 4px var(--color-shadow);
         box-shadow: 2px 2px 8px var(--color-shadow);
       }
+    }
+
+    img.feature {
+      border-radius: 0.5rem;
+      -webkit-box-shadow: 2px 2px 4px var(--color-shadow);
+      box-shadow: 2px 2px 8px var(--color-shadow);
     }
 
     .images-sm img {
