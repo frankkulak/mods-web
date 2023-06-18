@@ -14,7 +14,8 @@
       If it is a ZIP file, you must <a
         class="text-secondary"
         href="https://support.microsoft.com/en-us/windows/zip-and-unzip-files-f6dde0a7-0fec-8294-e1d3-703ed85e7ebc"
-        target="_blank">unzip it</a
+        target="_blank"
+        rel="noreferrer">unzip it</a
       > before the next step
     </p>
     <li class="mt-2">

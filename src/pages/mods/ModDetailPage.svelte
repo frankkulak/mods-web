@@ -13,10 +13,10 @@
   import HtmlRenderer from "./HtmlRenderer.svelte";
   import ActionButton from "src/components/elements/ActionButton.svelte";
   import ModStatusIndicator from "./ModStatusIndicator.svelte";
-  import DownloadSection from "./DownloadSection.svelte";
+  import DownloadSection from "./downloads/DownloadSection.svelte";
   import PacksList from "./PacksList.svelte";
   import VideosSection from "./VideosSection.svelte";
-  import EarlyAccessDownloadSection from "./EarlyAccessDownloadSection.svelte";
+  import EarlyAccessDownloadSection from "./downloads/EarlyAccessDownloadSection.svelte";
   import { replace } from "svelte-spa-router";
 
   //#region Variables
