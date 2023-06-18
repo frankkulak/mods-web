@@ -63,6 +63,7 @@ export interface ModTranslation {
   code: LocaleCode;
   translators: ModTranslator[];
   outdated?: boolean;
+  href?: string;
 }
 
 export interface ModTranslator {

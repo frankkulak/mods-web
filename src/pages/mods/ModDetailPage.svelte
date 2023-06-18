@@ -8,7 +8,7 @@
   } from "src/lib/data/mods";
   import type { ModData } from "src/lib/data/mods";
   import SectionSeparator from "src/components/elements/SectionSeparator.svelte";
-  import TranslationsView from "src/pages/mods/TranslationsView.svelte";
+  import TranslationsView from "src/pages/mods/translations/TranslationsView.svelte";
   import DataFetchBlock from "src/components/layout/DataFetchBlock.svelte";
   import HtmlRenderer from "./HtmlRenderer.svelte";
   import ActionButton from "src/components/elements/ActionButton.svelte";
