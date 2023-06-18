@@ -12,7 +12,7 @@
         href={translation.href}
         target="_blank"
         rel="noreferrer"
-        class="translation no-underline zoom-on-hover-sm flex items-center justify-between gap-2 bg-gray-200 dark:bg-gray-800 p-2 rounded-lg"
+        class="translation no-underline flex items-center justify-between gap-2 bg-gray-200 dark:bg-gray-800 p-2 rounded-lg border-2 border-solid border-transparent hover:border-accent-secondary-light dark:hover:border-accent-secondary-dark"
         class:french={translation.code === "FRE_FR"}
       >
         <TranslationInfo {translation} />

@@ -19,6 +19,7 @@
         class="block no-underline p-2 bg-gray-200 dark:bg-gray-800 rounded-lg border-2 border-solid border-transparent hover:border-accent-secondary-light dark:hover:border-accent-secondary-dark"
         href={video.href}
         target="_blank"
+        rel="noreferrer"
         title={video.name}
       >
         <h2 class="overflow-hidden whitespace-nowrap text-ellipsis">
