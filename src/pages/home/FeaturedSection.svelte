@@ -15,15 +15,11 @@
     <div class="flex-1 p-6 bg-gray-100 dark:bg-gray-900 rounded-lg shadow-md">
       <div class="flex items-center gap-4">
         <img
-          class="h-10 w-10 drop-shadow object-contain"
+          class="h-10 w-10 object-contain"
           src="./assets/lb-icon.png"
           alt="LB"
         />
-        <h2
-          class="text-2xl font-bold drop-shadow text-sky-800 dark:text-sky-200"
-        >
-          Language Barriers
-        </h2>
+        <h2 class="text-2xl font-bold">Language Barriers</h2>
       </div>
       <p class="mt-4 mb-6">Mod that adds languages to the game</p>
       <div class="flex gap-4">
@@ -37,23 +33,20 @@
     <div class="flex-1 p-6 bg-gray-100 dark:bg-gray-900 rounded-lg shadow-md">
       <div class="flex items-center gap-4">
         <img
-          class="h-10 w-10 drop-shadow object-contain"
+          class="h-10 w-10 object-contain"
           src="./assets/s4tk-transparent.png"
           alt="S4TK"
         />
-        <h2 class="text-2xl font-bold drop-shadow s4tk-text-gradient">
-          Sims 4 Toolkit
-        </h2>
+        <h2 class="text-2xl font-bold s4tk-text-gradient">Sims 4 Toolkit</h2>
       </div>
-      <p class="mt-4 mb-6">Node.js library that powers modding tools</p>
+      <p class="mt-4 mb-6">Suite of modern modding tools</p>
       <div class="flex gap-4">
+        <LinkButton href="#/tools" text="S4TK Tools" gradient={true} />
         <LinkButton
           href="https://sims4toolkit.com"
-          text="Docs Website"
-          gradient={true}
+          text="Library Docs"
           target="_blank"
         />
-        <LinkButton href="#/tools" text="S4TK Tools" />
       </div>
     </div>
   </div>
