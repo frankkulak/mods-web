@@ -58,6 +58,7 @@
     class="py-2 px-4 zoom-on-hover hover:cursor-pointer drop-shadow-md no-underline whitespace-nowrap bg-brand-patreon rounded-md flex items-center gap-4"
     href="https://www.patreon.com/bePatron?u=40823163"
     target="_blank"
+    rel="noreferrer"
   >
     <img class="h-6" src="./assets/patreon-logo.png" alt="Patreon" />
     <p class="text-gray-100">Become a Patron</p>

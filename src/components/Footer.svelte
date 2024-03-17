@@ -10,6 +10,7 @@
         <a
           href="https://sims4toolkit.com"
           target="_blank"
+          rel="noreferrer"
           class="text-brand-s4tk-light dark:text-brand-s4tk-dark"
           >Sims 4 Toolkit</a
         >
@@ -17,24 +18,28 @@
         <a
           href="https://twitter.com/frankkulakmods"
           target="_blank"
+          rel="noreferrer"
           class="text-brand-twitter">Twitter</a
         >
         |
         <a
           href="https://patreon.frankkmods.com"
           target="_blank"
+          rel="noreferrer"
           class="text-brand-patreon">Patreon</a
         >
         |
         <a
           href="https://ko-fi.com/frankkulak"
           target="_blank"
+          rel="noreferrer"
           class="text-brand-kofi">Ko-fi</a
         >
         |
         <a
           href="https://discord.gg/qNhD3Jh"
           target="_blank"
+          rel="noreferrer"
           class="text-brand-discord">Discord</a
         >
       </p>
@@ -49,16 +54,18 @@
         <a
           href="https://ionic.io/ionicons"
           target="_blank"
+          rel="noreferrer"
           class="text-secondary">Ionicons</a
         >
         and
         <a
           href="https://primer.github.io/octicons/"
           target="_blank"
+          rel="noreferrer"
           class="text-secondary">GitHub Octicons</a
         >.
       </p>
-      <p class="text-subtle">2023 © Frankk</p>
+      <p class="text-subtle">2024 © Frankk</p>
     </div>
   </div>
 </footer>

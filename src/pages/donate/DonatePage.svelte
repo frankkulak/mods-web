@@ -21,6 +21,7 @@
           class="inline-block zoom-on-hover hover:cursor-pointer drop-shadow-md"
           href="https://ko-fi.com/frankkulak"
           target="_blank"
+          rel="noreferrer"
         >
           <img
             class="h-10"

@@ -10,7 +10,8 @@
     The string table editor and merger have been retired in favor of <a
       class="text-secondary"
       href="https://stbl.sims4toolkit.com"
-      target="_blank">String Table Studio</a
+      target="_blank"
+      rel="noreferrer">String Table Studio</a
     >, but they are still available on a legacy website.
   </p>
   <p class="mb-8">

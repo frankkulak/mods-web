@@ -50,7 +50,8 @@
         Modding tools powered by the <a
           class="text-secondary"
           href="https://sims4toolkit.com/"
-          target="_blank">@s4tk</a
+          target="_blank"
+          rel="noreferrer">@s4tk</a
         > Node library
       </p>
     </div>

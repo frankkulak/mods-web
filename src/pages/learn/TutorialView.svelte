@@ -9,6 +9,7 @@
   class="no-underline zoom-on-hover-sm"
   href={tutorialInfo.href}
   target="_blank"
+  rel="noreferrer"
 >
   <div
     class="h-full flex flex-col rounded-lg shadow-md bg-gray-100 dark:bg-gray-900"
