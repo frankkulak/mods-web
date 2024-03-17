@@ -8,8 +8,13 @@ export interface GameData {
     text: string;
   }[];
   currentAlertIndex: number;
-  date: string;
-  version: string;
+  versionInfo: GameVersionInfo;
+}
+
+export interface GameVersionInfo {
+  winVersion: string;
+  macVersion: string;
+  releaseDate: string;
 }
 
 export async function fetchGameData(): Promise<GameData> {
