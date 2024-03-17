@@ -36,13 +36,11 @@
     <div class="my-16 flex flex-col gap-6 items-center">
       <div class="flex gap-4 items-center">
         <img
-          class="w-10 sm:w-14 drop-shadow-lg"
+          class="w-10 sm:w-14"
           src="./assets/s4tk-transparent.png"
           alt="S4TK"
         />
-        <h1
-          class="s4tk-text-gradient text-3xl sm:text-5xl drop-shadow-lg font-bold"
-        >
+        <h1 class="s4tk-text-gradient text-3xl sm:text-5xl font-bold">
           Sims 4 Toolkit
         </h1>
       </div>
