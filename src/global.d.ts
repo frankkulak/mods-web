@@ -3,6 +3,7 @@
 interface UserSettings {
   isLightTheme: boolean;
   lastViewedAlert: number;
+  lastVotePromptYear: number;
 }
 
 interface NavItem {

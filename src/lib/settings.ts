@@ -175,6 +175,9 @@ const Settings = getSettingsProxy({
   },
   lastViewedAlert: {
     cls: StoredInteger
+  },
+  lastVotePromptYear: {
+    cls: StoredInteger
   }
 });
 
