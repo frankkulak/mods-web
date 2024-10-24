@@ -69,7 +69,10 @@
           <p class="text-xs text-subtle">
             Want to submit or update a translation? Send it to me
             <a href="#/contact" class="text-secondary">on Discord</a>. I can
-            either include it or link to it on your webpage.
+            either include it or link to it on your webpage. You must be fluent
+            in both English and the translated language. If I find that you are
+            using an online translator, you will be blacklisted from submitting
+            translations in the future.
           </p>
         {/if}
       </div>
