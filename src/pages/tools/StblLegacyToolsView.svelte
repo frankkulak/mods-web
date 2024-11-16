@@ -3,7 +3,7 @@
   import LinkButton from "src/components/elements/LinkButton.svelte";
 </script>
 
-<div class="p-6 rounded-lg shadow-md w-full bg-gray-100 dark:bg-gray-900">
+<div class="p-6 rounded-lg shadow-md w-full bg-gray-50 dark:bg-gray-900">
   <SectionHeader title="Looking for the STBL tools?" />
 
   <p class="mt-4 mb-2">

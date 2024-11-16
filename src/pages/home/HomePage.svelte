@@ -17,7 +17,7 @@
     >
       <div in:scale class="text-center">
         <h1 class="mb-4 text-4xl font-bold text-white drop-shadow-md">
-          Hey, I'm Frankk!
+          Hey, I'm Frank!
         </h1>
         <p class="text-white drop-shadow text-opacity-70">
           I make mods and modding tools for The Sims 4

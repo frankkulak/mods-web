@@ -151,7 +151,7 @@
         </div>
       </div>
 
-      <div class="mt-16 p-6 bg-gray-100 dark:bg-gray-900 rounded-lg shadow-md">
+      <div class="mt-16 p-6 bg-gray-50 dark:bg-gray-900 rounded-lg shadow-md">
         {#if modData.pages.length > 1}
           <div class="mb-8 w-full flex flex-wrap justify-center gap-4">
             {#each modData.pages as page, key (key)}

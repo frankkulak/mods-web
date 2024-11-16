@@ -8,7 +8,6 @@
   import Footer from "src/components/Footer.svelte";
   import BlurOverlay from "src/components/layout/BlurOverlay.svelte";
   import WholeScreenAlert from "src/components/views/WholeScreenAlert.svelte";
-  import VotePromptFooter from "src/components/views/VotePromptFooter.svelte";
   import HomePage from "src/pages/home/HomePage.svelte";
   import NotFoundPage from "src/pages/NotFoundPage.svelte";
   import ToolsPage from "src/pages/tools/ToolsPage.svelte";
@@ -37,10 +36,6 @@
   let seoMods: ModIndexDisplayData[];
   let gameData: GameData;
   let showAlerts = false;
-
-  // TODO: make vote timestamp dynamic to current year
-  let showVoteFooter =
-    Settings.lastVotePromptYear < 2024 && Date.now() < 1730851200000; // Nov. 6, 2024
 
   onMount(() => {
     fetchModIndex()
@@ -93,12 +88,6 @@
     showAlerts = false;
     Settings.lastViewedAlert = gameData.currentAlertIndex;
   }
-
-  function dismissVoteFooter() {
-    // TODO: set to current year
-    Settings.lastVotePromptYear = 2024;
-    showVoteFooter = false;
-  }
 </script>
 
 <Navbar />
@@ -111,10 +100,6 @@
   <BlurOverlay>
     <WholeScreenAlert alerts={getAlertsToShow()} onClose={dismissAlerts} />
   </BlurOverlay>
-{/if}
-
-{#if showVoteFooter}
-  <VotePromptFooter onClose={dismissVoteFooter} />
 {/if}
 
 <!-- Just something hacky for SEO since site uses hash paths -->

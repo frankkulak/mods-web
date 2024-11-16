@@ -8,7 +8,7 @@
 
 <div
   bind:this={element}
-  class="w-full bg-gray-100 dark:bg-gray-900 rounded-lg shadow-md"
+  class="w-full bg-gray-50 dark:bg-gray-900 rounded-lg shadow-md"
 >
   <div class="w-full p-6 flex flex-col gap-6">
     <div
@@ -18,7 +18,7 @@
         <div class="flex items-center gap-4">
           <img
             class="h-8 w-8"
-            src="./assets/icons/logo-patreon.svg"
+            src="./assets/icons/logo-patreon-coral.svg"
             alt="patreon"
           />
           <h2 class="text-xl font-bold">Early Access</h2>

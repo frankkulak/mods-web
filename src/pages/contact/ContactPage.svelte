@@ -17,7 +17,7 @@
       />
       <div class="text-center sm:text-left">
         <h1 class="text-3xl text-gradient font-bold drop-shadow-md">
-          Hey, I'm Frankk!
+          Hey, I'm Frank!
         </h1>
         <p class="mt-4 text-subtle">
           I make mods and modding tools for The Sims 4

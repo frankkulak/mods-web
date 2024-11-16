@@ -6,7 +6,7 @@
 </script>
 
 <div
-  class="tool-info p-6 relative flex flex-col justify-between rounded-lg shadow-md bg-gray-100 dark:bg-gray-900"
+  class="tool-info p-6 relative flex flex-col justify-between rounded-lg shadow-md bg-gray-50 dark:bg-gray-900"
 >
   {#if toolInfo.pinned}
     <img

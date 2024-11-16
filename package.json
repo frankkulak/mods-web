@@ -5,7 +5,7 @@
     "clean": "rm -rf ./public/build",
     "build": "npm run clean && npm run sass:build && npm run tw:build && rollup -c",
     "dev": "npm run clean ; concurrently \"npm run sass:watch\" \"npm run tw:watch\" \"rollup -c -w\"",
-    "start": "sirv public --no-clear --port 5000",
+    "start": "sirv public --no-clear --port 8080",
     "serve": "sirv public --no-clear --host",
     "deploy": "sh ./scripts/deploy.sh",
     "sass:build": "sass src/styles/global/_index.scss public/build/global.css",

@@ -14,7 +14,7 @@
 
 <div
   bind:this={element}
-  class="w-full bg-gray-100 dark:bg-gray-900 rounded-lg shadow-md"
+  class="w-full bg-gray-50 dark:bg-gray-900 rounded-lg shadow-md"
 >
   <div class="w-full p-6 flex flex-col gap-6">
     <div

@@ -10,11 +10,11 @@
 
   <div class="flex flex-wrap justify-center gap-8 text-center">
     <ColoredLinkBlock
-      title="Twitter"
+      title="Bluesky"
       text="Read my latest updates"
-      icon="logo-twitter"
-      href="https://twitter.com/frankkulakmods"
-      bgClass="bg-brand-twitter"
+      icon="logo-bluesky"
+      href="https://bsky.app/profile/frankkulak.bsky.social"
+      bgClass="bg-brand-bluesky"
     />
     <ColoredLinkBlock
       title="Discord"
@@ -22,6 +22,13 @@
       icon="logo-discord"
       href="https://discord.gg/qNhD3Jh"
       bgClass="bg-brand-discord"
+    />
+    <ColoredLinkBlock
+      title="Patreon"
+      text="Support my work"
+      icon="logo-patreon-black"
+      href="https://patreon.frankkmods.com/"
+      bgClass="bg-brand-patreon"
     />
     <ColoredLinkBlock
       title="Email"

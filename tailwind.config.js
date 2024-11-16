@@ -15,7 +15,7 @@ module.exports = {
           discord: "#747DF8",
           kofi: "#fbab18",
           patreon: "#ff434d",
-          twitter: "#1da1f2",
+          bluesky: "#1185fe",
         },
         accent: {
           primary: {

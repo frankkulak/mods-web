@@ -12,7 +12,7 @@
     <h2 class="text-2xl font-bold">Featured</h2>
   </div>
   <div class="w-full flex flex-col md:flex-row md:flex-wrap gap-8">
-    <div class="flex-1 p-6 bg-gray-100 dark:bg-gray-900 rounded-lg shadow-md">
+    <div class="flex-1 p-6 bg-gray-50 dark:bg-gray-900 rounded-lg shadow-md">
       <div class="flex items-center gap-4">
         <img
           class="h-10 w-10 object-contain"
@@ -30,7 +30,7 @@
         />
       </div>
     </div>
-    <div class="flex-1 p-6 bg-gray-100 dark:bg-gray-900 rounded-lg shadow-md">
+    <div class="flex-1 p-6 bg-gray-50 dark:bg-gray-900 rounded-lg shadow-md">
       <div class="flex items-center gap-4">
         <img
           class="h-10 w-10 object-contain"

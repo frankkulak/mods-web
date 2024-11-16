@@ -12,7 +12,7 @@
   rel="noreferrer"
 >
   <div
-    class="h-full flex flex-col rounded-lg shadow-md bg-gray-100 dark:bg-gray-900"
+    class="h-full flex flex-col rounded-lg shadow-md bg-gray-50 dark:bg-gray-900"
   >
     <div class="px-6 py-1 rounded-t-lg {colorClass}">
       <h2 class="text-lg font-bold text-gray-100 dark:text-gray-900">

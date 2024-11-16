@@ -16,10 +16,17 @@
         >
         |
         <a
-          href="https://twitter.com/frankkulakmods"
+          href="https://bsky.app/profile/frankkulak.bsky.social"
           target="_blank"
           rel="noreferrer"
-          class="text-brand-twitter">Twitter</a
+          class="text-brand-bluesky">Bluesky</a
+        >
+        |
+        <a
+          href="https://discord.gg/qNhD3Jh"
+          target="_blank"
+          rel="noreferrer"
+          class="text-brand-discord">Discord</a
         >
         |
         <a
@@ -34,13 +41,6 @@
           target="_blank"
           rel="noreferrer"
           class="text-brand-kofi">Ko-fi</a
-        >
-        |
-        <a
-          href="https://discord.gg/qNhD3Jh"
-          target="_blank"
-          rel="noreferrer"
-          class="text-brand-discord">Discord</a
         >
       </p>
     </div>
